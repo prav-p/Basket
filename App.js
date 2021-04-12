@@ -33,6 +33,8 @@ const App = () => {
           <Stack.Screen name="Landing" component={Landing} />
           <Stack.Screen name="Asian Family Mar" component={Tabs} />
           <Stack.Screen name="Home" component={Home} /> 
+          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Create An Account" component={CreateAccount} />
           
           
         </Stack.Navigator>

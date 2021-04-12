@@ -6,9 +6,11 @@ import {
     StyleSheet,
     TouchableOpacity,
 } from "react-native";
-import { COLORS, images,FONTS } from "../constants";
+import { useNavigation } from '@react-navigation/native';
+import { COLORS, images, } from "../constants";
 
 const Landing = () =>{
+    const navigation = useNavigation(); 
     return (
         <ImageBackground
         style={style.img}
@@ -19,7 +21,7 @@ const Landing = () =>{
                 <Text style = {style.text3}>Basket</Text>
             </View>
        
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>navigation.navigate('Login')}>
             <View style={style.btn1}>
                 <View style={style.insidebtn}>
                     <Text style = {style.text}>Login</Text>
@@ -27,7 +29,7 @@ const Landing = () =>{
             </View>
             </TouchableOpacity>  
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>navigation.navigate('Create An Account')}>
             <View style={style.btn2}>
                 <View style={style.insidebtn2}>
                     <Text style = {style.text2}> Create An Account</Text>

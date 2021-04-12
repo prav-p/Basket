@@ -13,7 +13,7 @@ export const COLORS = {
     dropShadow: "#FF7A00",
     transparent: "transparent",
     darkGray: '#6D6D6D',
-    lightGray: '#EBEBEB,'
+    lightGray: '#ebebeb,'
 };
 
 export const SIZES = {

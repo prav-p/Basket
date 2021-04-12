@@ -12,4 +12,4 @@ const Item = () =>{
     )
 }
 
-export default Home;
+export default Item;

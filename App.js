@@ -1,70 +1,43 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Button, StyleSheet, Text, View,ImageBackground } from 'react-native';
-import Background from './assets/landing.png';
+import { createStackNavigator} from "@react-navigation/stack";
+import {NavigationContainer} from "@react-navigation/native";
+import { useFonts } from 'expo-font';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={[styles.container, {
-        flexDirection: "column"
-      }]}>
-        
-        <ImageBackground source={Background} style={styles.backgroundImage}>
-        <View style ={{flex: 3}} />
-        <Text style={styles.h1}>Basket</Text>
-        <View style ={{flex: 1}} />
-        {<Button
-        title="LOGIN"
-        style={styles.button}
-        onPress={() => this.onPress()}
-        
-        /> }
-         <View style ={{flex: 1}} />
-        {<CreateButton
-        title="Create an Account"
-        style={styles.button}
-        onPress={() => this.onPress()}
-        
-        /> }
-        </ImageBackground>
-        
-        
-    </View>
-  );
+import Tabs from './navigation/tabs';
+import {Home,Item,Login,Landing,Search,Checkout,CreateAccount} from './screens';
+
+const Stack = createStackNavigator();
+
+const App = () => {
+  
+  const [loaded] = useFonts({
+    "SignikaNegative-Bold" : require('./assets/fonts/SignikaNegative-Bold.ttf'),
+    "SignikaNegative-SemiBold" : require('./assets/fonts/SignikaNegative-SemiBold.ttf'),
+    "SignikaNegative-Regular" : require('./assets/fonts/SignikaNegative-Regular.ttf'),
+
+  })
+  
+  if(!loaded){
+    return null;
+  }
+
+  return(
+    <NavigationContainer>
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false
+          }}
+          initialRouteName={"Landing"}
+          >
+          <Stack.Screen name="Basket" component={Checkout} />
+          <Stack.Screen name="Landing" component={Landing} />
+          <Stack.Screen name="Asian Family Mar" component={Tabs} />
+          <Stack.Screen name="Home" component={Home} /> 
+          
+          
+        </Stack.Navigator>
+    </NavigationContainer>
+  )
 }
-}
 
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'transparent',
-    //alignItems: 'center',
-    //justifyContent: 'space-between',
-    //width: '100%',
-  },
-  backgroundImage: {
-    resizeMode: 'cover',
-    justifyContent: 'center',
-    width: '100%',
-    height: '100%',
-  },
-  h1: {
-    color: '#FF9E45',
-    fontSize:60,
-    fontWeight: "bold",
-    justifyContent: "center",
-    textAlign:'center',
-     
-    
-
-  },
-   CreateButton: {
-     color: 'transparent',
-     justifyContent: "center",
-     borderRadius: 20,
-     borderColor: '#FF9E45',
-    
-   }
-});
+export default App;

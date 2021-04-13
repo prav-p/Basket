@@ -17,23 +17,23 @@ const Landing = () => {
         <Text style={style.text3}>Basket</Text>
       </View>
 
-      <TouchableOpacity onPress={() => navigation.navigate("Login")}>
-        <View style={style.btn1}>
-          <View style={style.insidebtn}>
-            <Text style={style.text}>Login</Text>
-          </View>
+      <View style={style.btn1}>
+        <View style={style.insidebtn}>
+          <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+            <Text style={style.text}> Login</Text>
+          </TouchableOpacity>
         </View>
-      </TouchableOpacity>
+      </View>
 
-      <TouchableOpacity
-        onPress={() => navigation.navigate("Create An Account")}
-      >
-        <View style={style.btn2}>
-          <View style={style.insidebtn2}>
+      <View style={style.btn2}>
+        <View style={style.insidebtn2}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Create An Account")}
+          >
             <Text style={style.text2}> Create An Account</Text>
-          </View>
+          </TouchableOpacity>
         </View>
-      </TouchableOpacity>
+      </View>
     </ImageBackground>
   );
 };
@@ -45,7 +45,7 @@ const style = StyleSheet.create({
   },
   btn1: {
     alignItems: "center",
-    top: 560,
+    marginTop: "150%",
   },
   insidebtn: {
     height: 62,
@@ -61,10 +61,14 @@ const style = StyleSheet.create({
     textAlign: "center",
     fontSize: 30,
     color: COLORS.white,
+    paddingLeft: 150,
+    paddingRight: 150,
+    paddingTop: 7,
+    paddingBottom: 7,
   },
   btn2: {
     alignItems: "center",
-    top: 600,
+    marginTop: "10%",
   },
   insidebtn2: {
     height: 62,
@@ -82,6 +86,10 @@ const style = StyleSheet.create({
     textAlign: "center",
     fontSize: 30,
     color: COLORS.primary,
+    paddingLeft: 70,
+    paddingRight: 70,
+    paddingTop: 7,
+    paddingBottom: 7,
   },
   title: {
     position: "absolute",

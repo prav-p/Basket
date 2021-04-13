@@ -1,4 +1,5 @@
 import React from 'react';
+import { COLORS } from "../constants";
 import {
     SafeAreaView,
     View,
@@ -6,21 +7,66 @@ import {
     StyleSheet,
     TouchableOpacity,
     Image,
-    FlatList
+    FlatList,
+    TextInput
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const Login = () => {
+    const [text, onChangeText] = React.useState();
+    const navigation = useNavigation();
+
     function renderLogin() {
         return (
             <View>
-                <Text style={styles.textStyle}>LOGIN</Text>
+                <Text style={styles.loginText}>LOGIN</Text>
             </View>
         )
+    }
+
+    function renderLoginImage() {
+        return (
+            <View>
+                <Image style={styles.loginImage} source={require('../assets/images/LoginImage.png')} />
+            </View>
+        )
+    }
+
+    function renderLoginInq() {
+        return (
+            <View>
+                <Text style={styles.userName}>Username</Text>
+                <TextInput
+                    style={styles.userNameInput}
+                    onChangeText={onChangeText}
+                    value={text}
+                />
+                <Text style={styles.passwordLabel}>Password</Text>
+                <TextInput
+                    style={styles.passwordInput}
+                    onChangeText={onChangeText}
+                    value={text}
+                />
+            </View>
+        )
+    }
+
+    function renderLoginButton() {
+        <View style={styles.btn1}>
+            <View style={styles.insidebtn}>
+            <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+                <Text style={styles.text}> Login</Text>
+            </TouchableOpacity>
+            </View>
+        </View>
     }
 
     return (
         <SafeAreaView>
             {renderLogin()}
+            {renderLoginImage()}
+            {renderLoginInq()}
+            {renderLoginButton()}
         </SafeAreaView>
     )
 }
@@ -32,25 +78,81 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     },
-    textStyle: {
-        position: 'absolute',
+
+    loginText: {
+        top: 40,
+        fontFamily: "SignikaNegative-Bold",
+        textAlign: "center",
+        fontSize: 40,
+        color: COLORS.primary,
+    },
+
+    loginImage: {
+        width: 246,
+        height: 225,
+        left: 84,
+        top: 60,
+    },
+
+    userName: {
+        fontFamily: "SignikaNegative-Bold",
+        fontSize: 20,
+        left: 35,
+        top: 100,
+    },
+
+    userNameInput: {
+        width: 350,
+        height: 50,
+        left: 35,
+        top: 105,
+
+        backgroundColor: '#FF9E45',
+        borderRadius: 22,
+    },
+
+    passwordLabel: {
+        fontFamily: "SignikaNegative-Bold",
+        fontSize: 20,
+        left: 35,
+        top: 120,
+    },
+
+    passwordInput: {
+        width: 350,
+        height: 50,
+        left: 35,
+        top: 125,
+
+        backgroundColor: '#FF9E45',
+        borderRadius: 22,
+    },
+
+    btn1: {
+        alignItems: "center",
+        marginTop: "150%",
+    },
+
+    insidebtn: {
+        height: 62,
         width: 362,
-        height: 29,
-        left: 26,
-        top: 110,
+        textAlign: "center",
+        backgroundColor: COLORS.primary,
+        alignItems: "center",
+        justifyContent: "center",
+        borderRadius: 20,
+    },
 
-        fontFamily: 'SignikaNegative-Bold',
-        fontStyle: 'normal',
-        fontWeight: 'bold',
-        fontSize: 60,
-        lineHeight: 74,
-        display: 'flex',
-        alignItems: 'center',
-        textAlign: 'center',
-        letterSpacing: 0.005,
-
-        color: '#FF9E45'
-    }
+    text: {
+        fontFamily: "SignikaNegative-Bold",
+        textAlign: "center",
+        fontSize: 30,
+        color: COLORS.white,
+        paddingLeft: 150,
+        paddingRight: 150,
+        paddingTop: 7,
+        paddingBottom: 7,
+    },
 })
 
 export default Login;

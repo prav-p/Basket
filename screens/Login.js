@@ -94,14 +94,14 @@ const styles = StyleSheet.create({
     fontFamily: "SignikaNegative-Bold",
     textAlign: "center",
 
-    fontSize: RFValue(60, 580),
+    fontSize: RFValue(80, 896),
 
     color: COLORS.primary,
   },
 
   loginImage: {
     width: wp("50%"),
-    height: hp("25%"),
+    height: hp("24%"),
     left: 90,
     top: 70,
   },
@@ -109,40 +109,39 @@ const styles = StyleSheet.create({
   userName: {
     fontFamily: "SignikaNegative-Bold",
 
-    fontSize: RFValue(15, 580),
-
-    left: 35,
+    fontSize: RFValue(25, 896),
+    left: 20,
     top: 105,
   },
 
   userNameInput: {
-    width: wp("85%"),
-    height: hp("5.5%"),
+    width: wp("90%"),
+    height: hp("5%"),
     left: 20,
     top: 105,
-    fontSize: 20,
+    fontSize: RFValue(30, 896),
     backgroundColor: "#FF9E45",
-    borderRadius: 20,
+    borderRadius: 10,
     fontFamily: "SignikaNegative-Regular",
   },
 
   passwordLabel: {
     fontFamily: "SignikaNegative-Bold",
 
-    fontSize: RFValue(15, 580),
+    fontSize: RFValue(26, 896),
 
-    left: 35,
-    top: 125,
+    left: 20,
+    top: 150,
   },
 
   passwordInput: {
-    width: wp("85%"),
-    height: hp("5.5%"),
+    width: wp("90%"),
+    height: hp("5%"),
     left: 20,
-    top: 125,
-    fontSize: 20,
+    top: 150,
+    fontSize: RFValue(30, 896),
     backgroundColor: "#FF9E45",
-    borderRadius: 20,
+    borderRadius: 10,
     fontFamily: "SignikaNegative-Regular",
   },
 
@@ -165,7 +164,7 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: "SignikaNegative-Bold",
     textAlign: "center",
-    fontSize: 30,
+    fontSize: RFValue(40, 896),
     color: COLORS.white,
     paddingLeft: 140,
     paddingRight: 150,

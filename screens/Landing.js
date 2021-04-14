@@ -65,7 +65,7 @@ const style = StyleSheet.create({
     fontFamily: "SignikaNegative-Bold",
     left: -10,
     textAlign: "center",
-    fontSize: RFValue(32, 896),
+    fontSize: RFValue(33.5, 896),
     color: COLORS.white,
     paddingLeft: 160,
     paddingRight: 150,
@@ -90,7 +90,7 @@ const style = StyleSheet.create({
   text2: {
     fontFamily: "SignikaNegative-Bold",
     textAlign: "center",
-    fontSize: RFValue(30, 896),
+    fontSize: RFValue(35, 896),
     color: COLORS.primary,
     paddingLeft: 70,
     paddingRight: 70,

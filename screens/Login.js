@@ -100,6 +100,7 @@ const styles = StyleSheet.create({
     },
 
     loginImage: {
+        alignItems: 'center',
         width: 246,
         height: 225,
         left: 84,
@@ -124,6 +125,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#FF9E45",
         borderRadius: 22,
         fontFamily: "SignikaNegative-Regular",
+        alignItems: 'center'
     },
 
     passwordLabel: {
@@ -144,6 +146,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#FF9E45",
         borderRadius: 22,
         fontFamily: "SignikaNegative-Regular",
+        alignItems: 'center'
     },
 
     btn1: {

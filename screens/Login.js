@@ -11,10 +11,16 @@ import {
   TextInput,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from "react-native-responsive-screen";
 
 const Login = () => {
   const [text, onChangeText] = React.useState();
   const navigation = useNavigation();
+
 
   function renderLogin() {
     return (
@@ -38,6 +44,7 @@ const Login = () => {
   function renderLoginInq() {
     return (
       <View>
+
         <Text style={styles.userName}>Username</Text>
         <TextInput
           style={styles.userNameInput}
@@ -86,7 +93,9 @@ const styles = StyleSheet.create({
     top: 40,
     fontFamily: "SignikaNegative-Bold",
     textAlign: "center",
-    fontSize: 40,
+
+    fontSize: RFValue(40, 580),
+
     color: COLORS.primary,
   },
 
@@ -99,7 +108,9 @@ const styles = StyleSheet.create({
 
   userName: {
     fontFamily: "SignikaNegative-Bold",
-    fontSize: 20,
+
+    fontSize: RFValue(15, 580),
+
     left: 35,
     top: 100,
   },
@@ -117,7 +128,9 @@ const styles = StyleSheet.create({
 
   passwordLabel: {
     fontFamily: "SignikaNegative-Bold",
-    fontSize: 20,
+
+    fontSize: RFValue(15, 580),
+
     left: 35,
     top: 120,
   },

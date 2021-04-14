@@ -21,7 +21,6 @@ const Login = () => {
   const [text, onChangeText] = React.useState();
   const navigation = useNavigation();
 
-
   function renderLogin() {
     return (
       <View>
@@ -44,7 +43,6 @@ const Login = () => {
   function renderLoginInq() {
     return (
       <View>
-
         <Text style={styles.userName}>Username</Text>
         <TextInput
           style={styles.userNameInput}
@@ -173,7 +171,7 @@ const styles = StyleSheet.create({
         paddingRight: 150,
         paddingTop: 7,
         paddingBottom: 7,
-    },
+    }
 });
 
 export default Login;

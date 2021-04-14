@@ -8,6 +8,11 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { COLORS, images } from "../constants";
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from "react-native-responsive-screen";
 
 const Landing = () => {
   const navigation = useNavigation();
@@ -45,11 +50,11 @@ const style = StyleSheet.create({
   },
   btn1: {
     alignItems: "center",
-    marginTop: "150%",
+    marginTop: hp("68%"),
   },
   insidebtn: {
-    height: 62,
-    width: 362,
+    height: hp("7.5%"),
+    width: wp("95%"),
     textAlign: "center",
     backgroundColor: COLORS.primary,
     alignItems: "center",
@@ -58,10 +63,11 @@ const style = StyleSheet.create({
   },
   text: {
     fontFamily: "SignikaNegative-Bold",
+    left: -10,
     textAlign: "center",
-    fontSize: 30,
+    fontSize: RFValue(32, 896),
     color: COLORS.white,
-    paddingLeft: 150,
+    paddingLeft: 160,
     paddingRight: 150,
     paddingTop: 7,
     paddingBottom: 7,
@@ -71,8 +77,8 @@ const style = StyleSheet.create({
     marginTop: "10%",
   },
   insidebtn2: {
-    height: 62,
-    width: 362,
+    height: hp("7.5%"),
+    width: wp("95%"),
     textAlign: "center",
     backgroundColor: COLORS.white,
     alignItems: "center",
@@ -84,7 +90,7 @@ const style = StyleSheet.create({
   text2: {
     fontFamily: "SignikaNegative-Bold",
     textAlign: "center",
-    fontSize: 30,
+    fontSize: RFValue(30, 896),
     color: COLORS.primary,
     paddingLeft: 70,
     paddingRight: 70,
@@ -93,7 +99,7 @@ const style = StyleSheet.create({
   },
   title: {
     position: "absolute",
-    top: 178,
+    top: hp("20%"),
     left: 0,
     right: 0,
     bottom: 0,

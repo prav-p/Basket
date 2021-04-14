@@ -9,6 +9,10 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import { COLORS, images } from "../constants";
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from "react-native-responsive-screen";
 
 const Landing = () => {
   const navigation = useNavigation();
@@ -49,8 +53,8 @@ const style = StyleSheet.create({
     marginTop: "150%",
   },
   insidebtn: {
-    height: 62,
-    width: 362,
+    height: hp("7.5%"),
+    width: wp("95%"),
     textAlign: "center",
     backgroundColor: COLORS.primary,
     alignItems: "center",
@@ -73,8 +77,8 @@ const style = StyleSheet.create({
     marginTop: "10%",
   },
   insidebtn2: {
-    height: 62,
-    width: 362,
+    height: hp("7.5%"),
+    width: wp("95%"),
     textAlign: "center",
     backgroundColor: COLORS.white,
     alignItems: "center",

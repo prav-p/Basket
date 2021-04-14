@@ -21,7 +21,6 @@ const Login = () => {
   const [text, onChangeText] = React.useState();
   const navigation = useNavigation();
 
-
   function renderLogin() {
     return (
       <View>
@@ -44,7 +43,6 @@ const Login = () => {
   function renderLoginInq() {
     return (
       <View>
-
         <Text style={styles.userName}>Username</Text>
         <TextInput
           style={styles.userNameInput}
@@ -90,11 +88,11 @@ const styles = StyleSheet.create({
   },
 
   loginText: {
-    top: 40,
+    top: 60,
     fontFamily: "SignikaNegative-Bold",
     textAlign: "center",
 
-    fontSize: RFValue(40, 580),
+    fontSize: RFValue(60, 580),
 
     color: COLORS.primary,
   },
@@ -103,13 +101,13 @@ const styles = StyleSheet.create({
     width: 246,
     height: 225,
     left: 84,
-    top: 60,
+    top: 80,
   },
 
   userName: {
     fontFamily: "SignikaNegative-Bold",
 
-    fontSize: RFValue(15, 580),
+    fontSize: RFValue(18, 580),
 
     left: 35,
     top: 100,
@@ -117,10 +115,10 @@ const styles = StyleSheet.create({
 
   userNameInput: {
     width: 350,
-    height: 50,
+    height: 40,
     left: 35,
     top: 105,
-    fontSize: 20,
+    fontSize: 24,
     backgroundColor: "#FF9E45",
     borderRadius: 22,
     fontFamily: "SignikaNegative-Regular",
@@ -129,7 +127,7 @@ const styles = StyleSheet.create({
   passwordLabel: {
     fontFamily: "SignikaNegative-Bold",
 
-    fontSize: RFValue(15, 580),
+    fontSize: RFValue(18, 580),
 
     left: 35,
     top: 120,
@@ -137,10 +135,10 @@ const styles = StyleSheet.create({
 
   passwordInput: {
     width: 350,
-    height: 50,
+    height: 40,
     left: 35,
     top: 125,
-    fontSize: 20,
+    fontSize: 24,
     backgroundColor: "#FF9E45",
     borderRadius: 22,
     fontFamily: "SignikaNegative-Regular",

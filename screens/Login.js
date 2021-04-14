@@ -94,16 +94,16 @@ const styles = StyleSheet.create({
     fontFamily: "SignikaNegative-Bold",
     textAlign: "center",
 
-    fontSize: RFValue(40, 580),
+    fontSize: RFValue(60, 580),
 
     color: COLORS.primary,
   },
 
   loginImage: {
-    width: 246,
-    height: 225,
-    left: 84,
-    top: 60,
+    width: wp("50%"),
+    height: hp("25%"),
+    left: 90,
+    top: 70,
   },
 
   userName: {
@@ -112,17 +112,17 @@ const styles = StyleSheet.create({
     fontSize: RFValue(15, 580),
 
     left: 35,
-    top: 100,
+    top: 105,
   },
 
   userNameInput: {
-    width: 350,
-    height: 50,
-    left: 35,
+    width: wp("85%"),
+    height: hp("5.5%"),
+    left: 20,
     top: 105,
     fontSize: 20,
     backgroundColor: "#FF9E45",
-    borderRadius: 22,
+    borderRadius: 20,
     fontFamily: "SignikaNegative-Regular",
   },
 
@@ -132,17 +132,17 @@ const styles = StyleSheet.create({
     fontSize: RFValue(15, 580),
 
     left: 35,
-    top: 120,
+    top: 125,
   },
 
   passwordInput: {
-    width: 350,
-    height: 50,
-    left: 35,
+    width: wp("85%"),
+    height: hp("5.5%"),
+    left: 20,
     top: 125,
     fontSize: 20,
     backgroundColor: "#FF9E45",
-    borderRadius: 22,
+    borderRadius: 20,
     fontFamily: "SignikaNegative-Regular",
   },
 
@@ -153,8 +153,8 @@ const styles = StyleSheet.create({
   },
 
   insidebtn: {
-    height: 62,
-    width: 362,
+    height: hp("7.5%"),
+    width: wp("95%"),
     textAlign: "center",
     backgroundColor: COLORS.primary,
     alignItems: "center",

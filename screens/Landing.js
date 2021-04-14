@@ -50,7 +50,7 @@ const style = StyleSheet.create({
   },
   btn1: {
     alignItems: "center",
-    marginTop: "150%",
+    marginTop: hp("68%"),
   },
   insidebtn: {
     height: hp("7.5%"),

@@ -99,7 +99,7 @@ const style = StyleSheet.create({
   },
   title: {
     position: "absolute",
-    top: 178,
+    top: hp("20%"),
     left: 0,
     right: 0,
     bottom: 0,

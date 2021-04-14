@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     height: 50,
     left: 35,
     top: 105,
-
+    fontSize: 20,
     backgroundColor: "#FF9E45",
     borderRadius: 22,
     fontFamily: "SignikaNegative-Regular",
@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
     height: 50,
     left: 35,
     top: 125,
-
+    fontSize: 20,
     backgroundColor: "#FF9E45",
     borderRadius: 22,
     fontFamily: "SignikaNegative-Regular",

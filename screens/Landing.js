@@ -4,12 +4,11 @@ import {
   Text,
   ImageBackground,
   StyleSheet,
-  TouchableOpacity
+  TouchableOpacity,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { COLORS, images } from "../constants";
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
-
 
 const Landing = () => {
   const navigation = useNavigation();

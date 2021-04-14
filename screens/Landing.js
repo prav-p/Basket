@@ -4,10 +4,12 @@ import {
   Text,
   ImageBackground,
   StyleSheet,
-  TouchableOpacity,
+  TouchableOpacity
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { COLORS, images } from "../constants";
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
+
 
 const Landing = () => {
   const navigation = useNavigation();
@@ -58,8 +60,9 @@ const style = StyleSheet.create({
   },
   text: {
     fontFamily: "SignikaNegative-Bold",
+    left: -10,
     textAlign: "center",
-    fontSize: 30,
+    fontSize: RFValue(20, 580),
     color: COLORS.white,
     paddingLeft: 150,
     paddingRight: 150,
@@ -84,7 +87,7 @@ const style = StyleSheet.create({
   text2: {
     fontFamily: "SignikaNegative-Bold",
     textAlign: "center",
-    fontSize: 30,
+    fontSize: RFValue(19, 580),
     color: COLORS.primary,
     paddingLeft: 70,
     paddingRight: 70,

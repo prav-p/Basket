@@ -88,7 +88,7 @@ const Login = () => {
                 {renderLoginButton()}
             </SafeAreaView>
         </TouchableWithoutFeedback>
-  </KeyboardAvoidingView>
+    </KeyboardAvoidingView>
     
   );
 };

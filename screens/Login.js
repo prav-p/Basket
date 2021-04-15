@@ -47,18 +47,19 @@ const Login = () => {
   function renderLoginInq() {
     return (
       <View>
-        <Text style={styles.userName}>Username</Text>
-        <TextInput
-          style={styles.userNameInput}
-          onChangeText={onChangeUsername}
-          value={username}
-        />
-        <Text style={styles.passwordLabel}>Password</Text>
-        <TextInput
-          style={styles.passwordInput}
-          onChangeText={onChangePassword}
-          value={password}
-        />
+            <Text style={styles.userName}>Username</Text>
+            <TextInput
+                style={styles.userNameInput}
+                onChangeText={onChangeUsername}
+                value={username}
+            />
+            <Text style={styles.passwordLabel}>Password</Text>
+            <TextInput
+                secureTextEntry={true}
+                style={styles.passwordInput}
+                onChangeText={onChangePassword}
+                value={password}
+            />
       </View>
     );
   }
@@ -94,6 +95,7 @@ const Login = () => {
 };
 
 const styles = StyleSheet.create({
+<<<<<<< Updated upstream
     container: {
         flex: 1,
         backgroundColor: "#fff",
@@ -187,6 +189,97 @@ const styles = StyleSheet.create({
         paddingTop: 7,
         paddingBottom: 7,
     }
+=======
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  loginText: {
+    top: 40,
+    fontFamily: "SignikaNegative-Bold",
+    textAlign: "center",
+
+    fontSize: RFValue(80, 896),
+
+    color: COLORS.primary,
+  },
+
+  loginImage: {
+    width: wp("50%"),
+    height: hp("24%"),
+    left: 90,
+    top: 70,
+  },
+
+  userName: {
+    fontFamily: "SignikaNegative-Bold",
+
+    fontSize: RFValue(25, 896),
+    left: 20,
+    top: 105,
+  },
+
+  userNameInput: {
+    width: wp("85%"),
+    height: hp("5%"),
+    left: 20,
+    top: 105,
+    fontSize: RFValue(30, 896),
+    backgroundColor: "#FF9E45",
+    borderRadius: 10,
+    fontFamily: "SignikaNegative-Regular",
+  },
+
+  passwordLabel: {
+    fontFamily: "SignikaNegative-Bold",
+
+    fontSize: RFValue(26, 896),
+
+    left: 20,
+    top: 150,
+  },
+
+  passwordInput: {
+    width: wp("85%"),
+    height: hp("5%"),
+    left: 20,
+    top: 150,
+    fontSize: RFValue(30, 896),
+    backgroundColor: "#FF9E45",
+    borderRadius: 10,
+    fontFamily: "SignikaNegative-Regular",
+  },
+
+  btn1: {
+    flex: 1,
+    alignItems: "center",
+    marginTop: "60%",
+  },
+
+  insidebtn: {
+    height: hp("7.5%"),
+    width: wp("95%"),
+    textAlign: "center",
+    backgroundColor: COLORS.primary,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 20,
+  },
+
+  text: {
+    fontFamily: "SignikaNegative-Bold",
+    textAlign: "center",
+    fontSize: RFValue(40, 896),
+    color: COLORS.white,
+    paddingLeft: 140,
+    paddingRight: 150,
+    paddingTop: 7,
+    paddingBottom: 7,
+  },
+>>>>>>> Stashed changes
 });
 
 export default Login;

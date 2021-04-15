@@ -47,18 +47,19 @@ const Login = () => {
   function renderLoginInq() {
     return (
       <View>
-        <Text style={styles.userName}>Username</Text>
-        <TextInput
-          style={styles.userNameInput}
-          onChangeText={onChangeUsername}
-          value={username}
-        />
-        <Text style={styles.passwordLabel}>Password</Text>
-        <TextInput
-          style={styles.passwordInput}
-          onChangeText={onChangePassword}
-          value={password}
-        />
+            <Text style={styles.userName}>Username</Text>
+            <TextInput
+                style={styles.userNameInput}
+                onChangeText={onChangeUsername}
+                value={username}
+            />
+            <Text style={styles.passwordLabel}>Password</Text>
+            <TextInput
+                secureTextEntry={true}
+                style={styles.passwordInput}
+                onChangeText={onChangePassword}
+                value={password}
+            />
       </View>
     );
   }
@@ -121,6 +122,15 @@ const styles = StyleSheet.create({
     fontFamily: "SignikaNegative-Bold",
 
     fontSize: RFValue(25, 896),
+    left: 20,
+    top: 105,
+  },
+
+  userNameInput: {
+    width: wp("85%"),
+    height: hp("5%"),
+    left: 20,
+    top: 105,
     left: 10,
     top: 115,
   },
@@ -140,7 +150,15 @@ const styles = StyleSheet.create({
     fontFamily: "SignikaNegative-Bold",
 
     fontSize: RFValue(26, 896),
+    left: 20,
+    top: 150,
+  },
 
+  passwordInput: {
+    width: wp("85%"),
+    height: hp("5%"),
+    left: 20,
+    top: 150,
     left: 10,
     top: 160,
   },
@@ -175,6 +193,7 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: "SignikaNegative-Bold",
     textAlign: "center",
+    fontSize: RFValue(40, 896),
     fontSize: RFValue(30, 896),
     color: COLORS.white,
     paddingLeft: 140,

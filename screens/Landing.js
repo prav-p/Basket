@@ -111,8 +111,8 @@ const style = StyleSheet.create({
     textAlign: "center",
     fontSize: RFValue(20, 896),
     color: COLORS.primary,
-    paddingLeft: 50,
-    paddingRight: 50,
+    paddingLeft: 30,
+    paddingRight: 30,
   },
   title: {
     position: "absolute",

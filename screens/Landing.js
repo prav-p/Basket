@@ -1,10 +1,11 @@
 import React from "react";
+import { TouchableHighlight } from "react-native-gesture-handler";
 import {
   View,
   Text,
   ImageBackground,
   StyleSheet,
-  TouchableOpacity,
+  Dimensions,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { COLORS, images } from "../constants";
@@ -16,6 +17,7 @@ import {
 
 const Landing = () => {
   const navigation = useNavigation();
+  const screen_width = Dimensions.get("window").width;
   return (
     <ImageBackground style={style.img} source={images.landing}>
       <View style={style.title}>
@@ -24,19 +26,38 @@ const Landing = () => {
 
       <View style={style.btn1}>
         <View style={style.insidebtn}>
-          <TouchableOpacity onPress={() => navigation.navigate("Login")}>
-            <Text style={style.text}> Login</Text>
-          </TouchableOpacity>
+          <TouchableHighlight onPress={() => navigation.navigate("Login")}>
+            <Text style={style.text}>
+              <Text
+                style={{
+                  paddingLeft: screen_width / 10,
+                  paddingRight: screen_width / 10, // if this is changed to SCREEN_WIDTH / 21 everything works
+                  fontSize: screen_width / 10,
+                }}
+              >
+                Login
+              </Text>
+            </Text>
+          </TouchableHighlight>
         </View>
       </View>
 
       <View style={style.btn2}>
         <View style={style.insidebtn2}>
-          <TouchableOpacity
+          <TouchableHighlight
             onPress={() => navigation.navigate("Create An Account")}
           >
-            <Text style={style.text2}> Create An Account</Text>
-          </TouchableOpacity>
+            <Text style={style.text2}>
+              <Text
+                style={{
+                  paddingLeft: screen_width / 10, // if this is changed to SCREEN_WIDTH / 21 everything works
+                  fontSize: screen_width / 10,
+                }}
+              >
+                Create An Account
+              </Text>
+            </Text>
+          </TouchableHighlight>
         </View>
       </View>
     </ImageBackground>
@@ -55,7 +76,7 @@ const style = StyleSheet.create({
   insidebtn: {
     height: hp("7.5%"),
     width: wp("95%"),
-    textAlign: "center",
+    //textAlign: "center",
     backgroundColor: COLORS.primary,
     alignItems: "center",
     justifyContent: "center",
@@ -63,14 +84,12 @@ const style = StyleSheet.create({
   },
   text: {
     fontFamily: "SignikaNegative-Bold",
-    left: -10,
+    left: 0,
     textAlign: "center",
     fontSize: RFValue(20, 896),
     color: COLORS.white,
-    paddingLeft: 160,
-    paddingRight: 150,
-    paddingTop: 7,
-    paddingBottom: 7,
+    paddingLeft: 140,
+    paddingRight: 140,
   },
   btn2: {
     alignItems: "center",
@@ -92,10 +111,8 @@ const style = StyleSheet.create({
     textAlign: "center",
     fontSize: RFValue(20, 896),
     color: COLORS.primary,
-    paddingLeft: 70,
-    paddingRight: 70,
-    paddingTop: 7,
-    paddingBottom: 7,
+    paddingLeft: 50,
+    paddingRight: 50,
   },
   title: {
     position: "absolute",

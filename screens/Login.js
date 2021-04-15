@@ -47,19 +47,19 @@ const Login = () => {
   function renderLoginInq() {
     return (
       <View>
-            <Text style={styles.userName}>Username</Text>
-            <TextInput
-                style={styles.userNameInput}
-                onChangeText={onChangeUsername}
-                value={username}
-            />
-            <Text style={styles.passwordLabel}>Password</Text>
-            <TextInput
-                secureTextEntry={true}
-                style={styles.passwordInput}
-                onChangeText={onChangePassword}
-                value={password}
-            />
+        <Text style={styles.userName}>Username</Text>
+        <TextInput
+          style={styles.userNameInput}
+          onChangeText={onChangeUsername}
+          value={username}
+        />
+        <Text style={styles.passwordLabel}>Password</Text>
+        <TextInput
+          secureTextEntry={true}
+          style={styles.passwordInput}
+          onChangeText={onChangePassword}
+          value={password}
+        />
       </View>
     );
   }

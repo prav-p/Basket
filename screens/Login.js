@@ -11,7 +11,7 @@ import {
   FlatList,
   TextInput,
   KeyboardAvoidingView,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
@@ -77,19 +77,18 @@ const Login = () => {
 
   return (
     <KeyboardAvoidingView
-        behavior={Platform.OS === "ios" ? "padding" : "height"}
-        style={styles.container}
-    >   
-        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-            <SafeAreaView>
-                {renderLogin()}
-                {renderLoginImage()}
-                {renderLoginInq()}
-                {renderLoginButton()}
-            </SafeAreaView>
-        </TouchableWithoutFeedback>
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      style={styles.container}
+    >
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <SafeAreaView>
+          {renderLogin()}
+          {renderLoginImage()}
+          {renderLoginInq()}
+          {renderLoginButton()}
+        </SafeAreaView>
+      </TouchableWithoutFeedback>
     </KeyboardAvoidingView>
-    
   );
 };
 
@@ -122,15 +121,15 @@ const styles = StyleSheet.create({
     fontFamily: "SignikaNegative-Bold",
 
     fontSize: RFValue(25, 896),
-    left: 20,
-    top: 105,
+    left: 10,
+    top: 115,
   },
 
   userNameInput: {
     width: wp("90%"),
     height: hp("5%"),
-    left: 20,
-    top: 105,
+    left: 10,
+    top: 115,
     fontSize: RFValue(30, 896),
     backgroundColor: "#FF9E45",
     borderRadius: 10,
@@ -142,15 +141,15 @@ const styles = StyleSheet.create({
 
     fontSize: RFValue(26, 896),
 
-    left: 20,
-    top: 150,
+    left: 10,
+    top: 160,
   },
 
   passwordInput: {
     width: wp("90%"),
     height: hp("5%"),
-    left: 20,
-    top: 150,
+    left: 10,
+    top: 160,
     fontSize: RFValue(30, 896),
     backgroundColor: "#FF9E45",
     borderRadius: 10,
@@ -176,7 +175,7 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: "SignikaNegative-Bold",
     textAlign: "center",
-    fontSize: RFValue(40, 896),
+    fontSize: RFValue(30, 896),
     color: COLORS.white,
     paddingLeft: 140,
     paddingRight: 150,

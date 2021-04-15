@@ -7,8 +7,11 @@ import {
   StyleSheet,
   TouchableOpacity,
   Image,
+  Keyboard,
   FlatList,
   TextInput,
+  KeyboardAvoidingView,
+  TouchableWithoutFeedback
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
@@ -18,7 +21,8 @@ import {
 } from "react-native-responsive-screen";
 
 const Login = () => {
-  const [text, onChangeText] = React.useState();
+  const [username, onChangeUsername] = React.useState();
+  const [password, onChangePassword] = React.useState();
   const navigation = useNavigation();
 
   function renderLogin() {
@@ -46,14 +50,14 @@ const Login = () => {
         <Text style={styles.userName}>Username</Text>
         <TextInput
           style={styles.userNameInput}
-          onChangeText={onChangeText}
-          value={text}
+          onChangeText={onChangeUsername}
+          value={username}
         />
         <Text style={styles.passwordLabel}>Password</Text>
         <TextInput
           style={styles.passwordInput}
-          onChangeText={onChangeText}
-          value={text}
+          onChangeText={onChangePassword}
+          value={password}
         />
       </View>
     );
@@ -72,12 +76,20 @@ const Login = () => {
   }
 
   return (
-    <SafeAreaView>
-      {renderLogin()}
-      {renderLoginImage()}
-      {renderLoginInq()}
-      {renderLoginButton()}
-    </SafeAreaView>
+    <KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        style={styles.container}
+    >   
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+            <SafeAreaView>
+                {renderLogin()}
+                {renderLoginImage()}
+                {renderLoginInq()}
+                {renderLoginButton()}
+            </SafeAreaView>
+        </TouchableWithoutFeedback>
+    </KeyboardAvoidingView>
+    
   );
 };
 

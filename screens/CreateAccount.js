@@ -1,5 +1,6 @@
 import React from "react";
 import { COLORS } from "../constants";
+import * as SQLite from "expo-sqlite";
 import {
   SafeAreaView,
   View,
@@ -12,6 +13,7 @@ import {
   TextInput,
   KeyboardAvoidingView,
   TouchableWithoutFeedback,
+  Alert,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
@@ -20,6 +22,8 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import { add } from "react-native-reanimated";
+
+const db = SQLite.openDatabase("BasketDB");
 
 const createAccount = () => {
   const [name, onChangeName] = React.useState();
@@ -32,6 +36,55 @@ const createAccount = () => {
   const [contactNo, onChangeContactNo] = React.useState();
   const navigation = useNavigation();
 
+  let [flatListItems, setFlatListItems] = React.useState([]);
+
+  let create_account = () => {
+    db.transaction((tx) => {
+      tx.executeSql(
+        "create table if not exists DataTable (id integer primary key not null, name text, email text, password text, " +
+          "rePassword text, address text, zipcode int, city text, contactNo text);",
+        []
+      );
+
+      tx.executeSql(
+        "insert into DataTable (name, email, password, rePassword, address, zipcode, city, contactNo) values " +
+          "(?, ?, ?, ?, ?, ?, ?, ?)",
+        [name, email, password, rePassword, address, zipcode, city, contactNo],
+        (tx, results) => {
+          console.log("Results", results.rowsAffected);
+          if (results.rowsAffected > 0) {
+            Alert.alert(
+              "Success",
+              "You are Registered Successfully",
+              [
+                {
+                  text: "Ok",
+                  onPress: () => navigation.navigate("Home"),
+                },
+              ],
+              { cancelable: false }
+            );
+          } else alert("Registration Failed");
+        }
+      );
+
+      tx.executeSql("SELECT * FROM DataTable", [], (tx, results) => {
+        var temp = [];
+        for (let i = 0; i < results.rows.length; ++i)
+          temp.push(results.rows.item(i));
+        setFlatListItems(temp);
+        console.log(temp);
+      });
+
+      // tx.executeSql(
+      //   "select * from scoreData",
+      //   [],
+      //   (_, { rows: { _array } }) => setScores(_array),
+      //   () => console.log("error fetching")
+      // );
+    });
+  };
+
   function renderSignUpHeader() {
     return (
       <View>
@@ -43,33 +96,33 @@ const createAccount = () => {
   function renderSignUpInq() {
     return (
       <View>
-        <Text style={styles.nameLabel}>Name</Text>
+        <Text style={styles.inqLabel}>Name</Text>
         <TextInput
-          style={styles.nameInput}
+          style={styles.inqInput}
           onChangeText={onChangeName}
           value={name}
         />
-        <Text style={styles.nameLabel}>Email</Text>
+        <Text style={styles.inqLabel}>Email</Text>
         <TextInput
-          style={styles.nameInput}
+          style={styles.inqInput}
           onChangeText={onChangeEmail}
           value={email}
         />
-        <Text style={styles.nameLabel}>Password</Text>
+        <Text style={styles.inqLabel}>Password</Text>
         <TextInput
-          style={styles.nameInput}
+          style={styles.inqInput}
           onChangeText={onChangePassword}
           value={password}
         />
-        <Text style={styles.nameLabel}>Re-enter Password</Text>
+        <Text style={styles.inqLabel}>Re-enter Password</Text>
         <TextInput
-          style={styles.nameInput}
+          style={styles.inqInput}
           onChangeText={onChangeRePassword}
           value={rePassword}
         />
-        <Text style={styles.nameLabel}>Address</Text>
+        <Text style={styles.inqLabel}>Address</Text>
         <TextInput
-          style={styles.nameInput}
+          style={styles.inqInput}
           onChangeText={onChangeAddress}
           value={address}
         />
@@ -95,6 +148,18 @@ const createAccount = () => {
     );
   }
 
+  function renderCreateButton() {
+    return (
+      <View style={styles.btn1}>
+        <View style={styles.insidebtn}>
+          <TouchableOpacity onPress={() => create_account()}>
+            <Text style={styles.text}>Create</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    );
+  }
+
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -104,6 +169,7 @@ const createAccount = () => {
         <SafeAreaView>
           {renderSignUpHeader()}
           {renderSignUpInq()}
+          {renderCreateButton()}
         </SafeAreaView>
       </TouchableWithoutFeedback>
     </KeyboardAvoidingView>
@@ -128,7 +194,7 @@ const styles = StyleSheet.create({
     color: COLORS.primary,
   },
 
-  nameLabel: {
+  inqLabel: {
     fontFamily: "SignikaNegative-Bold",
     fontSize: RFValue(25, 896),
     // right: 50,
@@ -136,7 +202,7 @@ const styles = StyleSheet.create({
     top: 20,
   },
 
-  nameInput: {
+  inqInput: {
     top: 20,
     width: wp("90%"),
     height: hp("5%"),
@@ -286,6 +352,34 @@ const styles = StyleSheet.create({
     backgroundColor: "#EBEBEB",
     // borderRadius: 10,
     fontFamily: "SignikaNegative-Regular",
+  },
+
+  btn1: {
+    flex: 1,
+    alignItems: "center",
+    // marginTop: "50%",
+  },
+
+  insidebtn: {
+    // height: hp("7.5%"),
+    // width: wp("95%"),
+    textAlign: "center",
+    backgroundColor: COLORS.primary,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 20,
+  },
+
+  text: {
+    fontFamily: "SignikaNegative-Bold",
+    textAlign: "center",
+    fontSize: RFValue(40, 896),
+    fontSize: RFValue(30, 896),
+    color: COLORS.white,
+    paddingLeft: 140,
+    paddingRight: 150,
+    paddingTop: 7,
+    paddingBottom: 7,
   },
 });
 export default createAccount;

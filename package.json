@@ -26,7 +26,8 @@
     "react-native-screens": "~2.15.2",
     "react-native-web": "~0.13.12",
     "react-navigation": "^4.4.4",
-    "yarn": "^1.22.10"
+    "yarn": "^1.22.10",
+    "expo-sqlite": "~8.5.0"
   },
   "devDependencies": {
     "@babel/core": "~7.9.0"

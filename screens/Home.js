@@ -43,22 +43,20 @@ const Home = () => {
   }
   function renderSearchBar() {
     state = {
-      search: '',
+      search: "",
     };
     updateSearch = (search) => {
       this.setState({ search });
     };
-    render() {
-      const { search } = this.state;
-  
-      return (
-        <SearchBar
-          placeholder="Type Here..."
-          onChangeText={this.updateSearch}
-          value={search}
-        />
-      );
-    }
+    const { search } = this.state;
+
+    return (
+      <SearchBar
+        placeholder="Type Here..."
+        onChangeText={this.updateSearch}
+        value={search}
+      />
+    );
   }
   return (
     <SafeAreaView>

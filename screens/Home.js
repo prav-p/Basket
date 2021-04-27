@@ -1,90 +1,122 @@
-import React from "react";
-import { COLORS, icons } from "../constants";
+import React from 'react'
 import {
-  SafeAreaView,
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  Image,
-  Icon,
-  Keyboard,
-  FlatList,
-  KeyboardAvoidingView,
-  TouchableWithoutFeedback,
-  TextInput,
-} from "react-native";
-import { SearchBar } from "react-native-elements";
-import { useNavigation } from "@react-navigation/native";
-import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from "react-native-responsive-screen";
+    Text,
+    FlatList,
+    View,
+    TouchableOpacity,
+    TextInput
+} from 'react-native'
+import filter from 'lodash.filter'
+import Data from '../assets/stores.json';
 
-const Home = () => {
-  const navigation = useNavigation();
-
-  function renderBasket() {
-    return (
-      <View style={style.basket}>
-        <TouchableOpacity onPress={() => navigation.navigate("Basket")}>
-          <Image source={icons.basketG}></Image>
-        </TouchableOpacity>
-      </View>
-    );
-  }
-  function renderGreeting() {
-    return (
-      <View style>
-        <Text style={style.greetingText}>Hello there</Text>
-      </View>
-    );
-  }
-  function renderSearchBar() {
+class Home extends React.Component {
     state = {
-      search: "",
-    };
-    updateSearch = (search) => {
-      this.setState({ search });
-    };
-    const { search } = this.state;
+        data: [],
+        query: '',
+        fullData: []
+    }
 
-    return (
-      <SearchBar
-        placeholder="Type Here..."
-        onChangeText={this.updateSearch}
-        value={search}
-      />
-    );
-  }
-  return (
-    <SafeAreaView>
-      {renderGreeting()}
-      {renderBasket()}
-      {renderSearchBar()}
-    </SafeAreaView>
-  );
-};
-const style = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: COLORS.primary,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  basket: {
-    flex: 1,
-    left: 300,
-    top: -55,
-  },
-  greetingText: {
-    top: 70,
-    fontFamily: "SignikaNegative-Bold",
-    textAlign: "center",
-    fontSize: RFValue(70, 896),
-    color: COLORS.primary,
-  },
-});
+    componentDidMount() {
+        this.makeRemoteRequest()
+    }
+
+    makeRemoteRequest = () => {
+        this.setState({
+            data: Data,
+            fullData: Data
+        });
+    }
+
+    contains = ({ storeName, storeLocation }, query) => {
+        if (
+            storeName.toUpperCase().includes(query) ||
+            storeLocation.toUpperCase().includes(query)
+        ) {
+        return true
+        }
+        return false
+    }
+
+    handleSearch = text => {
+        const formattedQuery = text.toUpperCase()
+        const data = filter(this.state.fullData, store => {
+            return this.contains(store, formattedQuery)
+        })
+        this.setState({ data, query: text })
+    }
+
+    renderHeader = () => (
+        <View
+            style={{
+                backgroundColor: '#fff',
+                padding: 10,
+        }}>
+        <TextInput
+                autoCapitalize='none'
+                autoCorrect={false}
+                onChangeText={this.handleSearch}
+                status='info'
+                placeholder='Search'
+                style={{
+                    borderRadius: 25,
+                    borderColor: '#333',
+                    backgroundColor: '#fff'
+                }}
+                textStyle={{ color: '#000' }}
+                clearButtonMode='always'
+        />
+        </View>
+    )
+
+    renderSeparator = () => {
+        return (
+        <View
+            style={{
+            height: 1,
+            width: '86%',
+            backgroundColor: '#CED0CE',
+            marginLeft: '5%'
+            }}
+        />
+        )
+    }
+
+    render() {
+        const { navigate } = this.props.navigation;
+        return (
+        <View
+            style={{
+            flex: 1,
+            paddingHorizontal: 20,
+            paddingVertical: 20,
+            marginTop: 40
+            }}>
+            <FlatList
+                data={this.state.data}
+                renderItem={({ item }) => (
+                    <TouchableOpacity onPress={() => navigate("Search")}>
+                    <View
+                        style={{
+                        flexDirection: 'row',
+                        padding: 16,
+                        alignItems: 'center'
+                        }}>
+                        <Text
+                        category='s1'
+                        style={{
+                            color: '#000'
+                        }}>{`${item.storeName} ${item.storeLocation}`}</Text>
+                    </View>
+                    </TouchableOpacity>
+                )}
+                keyExtractor={item => item.storeLocation}
+                ItemSeparatorComponent={this.renderSeparator}
+                ListHeaderComponent={this.renderHeader}
+                ListFooterComponent={this.renderFooter}
+            />
+        </View>
+        )
+    }
+}
 
 export default Home;

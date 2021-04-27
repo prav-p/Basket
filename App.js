@@ -13,10 +13,8 @@ import {
   Checkout,
   CreateAccount,
 } from "./screens";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 const Stack = createStackNavigator();
-const Tab = createBottomTabNavigator();
 const App = () => {
   const [loaded] = useFonts({
     "SignikaNegative-Bold": require("./assets/fonts/SignikaNegative-Bold.ttf"),
@@ -39,7 +37,7 @@ const App = () => {
         <Stack.Screen name="Basket" component={Checkout} />
         <Stack.Screen name="Landing" component={Landing} />
         <Stack.Screen name="Asian Family Mart" component={Tabs} />
-        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Home" component={Tabs} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Create An Account" component={CreateAccount} />
       </Stack.Navigator>

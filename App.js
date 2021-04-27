@@ -40,6 +40,7 @@ const App = () => {
         <Stack.Screen name="Home" component={Tabs} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Create An Account" component={CreateAccount} />
+        <Stack.Screen name="Search" component={Search} />
       </Stack.Navigator>
     </NavigationContainer>
   );

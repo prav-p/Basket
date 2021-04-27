@@ -8,6 +8,7 @@ import {
 } from 'react-native'
 import filter from 'lodash.filter'
 import Data from '../assets/stores.json';
+import { StyleSheet } from 'react-native';
 
 class Home extends React.Component {
     state = {
@@ -46,38 +47,25 @@ class Home extends React.Component {
     }
 
     renderHeader = () => (
-        <View
-            style={{
-                backgroundColor: '#fff',
-                padding: 10,
-        }}>
-        <TextInput
+        <View style={ style.headerView }>
+            <TextInput
                 autoCapitalize='none'
                 autoCorrect={false}
                 onChangeText={this.handleSearch}
                 status='info'
                 placeholder='Search'
-                style={{
-                    borderRadius: 25,
-                    borderColor: '#333',
-                    backgroundColor: '#fff'
-                }}
+                style={ style.searchBar }
                 textStyle={{ color: '#000' }}
                 clearButtonMode='always'
-        />
+            />
         </View>
     )
 
     renderSeparator = () => {
         return (
-        <View
-            style={{
-            height: 1,
-            width: '86%',
-            backgroundColor: '#CED0CE',
-            marginLeft: '5%'
-            }}
-        />
+            <View
+                style={ style.renderSeaparatorView }
+            />
         )
     }
 
@@ -85,27 +73,18 @@ class Home extends React.Component {
         const { navigate } = this.props.navigation;
         return (
         <View
-            style={{
-            flex: 1,
-            paddingHorizontal: 20,
-            paddingVertical: 20,
-            marginTop: 40
-            }}>
+            style={ style.renderView }>
             <FlatList
                 data={this.state.data}
                 renderItem={({ item }) => (
                     <TouchableOpacity onPress={() => navigate("Search")}>
                     <View
-                        style={{
-                        flexDirection: 'row',
-                        padding: 16,
-                        alignItems: 'center'
-                        }}>
+                        style={ style.flatListView }>
                         <Text
-                        category='s1'
-                        style={{
-                            color: '#000'
-                        }}>{`${item.storeName} ${item.storeLocation}`}</Text>
+                            category='s1'
+                            style={ style.flatListText }>
+                            {`${item.storeName} ${item.storeLocation}`}
+                        </Text>
                     </View>
                     </TouchableOpacity>
                 )}
@@ -118,5 +97,42 @@ class Home extends React.Component {
         )
     }
 }
+
+const style = StyleSheet.create({
+    headerView: {
+        backgroundColor: '#fff',
+        padding: 10
+    },
+
+    searchBar: {
+        borderRadius: 25,
+        borderColor: '#333',
+        backgroundColor: '#fff'
+    },
+
+    renderSeaparatorView: {
+        height: 1,
+        width: '86%',
+        backgroundColor: '#CED0CE',
+        marginLeft: '5%'
+    },
+
+    renderView: {
+        flex: 1,
+        paddingHorizontal: 20,
+        paddingVertical: 20,
+        marginTop: 40
+    },
+
+    flatListView: {
+        flexDirection: 'row',
+        padding: 16,
+        alignItems: 'center'
+    },
+
+    flatListText: {
+        color: '#000'
+    }
+});
 
 export default Home;

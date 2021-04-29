@@ -43,7 +43,7 @@ const Checkout = () => {
         >
           {/* Return Button */}
 
-          <TouchableOpacity onPress={() => navigation.navigate("Search")}>
+          <TouchableOpacity onPress={() => navigation.navigate("Home")}>
             <IconButton icon={icons.goBack} />
           </TouchableOpacity>
 
@@ -71,10 +71,18 @@ const Checkout = () => {
       </SafeAreaView>
     );
   }
+  function renderCheckout() {
+    return (
+      /*Empty Cart */
+      <View></View>
+    );
+  }
   return (
     <View style={styles.container}>
       {/* Header */}
       {renderHeader()}
+      {/*Checkout*/}
+      {renderCheckout()}
     </View>
   );
 };

@@ -6,7 +6,6 @@ import {
   View,
   Text,
   StyleSheet,
-  TouchableOpacity,
   Image,
   Icon,
   Keyboard,
@@ -21,13 +20,15 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
-const Checkout = (navigation) => {
+const Checkout = () => {
+  const navigation = useNavigation();
   function renderHeader() {
     return (
       <SafeAreaView
         style={{
-          height: 120,
+          height: 150,
           alignItems: "center",
         }}
       >
@@ -36,15 +37,20 @@ const Checkout = (navigation) => {
             flexDirection: "row",
             paddingHorizontal: 30,
             alignItems: "center",
+            height: 25,
+            wdith: 25,
           }}
         >
           {/* Return Button */}
-          <IconButton icon={icons.Back} onPress={() => navigation.goBack()} />
+
+          <TouchableOpacity onPress={() => navigation.navigate("Search")}>
+            <IconButton icon={icons.goBack} />
+          </TouchableOpacity>
 
           {/* Title */}
           <View
             style={{
-              flex: 2,
+              flex: 1,
               alignItems: "center",
             }}
           >
@@ -52,8 +58,8 @@ const Checkout = (navigation) => {
               style={{
                 color: COLORS.primary,
                 ...FONTS.h1,
-                fontSize: 40,
-                height: 10,
+                fontSize: 37,
+                top: 4,
               }}
             >
               Basket

@@ -4,12 +4,12 @@ import {
     Text
 } from "react-native";
 
-const Search = () => {
+const Mendoza = () => {
     return (
         <View>
-            <Text>Search</Text>
+            <Text>Mendoza</Text>
         </View>
     )
 }
 
-export default Search;
+export default Mendoza;

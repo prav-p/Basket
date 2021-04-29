@@ -12,7 +12,12 @@ import {
   Search,
   Checkout,
   CreateAccount,
+  Asian,
+  Mendoza,
+  European
 } from "./screens";
+// import Asian from './screens/Asian';
+// import Mendoza from './screens/Mendoza';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 const Stack = createStackNavigator();
@@ -43,6 +48,9 @@ const App = () => {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Create An Account" component={CreateAccount} />
         <Stack.Screen name="Search" component={Search} />
+        <Stack.Screen name="Asian" component={Asian} />
+        <Stack.Screen name="Mendoza" component={Mendoza} />
+        <Stack.Screen name="European" component={European} />
       </Stack.Navigator>
     </NavigationContainer>
   );

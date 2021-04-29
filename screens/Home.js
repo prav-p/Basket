@@ -69,6 +69,26 @@ class Home extends React.Component {
         )
     }
 
+    onclick_item(storeName) {
+        switch (storeName) {
+            case "Asian":
+                this.props.navigation.navigate("Asian");
+                //navigate
+                break;
+            case "Mendoza":
+                this.props.navigation.navigate("Mendoza");
+                //navigate
+                break;
+            case "European":
+                this.props.navigation.navigate("European");
+                //navigate
+                break;
+            default:
+            //whatever you want
+        }
+        console.log(storeName);
+    }
+
     render() {
         const { navigate } = this.props.navigation;
         return (
@@ -77,7 +97,7 @@ class Home extends React.Component {
             <FlatList
                 data={this.state.data}
                 renderItem={({ item }) => (
-                    <TouchableOpacity onPress={() => navigate("Search")}>
+                    <TouchableOpacity onPress={() => this.onclick_item(item.storeName)}>
                     <View
                         style={ style.flatListView }>
                         <Text

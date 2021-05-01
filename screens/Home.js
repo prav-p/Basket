@@ -86,7 +86,6 @@ class Home extends React.Component {
             default:
             //whatever you want
         }
-        console.log(storeName);
     }
 
     render() {

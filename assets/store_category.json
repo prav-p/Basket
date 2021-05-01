@@ -1,0 +1,5 @@
+[
+    { "category": "Dairy", "categoryItems": ["Eggs", "Cheese", "Milk"] },
+    { "category": "Meat & Seafood", "categoryItems": ["Bacon & Sausage", "Lunch Meat", "Beef"] },
+    { "category": "Produce", "categoryItems": ["Fruits", "Organic Produce", "Vegetables"] }
+]

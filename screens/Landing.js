@@ -1,5 +1,5 @@
 import React from "react";
-import { TouchableHighlight } from "react-native-gesture-handler";
+import { TouchableOpacity } from "react-native-gesture-handler";
 import {
   View,
   Text,
@@ -26,7 +26,7 @@ const Landing = () => {
 
       <View style={style.btn1}>
         <View style={style.insidebtn}>
-          <TouchableHighlight onPress={() => navigation.navigate("Login")}>
+          <TouchableOpacity onPress={() => navigation.navigate("Login")}>
             <Text style={style.text}>
               <Text
                 style={{
@@ -38,13 +38,13 @@ const Landing = () => {
                 Login
               </Text>
             </Text>
-          </TouchableHighlight>
+          </TouchableOpacity>
         </View>
       </View>
 
       <View style={style.btn2}>
         <View style={style.insidebtn2}>
-          <TouchableHighlight
+          <TouchableOpacity
             onPress={() => navigation.navigate("Create An Account")}
           >
             <Text style={style.text2}>
@@ -57,7 +57,7 @@ const Landing = () => {
                 Create An Account
               </Text>
             </Text>
-          </TouchableHighlight>
+          </TouchableOpacity>
         </View>
       </View>
     </ImageBackground>

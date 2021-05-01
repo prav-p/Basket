@@ -12,11 +12,15 @@ import {
   Search,
   Checkout,
   CreateAccount,
+  Asian,
+  Mendoza,
+  European,
 } from "./screens";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import {
+  AsianMilk
+} from "./screens/asian_search_screens";
 
 const Stack = createStackNavigator();
-const Tab = createBottomTabNavigator();
 const App = () => {
   const [loaded] = useFonts({
     "SignikaNegative-Bold": require("./assets/fonts/SignikaNegative-Bold.ttf"),
@@ -39,9 +43,14 @@ const App = () => {
         <Stack.Screen name="Basket" component={Checkout} />
         <Stack.Screen name="Landing" component={Landing} />
         <Stack.Screen name="Asian Family Mart" component={Tabs} />
-        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Home" component={Tabs} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Create An Account" component={CreateAccount} />
+        <Stack.Screen name="Search" component={Search} />
+        <Stack.Screen name="Asian" component={Asian} />
+        <Stack.Screen name="Mendoza" component={Mendoza} />
+        <Stack.Screen name="European" component={European} />
+        <Stack.Screen name="AsianMilk" component={AsianMilk} />
       </Stack.Navigator>
     </NavigationContainer>
   );

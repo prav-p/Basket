@@ -1,5 +1,12 @@
 import React from "react";
-import { Text, FlatList, View, TextInput, Image } from "react-native";
+import {
+  Text,
+  FlatList,
+  View,
+  TextInput,
+  Image,
+  TouchableHighlight,
+} from "react-native";
 import filter from "lodash.filter";
 import categoryData from "../assets/store_category.json";
 import { StyleSheet } from "react-native";
@@ -106,19 +113,20 @@ class Asian extends React.Component {
           keyExtractor={(item) => item.category}
           ItemSeparatorComponent={this.renderSeparator}
         />
-        <View>
-          <TouchableOpacity
+        <View style={style.btn1}>
+          <TouchableHighlight
             onPress={() => this.props.navigation.navigate("AsianMilk")}
           >
-            <Image
-              source={require("../assets/images/darigold_whole_milk.jpg")}
-              style={{
-                bottom: 400,
-                width: 50,
-                height: 50,
-              }}
-            />
-          </TouchableOpacity>
+            <View>
+              <Image
+                source={require("../assets/images/darigold_whole_milk.jpg")}
+                style={{
+                  width: 50,
+                  height: 50,
+                }}
+              />
+            </View>
+          </TouchableHighlight>
         </View>
       </View>
     );
@@ -174,6 +182,11 @@ const style = StyleSheet.create({
 
   item: {
     width: "50%", // is 50% of container width
+  },
+  btn1: {
+    alignItems: "flex-start",
+    //marginTop: "62%",
+    bottom: 400,
   },
 });
 

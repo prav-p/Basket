@@ -120,6 +120,16 @@ class Asian extends React.Component {
                     keyExtractor={item => item.category}
                     ItemSeparatorComponent={this.renderSeparator}
                 />
+                <TouchableOpacity onPress={( this.props.navigation.navigate("AsianMilk") )}>
+                        <Image 
+                            source={require('../assets/images/darigold_whole_milk.jpg')}
+                            style={{
+                                        bottom: 400,
+                                        width: 50,
+                                        height: 50
+                                    }} 
+                        />
+                </TouchableOpacity>
             </View>
         )
     }

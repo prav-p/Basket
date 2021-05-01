@@ -16,6 +16,9 @@ import {
   Mendoza,
   European,
 } from "./screens";
+import {
+  AsianMilk
+} from "./screens/asian_search_screens";
 
 const Stack = createStackNavigator();
 const App = () => {
@@ -47,6 +50,7 @@ const App = () => {
         <Stack.Screen name="Asian" component={Asian} />
         <Stack.Screen name="Mendoza" component={Mendoza} />
         <Stack.Screen name="European" component={European} />
+        <Stack.Screen name="AsianMilk" component={AsianMilk} />
       </Stack.Navigator>
     </NavigationContainer>
   );

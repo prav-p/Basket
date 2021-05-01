@@ -8,8 +8,7 @@ import Search from "./Search";
 import European from "./European";
 import Asian from "./Asian";
 import Mendoza from "./Mendoza";
-import AsianMilk from "./asian_search_screens/AsianMilk";
-
+import AsianMilk from "./AsianMilk";
 export {
   Home,
   Landing,
@@ -21,5 +20,5 @@ export {
   European,
   Asian,
   Mendoza,
-  AsianMilk
+  AsianMilk,
 };

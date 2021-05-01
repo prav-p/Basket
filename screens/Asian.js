@@ -10,6 +10,8 @@ import {
 import filter from 'lodash.filter'
 import categoryData from '../assets/store_category.json';
 import { StyleSheet } from 'react-native';
+import { NavigationEvents } from 'react-navigation';
+import AsianMilk from './AsianMilk';
 
 class Asian extends React.Component {
     state = {
@@ -90,6 +92,7 @@ class Asian extends React.Component {
     }
 
     render() {
+        const { navigation } = this.props.navigation;
         return (
             <View style={ style.renderView }>
                 <View>
@@ -103,7 +106,6 @@ class Asian extends React.Component {
                 <FlatList
                     data={this.state.data}
                     renderItem={({ item }) => (
-                        <TouchableOpacity onPress={() => this.onclick_item("")}>
                             <View
                                 style={ style.flatListView }>
                                 <Text
@@ -115,22 +117,24 @@ class Asian extends React.Component {
                                     <Text>{`${item.categoryItems[2]}`}</Text>
                                 </Text>
                             </View>
-                        </TouchableOpacity>
                     )}
                     keyExtractor={item => item.category}
                     ItemSeparatorComponent={this.renderSeparator}
                 />
-                <TouchableOpacity onPress={( this.props.navigation.navigate("AsianMilk") )}>
-                        <Image 
-                            source={require('../assets/images/darigold_whole_milk.jpg')}
-                            style={{
-                                        bottom: 400,
-                                        width: 50,
-                                        height: 50
-                                    }} 
-                        />
-                </TouchableOpacity>
+                <View>
+                    <TouchableOpacity onPress={ () => this.props.navigation.navigate("AsianMilk")}>
+                            <Image 
+                                source={require('../assets/images/darigold_whole_milk.jpg')}
+                                style={{
+                                            bottom: 400,
+                                            width: 50,
+                                            height: 50
+                                        }} 
+                            />
+                    </TouchableOpacity>
+                </View>
             </View>
+            
         )
     }
 }

@@ -15,10 +15,8 @@ import {
   Asian,
   Mendoza,
   European,
-} from "./screens";
-import {
   AsianMilk
-} from "./screens/asian_search_screens";
+} from "./screens";
 
 const Stack = createStackNavigator();
 const App = () => {
@@ -43,7 +41,7 @@ const App = () => {
         <Stack.Screen name="Basket" component={Checkout} />
         <Stack.Screen name="Landing" component={Landing} />
         <Stack.Screen name="Asian Family Mart" component={Tabs} />
-        <Stack.Screen name="Home" component={Tabs} />
+        <Stack.Screen name="Tabs" component={Tabs} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Create An Account" component={CreateAccount} />
         <Stack.Screen name="Search" component={Search} />
@@ -51,6 +49,7 @@ const App = () => {
         <Stack.Screen name="Mendoza" component={Mendoza} />
         <Stack.Screen name="European" component={European} />
         <Stack.Screen name="AsianMilk" component={AsianMilk} />
+        <Stack.Screen name="Home" component={Home} />
       </Stack.Navigator>
     </NavigationContainer>
   );

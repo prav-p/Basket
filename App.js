@@ -15,10 +15,8 @@ import {
   Asian,
   Mendoza,
   European,
+  AsianMilk,
 } from "./screens";
-import {
-  AsianMilk
-} from "./screens/asian_search_screens";
 
 const Stack = createStackNavigator();
 const App = () => {

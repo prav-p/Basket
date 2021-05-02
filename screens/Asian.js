@@ -62,6 +62,7 @@ class Asian extends React.Component {
                 clearButtonMode='always'
             />
         </View>
+<<<<<<< Updated upstream
     )
 
     renderSeparator = () => {
@@ -133,6 +134,35 @@ class Asian extends React.Component {
                             />
                     </TouchableOpacity>
                 </View>
+=======
+        <FlatList
+          data={this.state.data}
+          renderItem={({ item }) => (
+            <View style={style.flatListView}>
+              <Text category="s1" style={style.flatListText}>
+                {`${item.category}\n\n\n\n\n\n`}
+                <Text>{`${item.subCategory[0]}`}</Text>
+                <Text>{`${item.subCategory[1]}`}</Text>
+                <Text>{`${item.subCategory[2]}`}</Text>
+              </Text>
+            </View>
+          )}
+          keyExtractor={(item) => item.category}
+          ItemSeparatorComponent={this.renderSeparator}
+        />
+        <View style={style.btn1}>
+          <TouchableHighlight
+            onPress={() => this.props.navigation.navigate("AsianMilk")}
+          >
+            <View>
+              <Image
+                source={require("../assets/images/darigold_whole_milk.jpg")}
+                style={{
+                  width: 50,
+                  height: 50,
+                }}
+              />
+>>>>>>> Stashed changes
             </View>
             
         )

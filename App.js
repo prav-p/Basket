@@ -15,7 +15,7 @@ import {
   Asian,
   Mendoza,
   European,
-  AsianMilk
+  AsianMilk,
 } from "./screens";
 
 const Stack = createStackNavigator();

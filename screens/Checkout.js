@@ -8,11 +8,7 @@ import {
   StyleSheet,
   Image,
   Icon,
-  Keyboard,
-  FlatList,
-  KeyboardAvoidingView,
-  TouchableWithoutFeedback,
-  TextInput,
+  Dimensions,
 } from "react-native";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
@@ -24,6 +20,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 
 const Checkout = () => {
   const navigation = useNavigation();
+  const screen_width = Dimensions.get("window").width;
   function renderHeader() {
     return (
       <SafeAreaView
@@ -35,7 +32,7 @@ const Checkout = () => {
         <View
           style={{
             flexDirection: "row",
-            paddingHorizontal: 30,
+            paddingHorizontal: 20,
             alignItems: "center",
             height: 25,
             wdith: 25,
@@ -43,7 +40,7 @@ const Checkout = () => {
         >
           {/* Return Button */}
 
-          <TouchableOpacity onPress={() => navigation.navigate("Search")}>
+          <TouchableOpacity onPress={() => navigation.navigate("Home")}>
             <IconButton icon={icons.goBack} />
           </TouchableOpacity>
 
@@ -71,16 +68,54 @@ const Checkout = () => {
       </SafeAreaView>
     );
   }
+  function renderCheckout() {
+    return (
+      /*Empty Cart */
+      <SafeAreaView>
+        <View style={styles.btn1}>
+          <View style={styles.insidebtn}>
+            <TouchableOpacity onPress={() => navigation.navigate("")}>
+              <Text
+                style={{
+                  paddingLeft: screen_width / 10,
+                  paddingRight: screen_width / 10, // if this is changed to SCREEN_WIDTH / 21 everything works
+                  fontSize: screen_width / 10,
+                  fontFamily: "SignikaNegative-Bold",
+                }}
+              >
+                Checkout
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </SafeAreaView>
+    );
+  }
   return (
     <View style={styles.container}>
       {/* Header */}
       {renderHeader()}
+      {/*Checkout*/}
+      {renderCheckout()}
     </View>
   );
 };
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  btn1: {
+    alignItems: "center",
+    marginTop: hp("62%"),
+  },
+  insidebtn: {
+    height: hp("7.5%"),
+    width: wp("95%"),
+    //textAlign: "center",
+    backgroundColor: COLORS.primary,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 20,
   },
 });
 

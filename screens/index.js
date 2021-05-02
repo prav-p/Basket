@@ -21,5 +21,5 @@ export {
   European,
   Asian,
   Mendoza,
-  AsianMilk
+  AsianMilk,
 };

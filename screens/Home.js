@@ -25,7 +25,7 @@ class Home extends React.Component {
         this.setState({
             data: Data,
             fullData: Data
-        });
+          });
     }
 
     contains = ({ storeName, storeLocation }, query) => {
@@ -41,9 +41,11 @@ class Home extends React.Component {
     handleSearch = text => {
         const formattedQuery = text.toUpperCase()
         const data = filter(this.state.fullData, store => {
+            console.log(this.contains(store, formattedQuery));
             return this.contains(store, formattedQuery)
         })
         this.setState({ data, query: text })
+        console.log(data)
     }
 
     renderHeader = () => (

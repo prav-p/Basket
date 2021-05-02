@@ -1,17 +1,72 @@
 [
-    { "brand": "White Eggs", "quantity": 6, "price": 4.99 },
-    { "brand": "Parmesan", "quantity": 2, "price": 10.99 },
-    { "brand": "Horizon Organic Milk, Organic, Whole", "quantity": 5, "price": 3.99 },
-    { "brand": "Darigold Milk, Homogenized, Whole", "quantity": 4, "price": 4.99 },
-    { "brand": "Darigold Milk, Reduced Fat, 2%", "quantity": 2, "price": 4.99 },
-    { "brand": "Organic Valley Ultra Pasteurized Whole Milk", "quantity": 5, "price": 6.99 },
-    { "brand": "Bacon", "quantity": 6, "price": 8.99 },
-    { "brand": "Turkey Ham", "quantity": 7, "price": 7.99 },
-    { "brand": "Sirloin", "quantity": 4, "price": 12.99 },
-    { "brand": "Apple", "quantity": 6, "price": 2.99 },
-    { "brand": "Organic Something", "quantity": 7, "price": 5.99 },
-    { "brand": "Yellow Onions", "quantity": 2, "price": 0.49 },
-    { "brand": "Broccoli", "quantity": 3, "price": 1.69 },
-    { "brand": "Potatoes - Gold", "quantity": 5, "price": 0.89 },
-    { "brand": "Garlic", "quantity": 4, "price": 1.19 }
+    { 
+        "subCategory": "Milk", 
+        "brand": [
+            {
+                "name": "Horizon Organic Milk, Organic, Whole"
+            },
+            {
+                "name": "Darigold Milk, Homogenized, Whole"
+            },
+            {
+                "name": "Darigold Milk, Reduced Fat, 2%"
+            },
+            {
+                "name": "Organic Valley Ultra Pasteurized Whole Milk"
+            }
+        ]
+    },
+    {
+        "subCategory": "Cheese",
+        "brand": [
+            {
+                "name": "Parmesan"
+            }
+        ]
+    },
+    {
+        "subCategory": "Eggs",
+        "brand": [
+            "White Eggs"
+        ]
+    },
+    {
+        "subCategory": "Bacon & Sausage",
+        "brand": [
+            "Bacon"
+        ]
+    },
+    {
+        "subCategory": "Lunch Meat",
+        "brand": [
+            "Turkey Ham"
+        ]
+    },
+    {
+        "subCategory": "Beef",
+        "brand": [
+            "Sirloin"
+        ]
+    },
+    {
+        "subCategory": "Fruits",
+        "brand": [
+            "Apple"
+        ]
+    },
+    {
+        "subCategory": "Organic Produce",
+        "brand": [
+            "Organic"
+        ]
+    },
+    {
+        "subCategory": "Vegetables",
+        "brand": [
+            "Yellow Onions",
+            "Broccoli",
+            "Potatoes - Gold",
+            "Garlic"
+        ]
+    }
 ]

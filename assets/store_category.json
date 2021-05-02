@@ -1,5 +1,5 @@
 [
-    { "category": "Dairy", "categoryItems": ["Eggs", "Cheese", "Milk"] },
-    { "category": "Meat & Seafood", "categoryItems": ["Bacon & Sausage", "Lunch Meat", "Beef"] },
-    { "category": "Produce", "categoryItems": ["Fruits", "Organic Produce", "Vegetables"] }
+    { "category": "Dairy", "subCategory": ["Eggs", "Cheese", "Milk"] },
+    { "category": "Meat & Seafood", "subCategory": ["Bacon & Sausage", "Lunch Meat", "Beef"] },
+    { "category": "Produce", "subCategory": ["Fruits", "Organic Produce", "Vegetables"] }
 ]

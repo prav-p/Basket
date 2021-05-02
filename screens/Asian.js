@@ -105,8 +105,6 @@ class Asian extends React.Component {
               <Text category="s1" style={style.flatListText}>
                 {`${item.category}\n\n\n\n\n\n`}
                 <Text>{`${item.subCategory}`}</Text>
-                {/* <Text>{`${item.categoryItems[1]}`}</Text>
-                <Text>{`${item.categoryItems[2]}`}</Text> */}
               </Text>
             </View>
           )}

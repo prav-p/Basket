@@ -1,5 +1,5 @@
 [
-    {"storeName": "Asian", "storeLocation": "123 S St"},
-    {"storeName": "Mendoza", "storeLocation": "345 N Ct"},
-    {"storeName": "European", "storeLocation": "678 W Blvd"}
+    {"storeName": "Asian", "storeLocation": "123 S St","photo":"https:\/\/www.roireit.net\/assets\/001\/5666.jpg"},
+    {"storeName": "Mendoza", "storeLocation": "345 N Ct","photo":"https:\/\/10619-2.s.cdn12.com\/rests\/original\/336_509699841.jpg"},
+    {"storeName": "European", "storeLocation": "678 W Blvd","photo":"https:\/\/live.staticflickr.com\/4110\/5193886071_3aae1f53ff.jpg"}
 ]

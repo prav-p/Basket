@@ -9,8 +9,8 @@ import {
 } from "react-native";
 import filter from "lodash.filter";
 import Data from "../assets/stores.json";
+import { COLORS, images } from "../constants";
 import { StyleSheet } from "react-native";
-import { SafeAreaView } from "react-navigation";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 
 class Home extends React.Component {
@@ -56,8 +56,15 @@ class Home extends React.Component {
     return (
       <>
         <View style={style.basket}>
-          <Text style={{ right: 280, top: 20, fontSize: 20 }}>
-            {" "}
+          <Text
+            style={{
+              right: 280,
+              fontSize: 30,
+              top: 50,
+              fontFamily: "SignikaNegative-Bold",
+              color: COLORS.primary,
+            }}
+          >
             Stores Nearby
           </Text>
           <TouchableOpacity onPress={() => navigation.navigate("Basket")}>
@@ -111,6 +118,15 @@ class Home extends React.Component {
           renderItem={({ item }) => (
             <TouchableOpacity onPress={() => this.onclick_item(item.storeName)}>
               <View style={style.flatListView}>
+                <Image
+                  Image
+                  source={{ uri: item.photo }}
+                  style={{
+                    width: 100,
+                    height: 100,
+                    borderRadius: 30,
+                  }}
+                />
                 <Text category="s1" style={style.flatListText}>
                   {`${item.storeName} ${item.storeLocation}`}
                 </Text>
@@ -128,16 +144,21 @@ class Home extends React.Component {
 }
 
 const style = StyleSheet.create({
-  basket: { top: -5, left: 280, height: 60 },
+  basket: {
+    left: 280,
+    top: -35,
+  },
+
   headerView: {
     backgroundColor: "#fff",
     padding: 10,
   },
 
   searchBar: {
-    borderRadius: 25,
+    borderRadius: 30,
     borderColor: "#333",
     backgroundColor: "#fff",
+    fontStyle: "italic",
   },
 
   renderSeaparatorView: {
@@ -162,7 +183,10 @@ const style = StyleSheet.create({
   },
 
   flatListText: {
+    left: 20,
     color: "#000",
+    fontFamily: "SignikaNegative-SemiBold",
+    fontSize: 22,
   },
 });
 

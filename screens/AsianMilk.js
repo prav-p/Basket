@@ -4,11 +4,13 @@ import {
     FlatList,
     View,
     TouchableOpacity,
-    TextInput
+    TextInput,
+    Image
 } from 'react-native'
 import filter from 'lodash.filter'
 import Data from '../assets/store_items.json';
 import { StyleSheet } from 'react-native';
+import { COLOR, COLORS } from "../constants";
 
 class AsianMilk extends React.Component {
     state = {
@@ -70,25 +72,6 @@ class AsianMilk extends React.Component {
         )
     }
 
-    onclick_item(storeName) {
-        switch (storeName) {
-            case "Asian":
-                this.props.navigation.navigate("Asian");
-                //navigate
-                break;
-            case "Mendoza":
-                this.props.navigation.navigate("Mendoza");
-                //navigate
-                break;
-            case "European":
-                this.props.navigation.navigate("European");
-                //navigate
-                break;
-            default:
-            //whatever you want
-        }
-    }
-
     render() {
         return (
         <View
@@ -96,7 +79,6 @@ class AsianMilk extends React.Component {
             <FlatList
                 data={this.state.data}
                 renderItem={({ item }) => (
-                    <TouchableOpacity>
                     <View
                         style={ style.flatListView }>
                         <Text
@@ -104,15 +86,102 @@ class AsianMilk extends React.Component {
                             style={ style.flatListText }>
                             {`${item.name}`}
                         </Text>
+                        <TouchableOpacity 
+                            style={{
+                                width: 30,
+                                backgroundColor: COLORS.white,
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                borderTopLeftRadius: 25,
+                                borderBottomLeftRadius: 25,
+                                // bottom: 400,
+                                height: 30,
+                                right: 110
+                            }}
+                            onPress={console.log()}
+                        >
+                            <Text>-</Text>
+                        </TouchableOpacity>
+                        <View 
+                            style={{
+                                width: 30,
+                                backgroundColor: COLORS.white,
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                // bottom: 430,
+                                height: 30,
+                                // left: 50
+                                right: 110
+                            }}
+                        >
+                            <Text>5</Text>
+                        </View>
+                        <TouchableOpacity
+                            style={{
+                                width: 30,
+                                backgroundColor: COLORS.white,
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                borderTopRightRadius: 25,
+                                borderBottomRightRadius: 25,
+                                // bottom: 460,
+                                // left: 100,
+                                height: 30,
+                                right: 110
+                            }}
+                        >
+                            <Text>+</Text>
+
+                        </TouchableOpacity>
                     </View>
-                    </TouchableOpacity>
                 )}
                 numColumns={2}
                 keyExtractor={item => item.name}
-                // ItemSeparatorComponent={this.renderSeparator}
                 ListHeaderComponent={this.renderHeader}
-                ListFooterComponent={this.renderFooter}
             />
+            {/* <TouchableOpacity 
+                style={{
+                    width: 50,
+                    backgroundColor: COLORS.white,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    borderTopLeftRadius: 25,
+                    borderBottomLeftRadius: 25,
+                    bottom: 400,
+                    height: 30
+                }}
+            >
+                <Text>-</Text>
+            </TouchableOpacity>
+            <View 
+                style={{
+                    width: 50,
+                    backgroundColor: COLORS.white,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    bottom: 430,
+                    height: 30,
+                    left: 50
+                }}
+            >
+                <Text>5</Text>
+            </View>
+            <TouchableOpacity
+                style={{
+                    width: 50,
+                    backgroundColor: COLORS.white,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    borderTopRightRadius: 25,
+                    borderBottomRightRadius: 25,
+                    bottom: 460,
+                    left: 100,
+                    height: 30
+                }}
+            >
+                <Text>+</Text>
+
+            </TouchableOpacity> */}
         </View>
         )
     }
@@ -152,8 +221,9 @@ const style = StyleSheet.create({
 
     flatListText: {
         color: '#000',
-        width: 140,
-        height: 140
+        width: 90,
+        height: 140,
+        
     }
 });
 

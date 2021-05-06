@@ -27,46 +27,66 @@
     {
         "subCategory": "Eggs",
         "brand": [
-            "White Eggs"
+            {
+                "name": "White Eggs"
+            }
         ]
     },
     {
         "subCategory": "Bacon & Sausage",
         "brand": [
-            "Bacon"
+            {
+                "name": "Bacon"
+            }
         ]
     },
     {
         "subCategory": "Lunch Meat",
         "brand": [
-            "Turkey Ham"
+            {
+                "name": "Turkey Ham"
+            }
         ]
     },
     {
         "subCategory": "Beef",
         "brand": [
-            "Sirloin"
+            {
+                "name": "Sirloin"
+            }
         ]
     },
     {
         "subCategory": "Fruits",
         "brand": [
-            "Apple"
+            {
+                "name": "Sirloin"
+            }
         ]
     },
     {
         "subCategory": "Organic Produce",
         "brand": [
-            "Organic"
+            {
+                "name": "Organic"
+            }
         ]
     },
     {
         "subCategory": "Vegetables",
         "brand": [
-            "Yellow Onions",
-            "Broccoli",
-            "Potatoes - Gold",
-            "Garlic"
+            {
+                "name": "Yellow Onions"
+            },
+            {
+                "name": "Broccoli"
+            },
+            {
+                "name": "Potatoes - Gold"
+            },
+            {
+                "name": "Garlic"
+            }
         ]
     }
 ]

@@ -5,7 +5,8 @@ import {
     View,
     TouchableOpacity,
     TextInput,
-    Image
+    Image,
+    TouchableNativeFeedback
 } from 'react-native'
 import filter from 'lodash.filter'
 import Data from '../assets/store_items.json';
@@ -72,6 +73,20 @@ class AsianMilk extends React.Component {
         )
     }
 
+    editOrder = (action, menuId, price) => {
+        // const [orderItems, setOrderItems] = React.useState([]);
+        // if (action == "+") {
+        //     let orderList = orderItems.slice();
+        //     let item = orderList.filter(a => a.menuId == menuId);
+
+        //     if (item.length > 0) {
+        //         let newQty = item[0].q
+        //     }
+        // } else {
+
+        // }
+    }
+
     render() {
         return (
         <View
@@ -87,6 +102,7 @@ class AsianMilk extends React.Component {
                             {`${item.name}`}
                         </Text>
                         <TouchableOpacity 
+                            onPress={console.log("hello")}
                             style={{
                                 width: 30,
                                 backgroundColor: COLORS.white,
@@ -97,8 +113,7 @@ class AsianMilk extends React.Component {
                                 // bottom: 400,
                                 height: 30,
                                 right: 110
-                            }}
-                            onPress={console.log()}
+                            }} 
                         >
                             <Text>-</Text>
                         </TouchableOpacity>
@@ -117,6 +132,7 @@ class AsianMilk extends React.Component {
                             <Text>5</Text>
                         </View>
                         <TouchableOpacity
+                            onPress={console.log("hello")}
                             style={{
                                 width: 30,
                                 backgroundColor: COLORS.white,
@@ -139,49 +155,6 @@ class AsianMilk extends React.Component {
                 keyExtractor={item => item.name}
                 ListHeaderComponent={this.renderHeader}
             />
-            {/* <TouchableOpacity 
-                style={{
-                    width: 50,
-                    backgroundColor: COLORS.white,
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    borderTopLeftRadius: 25,
-                    borderBottomLeftRadius: 25,
-                    bottom: 400,
-                    height: 30
-                }}
-            >
-                <Text>-</Text>
-            </TouchableOpacity>
-            <View 
-                style={{
-                    width: 50,
-                    backgroundColor: COLORS.white,
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    bottom: 430,
-                    height: 30,
-                    left: 50
-                }}
-            >
-                <Text>5</Text>
-            </View>
-            <TouchableOpacity
-                style={{
-                    width: 50,
-                    backgroundColor: COLORS.white,
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    borderTopRightRadius: 25,
-                    borderBottomRightRadius: 25,
-                    bottom: 460,
-                    left: 100,
-                    height: 30
-                }}
-            >
-                <Text>+</Text>
-
-            </TouchableOpacity> */}
         </View>
         )
     }

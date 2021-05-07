@@ -13,6 +13,7 @@ import { StyleSheet } from "react-native";
 import { NavigationEvents } from "react-navigation";
 import AsianMilk from "./AsianMilk";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { COLORS } from "../constants";
 
 class Asian extends React.Component {
   state = {
@@ -90,7 +91,7 @@ class Asian extends React.Component {
     const { navigation } = this.props.navigation;
     return (
       <View style={style.renderView}>
-        <View>
+        <View style={style.basket}>
           <TouchableOpacity>
             <Image source={require("../assets/icons/BasketGreen.png")} />
           </TouchableOpacity>
@@ -104,7 +105,7 @@ class Asian extends React.Component {
             <View style={style.flatListView}>
               <Text category="s1" style={style.flatListText}>
                 {`${item.category}\n\n\n\n\n\n`}
-                <Text>{`${item.subCategory}`}</Text>
+                <Text style={style.flatListSubCat}>{`${item.type}`}</Text>
               </Text>
             </View>
           )}
@@ -132,8 +133,13 @@ class Asian extends React.Component {
 }
 
 const style = StyleSheet.create({
+  basket: {
+    left: 280,
+    bottom: -10,
+    backgroundColor: COLORS.secondary,
+  },
   headerView: {
-    backgroundColor: "#fff",
+    backgroundColor: COLORS.secondary,
     padding: 10,
   },
 
@@ -145,30 +151,42 @@ const style = StyleSheet.create({
 
   renderSeaparatorView: {
     height: 1,
-    width: "86%",
-    backgroundColor: "#CED0CE",
-    marginLeft: "5%",
+    width: "100%",
+    backgroundColor: COLORS.primary,
   },
 
   renderView: {
     flex: 1,
     paddingHorizontal: 20,
     paddingVertical: 20,
-    marginTop: 40,
+    //marginTop: 40,
+    backgroundColor: COLORS.secondary,
   },
 
   flatListView: {
+    paddingVertical: 30,
     flexDirection: "row",
     padding: 16,
     alignItems: "center",
+    //backgroundColor: "#fff",
   },
 
   flatListText: {
     color: "#000",
+    fontFamily: "SignikaNegative-SemiBold",
+    fontSize: 16,
+  },
+  flatListSubCat: {
+    fontFamily: "SignikaNegative-Regular",
+    fontSize: 14,
   },
 
   titleText: {
     textAlign: "center",
+    fontFamily: "SignikaNegative-Bold",
+    fontSize: 30,
+    color: COLORS.primary,
+    top: 15,
   },
 
   container: {
@@ -184,7 +202,7 @@ const style = StyleSheet.create({
   btn1: {
     alignItems: "flex-start",
     //marginTop: "62%",
-    bottom: 400,
+    bottom: 550,
   },
 });
 

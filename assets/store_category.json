@@ -3,10 +3,10 @@
         "category": "Dairy", 
         "subCategory": [
             {
-                "type": "Milk"
+                "type": "Milk "
             },
             {
-                "type": "Eggs"
+                "type": "Eggs "
             },
             {
                 "type": "Cheese"

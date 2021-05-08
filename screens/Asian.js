@@ -6,7 +6,7 @@ import {
   TextInput,
   Image,
   TouchableHighlight,
-  SectionList
+  SectionList,
 } from "react-native";
 import filter from "lodash.filter";
 import categoryData from "../assets/store_category.json";
@@ -14,7 +14,7 @@ import { StyleSheet } from "react-native";
 import { NavigationEvents } from "react-navigation";
 import AsianMilk from "./AsianMilk";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { COLORS, FONTS, icons } from "../constants";
+import { COLORS, FONTS, icons, images } from "../constants";
 import { IconButton } from "../components";
 
 class Asian extends React.Component {
@@ -117,11 +117,17 @@ class Asian extends React.Component {
             <View style={style.flatListView}>
               <Text category="s1" style={style.flatListText}>
                 {`${item.category}\n\n\n\n\n\n`}
-                <Text style={style.flatListSubCat}>{`${item.subCategory[0].type}`}</Text>
-                <Text style={style.flatListSubCat}>{`${item.subCategory[1].type}`}</Text>                
-                <Text style={style.flatListSubCat}>{`${item.subCategory[2].type}`}</Text>
+                <Text style={style.flatListSubCat}>
+                  {`${item.subCategory[0].type}\t\t `}
+                </Text>
+                <Text style={style.flatListSubCat}>
+                  {`${item.subCategory[1].type}\t\t `}
+                </Text>
+                <Text
+                  style={style.flatListSubCat}
+                >{`${item.subCategory[2].type}`}</Text>
               </Text>
-            </View>         
+            </View>
           )}
           keyExtractor={(item) => item.category}
           ItemSeparatorComponent={this.renderSeparator}
@@ -133,6 +139,134 @@ class Asian extends React.Component {
             <View>
               <Image
                 source={require("../assets/images/darigold_whole_milk.jpg")}
+                style={{
+                  width: 50,
+                  height: 50,
+                }}
+              />
+            </View>
+          </TouchableHighlight>
+        </View>
+
+        <View style={style.btn2}>
+          <TouchableHighlight
+            onPress={() => this.props.navigation.navigate("AsianEggs")}
+          >
+            <View>
+              <Image
+                source={require("../assets/images/eggs-2.jpg")}
+                style={{
+                  width: 50,
+                  height: 50,
+                }}
+              />
+            </View>
+          </TouchableHighlight>
+        </View>
+
+        <View style={style.btn3}>
+          <TouchableHighlight
+            onPress={() => this.props.navigation.navigate("AsianCheese")}
+          >
+            <View>
+              <Image
+                source={require("../assets/images/cheese.jpg")}
+                style={{
+                  width: 50,
+                  height: 50,
+                }}
+              />
+            </View>
+          </TouchableHighlight>
+        </View>
+
+        <View style={style.btn4}>
+          <TouchableHighlight
+            onPress={() => this.props.navigation.navigate("AsianVeg")}
+          >
+            <View>
+              <Image
+                source={require("../assets/images/vegetables.jpg")}
+                style={{
+                  width: 50,
+                  height: 50,
+                }}
+              />
+            </View>
+          </TouchableHighlight>
+        </View>
+
+        <View style={style.btn5}>
+          <TouchableHighlight
+            onPress={() => this.props.navigation.navigate("AsianOrganicProd")}
+          >
+            <View>
+              <Image
+                source={require("../assets/images/organic_produce.jpg")}
+                style={{
+                  width: 50,
+                  height: 50,
+                }}
+              />
+            </View>
+          </TouchableHighlight>
+        </View>
+
+        <View style={style.btn6}>
+          <TouchableHighlight
+            onPress={() => this.props.navigation.navigate("AsianFruits")}
+          >
+            <View>
+              <Image
+                source={require("../assets/images/fruits.jpg")}
+                style={{
+                  width: 50,
+                  height: 50,
+                }}
+              />
+            </View>
+          </TouchableHighlight>
+        </View>
+
+        <View style={style.btn7}>
+          <TouchableHighlight
+            onPress={() => this.props.navigation.navigate("AsianBeef")}
+          >
+            <View>
+              <Image
+                source={require("../assets/images/beef.jpg")}
+                style={{
+                  width: 50,
+                  height: 50,
+                }}
+              />
+            </View>
+          </TouchableHighlight>
+        </View>
+
+        <View style={style.btn8}>
+          <TouchableHighlight
+            onPress={() => this.props.navigation.navigate("AsianLunchMeat")}
+          >
+            <View>
+              <Image
+                source={require("../assets/images/lunch_meat.jpg")}
+                style={{
+                  width: 50,
+                  height: 50,
+                }}
+              />
+            </View>
+          </TouchableHighlight>
+        </View>
+
+        <View style={style.btn8}>
+          <TouchableHighlight
+            onPress={() => this.props.navigation.navigate("AsianBnS")}
+          >
+            <View>
+              <Image
+                source={require("../assets/images/pork belly.jpg")}
                 style={{
                   width: 50,
                   height: 50,
@@ -200,6 +334,7 @@ const style = StyleSheet.create({
   flatListSubCat: {
     fontFamily: "SignikaNegative-Regular",
     fontSize: 14,
+    marginLeft: 10,
   },
 
   titleText: {
@@ -221,6 +356,11 @@ const style = StyleSheet.create({
     width: "50%", // is 50% of container width
   },
   btn1: {
+    alignItems: "flex-start",
+    //marginTop: "62%",
+    bottom: 550,
+  },
+  btn2: {
     alignItems: "flex-start",
     //marginTop: "62%",
     bottom: 550,

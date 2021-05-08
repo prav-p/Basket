@@ -13,7 +13,8 @@ import { StyleSheet } from "react-native";
 import { NavigationEvents } from "react-navigation";
 import AsianMilk from "./AsianMilk";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { COLORS } from "../constants";
+import { COLORS, FONTS, icons } from "../constants";
+import { IconButton } from "../components";
 
 class Asian extends React.Component {
   state = {
@@ -91,8 +92,18 @@ class Asian extends React.Component {
     const { navigation } = this.props.navigation;
     return (
       <View style={style.renderView}>
+        {/* Return Button */}
+        <View style={style.goBack}>
+          <TouchableHighlight
+            onPress={() => this.props.navigation.navigate("Home")}
+          >
+            <IconButton icon={icons.goBack} />
+          </TouchableHighlight>
+        </View>
         <View style={style.basket}>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate("Basket")}
+          >
             <Image source={require("../assets/icons/BasketGreen.png")} />
           </TouchableOpacity>
         </View>
@@ -135,8 +146,15 @@ class Asian extends React.Component {
 const style = StyleSheet.create({
   basket: {
     left: 280,
-    bottom: -10,
+    bottom: -5,
     backgroundColor: COLORS.secondary,
+  },
+  goBack: {
+    flexDirection: "row",
+    paddingHorizontal: 20,
+    height: 25,
+    width: 25,
+    bottom: -40,
   },
   headerView: {
     backgroundColor: COLORS.secondary,

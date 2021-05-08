@@ -6,6 +6,7 @@ import {
   TextInput,
   Image,
   TouchableHighlight,
+  SectionList
 } from "react-native";
 import filter from "lodash.filter";
 import categoryData from "../assets/store_category.json";
@@ -104,9 +105,25 @@ class Asian extends React.Component {
             <View style={style.flatListView}>
               <Text category="s1" style={style.flatListText}>
                 {`${item.category}\n\n\n\n\n\n`}
+<<<<<<< Updated upstream
                 <Text>{`${item.subCategory}`}</Text>
+=======
+                
+       
+                <Text style={style.flatListSubCat}>{`${item.subCategory[0].type}`}</Text>
+
+                <Text style={style.flatListSubCat}>{`${item.subCategory[1].type}`}</Text>
+                
+                
+                <Text style={style.flatListSubCat}>{`${item.subCategory[2].type}`}</Text>
+>>>>>>> Stashed changes
               </Text>
+               <View>
+               
+               </View>
+
             </View>
+            
           )}
           keyExtractor={(item) => item.category}
           ItemSeparatorComponent={this.renderSeparator}

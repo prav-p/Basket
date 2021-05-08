@@ -1,5 +1,47 @@
 [
-    { "category": "Dairy", "subCategory": ["Eggs", "Cheese", "Milk"] },
-    { "category": "Meat & Seafood", "subCategory": ["Bacon & Sausage", "Lunch Meat", "Beef"] },
-    { "category": "Produce", "subCategory": ["Fruits", "Organic Produce", "Vegetables"] }
+    { 
+        "category": "Dairy", 
+        "subCategory": [
+            {
+                "type": "Milk"
+            },
+            {
+                "type": "Eggs"
+            },
+            {
+                "type": "Cheese"
+            }
+          
+        ]
+    },
+    { 
+        "category": "Meat & Seafood", 
+        "subCategory": [
+            {
+                "type": "Bacon & Sausage"
+            },
+            {
+                "type": "Lunch Meat"
+            },
+            {
+                "type": "Beef"
+            }
+          
+        ]
+    },
+    { 
+        "category": "Produce", 
+        "subCategory": [
+            {
+                "type": "Fruits"
+            },
+            {
+                "type": "Organic Produce"
+            },
+            {
+                "type": "Vegetables"
+            }
+          
+        ]
+    }
 ]

@@ -6,10 +6,10 @@
                 "type": "Milk "
             },
             {
-                "type": "Eggs "
+                "type": "                        Eggs "
             },
             {
-                "type": "Cheese"
+                "type": "                     Cheese"
             }
           
         ]
@@ -24,7 +24,7 @@
                 "type": "Lunch Meat"
             },
             {
-                "type": "Beef"
+                "type": "  Beef"
             }
           
         ]
@@ -36,10 +36,10 @@
                 "type": "Fruits"
             },
             {
-                "type": "Organic Produce"
+                "type": "    Organic Produce"
             },
             {
-                "type": "Vegetables"
+                "type": "     Vegetables"
             }
           
         ]

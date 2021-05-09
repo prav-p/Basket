@@ -164,13 +164,13 @@ class Asian extends React.Component {
           </TouchableHighlight>
         </View>
 
-        <View style={style.btn3}>
+        {/* <View style={style.btn3}>
           <TouchableHighlight
             onPress={() => this.props.navigation.navigate("AsianCheese")}
           >
             <View>
               <Image
-                source={require("../assets/images/cheese.jpg")}
+                source={require("../assets/images/cheese 1.jpg")}
                 style={{
                   width: 50,
                   height: 50,
@@ -274,7 +274,7 @@ class Asian extends React.Component {
               />
             </View>
           </TouchableHighlight>
-        </View>
+        </View> */}
       </View>
     );
   }
@@ -358,12 +358,13 @@ const style = StyleSheet.create({
   btn1: {
     alignItems: "flex-start",
     //marginTop: "62%",
-    bottom: 550,
+    bottom: 500,
   },
   btn2: {
     alignItems: "flex-start",
     //marginTop: "62%",
     bottom: 550,
+    left: 120,
   },
 });
 

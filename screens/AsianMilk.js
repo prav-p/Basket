@@ -25,15 +25,6 @@ class AsianMilk extends React.Component {
         orderItems: []
     }
 
-    // db = SQLite.openDatabase(
-    //     {
-    //       name: 'user.db',
-    //       createFromLocation : 1,
-    //     },
-    //     this.success.bind(this),  //okCallback
-    //     this.fail                // error callback
-    // );
-
     componentDidMount() {
         this.makeRemoteRequest()
     }
@@ -176,9 +167,7 @@ class AsianMilk extends React.Component {
                                 backgroundColor: COLORS.white,
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                                // bottom: 430,
                                 height: 30,
-                                // left: 50
                                 right: 110
                             }}
                         >
@@ -193,8 +182,6 @@ class AsianMilk extends React.Component {
                                 justifyContent: 'center',
                                 borderTopRightRadius: 25,
                                 borderBottomRightRadius: 25,
-                                // bottom: 460,
-                                // left: 100,
                                 height: 30,
                                 right: 110
                             }}

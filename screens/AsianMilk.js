@@ -10,15 +10,29 @@ import {
 } from 'react-native'
 import filter from 'lodash.filter'
 import Data from '../assets/store_items.json';
+import orderData from '../assets/order_list.json';
 import { StyleSheet } from 'react-native';
 import { COLOR, COLORS } from "../constants";
+import * as SQLite from "expo-sqlite";
+
+const db = SQLite.openDatabase("BasketDB");
 
 class AsianMilk extends React.Component {
     state = {
         data: [],
         query: '',
-        fullData: []
+        fullData: [],
+        orderItems: []
     }
+
+    // db = SQLite.openDatabase(
+    //     {
+    //       name: 'user.db',
+    //       createFromLocation : 1,
+    //     },
+    //     this.success.bind(this),  //okCallback
+    //     this.fail                // error callback
+    // );
 
     componentDidMount() {
         this.makeRemoteRequest()
@@ -27,7 +41,8 @@ class AsianMilk extends React.Component {
     makeRemoteRequest = () => {
         this.setState({
             data: Data[0].brand,
-            fullData: Data[0].brand
+            fullData: Data[0].brand,
+            orderItems: orderData
           });
     }
 
@@ -73,18 +88,56 @@ class AsianMilk extends React.Component {
         )
     }
 
-    editOrder = (action, menuId, price) => {
-        // const [orderItems, setOrderItems] = React.useState([]);
-        // if (action == "+") {
-        //     let orderList = orderItems.slice();
-        //     let item = orderList.filter(a => a.menuId == menuId);
+    editOrder = (action, name, price) => {
+        let orderList = this.state.orderItems.slice();
+        let item = orderList.filter(a => a.name == name);
 
-        //     if (item.length > 0) {
-        //         let newQty = item[0].q
-        //     }
-        // } else {
+        if (action == "+") {
+            if (item.length > 0) {
+                let newQty = item[0].qty + 1;
+                item[0].qty = newQty;
+                item[0].total = item[0].qty * price;
+            } else {
+                const newItem = {
+                    name: name,
+                    qty: 1,
+                    price: price,
+                    total: price
+                }
 
-        // }
+                orderList.push(newItem);
+            }
+
+            this.setState({
+                orderItems: orderList
+            })
+
+            console.log(orderList)
+        } else {
+            if (item.length > 0) {
+                if (item[0]?.qty > 0) {
+                    let newQty = item[0].qty - 1;
+                    item[0].qty = newQty;
+                    item[0].total = newQty * price;
+                }
+            }
+
+            this.setState({
+                orderItems: orderList
+            })
+
+            console.log(orderList)
+        }
+    }
+
+    getOrderQty = (name) => {
+        let orderItem = this.state.orderItems.filter(a => a.name == name);
+
+        if (orderItem.length > 0) {
+            return orderItem[0].qty;
+        } 
+
+        return 0;
     }
 
     render() {
@@ -102,7 +155,7 @@ class AsianMilk extends React.Component {
                             {`${item.name}`}
                         </Text>
                         <TouchableOpacity 
-                            onPress={console.log("hello")}
+                            onPress={() => this.editOrder("-", item.name, item.price)}
                             style={{
                                 width: 30,
                                 backgroundColor: COLORS.white,
@@ -129,10 +182,10 @@ class AsianMilk extends React.Component {
                                 right: 110
                             }}
                         >
-                            <Text>5</Text>
+                            <Text>{this.getOrderQty(item.name)}</Text>
                         </View>
                         <TouchableOpacity
-                            onPress={console.log("hello")}
+                            onPress={() => this.editOrder("+", item.name, item.price)}
                             style={{
                                 width: 30,
                                 backgroundColor: COLORS.white,

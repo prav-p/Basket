@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import {
     Text,
     FlatList,
@@ -196,48 +196,47 @@ class AsianMilk extends React.Component {
                 ListHeaderComponent={this.renderHeader}
             />
         </View>
-        )
-    }
+      )
+   }
 }
 
 const style = StyleSheet.create({
-    headerView: {
-        backgroundColor: '#fff',
-        padding: 10
-    },
+  headerView: {
+    backgroundColor: "#fff",
+    padding: 10,
+  },
 
-    searchBar: {
-        borderRadius: 25,
-        borderColor: '#333',
-        backgroundColor: '#fff'
-    },
+  searchBar: {
+    borderRadius: 25,
+    borderColor: "#333",
+    backgroundColor: "#fff",
+  },
 
-    renderSeaparatorView: {
-        height: 1,
-        width: '86%',
-        backgroundColor: '#CED0CE',
-        marginLeft: '5%'
-    },
+  renderSeaparatorView: {
+    height: 1,
+    width: "86%",
+    backgroundColor: "#CED0CE",
+    marginLeft: "5%",
+  },
 
-    renderView: {
-        flex: 1,
-        paddingHorizontal: 20,
-        paddingVertical: 20,
-        marginTop: 40
-    },
+  renderView: {
+    flex: 1,
+    paddingHorizontal: 20,
+    paddingVertical: 20,
+    marginTop: 40,
+  },
 
-    flatListView: {
-        flexDirection: 'row',
-        padding: 16,
-        alignItems: 'center',
-    },
+  flatListView: {
+    flexDirection: "row",
+    padding: 16,
+    alignItems: "center",
+  },
 
-    flatListText: {
-        color: '#000',
-        width: 90,
-        height: 140,
-        
-    }
+  flatListText: {
+    color: "#000",
+    width: 90,
+    height: 140,
+  },
 });
 
 export default AsianMilk;

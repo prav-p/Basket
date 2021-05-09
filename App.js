@@ -50,6 +50,7 @@ const App = () => {
         <Stack.Screen name="European" component={European} />
         <Stack.Screen name="AsianMilk" component={AsianMilk} />
         <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Item" component={Item} />
       </Stack.Navigator>
     </NavigationContainer>
   );

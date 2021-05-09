@@ -1,151 +1,203 @@
 import React from "react";
 import {
-  Text,
-  FlatList,
-  View,
-  TouchableOpacity,
-  TextInput,
-  Image,
-  TouchableNativeFeedback,
-} from "react-native";
-import filter from "lodash.filter";
-import Data from "../assets/store_items.json";
-import { StyleSheet } from "react-native";
+    Text,
+    FlatList,
+    View,
+    TouchableOpacity,
+    TextInput,
+    Image,
+    TouchableNativeFeedback
+} from 'react-native'
+import filter from 'lodash.filter'
+import Data from '../assets/store_items.json';
+import orderData from '../assets/order_list.json';
+import { StyleSheet } from 'react-native';
 import { COLOR, COLORS } from "../constants";
+import * as SQLite from "expo-sqlite";
+
+const db = SQLite.openDatabase("BasketDB");
 
 class AsianMilk extends React.Component {
-  state = {
-    data: [],
-    query: "",
-    fullData: [],
-  };
-
-  componentDidMount() {
-    this.makeRemoteRequest();
-  }
-
-  makeRemoteRequest = () => {
-    this.setState({
-      data: Data[0].brand,
-      fullData: Data[0].brand,
-    });
-  };
-
-  contains = ({ name }, query) => {
-    if (name.toUpperCase().includes(query)) {
-      return true;
+    state = {
+        data: [],
+        query: '',
+        fullData: [],
+        orderItems: []
     }
-    return false;
-  };
 
-  handleSearch = (text) => {
-    const formattedQuery = text.toUpperCase();
-    const data = filter(this.state.fullData, (item) => {
-      console.log(this.contains(item, formattedQuery));
-      return this.contains(item, formattedQuery);
-    });
-    this.setState({ data, query: text });
-    console.log(this.state.fullData[0].brand);
-  };
+    componentDidMount() {
+        this.makeRemoteRequest()
+    }
 
-  renderHeader = () => (
-    <View style={style.headerView}>
-      <TextInput
-        autoCapitalize="none"
-        autoCorrect={false}
-        onChangeText={this.handleSearch}
-        status="info"
-        placeholder="Search"
-        style={style.searchBar}
-        textStyle={{ color: "#000" }}
-        clearButtonMode="always"
-      />
-    </View>
-  );
+    makeRemoteRequest = () => {
+        this.setState({
+            data: Data[0].brand,
+            fullData: Data[0].brand,
+            orderItems: orderData
+          });
+    }
 
-  renderSeparator = () => {
-    return <View style={style.renderSeaparatorView} />;
-  };
+    contains = ({name}, query) => {
+        if (
+            name.toUpperCase().includes(query)
+        ) {
+            return true
+        }
+        return false
+    }
 
-  editOrder = (action, menuId, price) => {
-    // const [orderItems, setOrderItems] = React.useState([]);
-    // if (action == "+") {
-    //     let orderList = orderItems.slice();
-    //     let item = orderList.filter(a => a.menuId == menuId);
-    //     if (item.length > 0) {
-    //         let newQty = item[0].q
-    //     }
-    // } else {
-    // }
-  };
+    handleSearch = text => {
+        const formattedQuery = text.toUpperCase()
+        const data = filter(this.state.fullData, item => {
+            console.log(this.contains(item, formattedQuery));
+            return this.contains(item, formattedQuery)
+        })
+        this.setState({ data, query: text })
+        console.log(this.state.fullData[0].brand)
+    }
 
-  render() {
-    const { navigation } = this.props.navigation;
-    return (
-      <View style={style.renderView}>
-        <FlatList
-          data={this.state.data}
-          renderItem={({ item }) => (
-            <View style={style.flatListView}>
-              <Text category="s1" style={style.flatListText}>
-                {`${item.name}`}
-              </Text>
-              <TouchableOpacity
-                onPress={() => this.props.navigation.navigate("Basket")}
-                style={{
-                  width: 30,
-                  backgroundColor: COLORS.white,
-                  alignItems: "center",
-                  justifyContent: "center",
-                  borderTopLeftRadius: 25,
-                  borderBottomLeftRadius: 25,
-                  // bottom: 400,
-                  height: 30,
-                  right: 110,
-                }}
-              >
-                <Text>-</Text>
-              </TouchableOpacity>
-              <View
-                style={{
-                  width: 30,
-                  backgroundColor: COLORS.white,
-                  alignItems: "center",
-                  justifyContent: "center",
-                  // bottom: 430,
-                  height: 30,
-                  // left: 50
-                  right: 110,
-                }}
-              >
-                <Text>5</Text>
-              </View>
-              <TouchableOpacity
-                onPress={() => this.props.navigation.navigate("Basket")}
-                style={{
-                  width: 30,
-                  backgroundColor: COLORS.white,
-                  alignItems: "center",
-                  justifyContent: "center",
-                  borderTopRightRadius: 25,
-                  borderBottomRightRadius: 25,
-                  // bottom: 460,
-                  // left: 100,
-                  height: 30,
-                  right: 110,
-                }}
-              >
-                <Text>+</Text>
-              </TouchableOpacity>
-            </View>
-          )}
-          numColumns={2}
-          keyExtractor={(item) => item.name}
-          ListHeaderComponent={this.renderHeader}
-        />
-      </View>
-    );
-  }
+    renderHeader = () => (
+        <View style={ style.headerView }>
+            <TextInput
+                autoCapitalize='none'
+                autoCorrect={false}
+                onChangeText={this.handleSearch}
+                status='info'
+                placeholder='Search'
+                style={ style.searchBar }
+                textStyle={{ color: '#000' }}
+                clearButtonMode='always'
+            />
+        </View>
+    )
+
+    renderSeparator = () => {
+        return (
+            <View
+                style={ style.renderSeaparatorView }
+            />
+        )
+    }
+
+    editOrder = (action, name, price) => {
+        let orderList = this.state.orderItems.slice();
+        let item = orderList.filter(a => a.name == name);
+
+        if (action == "+") {
+            if (item.length > 0) {
+                let newQty = item[0].qty + 1;
+                item[0].qty = newQty;
+                item[0].total = item[0].qty * price;
+            } else {
+                const newItem = {
+                    name: name,
+                    qty: 1,
+                    price: price,
+                    total: price
+                }
+
+                orderList.push(newItem);
+            }
+
+            this.setState({
+                orderItems: orderList
+            })
+
+            console.log(orderList)
+        } else {
+            if (item.length > 0) {
+                if (item[0]?.qty > 0) {
+                    let newQty = item[0].qty - 1;
+                    item[0].qty = newQty;
+                    item[0].total = newQty * price;
+                }
+            }
+
+            this.setState({
+                orderItems: orderList
+            })
+
+            console.log(orderList)
+        }
+    }
+
+    getOrderQty = (name) => {
+        let orderItem = this.state.orderItems.filter(a => a.name == name);
+
+        if (orderItem.length > 0) {
+            return orderItem[0].qty;
+        } 
+
+        return 0;
+    }
+
+    render() {
+        return (
+        <View
+            style={ style.renderView }>
+            <FlatList
+                data={this.state.data}
+                renderItem={({ item }) => (
+                    <View
+                        style={ style.flatListView }>
+                        <Text
+                            category='s1'
+                            style={ style.flatListText }>
+                            {`${item.name}`}
+                        </Text>
+                        <TouchableOpacity 
+                            onPress={() => this.editOrder("-", item.name, item.price)}
+                            style={{
+                                width: 30,
+                                backgroundColor: COLORS.white,
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                borderTopLeftRadius: 25,
+                                borderBottomLeftRadius: 25,
+                                // bottom: 400,
+                                height: 30,
+                                right: 110
+                            }} 
+                        >
+                            <Text>-</Text>
+                        </TouchableOpacity>
+                        <View 
+                            style={{
+                                width: 30,
+                                backgroundColor: COLORS.white,
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                height: 30,
+                                right: 110
+                            }}
+                        >
+                            <Text>{this.getOrderQty(item.name)}</Text>
+                        </View>
+                        <TouchableOpacity
+                            onPress={() => this.editOrder("+", item.name, item.price)}
+                            style={{
+                                width: 30,
+                                backgroundColor: COLORS.white,
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                borderTopRightRadius: 25,
+                                borderBottomRightRadius: 25,
+                                height: 30,
+                                right: 110
+                            }}
+                        >
+                            <Text>+</Text>
+
+                        </TouchableOpacity>
+                    </View>
+                )}
+                numColumns={2}
+                keyExtractor={item => item.name}
+                ListHeaderComponent={this.renderHeader}
+            />
+        </View>
+      )
+   }
 }
 
 const style = StyleSheet.create({

@@ -3,16 +3,24 @@
         "subCategory": "Milk", 
         "brand": [
             {
-                "name": "Horizon Organic Milk, Organic, Whole"
+                "name": "Horizon Organic Milk, Organic, Whole",
+                "qty": 5,
+                "price": 4.69
             },
             {
-                "name": "Darigold Milk, Homogenized, Whole"
+                "name": "Darigold Milk, Homogenized, Whole",
+                "qty": 5,
+                "price": 2.99
             },
             {
-                "name": "Darigold Milk, Reduced Fat, 2%"
+                "name": "Darigold Milk, Reduced Fat, 2%",
+                "qty": 5,
+                "price": 2.89
             },
             {
-                "name": "Organic Valley Ultra Pasteurized Whole Milk"
+                "name": "Organic Valley Ultra Pasteurized Whole Milk",
+                "qty": 5,
+                "price": 5.69
             }
         ]
     },
@@ -20,7 +28,9 @@
         "subCategory": "Cheese",
         "brand": [
             {
-                "name": "Parmesan"
+                "name": "Parmesan",
+                "qty": 5,
+                "price": 2.89
             }
         ]
     },
@@ -28,7 +38,9 @@
         "subCategory": "Eggs",
         "brand": [
             {
-                "name": "White Eggs"
+                "name": "White Eggs",
+                "qty": 5,
+                "price": 2.89
             }
         ]
     },
@@ -36,7 +48,9 @@
         "subCategory": "Bacon & Sausage",
         "brand": [
             {
-                "name": "Bacon"
+                "name": "Bacon",
+                "qty": 5,
+                "price": 2.89
             }
         ]
     },
@@ -44,7 +58,9 @@
         "subCategory": "Lunch Meat",
         "brand": [
             {
-                "name": "Turkey Ham"
+                "name": "Turkey Ham",
+                "qty": 5,
+                "price": 2.89
             }
         ]
     },
@@ -52,7 +68,9 @@
         "subCategory": "Beef",
         "brand": [
             {
-                "name": "Sirloin"
+                "name": "Sirloin",
+                "qty": 5,
+                "price": 2.89
             }
         ]
     },
@@ -60,7 +78,9 @@
         "subCategory": "Fruits",
         "brand": [
             {
-                "name": "Sirloin"
+                "name": "Apple",
+                "qty": 5,
+                "price": 2.89
             }
         ]
     },
@@ -68,7 +88,9 @@
         "subCategory": "Organic Produce",
         "brand": [
             {
-                "name": "Organic"
+                "name": "Organic",
+                "qty": 5,
+                "price": 2.89
             }
         ]
     },
@@ -76,16 +98,24 @@
         "subCategory": "Vegetables",
         "brand": [
             {
-                "name": "Yellow Onions"
+                "name": "Yellow Onions",
+                "qty": 5,
+                "price": 0.49
             },
             {
-                "name": "Broccoli"
+                "name": "Broccoli",
+                "qty": 5,
+                "price": 1.69
             },
             {
-                "name": "Potatoes - Gold"
+                "name": "Potatoes - Gold",
+                "qty": 5,
+                "price": 0.89
             },
             {
-                "name": "Garlic"
+                "name": "Garlic",
+                "qty": 5,
+                "price": 1.19
             }
         ]
     }

@@ -9,6 +9,8 @@ import European from "./European";
 import Asian from "./Asian";
 import Mendoza from "./Mendoza";
 import AsianMilk from "./AsianMilk";
+import AsianCheese from "./AsianCheese";
+import AsianEggs from "./AsianEggs";
 
 export {
   Home,
@@ -22,4 +24,6 @@ export {
   Asian,
   Mendoza,
   AsianMilk,
+  AsianCheese,
+  AsianEggs,
 };

@@ -3,13 +3,16 @@
         "category": "Dairy", 
         "subCategory": [
             {
-                "type": "Milk "
+                "type": "Milk ",
+                "photo":"https:\/\/www.roireit.net\/assets\/001\/5666.jpg"
             },
             {
-                "type": "                        Eggs "
+                "type": "                        Eggs ",
+                "photo": "../assets/images/eggs-2.jpg"
             },
             {
-                "type": "                     Cheese"
+                "type": "                     Cheese",
+                "photo":"../assets/images/cheese 1.jpg"
             }
           
         ]
@@ -18,13 +21,16 @@
         "category": "Meat & Seafood", 
         "subCategory": [
             {
-                "type": "Bacon & Sausage"
+                "type": "Bacon & Sausage",
+                "photo":"../assets/images/pork belly.jpg"
             },
             {
-                "type": "Lunch Meat"
+                "type": "Lunch Meat",
+                "photo":"../assets/images/lunch_meat.jpg"
             },
             {
-                "type": "  Beef"
+                "type": "  Beef",
+                "photo":"../assets/images/beef.jpg"
             }
           
         ]
@@ -33,13 +39,16 @@
         "category": "Produce", 
         "subCategory": [
             {
-                "type": "Fruits"
+                "type": "Fruits",
+                "photo":"../assets/images/fruits.jpg"
             },
             {
-                "type": "    Organic Produce"
+                "type": "    Organic Produce",
+                "photo":"../assets/images/organic_produce.jpg"
             },
             {
-                "type": "     Vegetables"
+                "type": "     Vegetables",
+                "photo":"../assets/images/vegetables.jpg"
             }
           
         ]

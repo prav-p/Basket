@@ -52,9 +52,49 @@ class Asian extends React.Component {
     );
   };
 
+  onclick_item(category) {
+    switch (category) {
+      case "AsianMilk":
+        this.props.navigation.navigate("AsianMilk");
+        //navigate
+        break;
+      case "AsianEggs":
+        this.props.navigation.navigate("AsianEggs");
+        //navigate
+        break;
+      case "AsianCheese":
+        this.props.navigation.navigate("AsianCheese");
+        //navigate
+        break;
+      case "AsianBnS":
+        this.props.navigation.navigate("AsianAsianBnS");
+        //navigate
+        break;
+      case "AsianLunchMeat":
+        this.props.navigation.navigate("AsianLunchMeat");
+        //navigate
+        break;
+      case "AsianFruits":
+        this.props.navigation.navigate("AsianFruits");
+        //navigate
+        break;
+      case "AsianOrganicProd":
+        this.props.navigation.navigate("AsianOrganicProd");
+        //navigate
+        break;
+      case "AsianVeg":
+        this.props.navigation.navigate("AsianVeg");
+        //navigate
+        break;
+      default:
+      //whatever you want
+    }
+  }
+
   render() {
     return (
       <View style={styles.container}>
+        {/*Header */}
         <View style={styles.header}>
           {/*Return Button */}
           <View style={styles.goBack}>
@@ -64,11 +104,11 @@ class Asian extends React.Component {
               <IconButton icon={icons.goBack} />
             </TouchableOpacity>
           </View>
-
+          {/*Title Button */}
           <View>
             <Text style={styles.titleText}>Asian Family Market</Text>
           </View>
-
+          {/*Checkout Button */}
           <View style={styles.checkout}>
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate("Basket")}
@@ -78,6 +118,7 @@ class Asian extends React.Component {
           </View>
         </View>
 
+        {/*Categories */}
         <View style={styles.sectionList}>
           <SectionList
             contentContainerStyle={{ paddingHorizontal: 10 }}
@@ -85,14 +126,18 @@ class Asian extends React.Component {
             sections={this.state.data}
             renderSectionHeader={({ section }) => (
               <>
-                <Text style={styles.sectonHeader}>{section.category}</Text>
-                <FlatList
-                  data={section.data}
-                  horizontal
-                  renderItem={({ item }) => {
-                    return <ListItem item={item} />;
-                  }}
-                />
+                <TouchableOpacity
+                  onPress={() => this.onclick_item(item.subCategory)}
+                >
+                  <Text style={styles.sectonHeader}>{section.category}</Text>
+                  <FlatList
+                    data={section.data}
+                    horizontal
+                    renderItem={({ item }) => {
+                      return <ListItem item={item} />;
+                    }}
+                  />
+                </TouchableOpacity>
               </>
             )}
             renderItem={({ item, section }) => {
@@ -107,7 +152,6 @@ class Asian extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    //backgroundColor: COLORS.secondary,
   },
   header: {
     flex: 1,

@@ -7,6 +7,7 @@ import {
   SectionList,
   Image,
   FlatList,
+  SafeAreaView
 } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { COLORS, FONTS, icons, images } from "../constants";
@@ -35,21 +36,6 @@ class Asian extends React.Component {
       return true;
     }
     return false;
-  };
-
-  ListItem = ({ item }) => {
-    return (
-      <View style={styles.item}>
-        <Image
-          source={{
-            uri: item.uri,
-          }}
-          style={styles.itemPhoto}
-          resizeMode="cover"
-        />
-        <Text style={styles.itemText}>{item.text}</Text>
-      </View>
-    );
   };
 
   onclick_item(category) {
@@ -93,62 +79,104 @@ class Asian extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        {/*Header */}
-        <View style={styles.header}>
-          {/*Return Button */}
-          <View style={styles.goBack}>
-            <TouchableOpacity
-              onPress={() => this.props.navigation.navigate("Home")}
-            >
-              <IconButton icon={icons.goBack} />
-            </TouchableOpacity>
-          </View>
-          {/*Title Button */}
-          <View>
-            <Text style={styles.titleText}>Asian Family Market</Text>
-          </View>
-          {/*Checkout Button */}
-          <View style={styles.checkout}>
-            <TouchableOpacity
-              onPress={() => this.props.navigation.navigate("Basket")}
-            >
-              <Image source={require("../assets/icons/BasketGreen.png")} />
-            </TouchableOpacity>
-          </View>
-        </View>
+      // <View style={styles.container}>
+      //   {/*Header */}
+      //   <View style={styles.header}>
+      //     {/*Return Button */}
+      //     <View style={styles.goBack}>
+      //       <TouchableOpacity
+      //         onPress={() => this.props.navigation.navigate("Home")}
+      //       >
+      //         <IconButton icon={icons.goBack} />
+      //       </TouchableOpacity>
+      //     </View>
+      //     {/*Title Button */}
+      //     <View>
+      //       <Text style={styles.titleText}>Asian Family Market</Text>
+      //     </View>
+      //     {/*Checkout Button */}
+      //     <View style={styles.checkout}>
+      //       <TouchableOpacity
+      //         onPress={() => this.props.navigation.navigate("Basket")}
+      //       >
+      //         <Image source={require("../assets/icons/BasketGreen.png")} />
+      //       </TouchableOpacity>
+      //     </View>
+      //   </View>
 
-        {/*Categories */}
-        <View style={styles.sectionList}>
-          <SectionList
-            contentContainerStyle={{ paddingHorizontal: 10 }}
-            stickySectionHeadersEnabled={false}
-            sections={this.state.data}
-            renderSectionHeader={({ section }) => (
-              <>
-                <TouchableOpacity
-                  onPress={() => this.onclick_item(item.subCategory)}
-                >
-                  <Text style={styles.sectonHeader}>{section.category}</Text>
-                  <FlatList
-                    data={section.data}
-                    horizontal
-                    renderItem={({ item }) => {
-                      return <ListItem item={item} />;
-                    }}
-                  />
-                </TouchableOpacity>
-              </>
-            )}
-            renderItem={({ item, section }) => {
-              return null;
-            }}
-          />
-        </View>
-      </View>
+      //   {/*Categories */}
+      //   <View style={styles.sectionList}>
+      //     <SectionList
+      //       contentContainerStyle={{ paddingHorizontal: 10 }}
+      //       stickySectionHeadersEnabled={false}
+      //       sections={this.state.data}
+      //       renderSectionHeader={({ section }) => (
+      //         <>
+      //           <TouchableOpacity
+      //             // onPress={() => this.onclick_item(item.subCategory)}
+      //           >
+      //             <Text style={styles.sectonHeader}>{section.title}</Text>
+      //             <FlatList
+      //               data={section.data}
+      //               horizontal
+      //               renderItem={({ item }) => {
+      //                 return <ListItem item={item} />;
+      //               }}
+      //               keyExtractor={(item, index) => index.toString()}
+      //             />
+      //           </TouchableOpacity>
+      //         </>
+      //       )}
+      //       renderItem={({ item, section }) => {
+      //         return null;
+      //       }}
+      //       keyExtractor={(item, index) => index.toString()}
+      //     />
+      //   </View>
+      // </View>
+      <View style={styles.container}>
+      {/* <StatusBar style="light" /> */}
+      <SafeAreaView style={{ flex: 1 }}>
+        <SectionList
+          contentContainerStyle={{ paddingHorizontal: 10 }}
+          stickySectionHeadersEnabled={false}
+          sections={this.state.data}
+          renderSectionHeader={({ section }) => (
+            <>
+              <Text>{section.title}</Text>
+                <FlatList
+                  horizontal
+                  data={section.data}
+                  renderItem={({ item }) => <ListItem item={item} />}
+                  showsHorizontalScrollIndicator={false}
+                  keyExtractor={(item, index) => index.toString()}
+                />
+            </>
+          )}
+          renderItem={({ item, section }) => {
+            return null;
+          }}
+          keyExtractor={(item, index) => index.toString()}
+        />
+      </SafeAreaView>
+    </View>
     );
   }
 }
+
+const ListItem = ({ item }) => {
+  return (
+    <View style={styles.item}>
+      <Image
+        source={require("../assets/images/organic_produce.jpg")}
+        style={styles.itemPhoto}
+        resizeMode="cover"
+      />
+      <Text style={styles.itemText}>{item.type}</Text>
+    </View>
+  );
+};
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -176,6 +204,24 @@ const styles = StyleSheet.create({
   sectionList: {
     flex: 6,
   },
-  sectionHeader: {},
+
+  sectionHeader: {
+    fontWeight: '800',
+    fontSize: 18,
+    color: '#f4f4f4',
+    marginTop: 20,
+    marginBottom: 5,
+  },
+  item: {
+    margin: 10,
+  },
+  itemPhoto: {
+    
+  },
+  itemText: {
+    color: 'rgba(255, 255, 255, 0.5)',
+    marginTop: 5,
+  },
 });
+
 export default Asian;

@@ -1,56 +1,53 @@
 [
     { 
-        "category": "Dairy", 
-        "subCategory": [
+        "title": "Dairy", 
+        "data": [
             {
-                "type": "Milk ",
-                "photo":"https:\/\/www.roireit.net\/assets\/001\/5666.jpg"
+                "type": "Milk",
+                "photo": "../assets/images/Darigold Whole Milk - 0 1.jpg"
             },
             {
-                "type": "                        Eggs ",
+                "type": "Eggs",
                 "photo": "../assets/images/eggs-2.jpg"
             },
             {
                 "type": "                     Cheese",
-                "photo":"../assets/images/cheese 1.jpg"
+                "photo": "../assets/images/cheese 1.jpg"
             }
-          
         ]
     },
     { 
-        "category": "Meat & Seafood", 
-        "subCategory": [
+        "title": "Meat & Seafood", 
+        "data": [
             {
                 "type": "Bacon & Sausage",
-                "photo":"../assets/images/pork belly.jpg"
+                "photo": "../assets/images/pork belly.jpg"
             },
             {
                 "type": "Lunch Meat",
-                "photo":"../assets/images/lunch_meat.jpg"
+                "photo": "../assets/images/lunch_meat.jpg"
             },
             {
                 "type": "  Beef",
-                "photo":"../assets/images/beef.jpg"
-            }
-          
+                "photo": "../assets/images/beef.jpg"
+            }  
         ]
     },
     { 
-        "category": "Produce", 
-        "subCategory": [
+        "title": "Produce", 
+        "data": [
             {
                 "type": "Fruits",
-                "photo":"../assets/images/fruits.jpg"
+                "photo": "../assets/images/fruits.jpg"
             },
             {
                 "type": "    Organic Produce",
-                "photo":"../assets/images/organic_produce.jpg"
+                "photo": "../assets/images/organic_produce.jpg"
             },
             {
                 "type": "     Vegetables",
-                "photo":"../assets/images/vegetables.jpg"
+                "photo": "../assets/images/vegetables.jpg"
             }
-          
         ]
     }
 ]

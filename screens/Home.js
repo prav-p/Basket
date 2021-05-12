@@ -11,7 +11,7 @@ import filter from "lodash.filter";
 import Data from "../assets/stores.json";
 import { COLORS, images } from "../constants";
 import { StyleSheet } from "react-native";
-import { NavigationContainer, useNavigation } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 
 class Home extends React.Component {
   state = {
@@ -22,7 +22,6 @@ class Home extends React.Component {
 
   componentDidMount() {
     this.makeRemoteRequest();
-    
   }
 
   makeRemoteRequest = () => {

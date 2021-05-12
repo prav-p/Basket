@@ -1,5 +1,5 @@
 import React from "react";
-import categoryData from "../assets/store_category.json";
+import categoryData from "../assets/store_category";
 import {
   StyleSheet,
   Text,
@@ -12,7 +12,8 @@ import {
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { COLORS, FONTS, icons, images } from "../constants";
 import { IconButton } from "../components";
-
+import { Tabs } from "../navigation";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
 class Asian extends React.Component {
   state = {
     data: [],
@@ -38,8 +39,8 @@ class Asian extends React.Component {
     return false;
   };
 
-  onclick_item(category) {
-    switch (category) {
+  onclick_item(subCategory) {
+    switch (subCategory) {
       case "AsianMilk":
         this.props.navigation.navigate("AsianMilk");
         //navigate
@@ -79,61 +80,6 @@ class Asian extends React.Component {
 
   render() {
     return (
-      // <View style={styles.container}>
-      //   {/*Header */}
-      //   <View style={styles.header}>
-      //     {/*Return Button */}
-      //     <View style={styles.goBack}>
-      //       <TouchableOpacity
-      //         onPress={() => this.props.navigation.navigate("Home")}
-      //       >
-      //         <IconButton icon={icons.goBack} />
-      //       </TouchableOpacity>
-      //     </View>
-      //     {/*Title Button */}
-      //     <View>
-      //       <Text style={styles.titleText}>Asian Family Market</Text>
-      //     </View>
-      //     {/*Checkout Button */}
-      //     <View style={styles.checkout}>
-      //       <TouchableOpacity
-      //         onPress={() => this.props.navigation.navigate("Basket")}
-      //       >
-      //         <Image source={require("../assets/icons/BasketGreen.png")} />
-      //       </TouchableOpacity>
-      //     </View>
-      //   </View>
-
-      //   {/*Categories */}
-      //   <View style={styles.sectionList}>
-      //     <SectionList
-      //       contentContainerStyle={{ paddingHorizontal: 10 }}
-      //       stickySectionHeadersEnabled={false}
-      //       sections={this.state.data}
-      //       renderSectionHeader={({ section }) => (
-      //         <>
-      //           <TouchableOpacity
-      //             // onPress={() => this.onclick_item(item.subCategory)}
-      //           >
-      //             <Text style={styles.sectonHeader}>{section.title}</Text>
-      //             <FlatList
-      //               data={section.data}
-      //               horizontal
-      //               renderItem={({ item }) => {
-      //                 return <ListItem item={item} />;
-      //               }}
-      //               keyExtractor={(item, index) => index.toString()}
-      //             />
-      //           </TouchableOpacity>
-      //         </>
-      //       )}
-      //       renderItem={({ item, section }) => {
-      //         return null;
-      //       }}
-      //       keyExtractor={(item, index) => index.toString()}
-      //     />
-      //   </View>
-      // </View>
       <View style={styles.container}>
         <View style={styles.header}>
           {/*Return Button */}
@@ -157,7 +103,7 @@ class Asian extends React.Component {
             </TouchableOpacity>
           </View>
         </View>
-        <SafeAreaView>
+        <SafeAreaView style={{ flex: 3 }}>
           <SectionList
             style={styles.sectionList}
             contentContainerStyle={{ paddingHorizontal: 10 }}
@@ -173,6 +119,7 @@ class Asian extends React.Component {
                   showsHorizontalScrollIndicator={false}
                   keyExtractor={(item, index) => index.toString()}
                 />
+                <View style={styles.renderSeaparatorView}></View>
               </>
             )}
             renderItem={({ item, section }) => {
@@ -181,6 +128,9 @@ class Asian extends React.Component {
             keyExtractor={(item, index) => index.toString()}
           />
         </SafeAreaView>
+        <View>
+          <Tabs style={{ flex: 1 }}></Tabs>
+        </View>
       </View>
     );
   }
@@ -189,11 +139,9 @@ class Asian extends React.Component {
 const ListItem = ({ item }) => {
   return (
     <View style={styles.item}>
-      <Image
-        source={require("../assets/images/organic_produce.jpg")}
-        style={styles.itemPhoto}
-        resizeMode="cover"
-      />
+      <TouchableOpacity onPress={() => this.onclick_item(item.subCategory)}>
+        <Image source={{ uri: item.photo }} style={styles.itemPhoto} />
+      </TouchableOpacity>
       <Text style={styles.itemText}>{item.type}</Text>
     </View>
   );
@@ -226,6 +174,7 @@ const styles = StyleSheet.create({
   },
   sectionList: {
     //flex: 6,
+    alignContent: "center",
   },
 
   sectionHeader: {
@@ -239,12 +188,21 @@ const styles = StyleSheet.create({
   item: {
     margin: 10,
   },
-  itemPhoto: {},
+  itemPhoto: {
+    flex: 1,
+    width: 80,
+    height: 80,
+  },
   itemText: {
     color: "black",
     marginTop: 5,
     textAlign: "center",
     fontFamily: "SignikaNegative-Regular",
+  },
+  renderSeaparatorView: {
+    height: 1,
+    width: "100%",
+    backgroundColor: COLORS.primary,
   },
 });
 

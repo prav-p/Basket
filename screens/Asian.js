@@ -7,7 +7,7 @@ import {
   SectionList,
   Image,
   FlatList,
-  SafeAreaView
+  SafeAreaView,
 } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { COLORS, FONTS, icons, images } from "../constants";
@@ -135,15 +135,37 @@ class Asian extends React.Component {
       //   </View>
       // </View>
       <View style={styles.container}>
-      {/* <StatusBar style="light" /> */}
-      <SafeAreaView style={{ flex: 1 }}>
-        <SectionList
-          contentContainerStyle={{ paddingHorizontal: 10 }}
-          stickySectionHeadersEnabled={false}
-          sections={this.state.data}
-          renderSectionHeader={({ section }) => (
-            <>
-              <Text>{section.title}</Text>
+        <View style={styles.header}>
+          {/*Return Button */}
+          <View style={styles.goBack}>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate("Home")}
+            >
+              <IconButton icon={icons.goBack} />
+            </TouchableOpacity>
+          </View>
+          {/*Title Button */}
+          <View>
+            <Text style={styles.titleText}>Asian Family Market</Text>
+          </View>
+          {/*Checkout Button */}
+          <View style={styles.checkout}>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate("Basket")}
+            >
+              <Image source={require("../assets/icons/BasketGreen.png")} />
+            </TouchableOpacity>
+          </View>
+        </View>
+        <SafeAreaView>
+          <SectionList
+            style={styles.sectionList}
+            contentContainerStyle={{ paddingHorizontal: 10 }}
+            stickySectionHeadersEnabled={false}
+            sections={this.state.data}
+            renderSectionHeader={({ section }) => (
+              <>
+                <Text style={styles.sectionHeader}>{section.title}</Text>
                 <FlatList
                   horizontal
                   data={section.data}
@@ -151,15 +173,15 @@ class Asian extends React.Component {
                   showsHorizontalScrollIndicator={false}
                   keyExtractor={(item, index) => index.toString()}
                 />
-            </>
-          )}
-          renderItem={({ item, section }) => {
-            return null;
-          }}
-          keyExtractor={(item, index) => index.toString()}
-        />
-      </SafeAreaView>
-    </View>
+              </>
+            )}
+            renderItem={({ item, section }) => {
+              return null;
+            }}
+            keyExtractor={(item, index) => index.toString()}
+          />
+        </SafeAreaView>
+      </View>
     );
   }
 }
@@ -180,9 +202,10 @@ const ListItem = ({ item }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: COLORS.secondary,
   },
   header: {
-    flex: 1,
+    //flex: 1,
     flexDirection: "row",
     justifyContent: "space-around",
     color: COLORS.secondary,
@@ -202,25 +225,26 @@ const styles = StyleSheet.create({
     marginRight: "3%",
   },
   sectionList: {
-    flex: 6,
+    //flex: 6,
   },
 
   sectionHeader: {
-    fontWeight: '800',
+    fontWeight: "800",
     fontSize: 18,
-    color: '#f4f4f4',
+    color: "black",
     marginTop: 20,
     marginBottom: 5,
+    fontFamily: "SignikaNegative-Bold",
   },
   item: {
     margin: 10,
   },
-  itemPhoto: {
-    
-  },
+  itemPhoto: {},
   itemText: {
-    color: 'rgba(255, 255, 255, 0.5)',
+    color: "black",
     marginTop: 5,
+    textAlign: "center",
+    fontFamily: "SignikaNegative-Regular",
   },
 });
 

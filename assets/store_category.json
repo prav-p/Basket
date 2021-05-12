@@ -11,7 +11,7 @@
                 "photo": "../assets/images/eggs-2.jpg"
             },
             {
-                "type": "                     Cheese",
+                "type": "Cheese",
                 "photo": "../assets/images/cheese 1.jpg"
             }
         ]
@@ -28,7 +28,7 @@
                 "photo": "../assets/images/lunch_meat.jpg"
             },
             {
-                "type": "  Beef",
+                "type": "Beef",
                 "photo": "../assets/images/beef.jpg"
             }  
         ]
@@ -41,11 +41,11 @@
                 "photo": "../assets/images/fruits.jpg"
             },
             {
-                "type": "    Organic Produce",
+                "type": "Organic Produce",
                 "photo": "../assets/images/organic_produce.jpg"
             },
             {
-                "type": "     Vegetables",
+                "type": "Vegetables",
                 "photo": "../assets/images/vegetables.jpg"
             }
         ]

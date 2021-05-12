@@ -3,7 +3,6 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 
-import Tabs from "./navigation/tabs";
 import {
   Home,
   Item,
@@ -44,12 +43,11 @@ const App = () => {
         <Stack.Screen name="Landing" component={Landing} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Create An Account" component={CreateAccount} />
-        <Stack.Screen name="Search" component={Home} />
         <Stack.Screen name="Asian" component={Asian} />
         <Stack.Screen name="Mendoza" component={Mendoza} />
         <Stack.Screen name="European" component={European} />
         <Stack.Screen name="AsianMilk" component={AsianMilk} />
-        <Stack.Screen name="Home" component={Tabs} />
+        <Stack.Screen name="Home" component={Home} />
       </Stack.Navigator>
     </NavigationContainer>
   );

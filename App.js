@@ -3,7 +3,6 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 
-import Tabs from "./navigation/tabs";
 import {
   Home,
   Item,
@@ -16,6 +15,8 @@ import {
   Mendoza,
   European,
   AsianMilk,
+  AsianCheese,
+  AsianEggs,
 } from "./screens";
 
 const Stack = createStackNavigator();
@@ -40,11 +41,8 @@ const App = () => {
       >
         <Stack.Screen name="Checkout" component={Checkout} />
         <Stack.Screen name="Landing" component={Landing} />
-        <Stack.Screen name="Asian Family Mart" component={Tabs} />
-        <Stack.Screen name="Tabs" component={Tabs} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Create An Account" component={CreateAccount} />
-        <Stack.Screen name="Search" component={Search} />
         <Stack.Screen name="Asian" component={Asian} />
         <Stack.Screen name="Mendoza" component={Mendoza} />
         <Stack.Screen name="European" component={European} />

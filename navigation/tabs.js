@@ -4,14 +4,15 @@ import {
   createBottomTabNavigator,
   BottomTabBar,
 } from "@react-navigation/bottom-tabs";
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
 import { Search, Home, Checkout } from "../screens";
 import { icons, COLORS } from "../constants";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { useNavigation } from "@react-navigation/native";
 
 const Tab = createBottomTabNavigator();
 
 const Tabs = () => {
+  const navigation = useNavigation();
   return (
     <Tab.Navigator
       tabBarOptions={{
@@ -30,15 +31,17 @@ const Tabs = () => {
         component={Home}
         options={{
           tabBarIcon: ({ focused }) => (
-            <Image
-              source={icons.home}
-              resizeMode="contain"
-              style={{
-                width: 30,
-                height: 30,
-                tintColor: focused ? COLORS.primary : COLORS.black,
-              }}
-            />
+            <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+              <Image
+                source={icons.home}
+                resizeMode="contain"
+                style={{
+                  width: 30,
+                  height: 30,
+                  tintColor: focused ? COLORS.primary : COLORS.black,
+                }}
+              />
+            </TouchableOpacity>
           ),
         }}
       />
@@ -48,15 +51,17 @@ const Tabs = () => {
         component={Search}
         options={{
           tabBarIcon: ({ focused }) => (
-            <Image
-              source={icons.search}
-              resizeMode="contain"
-              style={{
-                width: 30,
-                height: 30,
-                tintColor: focused ? COLORS.primary : COLORS.black,
-              }}
-            />
+            <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+              <Image
+                source={icons.search}
+                resizeMode="contain"
+                style={{
+                  width: 30,
+                  height: 30,
+                  tintColor: focused ? COLORS.primary : COLORS.black,
+                }}
+              />
+            </TouchableOpacity>
           ),
         }}
       />
@@ -66,15 +71,17 @@ const Tabs = () => {
         component={Checkout}
         options={{
           tabBarIcon: ({ focused }) => (
-            <Image
-              source={icons.basket}
-              resizeMode="contain"
-              style={{
-                width: 30,
-                height: 30,
-                tintColor: focused ? COLORS.primary : COLORS.black,
-              }}
-            />
+            <TouchableOpacity onPress={() => navigation.navigate("Basket")}>
+              <Image
+                source={icons.basket}
+                resizeMode="contain"
+                style={{
+                  width: 30,
+                  height: 30,
+                  tintColor: focused ? COLORS.primary : COLORS.black,
+                }}
+              />
+            </TouchableOpacity>
           ),
         }}
       />

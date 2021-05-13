@@ -1,5 +1,29 @@
 [
-    {"storeName": "Asian", "storeLocation": "123 S St","photo":"https:\/\/www.roireit.net\/assets\/001\/5666.jpg"},
-    {"storeName": "Mendoza", "storeLocation": "345 N Ct","photo":"https:\/\/10619-2.s.cdn12.com\/rests\/original\/336_509699841.jpg"},
-    {"storeName": "European", "storeLocation": "678 W Blvd","photo":"https:\/\/live.staticflickr.com\/4110\/5193886071_3aae1f53ff.jpg"}
+    {
+        "storeName": "Asian Family Market Seattle", 
+        "storeLocation": "13200 Aurora Ave N, Seattle, WA 98133",
+        "photo":"https:\/\/www.roireit.net\/assets\/001\/5666.jpg",
+        "coordinates": {
+            "latitude": "47.72499478382056",
+            "longitude": "-122.3432288072639"
+        }
+    },
+    {
+        "storeName": "Mendoza's Mexican Mercado", 
+        "storeLocation": "7811 Aurora Ave N, Seattle, WA 98103",
+        "photo":"https:\/\/10619-2.s.cdn12.com\/rests\/original\/336_509699841.jpg",
+        "coordinates": {
+            "latitude": "47.68605136306583", 
+            "longitude": "-122.34469740181511"
+        }
+    },
+    {
+        "storeName": "European Foods", 
+        "storeLocation": "13520 Aurora Ave N, Seattle, WA 98133",
+        "photo":"https:\/\/live.staticflickr.com\/4110\/5193886071_3aae1f53ff.jpg",
+        "coordinates": {
+            "latitude": "47.72749276236118",
+            "longitude": "-122.34443367297844"
+        }   
+    }
 ]

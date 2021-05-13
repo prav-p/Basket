@@ -14,6 +14,7 @@ import {
   KeyboardAvoidingView,
   TouchableWithoutFeedback,
   Alert,
+  ScrollView
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
@@ -96,6 +97,7 @@ const createAccount = () => {
   function renderSignUpInq() {
     return (
       <View>
+        <ScrollView>
         <Text style={styles.inqLabel}>Name</Text>
         <TextInput
           style={styles.inqInput}
@@ -144,6 +146,10 @@ const createAccount = () => {
           onChangeText={onChangeContactNo}
           value={contactNo}
         />
+        <TouchableOpacity style={{bottom: 100}} onPress={() => create_account()}>
+            <Text style={styles.text}>Create</Text>
+          </TouchableOpacity>
+        </ScrollView>
       </View>
     );
   }
@@ -152,7 +158,7 @@ const createAccount = () => {
     return (
       <View style={styles.btn1}>
         <View style={styles.insidebtn}>
-          <TouchableOpacity onPress={() => create_account()}>
+          <TouchableOpacity style={{bottom: 100}} onPress={() => create_account()}>
             <Text style={styles.text}>Create</Text>
           </TouchableOpacity>
         </View>

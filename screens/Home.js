@@ -11,7 +11,8 @@ import filter from "lodash.filter";
 import Data from "../assets/stores.json";
 import { COLORS, images } from "../constants";
 import { StyleSheet } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 class Home extends React.Component {
   state = {
@@ -91,17 +92,25 @@ class Home extends React.Component {
     return <View style={style.renderSeaparatorView} />;
   };
 
-  onclick_item(storeName) {
+  async onclick_item(storeName) {
+    const res = this.state.data.filter((obj) => {
+      return obj.storeName === storeName;
+    });
+
+    console.log(`${res.storeName}`);
+
+    await AsyncStorage.setItem("@store_Key", JSON.stringify(res));
+
     switch (storeName) {
-      case "Asian":
+      case "Asian Family Market Seattle":
         this.props.navigation.navigate("Asian");
         //navigate
         break;
-      case "Mendoza":
+      case "Mendoza's Mexican Mercado":
         this.props.navigation.navigate("Mendoza");
         //navigate
         break;
-      case "European":
+      case "European Foods":
         this.props.navigation.navigate("European");
         //navigate
         break;
@@ -128,7 +137,7 @@ class Home extends React.Component {
                   }}
                 />
                 <Text category="s1" style={style.flatListText}>
-                  {`${item.storeName} ${item.storeLocation}`}
+                  {`${item.storeName}\n${item.storeLocation}`}
                 </Text>
               </View>
             </TouchableOpacity>
@@ -180,6 +189,7 @@ const style = StyleSheet.create({
     flexDirection: "row",
     padding: 16,
     alignItems: "center",
+    width: 250,
   },
 
   flatListText: {

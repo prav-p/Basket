@@ -39,7 +39,7 @@ const App = () => {
         }}
         initialRouteName={"Landing"}
       >
-        <Stack.Screen name="Basket" component={Checkout} />
+        <Stack.Screen name="Checkout" component={Checkout} />
         <Stack.Screen name="Landing" component={Landing} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Create An Account" component={CreateAccount} />
@@ -48,6 +48,7 @@ const App = () => {
         <Stack.Screen name="European" component={European} />
         <Stack.Screen name="AsianMilk" component={AsianMilk} />
         <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Item" component={Item} />
       </Stack.Navigator>
     </NavigationContainer>
   );

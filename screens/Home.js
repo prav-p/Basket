@@ -67,7 +67,7 @@ class Home extends React.Component {
           >
             Stores Nearby
           </Text>
-          <TouchableOpacity onPress={() => navigation.navigate("Basket")}>
+          <TouchableOpacity onPress={() => navigation.navigate("Checkout")}>
             <Image source={require("../assets/icons/BasketGreen.png")} />
           </TouchableOpacity>
         </View>
@@ -92,13 +92,13 @@ class Home extends React.Component {
   };
 
   async onclick_item(storeName) {
-    const res = this.state.data.filter(obj => {
-      return obj.storeName === storeName
-    })
+    const res = this.state.data.filter((obj) => {
+      return obj.storeName === storeName;
+    });
 
-    console.log(`${res.storeName}`)
+    console.log(`${res.storeName}`);
 
-    await AsyncStorage.setItem('@store_Key', JSON.stringify(res))
+    await AsyncStorage.setItem("@store_Key", JSON.stringify(res));
 
     switch (storeName) {
       case "Asian Family Market Seattle":
@@ -135,7 +135,7 @@ class Home extends React.Component {
                     borderRadius: 30,
                   }}
                 />
-                <Text category="s1" style={style.flatListText}>
+                <Text adjustsFontSizeToFit style={style.flatListText}>
                   {`${item.storeName}\n${item.storeLocation}`}
                 </Text>
               </View>
@@ -188,14 +188,15 @@ const style = StyleSheet.create({
     flexDirection: "row",
     padding: 16,
     alignItems: "center",
-    width: 250
+    width: 300,
   },
 
   flatListText: {
     left: 20,
     color: "#000",
     fontFamily: "SignikaNegative-SemiBold",
-    fontSize: 22,
+    fontSize: 18,
+    flexShrink: 1,
   },
 });
 

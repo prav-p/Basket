@@ -97,7 +97,7 @@ class Asian extends React.Component {
           {/*Checkout Button */}
           <View style={styles.checkout}>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate("Basket")}
+              onPress={() => this.props.navigation.navigate("Checkout")}
             >
               <Image source={require("../assets/icons/BasketGreen.png")} />
             </TouchableOpacity>
@@ -137,10 +137,10 @@ class Asian extends React.Component {
   }
 }
 
-const ListItem = ({ item, i, subCategory }) => {
+const ListItem = ({ item }) => {
   return (
     <View style={styles.item}>
-      <TouchableOpacity onPress={() => this.onclick_item(subCategory)}>
+      <TouchableOpacity onPress={() => this.onclick_item(item.subCategory)}>
         <Image source={{ uri: item.photo }} style={styles.itemPhoto} />
       </TouchableOpacity>
       <Text style={styles.itemText}>{item.type}</Text>

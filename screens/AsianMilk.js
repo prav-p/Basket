@@ -6,16 +6,14 @@ import {
     TouchableOpacity,
     TextInput,
     Image,
-    TouchableNativeFeedback
+    TouchableNativeFeedback,
 } from 'react-native'
 import filter from 'lodash.filter'
 import Data from '../assets/store_items.json';
-import orderData from '../assets/order_list.json';
 import { StyleSheet } from 'react-native';
 import { COLOR, COLORS } from "../constants";
-import * as SQLite from "expo-sqlite";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const db = SQLite.openDatabase("BasketDB");
 
 class AsianMilk extends React.Component {
     state = {
@@ -29,12 +27,20 @@ class AsianMilk extends React.Component {
         this.makeRemoteRequest()
     }
 
-    makeRemoteRequest = () => {
+    makeRemoteRequest = async() => {
+        const orderArray = await AsyncStorage.getItem('@order_Key');
+
         this.setState({
             data: Data[0].brand,
             fullData: Data[0].brand,
-            orderItems: orderData
-          });
+            orderItems: []
+        });
+
+        if (orderArray !== null) {
+            this.setState({
+                orderItems: JSON.parse(orderArray)
+            })
+        }
     }
 
     contains = ({name}, query) => {
@@ -79,7 +85,7 @@ class AsianMilk extends React.Component {
         )
     }
 
-    editOrder = (action, name, price) => {
+    editOrder = async(action, name, price) => {
         let orderList = this.state.orderItems.slice();
         let item = orderList.filter(a => a.name == name);
 
@@ -113,12 +119,20 @@ class AsianMilk extends React.Component {
                 }
             }
 
+
+
             this.setState({
                 orderItems: orderList
             })
 
             console.log(orderList)
         }
+
+        await AsyncStorage.setItem('@order_Key', JSON.stringify(orderList));
+
+        const orderArray = await AsyncStorage.getItem('@order_Key');
+
+        console.log(JSON.parse(orderArray));
     }
 
     getOrderQty = (name) => {
@@ -133,8 +147,15 @@ class AsianMilk extends React.Component {
 
     render() {
         return (
-        <View
-            style={ style.renderView }>
+        <View style={ style.renderView }>
+            <TouchableOpacity onPress={() => this.props.navigation.navigate("Asian")}>
+                <Text>{'<'}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => this.props.navigation.navigate("Item")} style={{left: 250}}>
+                <Image 
+                    source={require("../assets/icons/BasketGreen.png")}
+                />
+            </TouchableOpacity>
             <FlatList
                 data={this.state.data}
                 renderItem={({ item }) => (
@@ -154,7 +175,6 @@ class AsianMilk extends React.Component {
                                 justifyContent: 'center',
                                 borderTopLeftRadius: 25,
                                 borderBottomLeftRadius: 25,
-                                // bottom: 400,
                                 height: 30,
                                 right: 110
                             }} 

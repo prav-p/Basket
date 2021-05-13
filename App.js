@@ -38,7 +38,7 @@ const App = () => {
         }}
         initialRouteName={"Landing"}
       >
-        <Stack.Screen name="Basket" component={Checkout} />
+        <Stack.Screen name="Checkout" component={Checkout} />
         <Stack.Screen name="Landing" component={Landing} />
         <Stack.Screen name="Asian Family Mart" component={Tabs} />
         <Stack.Screen name="Tabs" component={Tabs} />

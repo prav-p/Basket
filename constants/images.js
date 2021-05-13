@@ -1,6 +1,6 @@
 export const landing = require("../assets/images/LandingBG.png");
 export const beef = require("../assets/images/beef.jpg");
-export const cheese = require("../assets/images/cheese 1.jpg");
+export const cheese = require("../assets/images/cheese.jpg");
 export const eggs = require("../assets/images/eggs-2.jpg");
 export const eggs_1 = require("../assets/images/eggs.jpg");
 export const fruits = require("../assets/images/fruits.jpg");

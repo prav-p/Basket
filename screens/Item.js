@@ -7,6 +7,7 @@ import {
     StyleSheet,
     Image
 } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 class Item extends React.Component {
     state = {
@@ -54,6 +55,9 @@ class Item extends React.Component {
                     keyExtractor={item => item.name}
                 />
                 <Text style={{}}>Total {this.getTotalPrice()}</Text>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate("Checkout")}>
+                    <Text>Continue</Text>
+                </TouchableOpacity>
             </View>
         )
     }

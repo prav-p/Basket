@@ -179,7 +179,6 @@ class Asian extends React.Component {
             </View>
           </TouchableHighlight>
         </View>
-
         <View style={style.btn4}>
           <TouchableHighlight
             onPress={() => this.props.navigation.navigate("AsianVeg")}
@@ -195,7 +194,6 @@ class Asian extends React.Component {
             </View>
           </TouchableHighlight>
         </View>
-
         <View style={style.btn5}>
           <TouchableHighlight
             onPress={() => this.props.navigation.navigate("AsianOrganicProd")}
@@ -211,7 +209,6 @@ class Asian extends React.Component {
             </View>
           </TouchableHighlight>
         </View>
-
         <View style={style.btn6}>
           <TouchableHighlight
             onPress={() => this.props.navigation.navigate("AsianFruits")}
@@ -227,7 +224,6 @@ class Asian extends React.Component {
             </View>
           </TouchableHighlight>
         </View>
-
         <View style={style.btn7}>
           <TouchableHighlight
             onPress={() => this.props.navigation.navigate("AsianBeef")}
@@ -243,7 +239,6 @@ class Asian extends React.Component {
             </View>
           </TouchableHighlight>
         </View>
-
         <View style={style.btn8}>
           <TouchableHighlight
             onPress={() => this.props.navigation.navigate("AsianLunchMeat")}
@@ -259,7 +254,6 @@ class Asian extends React.Component {
             </View>
           </TouchableHighlight>
         </View>
-
         <View style={style.btn8}>
           <TouchableHighlight
             onPress={() => this.props.navigation.navigate("AsianBnS")}

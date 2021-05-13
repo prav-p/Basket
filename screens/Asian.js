@@ -74,12 +74,6 @@ class Asian extends React.Component {
   }
 }
 
-<<<<<<< Updated upstream
-const ListItem = ({ item }) => {
-  return (
-    <View style={styles.item}>
-      <TouchableOpacity onPress={() => this.onclick_item(item.subCategory)}>
-=======
 const CATEGORIES = 
 [
     { 
@@ -168,8 +162,6 @@ const CATEGORIES =
     }
 ]
 
-// const a = Asian();
-
 const ListItem = ({ item }) => {
   const navigation = useNavigation();
   function onclick_item(type) {
@@ -216,7 +208,6 @@ const ListItem = ({ item }) => {
   return (
     <View style={styles.item}>
       <TouchableOpacity onPress={() => onclick_item(item.type)}>
->>>>>>> Stashed changes
         <Image source={{ uri: item.photo }} style={styles.itemPhoto} />
       </TouchableOpacity>
       <Text style={styles.itemText}>{item.type}</Text>

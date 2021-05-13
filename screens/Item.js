@@ -26,8 +26,6 @@ class Item extends React.Component {
         this.setState({
             data: filterArray
         })
-
-        console.log(filterArray)
     } 
 
     getTotalPrice = () => {

@@ -33,8 +33,14 @@ class AsianMilk extends React.Component {
         this.setState({
             data: Data[0].brand,
             fullData: Data[0].brand,
-            orderItems: JSON.parse(orderArray)
+            orderItems: []
         });
+
+        if (orderArray !== null) {
+            this.setState({
+                orderItems: JSON.parse(orderArray)
+            })
+        }
     }
 
     contains = ({name}, query) => {

@@ -15,7 +15,7 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import MapView from "react-native-maps";
+import MapView, { Marker } from "react-native-maps";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 class Checkout extends React.Component {
@@ -30,6 +30,7 @@ class Checkout extends React.Component {
     makeRemoteRequest = async() => {
         const storeArray = await AsyncStorage.getItem('@store_Key');
         const parseStoreArray = JSON.parse(storeArray);
+        console.log(parseStoreArray[0].coordinates)
 
         this.setState({
             data: parseStoreArray
@@ -110,7 +111,13 @@ class Checkout extends React.Component {
                   longitudeDelta: 0.0421,
                 }}
                 style={{width: 300, height: 200, bottom: 500}}
-              />
+              >
+                <Marker
+                  coordinate={this.state.data.coordinates}
+                >
+
+                </Marker>
+              </MapView>
             </View>
           </View>
         )

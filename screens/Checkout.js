@@ -17,6 +17,8 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import MapView from "react-native-maps";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Checkout = () => {
   const navigation = useNavigation();
@@ -49,6 +51,7 @@ const Checkout = () => {
             style={{
               flex: 1,
               alignItems: "center",
+              height: 100
             }}
           >
             <Text
@@ -56,10 +59,10 @@ const Checkout = () => {
                 color: COLORS.primary,
                 ...FONTS.h1,
                 fontSize: 37,
-                top: 4,
+                top: 60,
               }}
             >
-              Basket
+              Delivery Address
             </Text>
           </View>
           {/* Empty View */}
@@ -83,7 +86,7 @@ const Checkout = () => {
                   fontFamily: "SignikaNegative-Bold",
                 }}
               >
-                Checkout
+                Confirm Order
               </Text>
             </TouchableOpacity>
           </View>
@@ -91,12 +94,35 @@ const Checkout = () => {
       </SafeAreaView>
     );
   }
+
+  function renderMap() {
+    // const storeArray = await AsyncStorage.getItem('@store_Key');
+    // const parsedStoreArray = JSON.parse(storeArray);
+    // const destinationMarker = () => {
+
+    // }
+
+    return (
+      <View style={{alignItems: 'center'}}>
+        <MapView 
+          region={{
+            latitude: 37.78825,
+            longitude: -122.4324,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
+          }}
+          style={{width: 300, height: 200, bottom: 500}}
+        />
+      </View>
+    )
+  }
   return (
     <View style={styles.container}>
       {/* Header */}
       {renderHeader()}
       {/*Checkout*/}
       {renderCheckout()}
+      {renderMap()}
     </View>
   );
 };

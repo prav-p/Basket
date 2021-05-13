@@ -113,8 +113,6 @@ class AsianMilk extends React.Component {
                 }
             }
 
-
-
             this.setState({
                 orderItems: orderList
             })

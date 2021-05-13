@@ -113,6 +113,7 @@ class Asian extends React.Component {
               <>
                 <Text style={styles.sectionHeader}>{section.title}</Text>
                 <FlatList
+                  style={styles.flatlist}
                   horizontal
                   data={section.data}
                   renderItem={({ item }) => <ListItem item={item} />}
@@ -136,10 +137,10 @@ class Asian extends React.Component {
   }
 }
 
-const ListItem = ({ item }) => {
+const ListItem = ({ item, i, subCategory }) => {
   return (
     <View style={styles.item}>
-      <TouchableOpacity onPress={() => this.onclick_item(item.subCategory)}>
+      <TouchableOpacity onPress={() => this.onclick_item(subCategory)}>
         <Image source={{ uri: item.photo }} style={styles.itemPhoto} />
       </TouchableOpacity>
       <Text style={styles.itemText}>{item.type}</Text>
@@ -184,6 +185,10 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 5,
     fontFamily: "SignikaNegative-Bold",
+  },
+  flatlist: {
+    alignContent: "center",
+    marginHorizontal: "5%",
   },
   item: {
     margin: 10,

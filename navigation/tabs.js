@@ -71,7 +71,7 @@ const Tabs = () => {
         component={Checkout}
         options={{
           tabBarIcon: ({ focused }) => (
-            <TouchableOpacity onPress={() => navigation.navigate("Basket")}>
+            <TouchableOpacity onPress={() => navigation.navigate("Checkout")}>
               <Image
                 source={icons.basket}
                 resizeMode="contain"

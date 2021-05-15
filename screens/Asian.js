@@ -11,7 +11,6 @@ import {
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { COLORS, FONTS, icons, images } from "../constants";
 import { IconButton } from "../components";
-import { Tabs } from "../navigation";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 
 class Asian extends React.Component {
@@ -34,9 +33,12 @@ class Asian extends React.Component {
           {/*Checkout Button */}
           <View style={styles.checkout}>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate("Checkout")}
+              onPress={() => this.props.navigation.navigate("Item")}
             >
-              <Image source={require("../assets/icons/BasketGreen.png")} />
+              <Image
+                source={require("../assets/icons/BasketGreen.png")}
+                style={{ width: 40, height: 40 }}
+              />
             </TouchableOpacity>
           </View>
         </View>
@@ -66,106 +68,113 @@ class Asian extends React.Component {
             keyExtractor={(item, index) => index.toString()}
           />
         </SafeAreaView>
-        <View>
-          <Tabs style={{ flex: 1 }}></Tabs>
-        </View>
       </View>
     );
   }
 }
 
-const CATEGORIES = 
-[
-    { 
-        title: "Dairy", 
-        data: [
-            {
-                type: "Milk",
-                photo: "https:\/\/i.pinimg.com\/originals\/2a\/63\/fe\/2a63fec9446820c83dad300b0ffb7855.png"
-            },
-            {
-                type: "Eggs",
-                photo: "https:\/\/www.clique.com.sg\/wp-content\/uploads\/2020\/07\/DFSL0101.png"
-            },
-            {
-                type: "Cheese",
-                photo: "https://images.squarespace-cdn.com/content/v1/5a1592ff0abd04e470d48744/1512553461588-BZ9X4L2F5CINL2DU8QTF/ke17ZwdGBToddI8pDm48kPQujXO7frs1W7a77FZyt1F7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0prfa1Z6IeUrCPboCAmmHZn3ZVtqnTHXt-4Tm3byPSNDpHfFtqjKxWw0uc1YBtkl-w/Kaas.jpeg?format=2500w"
-            }
-        ]
-    },
-    { 
-        title: "Meat & Seafood", 
-        data: [
-            {
-                type: "Bacon & Sausage",
-                photo: "https://shop.southchinaseas.ca/assets/images/chinesesausagefront.jpg"
-            },
-            {
-                type: "Lunch Meat",
-                photo: "https://chinafoodingredients.files.wordpress.com/2019/04/yingjinqian.jpeg"
-            },
-            {
-                type: "Beef",
-                photo: "https://cdn.shopify.com/s/files/1/0261/9123/3121/products/wagyuman-japanese-wagyu-beef-japanese-a5-wagyu-culotte-picanha-steak-cut-28186276102241_1200x.jpg?v=1619127753"
-            }
-        ]
-    },
-    { 
-        title: "Produce", 
-        data: [
-            {
-                type: "Fruits",
-                photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWe7TH4pS9PE2WPlxqhvSFChuCjOE2srQjVQ&usqp=CAU"
-            },
-            {
-                type: "Organic Produce",
-                photo: "https://s3.amazonaws.com/finecooking.s3.tauntonclud.com/app/uploads/2017/04/24172130/ING-spinach.jpg"
-            },
-            {
-                type: "Vegetables",
-                photo: "https://cdn.shopify.com/s/files/1/2858/6430/products/galangal_root_cut_1800x1800.png?v=1569298305"
-            }
-        ]
-    },
-    { 
-        title: "Soy", 
-        data: [
-            {
-                type: "Soybeans",
-                photo: "https://cdn-a.william-reed.com/var/wrbm_gb_food_pharma/storage/images/publications/feed/feednavigator.com/article/2017/12/22/limited-decrease-in-european-soybean-production-predicted/7685401-1-eng-GB/Limited-decrease-in-European-soybean-production-predicted_wrbm_large.jpg"
-            },
-            {
-                type: "Beancurd skin",
-                photo: "https://m.media-amazon.com/images/I/61oBngF0n7L._SL1001_.jpg"
-            },
-            {
-                type: "Soy Milk",
-                photo: "https://cdn01.sayweee.net/2020-11/y3fKhlrxT12_rHKTd4KKhw.jpg"
-            }
-        ]
-    },{ 
-        title: "Pork", 
-        data: [
-            {
-                type: "Fruits",
-                photo: "/assets/images/fruits.jpg"
-            },
-            {
-                type: "Organic Produce",
-                photo: "/assets/images/organic_produce.jpg"
-            },
-            {
-                type: "Vegetables",
-                photo: "/assets/images/vegetables.jpg"
-            }
-        ]
-    }
-]
+const CATEGORIES = [
+  {
+    title: "Dairy",
+    data: [
+      {
+        type: "Milk",
+        photo:
+          "https://i.pinimg.com/originals/2a/63/fe/2a63fec9446820c83dad300b0ffb7855.png",
+      },
+      {
+        type: "Eggs",
+        photo:
+          "https://www.clique.com.sg/wp-content/uploads/2020/07/DFSL0101.png",
+      },
+      {
+        type: "Cheese",
+        photo:
+          "https://images.squarespace-cdn.com/content/v1/5a1592ff0abd04e470d48744/1512553461588-BZ9X4L2F5CINL2DU8QTF/ke17ZwdGBToddI8pDm48kPQujXO7frs1W7a77FZyt1F7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0prfa1Z6IeUrCPboCAmmHZn3ZVtqnTHXt-4Tm3byPSNDpHfFtqjKxWw0uc1YBtkl-w/Kaas.jpeg?format=2500w",
+      },
+    ],
+  },
+  {
+    title: "Meat & Seafood",
+    data: [
+      {
+        type: "Bacon & Sausage",
+        photo:
+          "https://shop.southchinaseas.ca/assets/images/chinesesausagefront.jpg",
+      },
+      {
+        type: "Lunch Meat",
+        photo:
+          "https://chinafoodingredients.files.wordpress.com/2019/04/yingjinqian.jpeg",
+      },
+      {
+        type: "Beef",
+        photo:
+          "https://cdn.shopify.com/s/files/1/0261/9123/3121/products/wagyuman-japanese-wagyu-beef-japanese-a5-wagyu-culotte-picanha-steak-cut-28186276102241_1200x.jpg?v=1619127753",
+      },
+    ],
+  },
+  {
+    title: "Produce",
+    data: [
+      {
+        type: "Fruits",
+        photo:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWe7TH4pS9PE2WPlxqhvSFChuCjOE2srQjVQ&usqp=CAU",
+      },
+      {
+        type: "Organic Produce",
+        photo:
+          "https://s3.amazonaws.com/finecooking.s3.tauntonclud.com/app/uploads/2017/04/24172130/ING-spinach.jpg",
+      },
+      {
+        type: "Vegetables",
+        photo:
+          "https://cdn.shopify.com/s/files/1/2858/6430/products/galangal_root_cut_1800x1800.png?v=1569298305",
+      },
+    ],
+  },
+  {
+    title: "Soy",
+    data: [
+      {
+        type: "Soybeans",
+        photo:
+          "https://cdn-a.william-reed.com/var/wrbm_gb_food_pharma/storage/images/publications/feed/feednavigator.com/article/2017/12/22/limited-decrease-in-european-soybean-production-predicted/7685401-1-eng-GB/Limited-decrease-in-European-soybean-production-predicted_wrbm_large.jpg",
+      },
+      {
+        type: "Beancurd skin",
+        photo: "https://m.media-amazon.com/images/I/61oBngF0n7L._SL1001_.jpg",
+      },
+      {
+        type: "Soy Milk",
+        photo: "https://cdn01.sayweee.net/2020-11/y3fKhlrxT12_rHKTd4KKhw.jpg",
+      },
+    ],
+  },
+  {
+    title: "Pork",
+    data: [
+      {
+        type: "Fruits",
+        photo: "/assets/images/fruits.jpg",
+      },
+      {
+        type: "Organic Produce",
+        photo: "/assets/images/organic_produce.jpg",
+      },
+      {
+        type: "Vegetables",
+        photo: "/assets/images/vegetables.jpg",
+      },
+    ],
+  },
+];
 
 const ListItem = ({ item }) => {
   const navigation = useNavigation();
   function onclick_item(type) {
-    console.log(type)
+    console.log(type);
     switch (type) {
       case "Milk":
         navigation.navigate("AsianMilk");
@@ -203,7 +212,7 @@ const ListItem = ({ item }) => {
       // whatever you want
     }
   }
-  
+
   // console.log(item.type)
   return (
     <View style={styles.item}>
@@ -232,10 +241,11 @@ const styles = StyleSheet.create({
     marginTop: "3%",
   },
   titleText: {
-    fontSize: 30,
+    fontSize: 25,
     fontFamily: "SignikaNegative-Bold",
     color: COLORS.primary,
-    marginTop: "20%",
+    marginTop: "5%",
+    marginLeft: "10%",
   },
   checkout: {
     marginRight: "3%",

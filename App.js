@@ -8,7 +8,6 @@ import {
   Item,
   Login,
   Landing,
-  Search,
   Checkout,
   CreateAccount,
   Asian,
@@ -47,6 +46,7 @@ const App = () => {
         <Stack.Screen name="Mendoza" component={Mendoza} />
         <Stack.Screen name="European" component={European} />
         <Stack.Screen name="AsianMilk" component={AsianMilk} />
+        <Stack.Screen name="AsianEggs" component={AsianEggs} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Item" component={Item} />
       </Stack.Navigator>

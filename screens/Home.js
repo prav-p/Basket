@@ -13,6 +13,7 @@ import { COLORS, images } from "../constants";
 import { StyleSheet } from "react-native";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import Search from "./Search";
 class Home extends React.Component {
   state = {
     data: [],
@@ -55,33 +56,34 @@ class Home extends React.Component {
     const navigation = useNavigation();
     return (
       <>
-        <View style={style.basket}>
-          <Text
-            style={{
-              right: 280,
-              fontSize: 30,
-              top: 50,
-              fontFamily: "SignikaNegative-Bold",
-              color: COLORS.primary,
-            }}
-          >
-            Stores Nearby
-          </Text>
-          <TouchableOpacity onPress={() => navigation.navigate("Checkout")}>
-            <Image source={require("../assets/icons/BasketGreen.png")} />
-          </TouchableOpacity>
-        </View>
-        <View style={style.headerView}>
-          <TextInput
-            autoCapitalize="none"
-            autoCorrect={false}
-            onChangeText={this.handleSearch}
-            status="info"
-            placeholder="Search"
-            style={style.searchBar}
-            textStyle={{ color: "#000" }}
-            clearButtonMode="always"
-          ></TextInput>
+        <View style={style.container}>
+          <View style={style.header}>
+            <View>
+              <Text style={style.titleText}>Stores Nearby</Text>
+            </View>
+            <View style={style.checkout}>
+              <TouchableOpacity onPress={() => navigation.navigate("Item")}>
+                <Image
+                  source={require("../assets/icons/BasketGreen.png")}
+                  style={{ width: 40, height: 40 }}
+                />
+              </TouchableOpacity>
+            </View>
+          </View>
+
+          <View style={style.headerView}>
+            <TextInput
+              autoCapitalize="none"
+              autoCorrect={false}
+              onChangeText={this.handleSearch}
+              status="info"
+              placeholder="Type to search here"
+              style={style.searchBar}
+              textStyle={{ color: COLORS.darkGray }}
+              clearButtonMode="always"
+            ></TextInput>
+            <View></View>
+          </View>
         </View>
       </>
     );
@@ -152,27 +154,43 @@ class Home extends React.Component {
 }
 
 const style = StyleSheet.create({
-  basket: {
-    left: 280,
-    top: -35,
+  header: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    color: COLORS.secondary,
+    marginTop: "2%",
+  },
+  titleText: {
+    fontSize: 30,
+    fontFamily: "SignikaNegative-Bold",
+    color: COLORS.primary,
+    left: 53,
+    marginTop: "15%",
   },
 
   headerView: {
-    backgroundColor: "#fff",
-    padding: 10,
+    //backgroundColor: "#fff",
+    //padding: 2,
+    //borderRadius: 15,
+    //marginTop: "10%",
+    //marginBottom: "5%",
   },
 
   searchBar: {
-    borderRadius: 30,
     borderColor: "#333",
     backgroundColor: "#fff",
+    fontFamily: "SignikaNegative-SemiBold",
     fontStyle: "italic",
+    fontSize: 18,
+    padding: 15,
+    marginTop: "5%",
+    borderRadius: 15,
   },
 
   renderSeaparatorView: {
     height: 2,
     width: "100%",
-    backgroundColor: "#CED0CE",
+    backgroundColor: COLORS.primary,
     //marginLeft: "5%",
   },
 
@@ -180,7 +198,6 @@ const style = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 20,
     paddingVertical: 10,
-    marginTop: "10%",
   },
 
   flatListView: {
@@ -197,6 +214,10 @@ const style = StyleSheet.create({
     fontFamily: "SignikaNegative-SemiBold",
     fontSize: 18,
     flexShrink: 1,
+  },
+  checkout: {
+    left: 35,
+    marginTop: "6%",
   },
 });
 

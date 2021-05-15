@@ -14,28 +14,55 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
 import MapView, { Marker } from "react-native-maps";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import UniversalGeocoder from "universal-geocoder";
 
 class Checkout extends React.Component {
     state = {
-        data: []
+        geoInput: "",
+        region: []
     }
 
     componentDidMount() {
-        this.makeRemoteRequest()
+        this.makeRemoteRequest();
     }
 
     makeRemoteRequest = async() => {
         const storeArray = await AsyncStorage.getItem('@store_Key');
         const parseStoreArray = JSON.parse(storeArray);
-        console.log(parseStoreArray[0].coordinates)
 
         this.setState({
-            data: parseStoreArray
+            region: [{
+              latitude: parseStoreArray[0].coordinates.latitude,
+              longitude: parseStoreArray[0].coordinates.longitude,
+              latitudeDelta: 0.035,
+              longitudeDelta: 0.045,
+            }]
         })
     } 
+
+    toLocation = (text) => {
+      const bingGeocoder = UniversalGeocoder.createGeocoder({
+        provider: "bing",
+        apiKey: "AoJNE9rgNyEuHs7JbEW4rqRimwp-R2Mc-F2ipRUzfuz8HcXYGc9Vp4DNnG67TKJf "
+      });
+
+      bingGeocoder.geocode(text, (result) => {
+        this.setState({ 
+          region: [{
+            latitude: result[0].coordinates.latitude,
+            longitude: result[0].coordinates.longitude,
+            latitudeDelta: 0.035,
+            longitudeDelta: 0.045,
+          }]
+        })
+
+        console.log(result[0].coordinates);
+      });
+
+    }
 
     render() {
         return (
@@ -87,7 +114,7 @@ class Checkout extends React.Component {
             <SafeAreaView>
               <View style={styles.btn1}>
                 <View style={styles.insidebtn}>
-                  <TouchableOpacity onPress={() => navigation.navigate("")}>
+                  <TouchableOpacity onPress={() => {this.toLocation(this.state.geoInput)}}>
                     <Text
                       style={{
                         paddingLeft: screen_width / 10,
@@ -104,20 +131,52 @@ class Checkout extends React.Component {
             </SafeAreaView>
             <View style={{alignItems: 'center'}}>
               <MapView 
-                region={{
-                  latitude: 37.78825,
-                  longitude: -122.4324,
-                  latitudeDelta: 0.0922,
-                  longitudeDelta: 0.0421,
-                }}
+                region={this.state.region[0]}
                 style={{width: 300, height: 200, bottom: 500}}
               >
-                <Marker
-                  coordinate={this.state.data.coordinates}
-                >
-
-                </Marker>
               </MapView>
+            </View>
+            <View style={{width: 200}}>
+              <Text 
+                style={{
+                  color: "#000000",
+                  left: 35,
+                  bottom: 455,
+                  fontSize: 20
+                }}
+              >
+                Address
+              </Text>
+              <TextInput 
+                style={{
+                  backgroundColor: "#C4C4C4",
+                  left: 35,
+                  width: 305,
+                  bottom: 450,
+                  height: 35
+                }}
+                onChangeText={(text) => this.setState({geoInput: text})}
+                value={this.state.geoInput}
+              />
+              <Text 
+                style={{
+                  color: "#000000",
+                  left: 35,
+                  bottom: 445,
+                  fontSize: 20
+                }}
+              >
+                Phone Number
+              </Text>
+              <TextInput 
+                style={{
+                  backgroundColor: "#C4C4C4",
+                  left: 35,
+                  width: 305,
+                  bottom: 440,
+                  height: 35
+                }}
+              />
             </View>
           </View>
         )
@@ -137,7 +196,6 @@ const styles = StyleSheet.create({
   insidebtn: {
     height: hp("7.5%"),
     width: wp("95%"),
-    //textAlign: "center",
     backgroundColor: COLORS.primary,
     alignItems: "center",
     justifyContent: "center",

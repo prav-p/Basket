@@ -4,7 +4,7 @@ import {
   createBottomTabNavigator,
   BottomTabBar,
 } from "@react-navigation/bottom-tabs";
-import { Search, Home, Checkout } from "../screens";
+import { Home, Checkout } from "../screens";
 import { icons, COLORS } from "../constants";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
@@ -46,7 +46,7 @@ const Tabs = () => {
         }}
       />
 
-      <Tab.Screen
+      {/* <Tab.Screen
         name="Shop"
         component={Search}
         options={{
@@ -64,14 +64,14 @@ const Tabs = () => {
             </TouchableOpacity>
           ),
         }}
-      />
+      /> */}
 
       <Tab.Screen
         name="Basket"
         component={Checkout}
         options={{
           tabBarIcon: ({ focused }) => (
-            <TouchableOpacity onPress={() => navigation.navigate("Checkout")}>
+            <TouchableOpacity onPress={() => navigation.navigate("Item")}>
               <Image
                 source={icons.basket}
                 resizeMode="contain"

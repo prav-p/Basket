@@ -4,27 +4,59 @@
         "brand": [
             {
                 "name": "Horizon Organic Milk, Organic, Whole",
-                "qty": 5,
+                "qtyDes":"0.5 gal",
+                "priceDes":"$4.69",
+                "qty": 1,
                 "price": 4.69,
-                "picture": "../assets/images/horizon_organic_whole.jpg"
+                "picture": "https://images.albertsons-media.com/is/image/ABS/136010937?$ecom-pdp-desktop$&defaultImage=Not_Available&defaultImage=Not_Available"
             },
             {
-                "name": "Darigold Milk, Homogenized, Whole",
-                "qty": 5,
+                "name": "Darigold Milk, Homogenized, Whole, 3%",
+                "qtyDes":"0.5 gal",
+                "priceDes":"$2.99",
+                "qty": 1,
                 "price": 2.99,
-                "picture": "../assets/images/darigold_homo_whole.jpg"
+                "picture": "https://i5.walmartimages.com/asr/69829ee7-addc-44d8-b95a-9c672d8086fe.bbfa9611a8f022cd4cf0ff9c74da049b.jpeg"
             },
             {
                 "name": "Darigold Milk, Reduced Fat, 2%",
-                "qty": 5,
+                "qtyDes": "0.5 gal",
+                "priceDes": "$2.89",
+                "qty": 1,
                 "price": 2.89,
-                "picture": "../assets/images/darigold_reduced_2%.jpg"
+                "picture": "https://i5.walmartimages.com/asr/034bf4bc-50b9-423b-a423-dc7414da0461.fda4ec246246a8a7c4eec93b85c3521f.jpeg"
             },
             {
-                "name": "Organic Valley Ultra Pasteurized Whole Milk",
-                "qty": 5,
-                "price": 5.69,
-                "picture": "../assets/images/organic_pasteur_whole.jpg"
+                "name": "Lactaid, 100% Lacotse Free,Ultra-Pasteurised, Whole",
+                "qtyDes": "0.5 gal",
+                "priceDes": "$4.79",
+                "qty": 1,
+                "price": 4.79,
+                "picture": "https://images.freshop.com/00041383090363/efaaab640f34d99568b0301de69b4722_large.png"
+            },
+            {
+                "name": "Binggrae Melon Flavored Milk Drink",
+                "qtyDes": "6 x 6.8 fl oz",
+                "priceDes": "$7.49",
+                "qty": 1,
+                "price": 7.49,
+                "picture": "https://ipcdn.freshop.com/resize?url=https://images.freshop.com/08801104940153/6bcbcb66eb80b79eb144d50767815772_large.png&width=512&type=webp&quality=80"
+            },
+            {
+                "name": "Vita Milk Tea Drink",
+                "qtyDes": "6 x 8.45 fl oz",
+                "priceDes": "$7.29",
+                "qty":1,
+                "price":7.29,
+                "picture": "https://ipcdn.freshop.com/resize?url=https://images.freshop.com/1564405684704624911/ebbd7b8e6a1adfed09a6c7a562e162c7_large.png&width=512&type=webp&quality=80"
+            },
+            {
+                "name": "Longevity Brand Sweetened Condensed Milk",
+                "qtyDes": "14 oz",
+                "priceDes": "$3.79",
+                "qty":1,
+                "price":3.79,
+                "picture": "https://ipcdn.freshop.com/resize?url=https://images.freshop.com/00022652161014/95e6b6659ba883cf45cbc983078b1b73_large.png&width=512&type=webp&quality=80"
             }
         ]
     },
@@ -33,7 +65,7 @@
         "brand": [
             {
                 "name": "Parmesan",
-                "qty": 5,
+                "qty": 1,
                 "price": 2.89,
                 "picture": "../assets/images/parmesan.png"
             }
@@ -44,7 +76,7 @@
         "brand": [
             {
                 "name": "White Eggs",
-                "qty": 5,
+                "qty": 1,
                 "price": 2.89,
                 "picture": "../assets/images/white_eggs.jpg"
             }
@@ -55,7 +87,7 @@
         "brand": [
             {
                 "name": "Bacon",
-                "qty": 5,
+                "qty": 1,
                 "price": 2.89,
                 "picture": "../assets/images/bacon.png"
             }
@@ -66,7 +98,7 @@
         "brand": [
             {
                 "name": "Turkey Ham",
-                "qty": 5,
+                "qty": 1,
                 "price": 2.89,
                 "picture": "../assets/images/turkey_ham.png"
             }
@@ -77,7 +109,7 @@
         "brand": [
             {
                 "name": "Sirloin",
-                "qty": 5,
+                "qty": 1,
                 "price": 2.89,
                 "picture": "../assets/images/sirloin.jpg"
             }
@@ -88,7 +120,7 @@
         "brand": [
             {
                 "name": "Apple",
-                "qty": 5,
+                "qty": 1,
                 "price": 2.89,
                 "picture": "../assets/images/apple.jpg"
             }
@@ -99,7 +131,7 @@
         "brand": [
             {
                 "name": "Organic",
-                "qty": 5,
+                "qty": 1,
                 "price": 2.89,
                 "picture": "../assets/images/organic.jpg"
             }
@@ -110,25 +142,25 @@
         "brand": [
             {
                 "name": "Yellow Onions",
-                "qty": 5,
+                "qty": "1 ct",
                 "price": 0.49,
                 "picture": "../assets/images/yellow_onion.jpg"
             },
             {
                 "name": "Broccoli",
-                "qty": 5,
+                "qty": 1,
                 "price": 1.69,
                 "picture": "../assets/images/broccoli.jpg"
             },
             {
                 "name": "Potatoes - Gold",
-                "qty": 5,
+                "qty": 1,
                 "price": 0.89,
                 "picture": "../assets/images/potatoes.jpg"
             },
             {
                 "name": "Garlic",
-                "qty": 5,
+                "qty": 1,
                 "price": 1.19,
                 "picture": "../assets/images/garlic.jpg"
             }

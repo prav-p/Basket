@@ -7,10 +7,12 @@ import {
   TouchableHighlight,
   TouchableOpacity,
 } from "react-native-gesture-handler";
+import Data from "../assets/store_items.json";
 
 class Item extends React.Component {
   state = {
     data: [],
+    fullData: [],
   };
 
   componentDidMount() {
@@ -24,6 +26,7 @@ class Item extends React.Component {
 
     this.setState({
       data: filterArray,
+      fullData: Data,
     });
   };
 
@@ -57,8 +60,10 @@ class Item extends React.Component {
             <Text style={styles.titleText}>Checkout</Text>
           </View>
         </View>
-        <View></View>
         <FlatList
+          style={{
+            flex: 1,
+          }}
           data={this.state.data}
           renderItem={({ item }) => (
             <View style={styles.FlatListView}>

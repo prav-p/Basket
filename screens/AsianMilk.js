@@ -181,10 +181,9 @@ class AsianMilk extends React.Component {
                     marginBottom: "5%",
                   }}
                 />
-                <Text
-                  category="s1"
-                  style={styles.price}
-                >{`${item.priceDes}`}</Text>
+                <Text category="s1" style={styles.price}>
+                  ${`${item.price}`}
+                </Text>
                 <Text category="s1" style={styles.name}>{`${item.name}`}</Text>
                 <Text category="s1" style={styles.qty}>{`${item.qtyDes}`}</Text>
               </View>

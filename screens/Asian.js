@@ -8,7 +8,10 @@ import {
   FlatList,
   SafeAreaView,
 } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import {
+  TouchableHighlight,
+  TouchableOpacity,
+} from "react-native-gesture-handler";
 import { COLORS, FONTS, icons, images } from "../constants";
 import { IconButton } from "../components";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";

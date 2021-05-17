@@ -22,7 +22,20 @@ import UniversalGeocoder from "universal-geocoder";
 class Checkout extends React.Component {
     state = {
         geoInput: "",
-        region: []
+        fromLoc: [{
+          latitude: 47.64980739969915, 
+          longitude: -122.36211289260756,
+        }],
+        toLoc: [{
+          latitude: 47.64980739969915, 
+          longitude: -122.36211289260756,
+        }],
+        region: [{
+          latitude: 47.64980739969915, 
+          longitude: -122.36211289260756,
+          latitudeDelta: 0.035,
+          longitudeDelta: 0.045,
+        }]
     }
 
     componentDidMount() {
@@ -34,6 +47,11 @@ class Checkout extends React.Component {
         const parseStoreArray = JSON.parse(storeArray);
 
         this.setState({
+            fromLoc: [{
+              latitude: parseStoreArray[0].coordinates.latitude,
+              longitude: parseStoreArray[0].coordinates.longitude
+            }],
+
             region: [{
               latitude: parseStoreArray[0].coordinates.latitude,
               longitude: parseStoreArray[0].coordinates.longitude,
@@ -43,25 +61,52 @@ class Checkout extends React.Component {
         })
     } 
 
-    toLocation = (text) => {
-      const bingGeocoder = UniversalGeocoder.createGeocoder({
-        provider: "bing",
-        apiKey: "AoJNE9rgNyEuHs7JbEW4rqRimwp-R2Mc-F2ipRUzfuz8HcXYGc9Vp4DNnG67TKJf "
-      });
+    userInputLocation = async(text) => {
+      const storeArray = await AsyncStorage.getItem('@store_Key');
+      const parseStoreArray = JSON.parse(storeArray);
 
-      bingGeocoder.geocode(text, (result) => {
-        this.setState({ 
-          region: [{
-            latitude: result[0].coordinates.latitude,
-            longitude: result[0].coordinates.longitude,
-            latitudeDelta: 0.035,
-            longitudeDelta: 0.045,
-          }]
+      if (text === '') {
+        this.setState({
+            fromLoc: [{
+              latitude: parseStoreArray[0].coordinates.latitude,
+              longitude: parseStoreArray[0].coordinates.longitude
+            }],
+
+            region: [{
+              latitude: parseStoreArray[0].coordinates.latitude,
+              longitude: parseStoreArray[0].coordinates.longitude,
+              latitudeDelta: 0.035,
+              longitudeDelta: 0.045,
+            }]
         })
+      } else {
+        const bingGeocoder = UniversalGeocoder.createGeocoder({
+          provider: "bing",
+          apiKey: "AoJNE9rgNyEuHs7JbEW4rqRimwp-R2Mc-F2ipRUzfuz8HcXYGc9Vp4DNnG67TKJf "
+        });
+  
+        bingGeocoder.geocode(text, (result) => {
+          this.setState({
+            fromLoc: [{
+              latitude: parseStoreArray[0].coordinates.latitude,
+              longitude: parseStoreArray[0].coordinates.longitude
+            }],
 
-        console.log(result[0].coordinates);
-      });
+            toLoc: [{
+              latitude: result[0].coordinates.latitude,
+              longitude: result[0].coordinates.longitude
+            }],
 
+            // region: [this.getRegionForCoordinates(this.state.cd)]
+            region: [{
+              latitude: (parseStoreArray[0].coordinates.latitude + result[0].coordinates.latitude) / 2,
+              longitude: (parseStoreArray[0].coordinates.longitude + result[0].coordinates.longitude) / 2,
+              latitudeDelta: this.state.region[0].latitudeDelta + 0.08,
+              longitudeDelta: this.state.region[0].longitudeDelta + 0.08,
+            }]
+          })
+        });
+      }
     }
 
     render() {
@@ -114,7 +159,7 @@ class Checkout extends React.Component {
             <SafeAreaView>
               <View style={styles.btn1}>
                 <View style={styles.insidebtn}>
-                  <TouchableOpacity onPress={() => {this.toLocation(this.state.geoInput)}}>
+                  <TouchableOpacity onPress={() => {this.userInputLocation(this.state.geoInput)}}>
                     <Text
                       style={{
                         paddingLeft: screen_width / 10,
@@ -132,8 +177,21 @@ class Checkout extends React.Component {
             <View style={{alignItems: 'center'}}>
               <MapView 
                 region={this.state.region[0]}
-                style={{width: 300, height: 200, bottom: 500}}
+                style={{width: 300, height: 250, bottom: 530}}
               >
+                <Marker
+                  coordinate={{
+                    latitude: this.state.toLoc[0].latitude,
+                    longitude: this.state.toLoc[0].longitude
+                  }}
+                />
+                <Marker
+                  coordinate={{
+                    latitude: this.state.fromLoc[0].latitude,
+                    longitude: this.state.fromLoc[0].longitude,
+                  }}
+                >
+                </Marker>
               </MapView>
             </View>
             <View style={{width: 200}}>

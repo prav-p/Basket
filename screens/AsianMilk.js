@@ -249,9 +249,6 @@ class AsianMilk extends React.Component {
                     borderRadius: 25,
                     borderWidth: 2,
                     borderColor: COLORS.primary,
-                    //borderTopRightRadius: 25,
-                    //borderBottomRightRadius: 25,
-
                     right: 110,
                   }}
                 >

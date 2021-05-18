@@ -75,10 +75,36 @@
         "subCategory": "Eggs",
         "brand": [
             {
-                "name": "White Eggs",
+                "name": "Century Eggs",
+                "qty": 1,
+                "price": 2.89,
+                "qtyDes":"6 ct",
+                "picture": "../assets/images/white_eggs.jpg"
+            },
+            {
+                "name": "Salted Eggs",
                 "qty": 1,
                 "price": 2.89,
                 "picture": "../assets/images/white_eggs.jpg"
+            },
+            {
+                "name": "Asian Taste Cooked Salt Duck Egg – 東之味熟鹹蛋",
+                "qty": 1,
+                "price": 2.89,
+                "qtyDes":"6 ct",
+                "picture": "../assets/images/white_eggs.jpg"
+            },
+            {
+                "name": "Eggs",
+                "qty": 1,
+                "price": 2.89,
+                "picture": "../assets/images/white_eggs.jpg"
+            },
+            {
+                "name": "Quail Eggs",
+                "qty": 1,
+                "price": 2.50,
+                "picture": "https://ipcdn.freshop.com/resize?url=https://images.freshop.com/00016229000585/d31f74742b80f3614e380ec33aca5fc8_large.png&width=256&type=webp&quality=80"
             }
         ]
     },

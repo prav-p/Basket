@@ -8,10 +8,10 @@ import {
   TouchableOpacity,
   Image,
   Keyboard,
-  FlatList,
   TextInput,
   KeyboardAvoidingView,
   TouchableWithoutFeedback,
+  Alert
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
@@ -19,9 +19,12 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
+import * as SQLite from "expo-sqlite";
+
+const db = SQLite.openDatabase("BasketDB");
 
 const Login = () => {
-  const [username, onChangeUsername] = React.useState();
+  const [email, onChangeEmail] = React.useState();
   const [password, onChangePassword] = React.useState();
   const navigation = useNavigation();
 
@@ -47,11 +50,11 @@ const Login = () => {
   function renderLoginInq() {
     return (
       <View>
-        <Text style={styles.userName}>Username</Text>
+        <Text style={styles.email}>Email</Text>
         <TextInput
-          style={styles.userNameInput}
-          onChangeText={onChangeUsername}
-          value={username}
+          style={styles.emailInput}
+          onChangeText={onChangeEmail}
+          value={email}
         />
         <Text style={styles.passwordLabel}>Password</Text>
         <TextInput
@@ -64,11 +67,48 @@ const Login = () => {
     );
   }
 
+  function checkCred() {
+    var temp = [];
+    var pass = false;
+
+    db.transaction((tx) => {
+      tx.executeSql("SELECT * FROM DataTable", [], (tx, results) => {
+        for (let i = 0; i < results.rows.length; ++i)
+          temp.push(results.rows.item(i));
+        console.log(temp);
+
+        for (var i = 0; i < temp.length; ++i) {
+          if (temp[i].email === email && temp[i].password === password) {
+            pass = true;
+            break;
+          } else {
+            pass = false;
+          }
+        }
+
+        if (pass === false) {
+          Alert.alert(
+            "Error!",
+            "Invalid email or password",
+            [
+              {
+                text: "Ok",
+              },
+            ],
+            { cancelable: false }
+          );
+        } else {
+          navigation.navigate("Home");
+        }
+      });
+    })
+  }
+
   function renderLoginButton() {
     return (
       <View style={styles.btn1}>
         <View style={styles.insidebtn}>
-          <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+          <TouchableOpacity onPress={() => checkCred()}>
             <Text style={styles.text}>Login</Text>
           </TouchableOpacity>
         </View>
@@ -118,7 +158,7 @@ const styles = StyleSheet.create({
     top: 70,
   },
 
-  userName: {
+  email: {
     fontFamily: "SignikaNegative-Bold",
 
     fontSize: RFValue(25, 896),
@@ -126,7 +166,7 @@ const styles = StyleSheet.create({
     top: 105,
   },
 
-  userNameInput: {
+  emailInput: {
     width: wp("85%"),
     height: hp("5%"),
     left: 20,
@@ -135,7 +175,7 @@ const styles = StyleSheet.create({
     top: 115,
   },
 
-  userNameInput: {
+  emailInput: {
     width: wp("90%"),
     height: hp("5%"),
     left: 10,

@@ -39,7 +39,26 @@ const createAccount = () => {
 
   let [flatListItems, setFlatListItems] = React.useState([]);
 
+  function hasLowerCase(str) {
+    return (/[a-z]/.test(str));
+  }
+
   let create_account = () => {
+    if (!email.includes("@") && email.substring(email.length - 3, email.length - 4)) {
+      Alert.alert(
+        "Error!",
+        "Invalid email",
+        [
+          {
+            text: "Ok",
+          },
+        ],
+        { cancelable: false }
+      );
+    } else if (password.length !== 8) {
+
+    }
+
     db.transaction((tx) => {
       tx.executeSql(
         "create table if not exists DataTable (id integer primary key not null, name text, email text, password text, " +
@@ -50,33 +69,8 @@ const createAccount = () => {
       tx.executeSql(
         "insert into DataTable (name, email, password, rePassword, address, zipcode, city, contactNo) values " +
           "(?, ?, ?, ?, ?, ?, ?, ?)",
-        [name, email, password, rePassword, address, zipcode, city, contactNo],
-        (tx, results) => {
-          console.log("Results", results.rowsAffected);
-          if (results.rowsAffected > 0) {
-            Alert.alert(
-              "Success",
-              "You are Registered Successfully",
-              [
-                {
-                  text: "Ok",
-                  onPress: () => navigation.navigate("Home"),
-                },
-              ],
-              { cancelable: false }
-            );
-          } else alert("Registration Failed");
-        }
+        [name, email, password, rePassword, address, zipcode, city, contactNo]
       );
-
-      tx.executeSql("SELECT * FROM DataTable", [], (tx, results) => {
-        var temp = [];
-        for (let i = 0; i < results.rows.length; ++i)
-          temp.push(results.rows.item(i));
-        setFlatListItems(temp);
-        console.log(temp);
-      });
-
       // tx.executeSql(
       //   "select * from scoreData",
       //   [],

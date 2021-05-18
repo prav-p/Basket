@@ -71,7 +71,7 @@ class Item extends React.Component {
                 <Image
                   Image
                   source={{ uri: item.picture }}
-                  style={{ width: 80, height: 80 }}
+                  style={{ width: 60, height: 60 }}
                 />
                 <Text style={styles.itemName}>{`${item.name}\t`}</Text>
                 <Text style={styles.itemQty}>{`${item.qty}\t`}</Text>

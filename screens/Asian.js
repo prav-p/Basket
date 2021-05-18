@@ -78,7 +78,7 @@ class Asian extends React.Component {
 
 const CATEGORIES = [
   {
-    title: "Dairy",
+    title: "Dairy & Eggs",
     data: [
       {
         type: "Milk",
@@ -183,31 +183,31 @@ const ListItem = ({ item }) => {
         navigation.navigate("AsianMilk");
         //navigate
         break;
-      case "AsianEggs":
-        this.props.navigation.navigate("AsianEggs");
+      case "Eggs":
+        navigation.navigate("AsianEggs");
         //navigate
         break;
-      case "AsianCheese":
-        this.props.navigation.navigate("AsianCheese");
+      case "Cheese":
+        navigation.navigate("AsianCheese");
         //navigate
         break;
-      case "AsianBnS":
-        this.props.navigation.navigate("AsianAsianBnS");
+      case "BnS":
+        navigation.navigate("AsianBnS");
         //navigate
         break;
-      case "AsianLunchMeat":
-        this.props.navigation.navigate("AsianLunchMeat");
+      case "LunchMeat":
+        navigation.navigate("AsianLunchMeat");
         //navigate
         break;
-      case "AsianFruits":
-        this.props.navigation.navigate("AsianFruits");
+      case "Fruits":
+        navigation.navigate("AsianFruits");
         //navigate
         break;
-      case "AsianOrganicProd":
-        this.props.navigation.navigate("AsianOrganicProd");
+      case "OrganicProd":
+        navigation.navigate("AsianOrganicProd");
         //navigate
         break;
-      case "AsianVeg":
+      case "Veg":
         this.props.navigation.navigate("AsianVeg");
         //navigate
         break;

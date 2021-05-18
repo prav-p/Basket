@@ -41,6 +41,7 @@ class AsianMilk extends React.Component {
         orderItems: JSON.parse(orderArray),
       });
     }
+    console.log(this.state.orderItems);
   };
 
   contains = ({ name }, query) => {
@@ -79,9 +80,10 @@ class AsianMilk extends React.Component {
     return <View style={styles.renderSeaparatorView} />;
   };
 
-  editOrder = async (action, name, price) => {
+  editOrder = async (action, name, price, picture) => {
     let orderList = this.state.orderItems.slice();
     let item = orderList.filter((a) => a.name == name);
+    console.log(picture);
 
     if (action == "+") {
       if (item.length > 0) {
@@ -94,6 +96,7 @@ class AsianMilk extends React.Component {
           qty: 1,
           price: price,
           total: price,
+          picture: picture,
         };
 
         orderList.push(newItem);
@@ -189,7 +192,9 @@ class AsianMilk extends React.Component {
               </View>
               <View style={styles.buttons}>
                 <TouchableOpacity
-                  onPress={() => this.editOrder("-", item.name, item.price)}
+                  onPress={() =>
+                    this.editOrder("-", item.name, item.price, item.picture)
+                  }
                   style={{
                     width: 30,
                     backgroundColor: COLORS.white,
@@ -233,7 +238,9 @@ class AsianMilk extends React.Component {
                   </Text>
                 </View>
                 <TouchableOpacity
-                  onPress={() => this.editOrder("+", item.name, item.price)}
+                  onPress={() =>
+                    this.editOrder("+", item.name, item.price, item.picture)
+                  }
                   style={{
                     width: 30,
                     backgroundColor: COLORS.white,

@@ -16,6 +16,7 @@ import {
   AsianMilk,
   AsianCheese,
   AsianEggs,
+  AsianBnS,
   AsianSeafood,
 } from "./screens";
 
@@ -49,6 +50,7 @@ const App = () => {
         <Stack.Screen name="AsianMilk" component={AsianMilk} />
         <Stack.Screen name="AsianEggs" component={AsianEggs} />
         <Stack.Screen name="AsianCheese" component={AsianCheese} />
+        <Stack.Screen name="AsianBnS" component={AsianBnS} />
         <Stack.Screen name="AsianSeafood" component={AsianSeafood} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Item" component={Item} />

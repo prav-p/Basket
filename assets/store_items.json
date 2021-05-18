@@ -115,7 +115,7 @@
         ]
     },
     {
-        "subCategory": "Bacon & Sausage",
+        "subCategory": "Processed Meat",
         "brand": [
             {
                 "name": "Bacon",
@@ -126,7 +126,7 @@
         ]
     },
     {
-        "subCategory": "Lunch Meat",
+        "subCategory": "Seafood",
         "brand": [
             {
                 "name": "Turkey Ham",

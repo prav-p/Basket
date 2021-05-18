@@ -15,6 +15,8 @@ import {
 import { COLORS, FONTS, icons, images } from "../constants";
 import { IconButton } from "../components";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+// import AsyncStorage from "@react-native-async-storage/async-storage";
 
 class Asian extends React.Component {
   render() {
@@ -180,6 +182,7 @@ const ListItem = ({ item }) => {
     console.log(type);
     switch (type) {
       case "Milk":
+        // AsyncStorage.removeItem("@order_Key");
         navigation.navigate("AsianMilk");
         //navigate
         break;

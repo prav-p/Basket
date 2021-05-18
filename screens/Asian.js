@@ -198,8 +198,8 @@ const ListItem = ({ item }) => {
         navigation.navigate("AsianBnS");
         //navigate
         break;
-      case "LunchMeat":
-        navigation.navigate("AsianLunchMeat");
+      case "Seafood":
+        navigation.navigate("AsianSeafood");
         //navigate
         break;
       case "Fruits":

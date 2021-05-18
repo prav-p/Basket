@@ -1,5 +1,5 @@
 [
-    { 
+    {  
         "subCategory": "Milk", 
         "brand": [
             {
@@ -64,47 +64,53 @@
         "subCategory": "Cheese",
         "brand": [
             {
-                "name": "Parmesan",
+                "name": "The Laughing Cow Spreadable Cheese Wedges, Creamy Swiss, Original",
                 "qty": 1,
-                "price": 2.89,
-                "picture": "../assets/images/parmesan.png"
+                "price": 3.99,
+                "qtyDes":"6 oz",
+                "picture": "https://db535g4onu9gg.cloudfront.net/eyJidWNrZXQiOiJtZXJjYXRvLWltYWdlcyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJpbnNpZGUiLCJoZWlnaHQiOjcyMH0sIndlYnAiOnsicXVhbGl0eSI6NjB9fSwia2V5IjoicHJvZHVjdC1pbWFnZXMvZlpCaU9rWlZ4RDlwMUtZSU1WTDRIUVJEUFV5Y0E0Tmd6VE5jenBVMi5qcGcifQ=="
             }
         ]
     },
     {
         "subCategory": "Eggs",
         "brand": [
-            {
-                "name": "Century Eggs",
-                "qty": 1,
-                "price": 2.89,
-                "qtyDes":"6 ct",
-                "picture": "../assets/images/white_eggs.jpg"
-            },
-            {
-                "name": "Salted Eggs",
-                "qty": 1,
-                "price": 2.89,
-                "picture": "../assets/images/white_eggs.jpg"
-            },
+           
+            
             {
                 "name": "Asian Taste Cooked Salt Duck Egg – 東之味熟鹹蛋",
                 "qty": 1,
                 "price": 2.89,
                 "qtyDes":"6 ct",
-                "picture": "../assets/images/white_eggs.jpg"
+                "picture": "https://ipcdn.freshop.com/resize?url=https://images.freshop.com/00673367100722/cdae185f668d470386dec2e2f24bdaad_large.png&width=256&type=webp&quality=80"
             },
             {
-                "name": "Eggs",
+                "name": "Springbook Eggs",
                 "qty": 1,
-                "price": 2.89,
-                "picture": "../assets/images/white_eggs.jpg"
+                "price": 2.79,
+                "qtyDes":"12 ct",
+                "picture": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTlPby7xSyvoUq50hwex3NXu7cZcuyHAaMDNMNhQ2exh5d8QcuAxSLhNAjERDdB3bbxMff8pMpGyZFnlvsT4xvLt3rftgviSW8kkh68y_pWo_jR-J0quzVxLA&usqp=CAE"
             },
             {
-                "name": "Quail Eggs",
+                "name": "Aroy-D Quail Eggs In Water – 清水鵪鶉蛋",
                 "qty": 1,
                 "price": 2.50,
+                "qtyDes":"14.9 oz",
                 "picture": "https://ipcdn.freshop.com/resize?url=https://images.freshop.com/00016229000585/d31f74742b80f3614e380ec33aca5fc8_large.png&width=256&type=webp&quality=80"
+            },
+            {
+                "name": "Fresh Quail Eggs",
+                "qty": 1,
+                "price": 2.79,
+                "qtyDes":"10 ct",
+                "picture": "https://db535g4onu9gg.cloudfront.net/eyJidWNrZXQiOiJtZXJjYXRvLWltYWdlcyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJpbnNpZGUiLCJ3aWR0aCI6NzAwLCJoZWlnaHQiOjQ2N319LCJrZXkiOiJwcm9kdWN0LWltYWdlcy82dmdPWmtSY1JUbTZVRmNFdHBRQWJBNTZieWdBUTMyNXE1VzJGQ2x2LmpwZyJ9"
+            },
+            {
+                "name": "Century Eggs",
+                "qty": 1,
+                "price": 3.39,
+                "qtyDes":"6 ct",
+                "picture": "https://ipcdn.freshop.com/resize?url=https://images.freshop.com/00673367100708/21d2a8a1739e1859776934cf8a6e11dd_large.png&width=256&type=webp&quality=80"
             }
         ]
     },

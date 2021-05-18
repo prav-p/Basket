@@ -31,8 +31,8 @@ class AsianEggs extends React.Component {
     const orderArray = await AsyncStorage.getItem("@order_Key");
 
     this.setState({
-      data: Data[0].brand,
-      fullData: Data[0].brand,
+      data: Data[2].brand,
+      fullData: Data[2].brand,
       orderItems: [],
     });
 
@@ -58,7 +58,7 @@ class AsianEggs extends React.Component {
       return this.contains(item, formattedQuery);
     });
     this.setState({ data, query: text });
-    console.log(this.state.fullData[0].brand);
+    console.log(this.state.fullData[2].brand);
   };
 
   renderHeader = () => (

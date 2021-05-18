@@ -11,6 +11,7 @@ import Mendoza from "./Mendoza";
 import AsianMilk from "./AsianMilk";
 import AsianCheese from "./AsianCheese";
 import AsianEggs from "./AsianEggs";
+import AsianSeafood from "./AsianSeafood";
 
 export {
   Home,
@@ -26,4 +27,5 @@ export {
   AsianMilk,
   AsianCheese,
   AsianEggs,
+  AsianSeafood,
 };

@@ -103,12 +103,12 @@ const CATEGORIES = [
     title: "Meat & Seafood",
     data: [
       {
-        type: "Bacon & Sausage",
+        type: "Processed Meat",
         photo:
           "https://shop.southchinaseas.ca/assets/images/chinesesausagefront.jpg",
       },
       {
-        type: "Lunch Meat",
+        type: "Seafood",
         photo:
           "https://chinafoodingredients.files.wordpress.com/2019/04/yingjinqian.jpeg",
       },
@@ -194,7 +194,7 @@ const ListItem = ({ item }) => {
         navigation.navigate("AsianCheese");
         //navigate
         break;
-      case "BnS":
+      case "Processed Meat":
         navigation.navigate("AsianBnS");
         //navigate
         break;

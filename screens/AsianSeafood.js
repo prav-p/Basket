@@ -31,8 +31,8 @@ class AsianSeafood extends React.Component {
     const orderArray = await AsyncStorage.getItem("@order_Key");
 
     this.setState({
-      data: Data[0].brand,
-      fullData: Data[0].brand,
+      data: Data[4].brand,
+      fullData: Data[4].brand,
       orderItems: [],
     });
 

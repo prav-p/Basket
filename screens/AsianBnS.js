@@ -31,8 +31,8 @@ class AsianBnS extends React.Component {
     const orderArray = await AsyncStorage.getItem("@order_Key");
 
     this.setState({
-      data: Data[1].brand,
-      fullData: Data[1].brand,
+      data: Data[3].brand,
+      fullData: Data[3].brand,
       orderItems: [],
     });
 

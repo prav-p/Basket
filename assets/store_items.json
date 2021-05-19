@@ -115,13 +115,49 @@
         ]
     },
     {
-        "subCategory": "Processed Meat",
+        "subCategory": "Processed Meat & Seafood",
         "brand": [
             {
-                "name": "Bacon",
+                "name": "Ma Ling Premium Pork Luncheon Meat",
                 "qty": 1,
-                "price": 2.89,
-                "picture": "../assets/images/bacon.png"
+                "price": 3.99,
+                "qtyDes":"15.5 oz",
+                "picture": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTyup-v8DACJ8M0EL7xW10mjww4LotAV1xY_npMK6BOAO45ZRSoTtpRN9Zwfr5jLOPcnHsAkzPPO1sSO321g7VnZDs75J0ils21joYplFdFn0rsTMMPCv8IJw&usqp=CAE"
+            },
+            {
+                "name": "Ma Ling Premium Luncheon Meat",
+                "qty": 1,
+                "price": 4.39,
+                "qtyDes":"15.5 oz",
+                "picture": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTbfbpwRfxIhw3LbjR9cQI0Nah-puAuER6Te5h37Mq6tHn3LIXYSJcMjXviW6QKXYzq2q1u-tLu6caTE3chWGZdHJDTf1tHzvgJOMY5qGbXFSTPi04bp4AFEw&usqp=CAE"
+            },
+            {
+                "name": "SPAM Classic Lunch Meat",
+                "qty": 1,
+                "price": 2.99,
+                "qtyDes":"12 oz",
+                "picture": "https://target.scene7.com/is/image/Target/GUEST_439b381d-5e22-4015-b833-a4399f323205?wid=325&hei=325&qlt=80&fmt=webp"
+            },
+            {
+                "name": "Lee Kum Kee Abalone in Premium Oyster Sauce",
+                "qty": 1,
+                "price": 11.99,
+                "qtyDes":"7.8 oz",
+                "picture":"https://weee-img.s3.us-west-2.amazonaws.com/2021-03/mRzV45fuSsKrIafXkYfxmw-square.jpg"
+            }, 
+            {
+                "name": "Formosa Brand Pork Fu",
+                "qty": 1,
+                "price": 15.69,
+                "qtyDes":"18 oz",
+                "picture":"https://weee-img.s3.us-west-2.amazonaws.com/2021-03/rw1tRAC6SfibDWxCVvtI5Q-square.jpg"
+            },
+            {
+                "name":"Hsin Tung Yang Crispy Roasted Eel",
+                "qty": 1,
+                "price":2.49,
+                "qtyDes":"3.5 oz",
+                "picture": "https://weee-img.s3.us-west-2.amazonaws.com/2021-05/8liuuuJEQIGwCWNOGEkl0g-square.jpg"
             }
         ]
     },
@@ -129,10 +165,46 @@
         "subCategory": "Seafood",
         "brand": [
             {
-                "name": "Turkey Ham",
+                "name": "Pescatore Seafood Mix, Frozen",
                 "qty": 1,
-                "price": 2.89,
-                "picture": "../assets/images/turkey_ham.png"
+                "price": 4.99,
+                "qtyDes": "1 lb",
+                "picture": "https://weee-img.s3.us-west-2.amazonaws.com/2021-02/oJmlZWiJTbeV_zSBBW341w-square.jpg"
+            },
+            {
+                "name": "Butterfish Channel Catfish, Frozen",
+                "qty": 1,
+                "price": 11.99,
+                "qtyDes": "1 ct",
+                "picture": "https://cdn01.sayweee.net/2019-12/NR8LxBknSb60z-j1dVZcIQ-square-320.jpg"
+            },
+            {
+                "name": "Unagi Kabayaki Charcoal Grilled Eel, Frozen",
+                "qty": 1,
+                "price": 9.99,
+                "qtyDes": "9 oz",
+                "picture": "https://weee-img.s3.us-west-2.amazonaws.com/2021-03/f6xEdf39QKyyHgVhPN9MzQ-square.jpg"
+            },
+            {
+                "name": "Oceankist Wild-Caught King Mackerel Steak, Frozen",
+                "qty": 1,
+                "price": 6.49,
+                "qtyDes": "14 oz",
+                "picture": "https://cdn01.sayweee.net/2020-11/HHIts6loTs--LH8Urvj77A-square.jpg"
+            },
+            {
+                "name": "Sanford New Zealand Half Shell Greenshell Mussels",
+                "qty": 1,
+                "price": 11.99,
+                "qtyDes": "2 lbs",
+                "picture": "https://cdn01.sayweee.net/2020-10/8nmsmEz0RJGuYMc_IwxiBQ-square.jpg"
+            },
+            {
+                "name": "Blood Clam with Half Shell",
+                "qty": 1,
+                "price": 11.99,
+                "qtyDes": "16 oz",
+                "picture": "https://cdn01.sayweee.net/2021-01/yGMEC6cZSu-9ORcnxf7tjw-square.jpg"
             }
         ]
     },

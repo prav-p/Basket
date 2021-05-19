@@ -59,7 +59,7 @@ const createAccount = () => {
               "You are Registered Successfully",
               [
                 {
-                  text: "Ok",
+                  text: "Continue",
                   onPress: () => navigation.navigate("Home"),
                 },
               ],
@@ -89,7 +89,7 @@ const createAccount = () => {
 
   function renderSignUpInq() {
     return (
-      <View>
+      <View style={styles.form}>
         <ScrollView>
           <Text style={styles.inqLabel}>Name</Text>
           <TextInput
@@ -121,32 +121,30 @@ const createAccount = () => {
             onChangeText={onChangeAddress}
             value={address}
           />
-          <Text style={styles.zipcodeLabel}>Zipcode</Text>
-          <TextInput
-            style={styles.zipcodeInput}
-            keyboardType="numeric"
-            onChangeText={onChangeZipcode}
-            value={zipcode}
-          />
-          <Text style={styles.cityLabel}>City</Text>
-          <TextInput
-            style={styles.cityInput}
-            onChangeText={onChangeCity}
-            value={city}
-          />
+          <View style={styles.zipCity}>
+            <Text style={styles.zipcodeLabel}>Zipcode</Text>
+            <TextInput
+              style={styles.zipcodeInput}
+              keyboardType="numeric"
+              onChangeText={onChangeZipcode}
+              value={zipcode}
+              maxLength={5}
+            />
+            <Text style={styles.cityLabel}>City</Text>
+            <TextInput
+              style={styles.cityInput}
+              onChangeText={onChangeCity}
+              value={city}
+            />
+          </View>
           <Text style={styles.contactNoLabel}>Contact Number</Text>
           <TextInput
             style={styles.contactNoInput}
             keyboardType="numeric"
             onChangeText={onChangeContactNo}
             value={contactNo}
+            maxLength={10}
           />
-          <TouchableOpacity
-            style={{ bottom: 100 }}
-            onPress={() => create_account()}
-          >
-            <Text style={styles.text}>Create</Text>
-          </TouchableOpacity>
         </ScrollView>
       </View>
     );
@@ -154,15 +152,10 @@ const createAccount = () => {
 
   function renderCreateButton() {
     return (
-      <View style={styles.btn1}>
-        <View style={styles.insidebtn}>
-          <TouchableOpacity
-            style={{ bottom: 100 }}
-            onPress={() => create_account()}
-          >
-            <Text style={styles.text}>Create</Text>
-          </TouchableOpacity>
-        </View>
+      <View style={styles.CreateAccount}>
+        <TouchableOpacity onPress={() => create_account()}>
+          <Text style={styles.createText}>Create</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -184,6 +177,13 @@ const createAccount = () => {
 };
 
 const styles = StyleSheet.create({
+  form: {
+    flex: 4,
+    marginVertical: "10%",
+    marginLeft: "30%",
+    width: 450,
+  },
+
   container: {
     flex: 1,
     backgroundColor: "#fff",
@@ -222,23 +222,30 @@ const styles = StyleSheet.create({
     // borderRadius: 10,
     fontFamily: "SignikaNegative-Regular",
   },
-
+  zipCity: {
+    alignItems: "flex-start",
+    flex: 1,
+    flexDirection: "row",
+    marginVertical: 20,
+    marginBottom: 2,
+  },
   zipcodeLabel: {
     fontFamily: "SignikaNegative-Bold",
     fontSize: RFValue(25, 896),
     // right: 50,
     // bottom: 50,
-    top: 20,
+    //top: 20,
   },
 
   zipcodeInput: {
-    top: 20,
+    //top: 20,
     width: wp("30%"),
     height: hp("5%"),
-    // left: 10,
+    marginVertical: 20,
+    right: 55,
     // top: 115,
     // bottom: 50,
-    marginBottom: 20,
+    //marginBottom: 20,
     fontSize: RFValue(30, 896),
     backgroundColor: "#EBEBEB",
     // borderRadius: 10,
@@ -248,18 +255,19 @@ const styles = StyleSheet.create({
   cityLabel: {
     fontFamily: "SignikaNegative-Bold",
     fontSize: RFValue(25, 896),
-    left: 150,
+    //left: 150,
     // right: 50,
-    bottom: 75,
+    //bottom: 75,
   },
 
   cityInput: {
-    width: wp("54%"),
+    width: wp("46%"),
     height: hp("5%"),
-    // left: 10,
+    marginVertical: 20,
+    right: 30,
     // top: 115,
-    bottom: 73,
-    left: 150,
+    //bottom: 73,
+    //left: 150,
     fontSize: RFValue(30, 896),
     backgroundColor: "#EBEBEB",
     // borderRadius: 10,
@@ -270,47 +278,34 @@ const styles = StyleSheet.create({
     fontFamily: "SignikaNegative-Bold",
     fontSize: RFValue(25, 896),
     // right: 50,
-    bottom: 50,
+    marginTop: 1,
   },
 
   contactNoInput: {
     width: wp("90%"),
     height: hp("5%"),
     // left: 10,
-    // top: 115,
-    bottom: 50,
+    marginBottom: 10,
     fontSize: RFValue(30, 896),
     backgroundColor: "#EBEBEB",
     // borderRadius: 10,
     fontFamily: "SignikaNegative-Regular",
   },
-
-  btn1: {
-    flex: 1,
-    alignItems: "center",
-    // marginTop: "50%",
-  },
-
-  insidebtn: {
-    // height: hp("7.5%"),
-    // width: wp("95%"),
-    textAlign: "center",
-    backgroundColor: COLORS.primary,
-    alignItems: "center",
-    justifyContent: "center",
+  CreateAccount: {
+    marginVertical: "5%",
+    width: 330,
+    height: 60,
     borderRadius: 20,
+    marginLeft: "30%",
+    backgroundColor: COLORS.primary,
   },
-
-  text: {
-    fontFamily: "SignikaNegative-Bold",
+  createText: {
     textAlign: "center",
-    fontSize: RFValue(40, 896),
-    fontSize: RFValue(30, 896),
-    color: COLORS.white,
-    paddingLeft: 140,
-    paddingRight: 150,
-    paddingTop: 7,
-    paddingBottom: 7,
+    marginVertical: "4%",
+    fontFamily: "SignikaNegative-Bold",
+    fontSize: 30,
+    width: 330,
+    height: 60,
   },
 });
 export default createAccount;

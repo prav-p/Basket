@@ -149,7 +149,7 @@ class AsianBnS extends React.Component {
             <TouchableHighlight
               activeOpacity={0.6}
               underlayColor="#white"
-              onPress={() => this.props.navigation.navigate("Home")}
+              onPress={() => this.props.navigation.navigate("Asian")}
             >
               <IconButton icon={icons.goBack} />
             </TouchableHighlight>

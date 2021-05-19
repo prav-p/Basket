@@ -103,7 +103,7 @@ const CATEGORIES = [
     title: "Meat & Seafood",
     data: [
       {
-        type: "Processed Meat",
+        type: "Processed",
         photo:
           "https://shop.southchinaseas.ca/assets/images/chinesesausagefront.jpg",
       },
@@ -194,7 +194,7 @@ const ListItem = ({ item }) => {
         navigation.navigate("AsianCheese");
         //navigate
         break;
-      case "Processed Meat":
+      case "Processed":
         navigation.navigate("AsianBnS");
         //navigate
         break;

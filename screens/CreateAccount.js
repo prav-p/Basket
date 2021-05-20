@@ -94,30 +94,35 @@ const createAccount = () => {
           <Text style={styles.inqLabel}>Name</Text>
           <TextInput
             style={styles.inqInput}
+            selectionColor={COLORS.primary}
             onChangeText={onChangeName}
             value={name}
           />
           <Text style={styles.inqLabel}>Email</Text>
           <TextInput
             style={styles.inqInput}
+            selectionColor={COLORS.primary}
             onChangeText={onChangeEmail}
             value={email}
           />
           <Text style={styles.inqLabel}>Password</Text>
           <TextInput
             style={styles.inqInput}
+            selectionColor={COLORS.primary}
             onChangeText={onChangePassword}
             value={password}
           />
           <Text style={styles.inqLabel}>Re-enter Password</Text>
           <TextInput
             style={styles.inqInput}
+            selectionColor={COLORS.primary}
             onChangeText={onChangeRePassword}
             value={rePassword}
           />
           <Text style={styles.inqLabel}>Address</Text>
           <TextInput
             style={styles.inqInput}
+            selectionColor={COLORS.primary}
             onChangeText={onChangeAddress}
             value={address}
           />
@@ -126,6 +131,7 @@ const createAccount = () => {
             <TextInput
               style={styles.zipcodeInput}
               keyboardType="numeric"
+              selectionColor={COLORS.primary}
               onChangeText={onChangeZipcode}
               value={zipcode}
               maxLength={5}
@@ -133,6 +139,7 @@ const createAccount = () => {
             <Text style={styles.cityLabel}>City</Text>
             <TextInput
               style={styles.cityInput}
+              selectionColor={COLORS.primary}
               onChangeText={onChangeCity}
               value={city}
             />
@@ -141,6 +148,7 @@ const createAccount = () => {
           <TextInput
             style={styles.contactNoInput}
             keyboardType="numeric"
+            selectionColor={COLORS.primary}
             onChangeText={onChangeContactNo}
             value={contactNo}
             maxLength={10}
@@ -296,8 +304,10 @@ const styles = StyleSheet.create({
     width: 330,
     height: 60,
     borderRadius: 20,
+    borderWidth: 3,
+    borderColor: COLORS.primary,
     marginLeft: "30%",
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.secondary,
   },
   createText: {
     textAlign: "center",
@@ -306,6 +316,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     width: 330,
     height: 60,
+    color: COLORS.primary,
   },
 });
 export default createAccount;

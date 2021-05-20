@@ -69,6 +69,27 @@
                 "price": 3.99,
                 "qtyDes":"6 oz",
                 "picture": "https://db535g4onu9gg.cloudfront.net/eyJidWNrZXQiOiJtZXJjYXRvLWltYWdlcyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJpbnNpZGUiLCJoZWlnaHQiOjcyMH0sIndlYnAiOnsicXVhbGl0eSI6NjB9fSwia2V5IjoicHJvZHVjdC1pbWFnZXMvZlpCaU9rWlZ4RDlwMUtZSU1WTDRIUVJEUFV5Y0E0Tmd6VE5jenBVMi5qcGcifQ=="
+            },
+            {
+                "name": "Kraft Singles American Cheese Slices",
+                "qty": 1,
+                "price": 5.99,
+                "qtyDes":"16 oz",
+                "picture": "https://cdn01.sayweee.net/2021-03/FpzFmwLHSieG0K_BxFrkwA-square-320.jpg"
+            },
+            {
+                "name": "Crispy Cheese Balls",
+                "qty": 1,
+                "price": 5.89,
+                "qtyDes":"12.3 oz",
+                "picture": "https://cdn01.sayweee.net/2020-10/92cuoX8cTG2lWOcjwOJr1w-square-320.jpg"
+            },
+            {
+                "name": "Pulmuone Mozzarella Cheese Balls",
+                "qty": 1,
+                "price": 8.99,
+                "qtyDes":"12.7 oz",
+                "picture": "https://cdn01.sayweee.net/2020-12/X1lQ4D7cQHSzB-BFGpHCig-square-320.jpg"
             }
         ]
     },
@@ -168,7 +189,7 @@
                 "name": "Pescatore Seafood Mix, Frozen",
                 "qty": 1,
                 "price": 4.99,
-                "qtyDes": "1 lb",
+                "qtyDes": "1 lbs",
                 "picture": "https://weee-img.s3.us-west-2.amazonaws.com/2021-02/oJmlZWiJTbeV_zSBBW341w-square.jpg"
             },
             {
@@ -212,10 +233,100 @@
         "subCategory": "Beef",
         "brand": [
             {
-                "name": "Sirloin",
+                "name": "GFC Frozen Beef Flat Iron Shabu Shabu 1.5mm Sliced",
                 "qty": 1,
-                "price": 2.89,
-                "picture": "../assets/images/sirloin.jpg"
+                "price": 14.99,
+                "qtyDes": "0.95-1.16 lbs",
+                "picture": "https://cdn01.sayweee.net/2021-03/tbP1NSjeSyKvLJdfQOuOFQ-square.jpg"
+            },
+            {
+                "name": "Beef Vein Steak",
+                "qty": 1,
+                "price": 5.39,
+                "qtyDes": "8 oz",
+                "picture": "https://weee-img.s3.us-west-2.amazonaws.com/2020-09/zzp-XoP_QviyS1MLM8KgbQ-square.jpg"
+            },
+            {
+                "name": "Korean Marinated Beef Short Rib",
+                "qty": 1,
+                "price": 42.99,
+                "qtyDes": "3 lbs",
+                "picture": "https://www.sayweee.com/admin_image/s3_thumbnail?src=2021-05/berjGmSFSzWZo2OR6I477Q-square-320.jpg"
+            },
+            {
+                "name": "Ri Wang Beef Honeycomb Tripe",
+                "qty": 1,
+                "price": 3.99,                
+                "qtyDes": "5.29 oz",
+                "picture": "https://cdn01.sayweee.net/2019-12/Dlj-EORhQv61Zr5R-whRvw-square.jpg"
+            },
+            {
+                "name": "GFC Sliced Wagyu Short Rib 5mm",
+                "qty": 1,
+                "price": 16.59,                
+                "qtyDes": "4.8 - 5.2 oz",
+                "picture": "https://cdn01.sayweee.net/2021-03/LleXAy_aRGm_McKzPsmwpA-square.jpg"
+            },
+            {
+                "name": "Beef Short Plate Roll Sliced ( Short Cut )",
+                "qty": 1,
+                "price": 10.59,                
+                "qtyDes": "16 oz",
+                "picture": "https://cdn01.sayweee.net/2021-05/sS_Lpmq2SymoYXPeu-1ukA-square.jpg"
+            },
+            {
+                "name": "Japanese Wagyu F1 Striploin",
+                "qty": 1,
+                "price": 85.99,                
+                "qtyDes": "16 oz",
+                "picture": "https://cdn01.sayweee.net/2021-03/U-HdvUODQva9WN0Zm3yodg-square.jpg"
+            }
+        ]
+    },
+    {
+        "subCategory": "Pork",
+        "brand": [
+            {
+                "name": "Pork Spare Ribs",
+                "qty": 1,
+                "price": 20.99,
+                "qtyDes": "5 lbs",
+                "picture": "https://cdn01.sayweee.net/2019-12/2lrK8akMSa6rCswboZF_HA-square.jpg"
+            },
+            {
+                "name": "Pork Front Feet",
+                "qty": 1,
+                "price": 11.50,
+                "qtyDes": "4 lbs",
+                "picture": "https://cdn01.sayweee.net/2019-12/UJgKcQ7gQByb5F83lIVmGw-square.jpg"
+            },
+            {
+                "name": "Japanese Kurobuta Berkshire Pork Ham",
+                "qty": 1,
+                "price": 4.99,
+                "qtyDes": "7 oz",
+                "picture": "https://weee-img.s3.us-west-2.amazonaws.com/2021-04/wPEyETQwS-ybdSH_wsEpZw-square.jpg"
+            },
+            {
+                "name": "Pork Hocks",
+                "qty": 1,
+                "price": 4.99,
+                "qtyDes": "4 - 5 lbs",
+                "picture": "https://cdn01.sayweee.net/2020-02/CLY5upyfQ82geDWzYNaoEg-square.jpg"
+            },
+            {
+                "name": "Pork Neck Bones",
+                "qty": 1,
+                "price": 4.99,
+                "qtyDes": "2 - 2.5 lbs",
+                "picture": "https://cdn01.sayweee.net/2020-02/TPFPfgqmRF20Y9gDQN5YBg-square.jpg"
+            },
+            {
+                "name": "Sliced Pork Belly",
+                "qty": 1,
+                "price": 11.39,
+                "qtyDes": "2 lbs",
+                "picture": "https://cdn01.sayweee.net/2020-02/XuNuqu8cSGum0Y4LkFhtDw-square.jpg"
             }
         ]
     },
@@ -223,10 +334,60 @@
         "subCategory": "Fruits",
         "brand": [
             {
-                "name": "Apple",
+                "name": "Whole Malaysia Top Musang King Durian, Frozen",
                 "qty": 1,
-                "price": 2.89,
-                "picture": "../assets/images/apple.jpg"
+                "price": 69.99,
+                "qtyDes": "1 ct",
+                "picture": "https://weee-img.s3.us-west-2.amazonaws.com/2021-05/B3rIJ0fARlKFkNk61LFUJQ-square.jpg"
+            },
+            {
+                "name": "Yellow Dragon Fruit",
+                "qty": 1,
+                "price": 6.99,
+                "qtyDes": "1.5 lb",
+                "picture": "https://weee-img.s3.us-west-2.amazonaws.com/2021-03/qZJO1YOaT12VGJI94amILw-square.jpg"
+            },
+            {
+                "name": "Taiwan Pearl Guavas",
+                "qty": 1,
+                "price": 15.99,
+                "qtyDes": "4 ct",
+                "picture": "https://weee-img.s3.us-west-2.amazonaws.com/2020-12/IaOrZscsR-GbAPjQyelJyA-square.jpg"
+            },
+            {
+                "name": "Nansui Pear Box",
+                "qty": 1,
+                "price": 20.99,
+                "qtyDes": "9 ct",
+                "picture": "https://weee-img.s3.us-west-2.amazonaws.com/2021-03/rq-4YDthTnCI0WUlfqw6Wg-square.jpg"
+            },
+            {
+                "name": "Dragon Fruit",
+                "qty": 1,
+                "price": 20.79,
+                "qtyDes": "2.7 - 3.3 lbs",
+                "picture": "https://cdn01.sayweee.net/2020-07/Xlr2IjtuQmGH8OH1kWLyRg-square.jpg"
+            },
+            {
+                "name": "Satsuma Orange with Stems",
+                "qty": 1,
+                "price": 6.99,
+                "qtyDes": "2.8 - 3.2 lbs",
+                "picture": "https://cdn01.sayweee.net/2019-12/nQzuDUnCRYKyKGUoACV_Ew-square.jpg"
+            },
+            {
+                "name": "Taiwan melon",
+                "qty": 1,
+                "price": 6.99,
+                "qtyDes": "2.8 - 3.2 lbs",
+                "picture": "https://cdn01.sayweee.net/2020-08/HO9IaVCBSCSk6tREBhSXRw-square.jpg"
+            },
+            {
+                "name": "Korean melon",
+                "qty": 1,
+                "price": 9.99,
+                "qtyDes": "4-4.5 lbs",
+                "picture": "https://weee-img.s3.us-west-2.amazonaws.com/2021-01/kp5LxKX2RfSJKYW7-Ch0eg-square.jpg"
             }
         ]
     },

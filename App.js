@@ -18,6 +18,9 @@ import {
   AsianEggs,
   AsianBnS,
   AsianSeafood,
+  AsianBeef,
+  AsianPork,
+  AsianFruits,
 } from "./screens";
 
 const Stack = createStackNavigator();
@@ -52,6 +55,9 @@ const App = () => {
         <Stack.Screen name="AsianCheese" component={AsianCheese} />
         <Stack.Screen name="AsianBnS" component={AsianBnS} />
         <Stack.Screen name="AsianSeafood" component={AsianSeafood} />
+        <Stack.Screen name="AsianBeef" component={AsianBeef} />
+        <Stack.Screen name="AsianPork" component={AsianPork} />
+        <Stack.Screen name="AsianFruits" component={AsianFruits} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Item" component={Item} />
       </Stack.Navigator>

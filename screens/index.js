@@ -13,6 +13,9 @@ import AsianCheese from "./AsianCheese";
 import AsianEggs from "./AsianEggs";
 import AsianBnS from "./AsianBnS";
 import AsianSeafood from "./AsianSeafood";
+import AsianBeef from "./AsianBeef";
+import AsianPork from "./AsianPork";
+import AsianFruits from "./AsianFruits";
 
 export {
   Home,
@@ -30,4 +33,7 @@ export {
   AsianEggs,
   AsianBnS,
   AsianSeafood,
+  AsianBeef,
+  AsianPork,
+  AsianFruits,
 };

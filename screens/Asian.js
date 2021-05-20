@@ -117,6 +117,11 @@ const CATEGORIES = [
         photo:
           "https://cdn.shopify.com/s/files/1/0261/9123/3121/products/wagyuman-japanese-wagyu-beef-japanese-a5-wagyu-culotte-picanha-steak-cut-28186276102241_1200x.jpg?v=1619127753",
       },
+      {
+        type: "Pork",
+        photo:
+          "https://cdn01.sayweee.net/2019-12/a_sMtD4ySgqRNa3Ery2wmQ-square-320.jpg",
+      },
     ],
   },
   {
@@ -157,23 +162,6 @@ const CATEGORIES = [
       },
     ],
   },
-  {
-    title: "Pork",
-    data: [
-      {
-        type: "Fruits",
-        photo: "/assets/images/fruits.jpg",
-      },
-      {
-        type: "Organic Produce",
-        photo: "/assets/images/organic_produce.jpg",
-      },
-      {
-        type: "Vegetables",
-        photo: "/assets/images/vegetables.jpg",
-      },
-    ],
-  },
 ];
 
 const ListItem = ({ item }) => {
@@ -184,35 +172,43 @@ const ListItem = ({ item }) => {
       case "Milk":
         AsyncStorage.removeItem("@order_Key");
         navigation.navigate("AsianMilk");
-        //navigate
+
         break;
       case "Eggs":
         navigation.navigate("AsianEggs");
-        //navigate
+
         break;
       case "Cheese":
         navigation.navigate("AsianCheese");
-        //navigate
+
         break;
       case "Processed":
         navigation.navigate("AsianBnS");
-        //navigate
+
         break;
       case "Seafood":
         navigation.navigate("AsianSeafood");
-        //navigate
+
+        break;
+      case "Beef":
+        navigation.navigate("AsianBeef");
+
+        break;
+      case "Pork":
+        navigation.navigate("AsianPork");
+
         break;
       case "Fruits":
         navigation.navigate("AsianFruits");
-        //navigate
+
         break;
       case "OrganicProd":
         navigation.navigate("AsianOrganicProd");
-        //navigate
+
         break;
       case "Veg":
         this.props.navigation.navigate("AsianVeg");
-        //navigate
+
         break;
       default:
       // whatever you want

@@ -8,14 +8,14 @@ import {
   TouchableOpacity,
 } from "react-native";
 import filter from "lodash.filter";
-import Data from "../assets/store_items.json";
+import Data from "../assets/euro_items.json";
 import { StyleSheet } from "react-native";
 import { IconButton } from "../components";
 import { icons, COLORS } from "../constants";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { TouchableHighlight } from "react-native-gesture-handler";
 
-class AsianVeg extends React.Component {
+class EuroButter extends React.Component {
   state = {
     data: [],
     query: "",
@@ -31,8 +31,8 @@ class AsianVeg extends React.Component {
     const orderArray = await AsyncStorage.getItem("@order_Key");
 
     this.setState({
-      data: Data[9].brand,
-      fullData: Data[9].brand,
+      data: Data[0].brand,
+      fullData: Data[0].brand,
       orderItems: [],
     });
 
@@ -149,14 +149,14 @@ class AsianVeg extends React.Component {
             <TouchableHighlight
               activeOpacity={0.6}
               underlayColor="#white"
-              onPress={() => this.props.navigation.navigate("Asian")}
+              onPress={() => this.props.navigation.navigate("European")}
             >
               <IconButton icon={icons.goBack} />
             </TouchableHighlight>
           </View>
           {/*Title Button */}
           <View>
-            <Text style={styles.titleText}>Vegetables</Text>
+            <Text style={styles.titleText}>Butter</Text>
           </View>
           {/*Checkout Button */}
           <View style={styles.checkout}>
@@ -375,4 +375,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AsianVeg;
+export default EuroButter;

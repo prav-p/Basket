@@ -21,6 +21,14 @@ import {
   AsianBeef,
   AsianPork,
   AsianFruits,
+  AsianOrganicProd,
+  AsianVeg,
+  EuroButter,
+  EuroMilk,
+  EuroCheese,
+  EuroChocolate,
+  EuroCoWaf,
+  EuroGummies,
 } from "./screens";
 
 const Stack = createStackNavigator();
@@ -58,6 +66,14 @@ const App = () => {
         <Stack.Screen name="AsianBeef" component={AsianBeef} />
         <Stack.Screen name="AsianPork" component={AsianPork} />
         <Stack.Screen name="AsianFruits" component={AsianFruits} />
+        <Stack.Screen name="AsianOrganicProd" component={AsianOrganicProd} />
+        <Stack.Screen name="AsianVeg" component={AsianVeg} />
+        <Stack.Screen name="EuroButter" component={EuroButter} />
+        <Stack.Screen name="EuroMilk" component={EuroMilk} />
+        <Stack.Screen name="EuroCheese" component={EuroCheese} />
+        <Stack.Screen name="EuroChocolate" component={EuroChocolate} />
+        <Stack.Screen name="EuroCoWaf" component={EuroCoWaf} />
+        {/*<Stack.Screen name="EuroGummies" component={EuroGummies} /> */}
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Item" component={Item} />
       </Stack.Navigator>

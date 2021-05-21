@@ -98,7 +98,7 @@ const CATEGORIES = [
     ],
   },
   {
-    title: "Sweets",
+    title: "Snacks",
     data: [
       {
         type: "Chocolate",
@@ -106,7 +106,7 @@ const CATEGORIES = [
           "https://www.europeangrocerystore.com/sites/default/files/styles/product_main_page/public/images/products/Ritter-Butter-Biscuit.jpg?itok=LEB9Mdos",
       },
       {
-        type: "Cookies & Waffles",
+        type: "Cookies",
         photo:
           "https://www.europeangrocerystore.com/sites/default/files/styles/product_main_page/public/images/products/7393560446A.jpg?itok=_OV9E5-W",
       },
@@ -193,36 +193,52 @@ const ListItem = ({ item }) => {
   function onclick_item(type) {
     console.log(type);
     switch (type) {
+      case "Butter":
+        navigation.navigate("EuroButter");
+        //navigate
+        break;
       case "Milk":
-        navigation.navigate("AsianMilk");
+        navigation.navigate("EuroMilk");
         //navigate
         break;
-      case "AsianEggs":
-        this.props.navigation.navigate("AsianEggs");
+      case "Cheese":
+        navigation.navigate("EuroCheese");
         //navigate
         break;
-      case "AsianCheese":
-        this.props.navigation.navigate("AsianCheese");
+      case "Chocolate":
+        navigation.navigate("EuroChocolate");
         //navigate
         break;
-      case "AsianBnS":
-        this.props.navigation.navigate("AsianAsianBnS");
+      case "Cookies & Waffles":
+        navigation.navigate("EuroCoWaf");
         //navigate
         break;
-      case "AsianLunchMeat":
-        this.props.navigation.navigate("AsianLunchMeat");
+      case "Gummies":
+        navigation.navigate("EuroGummies");
         //navigate
         break;
-      case "AsianFruits":
-        this.props.navigation.navigate("AsianFruits");
+      case "Herring":
+        navigation.navigate("EuroHerring");
         //navigate
         break;
-      case "AsianOrganicProd":
-        this.props.navigation.navigate("AsianOrganicProd");
+      case "Jam":
+        navigation.navigate("EuroJam");
         //navigate
         break;
-      case "AsianVeg":
-        this.props.navigation.navigate("AsianVeg");
+      case "Vegetables":
+        navigation.navigate("EuroVeg");
+        //navigate
+        break;
+      case "Mustard":
+        navigation.navigate("EuroMustard");
+        //navigate
+        break;
+      case "Ketchup":
+        navigation.navigate("EuroKetchup");
+        //navigate
+        break;
+      case "Honey":
+        navigation.navigate("EuroHoney");
         //navigate
         break;
       default:

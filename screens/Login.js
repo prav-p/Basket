@@ -88,7 +88,7 @@ const Login = () => {
 
         if (pass === false) {
           Alert.alert(
-            "Error!",
+            "Login Error!",
             "Invalid email or password",
             [
               {

@@ -13,7 +13,7 @@ import { COLORS, images } from "../constants";
 import { StyleSheet } from "react-native";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import Search from "./Search";
+
 class Home extends React.Component {
   state = {
     data: [],

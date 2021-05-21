@@ -144,24 +144,6 @@ const CATEGORIES = [
       },
     ],
   },
-  {
-    title: "Soy",
-    data: [
-      {
-        type: "Soybeans",
-        photo:
-          "https://cdn-a.william-reed.com/var/wrbm_gb_food_pharma/storage/images/publications/feed/feednavigator.com/article/2017/12/22/limited-decrease-in-european-soybean-production-predicted/7685401-1-eng-GB/Limited-decrease-in-European-soybean-production-predicted_wrbm_large.jpg",
-      },
-      {
-        type: "Beancurd skin",
-        photo: "https://m.media-amazon.com/images/I/61oBngF0n7L._SL1001_.jpg",
-      },
-      {
-        type: "Soy Milk",
-        photo: "https://cdn01.sayweee.net/2020-11/y3fKhlrxT12_rHKTd4KKhw.jpg",
-      },
-    ],
-  },
 ];
 
 const ListItem = ({ item }) => {
@@ -202,12 +184,12 @@ const ListItem = ({ item }) => {
         navigation.navigate("AsianFruits");
 
         break;
-      case "OrganicProd":
+      case "Organic Produce":
         navigation.navigate("AsianOrganicProd");
 
         break;
-      case "Veg":
-        this.props.navigation.navigate("AsianVeg");
+      case "Vegetables":
+        navigation.navigate("AsianVeg");
 
         break;
       default:

@@ -24,6 +24,15 @@ import EuroCheese from "./EuroCheese";
 import EuroChocolate from "./EuroChocolate";
 import EuroCoWaf from "./EuroCoWaf";
 import EuroGummies from "./EuroGummies";
+import EuroCereal from "./EuroCereal";
+import EuroPasta from "./EuroPasta";
+import EuroFlour from "./EuroFlour";
+import EuroHerring from "./EuroHerring";
+import EuroJam from "./EuroJam";
+import EuroVeg from "./EuroVeg";
+import EuroMustard from "./EuroMustard";
+import EuroKetchup from "./EuroKetchup";
+import EuroHoney from "./EuroHoney";
 
 export {
   Home,
@@ -52,4 +61,13 @@ export {
   EuroChocolate,
   EuroCoWaf,
   EuroGummies,
+  EuroCereal,
+  EuroPasta,
+  EuroFlour,
+  EuroHerring,
+  EuroJam,
+  EuroVeg,
+  EuroMustard,
+  EuroKetchup,
+  EuroHoney,
 };

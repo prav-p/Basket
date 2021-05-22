@@ -111,11 +111,6 @@ const CATEGORIES = [
           "https://www.europeangrocerystore.com/sites/default/files/styles/product_main_page/public/images/products/7393560446A.jpg?itok=_OV9E5-W",
       },
       {
-        type: "Gummies",
-        photo:
-          "https://www.europeangrocerystore.com/sites/default/files/styles/product_main_page/public/images/products/Haribo-Color-Rado-200.jpg?itok=Rkj-JigP",
-      },
-      {
         type: "Candies",
         photo:
           "https://www.europeangrocerystore.com/sites/default/files/styles/product_main_page/public/images/products/Polka-Mints-Nordic-Sweets.jpg?itok=7YAg2ZHt",
@@ -170,19 +165,17 @@ const CATEGORIES = [
       {
         type: "Mustard",
         photo:
-          "https://cdn-a.william-reed.com/var/wrbm_gb_food_pharma/storage/images/publications/feed/feednavigator.com/article/2017/12/22/limited-decrease-in-european-soybean-production-predicted/7685401-1-eng-GB/Limited-decrease-in-European-soybean-production-predicted_wrbm_large.jpg",
+          "https://cdn.shopify.com/s/files/1/0561/3553/products/FR-496_Edmond_Fallot_French_Dijon_Mustard_512x.jpg?v=1584703895",
       },
       {
         type: "Ketchup",
-        photo: "https://m.media-amazon.com/images/I/61oBngF0n7L._SL1001_.jpg",
+        photo:
+          "https://cdn.shopify.com/s/files/1/0561/3553/products/DE-291_512x.jpg?v=1601480432",
       },
       {
         type: "Honey",
-        photo: "https://cdn01.sayweee.net/2020-11/y3fKhlrxT12_rHKTd4KKhw.jpg",
-      },
-      {
-        type: "Vinegar",
-        photo: "https://cdn01.sayweee.net/2020-11/y3fKhlrxT12_rHKTd4KKhw.jpg",
+        photo:
+          "https://cdn.shopify.com/s/files/1/0561/3553/products/DE-1178_512x.jpg?v=1578870648",
       },
     ],
   },
@@ -209,12 +202,24 @@ const ListItem = ({ item }) => {
         navigation.navigate("EuroChocolate");
         //navigate
         break;
-      case "Cookies & Waffles":
+      case "Cookies":
         navigation.navigate("EuroCoWaf");
         //navigate
         break;
-      case "Gummies":
+      case "Candies":
         navigation.navigate("EuroGummies");
+        //navigate
+        break;
+      case "Cereal":
+        navigation.navigate("EuroCereal");
+        //navigate
+        break;
+      case "Pasta":
+        navigation.navigate("EuroPasta");
+        //navigate
+        break;
+      case "Flour":
+        navigation.navigate("EuroFlour");
         //navigate
         break;
       case "Herring":

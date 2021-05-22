@@ -29,6 +29,15 @@ import {
   EuroChocolate,
   EuroCoWaf,
   EuroGummies,
+  EuroCereal,
+  EuroPasta,
+  EuroFlour,
+  EuroHerring,
+  EuroJam,
+  EuroVeg,
+  EuroMustard,
+  EuroKetchup,
+  EuroHoney,
 } from "./screens";
 
 const Stack = createStackNavigator();
@@ -73,7 +82,16 @@ const App = () => {
         <Stack.Screen name="EuroCheese" component={EuroCheese} />
         <Stack.Screen name="EuroChocolate" component={EuroChocolate} />
         <Stack.Screen name="EuroCoWaf" component={EuroCoWaf} />
-        {/*<Stack.Screen name="EuroGummies" component={EuroGummies} /> */}
+        <Stack.Screen name="EuroGummies" component={EuroGummies} />
+        <Stack.Screen name="EuroCereal" component={EuroCereal} />
+        <Stack.Screen name="EuroPasta" component={EuroPasta} />
+        <Stack.Screen name="EuroFlour" component={EuroFlour} />
+        <Stack.Screen name="EuroHerring" component={EuroHerring} />
+        <Stack.Screen name="EuroJam" component={EuroJam} />
+        <Stack.Screen name="EuroVeg" component={EuroVeg} />
+        <Stack.Screen name="EuroMustard" component={EuroMustard} />
+        <Stack.Screen name="EuroKetchup" component={EuroKetchup} />
+        <Stack.Screen name="EuroHoney" component={EuroHoney} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Item" component={Item} />
       </Stack.Navigator>

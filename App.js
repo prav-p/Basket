@@ -38,6 +38,21 @@ import {
   EuroMustard,
   EuroKetchup,
   EuroHoney,
+  MendozaMilk,
+  MendozaCheese,
+  MendozaChoco,
+  MendozaSaladitos,
+  MendozaCandies,
+  MendozaSpices,
+  MendozaCanned,
+  MendozaFlour,
+  MendozaSalsa,
+  MendozaMole,
+  MendozaSauces,
+  MendozaBeans,
+  MendozaPasta,
+  MendozaRice,
+  MendozaTT,
 } from "./screens";
 
 const Stack = createStackNavigator();
@@ -66,6 +81,21 @@ const App = () => {
         <Stack.Screen name="Create An Account" component={CreateAccount} />
         <Stack.Screen name="Asian" component={Asian} />
         <Stack.Screen name="Mendoza" component={Mendoza} />
+        <Stack.Screen name="MendozaMilk" component={MendozaMilk} />
+        <Stack.Screen name="MendozaCheese" component={MendozaCheese} />
+        <Stack.Screen name="MendozaChoco" component={MendozaChoco} />
+        <Stack.Screen name="MendozaSaladitos" component={MendozaSaladitos} />
+        <Stack.Screen name="MendozaCandies" component={MendozaCandies} />
+        {/*<Stack.Screen name="MendozaSpices" component={MendozaSpices} />
+        <Stack.Screen name="MendozaCanned" component={MendozaCanned} />
+        <Stack.Screen name="MendozaFlour" component={MendozaFlour} />
+        <Stack.Screen name="MendozaSalsa" component={MendozaSalsa} />
+        <Stack.Screen name="MendozaMole" component={MendozaMole} />
+        <Stack.Screen name="MendozaSauces" component={MendozaSauces} />
+        <Stack.Screen name="MendozaBeans" component={MendozaBeans} />
+        <Stack.Screen name="MendozaPasta" component={MendozaPasta} />
+        <Stack.Screen name="MendozaRice" component={MendozaRice} /> 
+        <Stack.Screen name="MendozaTT" component={MendozaTT} />*/}
         <Stack.Screen name="European" component={European} />
         <Stack.Screen name="AsianMilk" component={AsianMilk} />
         <Stack.Screen name="AsianEggs" component={AsianEggs} />

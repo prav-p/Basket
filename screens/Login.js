@@ -53,6 +53,7 @@ const Login = () => {
         <Text style={styles.email}>Email</Text>
         <TextInput
           style={styles.emailInput}
+          selectionColor={COLORS.secondary}
           onChangeText={onChangeEmail}
           value={email}
         />
@@ -60,6 +61,7 @@ const Login = () => {
         <TextInput
           secureTextEntry={true}
           style={styles.passwordInput}
+          selectionColor={COLORS.secondary}
           onChangeText={onChangePassword}
           value={password}
         />
@@ -143,7 +145,6 @@ const styles = StyleSheet.create({
   },
 
   loginText: {
-    top: 40,
     fontFamily: "SignikaNegative-Bold",
     textAlign: "center",
 
@@ -237,7 +238,7 @@ const styles = StyleSheet.create({
     fontSize: RFValue(40, 896),
     fontSize: RFValue(30, 896),
     color: COLORS.white,
-    paddingLeft: 140,
+    paddingLeft: 150,
     paddingRight: 150,
     paddingTop: 7,
     paddingBottom: 7,

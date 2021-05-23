@@ -33,6 +33,21 @@ import EuroVeg from "./EuroVeg";
 import EuroMustard from "./EuroMustard";
 import EuroKetchup from "./EuroKetchup";
 import EuroHoney from "./EuroHoney";
+import MendozaMilk from "./MendozaMilk";
+import MendozaCheese from "./MendozaCheese";
+import MendozaChoco from "./MendozaChoco";
+import MendozaSaladitos from "./MendozaSaladitos";
+import MendozaCandies from "./MendozaCandies";
+import MendozaSpices from "./MendozaSpices";
+import MendozaCanned from "./MendozaCanned";
+import MendozaFlour from "./MendozaFlour";
+import MendozaSalsa from "./MendozaSalsa";
+import MendozaMole from "./MendozaMole";
+import MendozaSauces from "./MendozaSauces";
+import MendozaBeans from "./MendozaBeans";
+import MendozaPasta from "./MendozaPasta";
+import MendozaRice from "./MendozaRice";
+import MendozaTT from "./MendozaTT";
 
 export {
   Home,
@@ -70,4 +85,19 @@ export {
   EuroMustard,
   EuroKetchup,
   EuroHoney,
+  MendozaMilk,
+  MendozaCheese,
+  MendozaChoco,
+  MendozaSaladitos,
+  MendozaCandies,
+  MendozaSpices,
+  MendozaCanned,
+  MendozaFlour,
+  MendozaSalsa,
+  MendozaMole,
+  MendozaSauces,
+  MendozaBeans,
+  MendozaPasta,
+  MendozaRice,
+  MendozaTT,
 };

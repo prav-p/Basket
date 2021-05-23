@@ -38,8 +38,14 @@ class Item extends React.Component {
 
   getSalesTax = () => {
     let salesTax = this.getSubTotalPrice() * (10.1 / 100);
+    console.log(salesTax);
     return salesTax.toFixed(2);
   };
+
+  getTotalPrice = () => {
+    var totalPrice = +this.getSubTotalPrice() + +this.getSalesTax();
+    return totalPrice;
+  }
 
   render() {
     return (
@@ -148,10 +154,11 @@ class Item extends React.Component {
               fontWeight: "bold",
               fontFamily: "SignikaNegative-Bold",
               fontSize: 18,
-              marginLeft: "85%",
+              right: 10,
+              textAlign: 'right'
             }}
           >
-            ${this.getSubTotalPrice() + this.getSalesTax()}
+            ${this.getTotalPrice()}
           </Text>
         </View>
         <View style={styles.Checkout}>
@@ -227,7 +234,7 @@ const styles = StyleSheet.create({
     marginLeft: "6%",
   },
   subTotal: {
-    width: 330,
+    width: 350,
     height: 200,
   },
   Checkout: {

@@ -73,33 +73,34 @@ const Login = () => {
 
     db.transaction((tx) => {
       tx.executeSql("SELECT * FROM DataTable", [], (tx, results) => {
-        for (let i = 0; i < results.rows.length; ++i)
-          temp.push(results.rows.item(i));
-        console.log(temp);
+        // for (let i = 0; i < results.rows.length; ++i)
+        //   temp.push(results.rows.item(i));
+        // console.log(temp);
 
-        for (var i = 0; i < temp.length; ++i) {
-          if (temp[i].email === email && temp[i].password === password) {
-            pass = true;
-            break;
-          } else {
-            pass = false;
-          }
-        }
+        // for (var i = 0; i < temp.length; ++i) {
+        //   if (temp[i].email === email && temp[i].password === password) {
+        //     pass = true;
+        //     break;
+        //   } else {
+        //     pass = false;
+        //   }
+        // }
 
-        if (pass === false) {
-          Alert.alert(
-            "Error!",
-            "Invalid email or password",
-            [
-              {
-                text: "Ok",
-              },
-            ],
-            { cancelable: false }
-          );
-        } else {
-          navigation.navigate("Home");
-        }
+        // if (pass === false) {
+        //   Alert.alert(
+        //     "Error!",
+        //     "Invalid email or password",
+        //     [
+        //       {
+        //         text: "Ok",
+        //       },
+        //     ],
+        //     { cancelable: false }
+        //   );
+        // } else {
+        //   navigation.navigate("Home");
+        // }
+        navigation.navigate("Home");
       });
     })
   }

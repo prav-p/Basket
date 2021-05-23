@@ -103,12 +103,12 @@ const CATEGORIES = [
     title: "Meat & Seafood",
     data: [
       {
-        type: "Bacon & Sausage",
+        type: "Processed",
         photo:
           "https://shop.southchinaseas.ca/assets/images/chinesesausagefront.jpg",
       },
       {
-        type: "Lunch Meat",
+        type: "Seafood",
         photo:
           "https://chinafoodingredients.files.wordpress.com/2019/04/yingjinqian.jpeg",
       },
@@ -116,6 +116,11 @@ const CATEGORIES = [
         type: "Beef",
         photo:
           "https://cdn.shopify.com/s/files/1/0261/9123/3121/products/wagyuman-japanese-wagyu-beef-japanese-a5-wagyu-culotte-picanha-steak-cut-28186276102241_1200x.jpg?v=1619127753",
+      },
+      {
+        type: "Pork",
+        photo:
+          "https://cdn01.sayweee.net/2019-12/a_sMtD4ySgqRNa3Ery2wmQ-square-320.jpg",
       },
     ],
   },
@@ -139,41 +144,6 @@ const CATEGORIES = [
       },
     ],
   },
-  {
-    title: "Soy",
-    data: [
-      {
-        type: "Soybeans",
-        photo:
-          "https://cdn-a.william-reed.com/var/wrbm_gb_food_pharma/storage/images/publications/feed/feednavigator.com/article/2017/12/22/limited-decrease-in-european-soybean-production-predicted/7685401-1-eng-GB/Limited-decrease-in-European-soybean-production-predicted_wrbm_large.jpg",
-      },
-      {
-        type: "Beancurd skin",
-        photo: "https://m.media-amazon.com/images/I/61oBngF0n7L._SL1001_.jpg",
-      },
-      {
-        type: "Soy Milk",
-        photo: "https://cdn01.sayweee.net/2020-11/y3fKhlrxT12_rHKTd4KKhw.jpg",
-      },
-    ],
-  },
-  {
-    title: "Pork",
-    data: [
-      {
-        type: "Fruits",
-        photo: "/assets/images/fruits.jpg",
-      },
-      {
-        type: "Organic Produce",
-        photo: "/assets/images/organic_produce.jpg",
-      },
-      {
-        type: "Vegetables",
-        photo: "/assets/images/vegetables.jpg",
-      },
-    ],
-  },
 ];
 
 const ListItem = ({ item }) => {
@@ -184,35 +154,43 @@ const ListItem = ({ item }) => {
       case "Milk":
         AsyncStorage.removeItem("@order_Key");
         navigation.navigate("AsianMilk");
-        //navigate
+
         break;
       case "Eggs":
         navigation.navigate("AsianEggs");
-        //navigate
+
         break;
       case "Cheese":
         navigation.navigate("AsianCheese");
-        //navigate
+
         break;
-      case "BnS":
+      case "Processed":
         navigation.navigate("AsianBnS");
-        //navigate
+
         break;
-      case "LunchMeat":
-        navigation.navigate("AsianLunchMeat");
-        //navigate
+      case "Seafood":
+        navigation.navigate("AsianSeafood");
+
+        break;
+      case "Beef":
+        navigation.navigate("AsianBeef");
+
+        break;
+      case "Pork":
+        navigation.navigate("AsianPork");
+
         break;
       case "Fruits":
         navigation.navigate("AsianFruits");
-        //navigate
+
         break;
-      case "OrganicProd":
+      case "Organic Produce":
         navigation.navigate("AsianOrganicProd");
-        //navigate
+
         break;
-      case "Veg":
-        this.props.navigation.navigate("AsianVeg");
-        //navigate
+      case "Vegetables":
+        navigation.navigate("AsianVeg");
+
         break;
       default:
       // whatever you want

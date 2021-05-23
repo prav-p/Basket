@@ -11,7 +11,7 @@ import {
   TextInput,
   KeyboardAvoidingView,
   TouchableWithoutFeedback,
-  Alert
+  Alert,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
@@ -102,7 +102,7 @@ const Login = () => {
         // }
         navigation.navigate("Home");
       });
-    })
+    });
   }
 
   function renderLoginButton() {

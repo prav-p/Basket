@@ -21,12 +21,12 @@
         "title": "Meat & Seafood", 
         "data": [
             {
-                "type": "Bacon & Sausage",
+                "type": "Processed Meat",
                 "photo": "https://shop.southchinaseas.ca/assets/images/chinesesausagefront.jpg"
             },
             {
-                "type": "Lunch Meat",
-                "photo": "https://chinafoodingredients.files.wordpress.com/2019/04/yingjinqian.jpeg"
+                "type": "Seafood",
+                "photo": "https://db535g4onu9gg.cloudfront.net/eyJidWNrZXQiOiJtZXJjYXRvLWltYWdlcyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJpbnNpZGUiLCJ3aWR0aCI6NzAwLCJoZWlnaHQiOjQ2N319LCJrZXkiOiJwcm9kdWN0LWltYWdlcy9JOThuaVR0Tk9LR1FITVNuSjdaUm5YaDZXUFZZMHV1ZXBRTTduTTFhLmpwZyJ9"
             },
             {
                 "type": "Beef",
@@ -65,22 +65,6 @@
             {
                 "type": "Soy Milk",
                 "photo": "https://cdn01.sayweee.net/2020-11/y3fKhlrxT12_rHKTd4KKhw.jpg"
-            }
-        ]
-    },{ 
-        "title": "Pork", 
-        "data": [
-            {
-                "type": "Fruits",
-                "photo": "/assets/images/fruits.jpg"
-            },
-            {
-                "type": "Organic Produce",
-                "photo": "/assets/images/organic_produce.jpg"
-            },
-            {
-                "type": "Vegetables",
-                "photo": "/assets/images/vegetables.jpg"
             }
         ]
     }

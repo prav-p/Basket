@@ -98,7 +98,7 @@ const CATEGORIES = [
     ],
   },
   {
-    title: "Sweets",
+    title: "Snacks",
     data: [
       {
         type: "Chocolate",
@@ -106,14 +106,9 @@ const CATEGORIES = [
           "https://www.europeangrocerystore.com/sites/default/files/styles/product_main_page/public/images/products/Ritter-Butter-Biscuit.jpg?itok=LEB9Mdos",
       },
       {
-        type: "Cookies & Waffles",
+        type: "Cookies",
         photo:
           "https://www.europeangrocerystore.com/sites/default/files/styles/product_main_page/public/images/products/7393560446A.jpg?itok=_OV9E5-W",
-      },
-      {
-        type: "Gummies",
-        photo:
-          "https://www.europeangrocerystore.com/sites/default/files/styles/product_main_page/public/images/products/Haribo-Color-Rado-200.jpg?itok=Rkj-JigP",
       },
       {
         type: "Candies",
@@ -170,19 +165,17 @@ const CATEGORIES = [
       {
         type: "Mustard",
         photo:
-          "https://cdn-a.william-reed.com/var/wrbm_gb_food_pharma/storage/images/publications/feed/feednavigator.com/article/2017/12/22/limited-decrease-in-european-soybean-production-predicted/7685401-1-eng-GB/Limited-decrease-in-European-soybean-production-predicted_wrbm_large.jpg",
+          "https://cdn.shopify.com/s/files/1/0561/3553/products/FR-496_Edmond_Fallot_French_Dijon_Mustard_512x.jpg?v=1584703895",
       },
       {
         type: "Ketchup",
-        photo: "https://m.media-amazon.com/images/I/61oBngF0n7L._SL1001_.jpg",
+        photo:
+          "https://cdn.shopify.com/s/files/1/0561/3553/products/DE-291_512x.jpg?v=1601480432",
       },
       {
         type: "Honey",
-        photo: "https://cdn01.sayweee.net/2020-11/y3fKhlrxT12_rHKTd4KKhw.jpg",
-      },
-      {
-        type: "Vinegar",
-        photo: "https://cdn01.sayweee.net/2020-11/y3fKhlrxT12_rHKTd4KKhw.jpg",
+        photo:
+          "https://cdn.shopify.com/s/files/1/0561/3553/products/DE-1178_512x.jpg?v=1578870648",
       },
     ],
   },
@@ -193,36 +186,64 @@ const ListItem = ({ item }) => {
   function onclick_item(type) {
     console.log(type);
     switch (type) {
+      case "Butter":
+        navigation.navigate("EuroButter");
+        //navigate
+        break;
       case "Milk":
-        navigation.navigate("AsianMilk");
+        navigation.navigate("EuroMilk");
         //navigate
         break;
-      case "AsianEggs":
-        this.props.navigation.navigate("AsianEggs");
+      case "Cheese":
+        navigation.navigate("EuroCheese");
         //navigate
         break;
-      case "AsianCheese":
-        this.props.navigation.navigate("AsianCheese");
+      case "Chocolate":
+        navigation.navigate("EuroChocolate");
         //navigate
         break;
-      case "AsianBnS":
-        this.props.navigation.navigate("AsianAsianBnS");
+      case "Cookies":
+        navigation.navigate("EuroCoWaf");
         //navigate
         break;
-      case "AsianLunchMeat":
-        this.props.navigation.navigate("AsianLunchMeat");
+      case "Candies":
+        navigation.navigate("EuroGummies");
         //navigate
         break;
-      case "AsianFruits":
-        this.props.navigation.navigate("AsianFruits");
+      case "Cereal":
+        navigation.navigate("EuroCereal");
         //navigate
         break;
-      case "AsianOrganicProd":
-        this.props.navigation.navigate("AsianOrganicProd");
+      case "Pasta":
+        navigation.navigate("EuroPasta");
         //navigate
         break;
-      case "AsianVeg":
-        this.props.navigation.navigate("AsianVeg");
+      case "Flour":
+        navigation.navigate("EuroFlour");
+        //navigate
+        break;
+      case "Herring":
+        navigation.navigate("EuroHerring");
+        //navigate
+        break;
+      case "Jam":
+        navigation.navigate("EuroJam");
+        //navigate
+        break;
+      case "Vegetables":
+        navigation.navigate("EuroVeg");
+        //navigate
+        break;
+      case "Mustard":
+        navigation.navigate("EuroMustard");
+        //navigate
+        break;
+      case "Ketchup":
+        navigation.navigate("EuroKetchup");
+        //navigate
+        break;
+      case "Honey":
+        navigation.navigate("EuroHoney");
         //navigate
         break;
       default:

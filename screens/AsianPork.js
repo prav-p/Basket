@@ -15,7 +15,7 @@ import { icons, COLORS } from "../constants";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { TouchableHighlight } from "react-native-gesture-handler";
 
-class AsianFruits extends React.Component {
+class AsianPork extends React.Component {
   state = {
     data: [],
     query: "",
@@ -31,8 +31,8 @@ class AsianFruits extends React.Component {
     const orderArray = await AsyncStorage.getItem("@order_Key");
 
     this.setState({
-      data: Data[7].brand,
-      fullData: Data[7].brand,
+      data: Data[6].brand,
+      fullData: Data[6].brand,
       orderItems: [],
     });
 
@@ -156,7 +156,7 @@ class AsianFruits extends React.Component {
           </View>
           {/*Title Button */}
           <View>
-            <Text style={styles.titleText}>Fruits</Text>
+            <Text style={styles.titleText}>Pork</Text>
           </View>
           {/*Checkout Button */}
           <View style={styles.checkout}>
@@ -375,4 +375,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AsianFruits;
+export default AsianPork;

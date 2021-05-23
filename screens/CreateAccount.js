@@ -14,7 +14,7 @@ import {
   KeyboardAvoidingView,
   TouchableWithoutFeedback,
   Alert,
-  ScrollView
+  ScrollView,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
@@ -69,14 +69,32 @@ const createAccount = () => {
       tx.executeSql(
         "insert into DataTable (name, email, password, rePassword, address, zipcode, city, contactNo) values " +
           "(?, ?, ?, ?, ?, ?, ?, ?)",
-        [name, email, password, rePassword, address, zipcode, city, contactNo]
+        [name, email, password, rePassword, address, zipcode, city, contactNo],
+        (tx, results) => {
+          console.log("Results", results.rowsAffected);
+          if (results.rowsAffected > 0) {
+            Alert.alert(
+              "Success",
+              "You are Registered Successfully",
+              [
+                {
+                  text: "Continue",
+                  onPress: () => navigation.navigate("Home"),
+                },
+              ],
+              { cancelable: false }
+            );
+          } else alert("Registration Failed");
+        }
       );
-      // tx.executeSql(
-      //   "select * from scoreData",
-      //   [],
-      //   (_, { rows: { _array } }) => setScores(_array),
-      //   () => console.log("error fetching")
-      // );
+
+      tx.executeSql("SELECT * FROM DataTable", [], (tx, results) => {
+        var temp = [];
+        for (let i = 0; i < results.rows.length; ++i)
+          temp.push(results.rows.item(i));
+        setFlatListItems(temp);
+        console.log(temp);
+      });
     });
   };
 
@@ -90,59 +108,70 @@ const createAccount = () => {
 
   function renderSignUpInq() {
     return (
-      <View>
+      <View style={styles.form}>
         <ScrollView>
-        <Text style={styles.inqLabel}>Name</Text>
-        <TextInput
-          style={styles.inqInput}
-          onChangeText={onChangeName}
-          value={name}
-        />
-        <Text style={styles.inqLabel}>Email</Text>
-        <TextInput
-          style={styles.inqInput}
-          onChangeText={onChangeEmail}
-          value={email}
-        />
-        <Text style={styles.inqLabel}>Password</Text>
-        <TextInput
-          style={styles.inqInput}
-          onChangeText={onChangePassword}
-          value={password}
-        />
-        <Text style={styles.inqLabel}>Re-enter Password</Text>
-        <TextInput
-          style={styles.inqInput}
-          onChangeText={onChangeRePassword}
-          value={rePassword}
-        />
-        <Text style={styles.inqLabel}>Address</Text>
-        <TextInput
-          style={styles.inqInput}
-          onChangeText={onChangeAddress}
-          value={address}
-        />
-        <Text style={styles.zipcodeLabel}>Zipcode</Text>
-        <TextInput
-          style={styles.zipcodeInput}
-          onChangeText={onChangeZipcode}
-          value={zipcode}
-        />
-        <Text style={styles.cityLabel}>City</Text>
-        <TextInput
-          style={styles.cityInput}
-          onChangeText={onChangeCity}
-          value={city}
-        />
-        <Text style={styles.contactNoLabel}>Contact Number</Text>
-        <TextInput
-          style={styles.contactNoInput}
-          onChangeText={onChangeContactNo}
-          value={contactNo}
-        />
-        <TouchableOpacity style={{bottom: 100}} onPress={() => create_account()}>
-            <Text style={styles.text}>Create</Text>
-          </TouchableOpacity>
+          <Text style={styles.inqLabel}>Name</Text>
+          <TextInput
+            style={styles.inqInput}
+            selectionColor={COLORS.primary}
+            onChangeText={onChangeName}
+            value={name}
+          />
+          <Text style={styles.inqLabel}>Email</Text>
+          <TextInput
+            style={styles.inqInput}
+            selectionColor={COLORS.primary}
+            onChangeText={onChangeEmail}
+            value={email}
+          />
+          <Text style={styles.inqLabel}>Password</Text>
+          <TextInput
+            style={styles.inqInput}
+            selectionColor={COLORS.primary}
+            onChangeText={onChangePassword}
+            value={password}
+          />
+          <Text style={styles.inqLabel}>Re-enter Password</Text>
+          <TextInput
+            style={styles.inqInput}
+            selectionColor={COLORS.primary}
+            onChangeText={onChangeRePassword}
+            value={rePassword}
+          />
+          <Text style={styles.inqLabel}>Address</Text>
+          <TextInput
+            style={styles.inqInput}
+            selectionColor={COLORS.primary}
+            onChangeText={onChangeAddress}
+            value={address}
+          />
+          <View style={styles.zipCity}>
+            <Text style={styles.zipcodeLabel}>Zipcode</Text>
+            <TextInput
+              style={styles.zipcodeInput}
+              keyboardType="numeric"
+              selectionColor={COLORS.primary}
+              onChangeText={onChangeZipcode}
+              value={zipcode}
+              maxLength={5}
+            />
+            <Text style={styles.cityLabel}>City</Text>
+            <TextInput
+              style={styles.cityInput}
+              selectionColor={COLORS.primary}
+              onChangeText={onChangeCity}
+              value={city}
+            />
+          </View>
+          <Text style={styles.contactNoLabel}>Contact Number</Text>
+          <TextInput
+            style={styles.contactNoInput}
+            keyboardType="numeric"
+            selectionColor={COLORS.primary}
+            onChangeText={onChangeContactNo}
+            value={contactNo}
+            maxLength={10}
+          />
         </ScrollView>
       </View>
     );
@@ -150,12 +179,10 @@ const createAccount = () => {
 
   function renderCreateButton() {
     return (
-      <View style={styles.btn1}>
-        <View style={styles.insidebtn}>
-          <TouchableOpacity style={{bottom: 100}} onPress={() => create_account()}>
-            <Text style={styles.text}>Create</Text>
-          </TouchableOpacity>
-        </View>
+      <View style={styles.CreateAccount}>
+        <TouchableOpacity onPress={() => create_account()}>
+          <Text style={styles.createText}>Create</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -177,6 +204,13 @@ const createAccount = () => {
 };
 
 const styles = StyleSheet.create({
+  form: {
+    flex: 4,
+    marginVertical: "10%",
+    marginLeft: "30%",
+    width: 450,
+  },
+
   container: {
     flex: 1,
     backgroundColor: "#fff",
@@ -215,99 +249,30 @@ const styles = StyleSheet.create({
     // borderRadius: 10,
     fontFamily: "SignikaNegative-Regular",
   },
-
-  // emailLabel: {
-  //     fontFamily: "SignikaNegative-Bold",
-  //     fontSize: RFValue(25, 896),
-  //     // right: 50,
-  //     bottom: 50,
-  // },
-
-  // emailInput: {
-  //     width: wp("90%"),
-  //     height: hp("5%"),
-  //     // left: 10,
-  //     // top: 115,
-  //     bottom: 50,
-  //     fontSize: RFValue(30, 896),
-  //     backgroundColor: "#EBEBEB",
-  //     // borderRadius: 10,
-  //     fontFamily: "SignikaNegative-Regular",
-  // },
-
-  // passwordLabel: {
-  //     fontFamily: "SignikaNegative-Bold",
-  //     fontSize: RFValue(25, 896),
-  //     // right: 50,
-  //     bottom: 50,
-  // },
-
-  // passwordInput: {
-  //     width: wp("90%"),
-  //     height: hp("5%"),
-  //     // left: 10,
-  //     // top: 115,
-  //     bottom: 50,
-  //     fontSize: RFValue(30, 896),
-  //     backgroundColor: "#EBEBEB",
-  //     // borderRadius: 10,
-  //     fontFamily: "SignikaNegative-Regular",
-  // },
-
-  // rePasswordLabel: {
-  //     fontFamily: "SignikaNegative-Bold",
-  //     fontSize: RFValue(25, 896),
-  //     // right: 50,
-  //     bottom: 50,
-  // },
-
-  // rePasswordInput: {
-  //     width: wp("90%"),
-  //     height: hp("5%"),
-  //     // left: 10,
-  //     // top: 115,
-  //     bottom: 50,
-  //     fontSize: RFValue(30, 896),
-  //     backgroundColor: "#EBEBEB",
-  //     // borderRadius: 10,
-  //     fontFamily: "SignikaNegative-Regular",
-  // },
-
-  // addressLabel: {
-  //     fontFamily: "SignikaNegative-Bold",
-  //     fontSize: RFValue(25, 896),
-  //     // right: 50,
-  //     bottom: 50,
-  // },
-
-  // addressInput: {
-  //     width: wp("90%"),
-  //     height: hp("5%"),
-  //     // left: 10,
-  //     // top: 115,
-  //     bottom: 50,
-  //     fontSize: RFValue(30, 896),
-  //     backgroundColor: "#EBEBEB",
-  //     // borderRadius: 10,
-  //     fontFamily: "SignikaNegative-Regular",
-  // },
-
+  zipCity: {
+    alignItems: "flex-start",
+    flex: 1,
+    flexDirection: "row",
+    marginVertical: 20,
+    marginBottom: 2,
+  },
   zipcodeLabel: {
     fontFamily: "SignikaNegative-Bold",
     fontSize: RFValue(25, 896),
     // right: 50,
     // bottom: 50,
-    top: 20,
+    //top: 20,
   },
 
   zipcodeInput: {
-    top: 20,
+    //top: 20,
     width: wp("30%"),
     height: hp("5%"),
-    // left: 10,
+    marginVertical: 20,
+    right: 55,
     // top: 115,
     // bottom: 50,
-    marginBottom: 20,
+    //marginBottom: 20,
     fontSize: RFValue(30, 896),
     backgroundColor: "#EBEBEB",
     // borderRadius: 10,
@@ -317,18 +282,19 @@ const styles = StyleSheet.create({
   cityLabel: {
     fontFamily: "SignikaNegative-Bold",
     fontSize: RFValue(25, 896),
-    left: 150,
+    //left: 150,
     // right: 50,
-    bottom: 75,
+    //bottom: 75,
   },
 
   cityInput: {
-    width: wp("54%"),
+    width: wp("46%"),
     height: hp("5%"),
-    // left: 10,
+    marginVertical: 20,
+    right: 30,
     // top: 115,
-    bottom: 73,
-    left: 150,
+    //bottom: 73,
+    //left: 150,
     fontSize: RFValue(30, 896),
     backgroundColor: "#EBEBEB",
     // borderRadius: 10,
@@ -339,47 +305,37 @@ const styles = StyleSheet.create({
     fontFamily: "SignikaNegative-Bold",
     fontSize: RFValue(25, 896),
     // right: 50,
-    bottom: 50,
+    marginTop: 1,
   },
 
   contactNoInput: {
     width: wp("90%"),
     height: hp("5%"),
     // left: 10,
-    // top: 115,
-    bottom: 50,
+    marginBottom: 10,
     fontSize: RFValue(30, 896),
     backgroundColor: "#EBEBEB",
     // borderRadius: 10,
     fontFamily: "SignikaNegative-Regular",
   },
-
-  btn1: {
-    flex: 1,
-    alignItems: "center",
-    // marginTop: "50%",
-  },
-
-  insidebtn: {
-    // height: hp("7.5%"),
-    // width: wp("95%"),
-    textAlign: "center",
-    backgroundColor: COLORS.primary,
-    alignItems: "center",
-    justifyContent: "center",
+  CreateAccount: {
+    marginVertical: "5%",
+    width: 330,
+    height: 60,
     borderRadius: 20,
+    borderWidth: 3,
+    borderColor: COLORS.primary,
+    marginLeft: "30%",
+    backgroundColor: COLORS.secondary,
   },
-
-  text: {
-    fontFamily: "SignikaNegative-Bold",
+  createText: {
     textAlign: "center",
-    fontSize: RFValue(40, 896),
-    fontSize: RFValue(30, 896),
-    color: COLORS.white,
-    paddingLeft: 140,
-    paddingRight: 150,
-    paddingTop: 7,
-    paddingBottom: 7,
+    marginVertical: "4%",
+    fontFamily: "SignikaNegative-Bold",
+    fontSize: 30,
+    width: 330,
+    height: 60,
+    color: COLORS.primary,
   },
 });
 export default createAccount;

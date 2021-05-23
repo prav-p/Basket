@@ -39,7 +39,26 @@ const createAccount = () => {
 
   let [flatListItems, setFlatListItems] = React.useState([]);
 
+  function hasLowerCase(str) {
+    return (/[a-z]/.test(str));
+  }
+
   let create_account = () => {
+    if (!email.includes("@") && email.substring(email.length - 3, email.length - 4)) {
+      Alert.alert(
+        "Error!",
+        "Invalid email",
+        [
+          {
+            text: "Ok",
+          },
+        ],
+        { cancelable: false }
+      );
+    } else if (password.length !== 8) {
+
+    }
+
     db.transaction((tx) => {
       tx.executeSql(
         "create table if not exists DataTable (id integer primary key not null, name text, email text, password text, " +

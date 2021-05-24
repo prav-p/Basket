@@ -52,6 +52,7 @@ import {
   MendozaPasta,
   MendozaRice,
   MendozaTT,
+  ThankYou,
 } from "./screens";
 
 const Stack = createStackNavigator();
@@ -123,6 +124,7 @@ const App = () => {
         <Stack.Screen name="EuroHoney" component={EuroHoney} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Item" component={Item} />
+        <Stack.Screen name="ThankYou" component={ThankYou} />
       </Stack.Navigator>
     </NavigationContainer>
   );

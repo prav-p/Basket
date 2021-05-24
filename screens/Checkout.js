@@ -18,6 +18,7 @@ import {
   TextInput,
   TouchableOpacity,
   TouchableHighlight,
+  ScrollView,
 } from "react-native-gesture-handler";
 import MapView, { Marker } from "react-native-maps";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -164,6 +165,7 @@ class Checkout extends React.Component {
             <TouchableOpacity
               onPress={() => {
                 this.userInputLocation(this.state.geoInput);
+                this.navigation.navigate("Final");
               }}
             >
               <Text style={styles.orderText}>Confirm Order</Text>

@@ -47,7 +47,7 @@ import MendozaBeans from "./MendozaBeans";
 import MendozaPasta from "./MendozaPasta";
 import MendozaRice from "./MendozaRice";
 import MendozaTT from "./MendozaTT";
-
+import ThankYou from "./ThankYou";
 export {
   Home,
   Landing,
@@ -98,4 +98,5 @@ export {
   MendozaPasta,
   MendozaRice,
   MendozaTT,
+  ThankYou,
 };

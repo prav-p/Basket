@@ -13,7 +13,6 @@ import { COLORS } from "../constants";
 import { StyleSheet } from "react-native";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import PopinButton from "react-native-popin-button";
 
 class Home extends React.Component {
   state = {

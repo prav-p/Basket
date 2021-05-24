@@ -9,16 +9,18 @@ import {
   Image,
   Icon,
   Dimensions,
+  Keyboard,
+  KeyboardAvoidingView,
 } from "react-native";
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import {
+  ScrollView,
   TextInput,
   TouchableOpacity,
-  TouchableHighlight,
-  ScrollView,
+  TouchableWithoutFeedback,
 } from "react-native-gesture-handler";
 import MapView, { Marker } from "react-native-maps";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -143,101 +145,147 @@ class Checkout extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.header}>
-          {/*Return Button */}
-          <View style={styles.goBack}>
-            <TouchableHighlight
-              activeOpacity={0.6}
-              underlayColor="#white"
-              onPress={() => this.props.navigation.navigate("Item")}
-            >
-              <IconButton icon={icons.goBack} />
-            </TouchableHighlight>
-          </View>
-          {/*Title Button */}
-          <View>
-            <Text style={styles.titleText}>Delivery</Text>
-          </View>
-        </View>
-        <SafeAreaView>
-          <View style={styles.order}>
-            <TouchableOpacity
-              onPress={() => {
-                this.userInputLocation(this.state.geoInput);
-                this.navigation.navigate("Final");
+      // <View style={styles.container}>
+      <KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        style={styles.container}
+      >
+        <ScrollView>
+          <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+            <SafeAreaView
+              style={{
+                height: 150,
+                alignItems: "center",
               }}
             >
-              <Text style={styles.orderText}>Confirm Order</Text>
-            </TouchableOpacity>
-          </View>
-        </SafeAreaView>
-        <View style={styles.input}>
-          <View style={{ alignItems: "center" }}>
-            <MapView
-              region={this.state.region[0]}
-              style={{ width: 330, height: 250, bottom: 530, left: 10 }}
-            >
-              <Marker
-                coordinate={{
-                  latitude: this.state.toLoc[0].latitude,
-                  longitude: this.state.toLoc[0].longitude,
+              <View
+                style={{
+                  flexDirection: "row",
+                  paddingHorizontal: 20,
+                  alignItems: "center",
+                  height: 25,
+                  wdith: 25,
+                }}
+              >
+                {/* Return Button */}
+
+                <TouchableOpacity
+                  onPress={() => this.props.navigation.navigate("Item")}
+                  style={{
+                    top: 25,
+                  }}
+                >
+                  <IconButton icon={icons.goBack} />
+                </TouchableOpacity>
+
+                {/* Title */}
+                <View
+                  style={{
+                    flex: 1,
+                    alignItems: "center",
+                    height: 100,
+                  }}
+                >
+                  <Text
+                    style={{
+                      color: COLORS.primary,
+                      ...FONTS.h1,
+                      fontSize: 37,
+                      top: 60,
+                    }}
+                  >
+                    Delivery Address
+                  </Text>
+                </View>
+                {/* Empty View */}
+                <View style={{ width: 25 }}></View>
+              </View>
+            </SafeAreaView>
+            <View style={{ alignItems: "center" }}>
+              <MapView
+                region={this.state.region[0]}
+                style={{ width: 300, height: 250, bottom: 50 }}
+              >
+                <Marker
+                  coordinate={{
+                    latitude: this.state.toLoc[0].latitude,
+                    longitude: this.state.toLoc[0].longitude,
+                  }}
+                />
+                <Marker
+                  coordinate={{
+                    latitude: this.state.fromLoc[0].latitude,
+                    longitude: this.state.fromLoc[0].longitude,
+                  }}
+                ></Marker>
+              </MapView>
+            </View>
+            <View style={{ width: 200 }}>
+              <Text
+                style={{
+                  color: "#000000",
+                  left: 35,
+                  fontSize: 20,
+                  bottom: 20,
+                }}
+              >
+                Address
+              </Text>
+              <TextInput
+                style={{
+                  backgroundColor: "#C4C4C4",
+                  left: 35,
+                  width: 305,
+                  height: 35,
+                  bottom: 20,
+                }}
+                onChangeText={(text) => this.setState({ geoInput: text })}
+                value={this.state.geoInput}
+              />
+              <Text
+                style={{
+                  color: "#000000",
+                  left: 35,
+                  fontSize: 20,
+                }}
+              >
+                Phone Number
+              </Text>
+              <TextInput
+                style={{
+                  backgroundColor: "#C4C4C4",
+                  left: 35,
+                  width: 305,
+                  height: 35,
                 }}
               />
-              <Marker
-                coordinate={{
-                  latitude: this.state.fromLoc[0].latitude,
-                  longitude: this.state.fromLoc[0].longitude,
-                }}
-              ></Marker>
-            </MapView>
-          </View>
-          <View style={{ width: 200 }}>
-            <Text
-              style={{
-                color: "#000000",
-                left: 35,
-                bottom: 455,
-                fontSize: 20,
-              }}
-            >
-              Address
-            </Text>
-            <TextInput
-              style={{
-                backgroundColor: "#C4C4C4",
-                left: 35,
-                width: 305,
-                bottom: 450,
-                height: 35,
-              }}
-              onChangeText={(text) => this.setState({ geoInput: text })}
-              value={this.state.geoInput}
-            />
-            <Text
-              style={{
-                color: "#000000",
-                left: 35,
-                bottom: 445,
-                fontSize: 20,
-              }}
-            >
-              Phone Number
-            </Text>
-            <TextInput
-              style={{
-                backgroundColor: "#C4C4C4",
-                left: 35,
-                width: 305,
-                bottom: 440,
-                height: 35,
-              }}
-              keyboardType="numeric"
-              maxLength={10}
-            />
-          </View>
-        </View>
-      </View>
+            </View>
+            <SafeAreaView>
+              <View style={styles.btn1}>
+                <View style={styles.insidebtn}>
+                  <TouchableOpacity
+                    onPress={() => {
+                      this.userInputLocation(this.state.geoInput);
+                    }}
+                  >
+                    <Text
+                      style={{
+                        paddingLeft: screen_width / 10,
+                        paddingRight: screen_width / 10, // if this is changed to SCREEN_WIDTH / 21 everything works
+                        fontSize: screen_width / 10,
+                        fontFamily: "SignikaNegative-Bold",
+                      }}
+                    >
+                      Confirm Order
+                    </Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
+            </SafeAreaView>
+          </TouchableWithoutFeedback>
+        </ScrollView>
+      </KeyboardAvoidingView>
+      // </View>
     );
   }
 }
@@ -250,6 +298,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     paddingVertical: 20,
   },
+
+  btn1: {
+    alignItems: "center",
+    // top: 50
+  },
+
   goBack: {
     right: 50,
     marginLeft: "5%",
@@ -281,9 +335,11 @@ const styles = StyleSheet.create({
     width: 330,
     height: 60,
     borderRadius: 20,
+    // top: 30
     backgroundColor: COLORS.primary,
     left: 10,
   },
+
   orderText: {
     textAlign: "center",
     marginVertical: "4%",

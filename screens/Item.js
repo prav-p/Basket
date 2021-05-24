@@ -279,7 +279,6 @@ const styles = StyleSheet.create({
     width: 350,
     height: 200,
   },
-  emptyCheckout: {},
   emptyCheckoutText: {
     textAlign: "center",
     fontSize: 20,
@@ -298,7 +297,7 @@ const styles = StyleSheet.create({
     width: 330,
     height: 60,
     borderRadius: 20,
-
+    left: 10,
     backgroundColor: COLORS.primary,
   },
   CheckoutText: {

@@ -14,7 +14,11 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
-import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
+import {
+  TextInput,
+  TouchableOpacity,
+  TouchableHighlight,
+} from "react-native-gesture-handler";
 import MapView, { Marker } from "react-native-maps";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import UniversalGeocoder from "universal-geocoder";
@@ -139,136 +143,97 @@ class Checkout extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <SafeAreaView
-          style={{
-            height: 150,
-            alignItems: "center",
-          }}
-        >
-          <View
-            style={{
-              flexDirection: "row",
-              paddingHorizontal: 20,
-              alignItems: "center",
-              height: 25,
-              wdith: 25,
-            }}
-          >
-            {/* Return Button */}
-
-            <TouchableOpacity
+        <View style={styles.header}>
+          {/*Return Button */}
+          <View style={styles.goBack}>
+            <TouchableHighlight
+              activeOpacity={0.6}
+              underlayColor="#white"
               onPress={() => this.props.navigation.navigate("Item")}
             >
               <IconButton icon={icons.goBack} />
-            </TouchableOpacity>
-
-            {/* Title */}
-            <View
-              style={{
-                flex: 1,
-                alignItems: "center",
-                height: 100,
+            </TouchableHighlight>
+          </View>
+          {/*Title Button */}
+          <View>
+            <Text style={styles.titleText}>Delivery</Text>
+          </View>
+        </View>
+        <SafeAreaView>
+          <View style={styles.order}>
+            <TouchableOpacity
+              onPress={() => {
+                this.userInputLocation(this.state.geoInput);
               }}
             >
-              <Text
-                style={{
-                  color: COLORS.primary,
-                  ...FONTS.h1,
-                  fontSize: 37,
-                  top: 60,
-                }}
-              >
-                Delivery Address
-              </Text>
-            </View>
-            {/* Empty View */}
-            <View style={{ width: 25 }}></View>
+              <Text style={styles.orderText}>Confirm Order</Text>
+            </TouchableOpacity>
           </View>
         </SafeAreaView>
-        <SafeAreaView>
-          <View style={styles.btn1}>
-            <View style={styles.insidebtn}>
-              <TouchableOpacity
-                onPress={() => {
-                  this.userInputLocation(this.state.geoInput);
+        <View style={styles.input}>
+          <View style={{ alignItems: "center" }}>
+            <MapView
+              region={this.state.region[0]}
+              style={{ width: 330, height: 250, bottom: 530, left: 10 }}
+            >
+              <Marker
+                coordinate={{
+                  latitude: this.state.toLoc[0].latitude,
+                  longitude: this.state.toLoc[0].longitude,
                 }}
-              >
-                <Text
-                  style={{
-                    paddingLeft: screen_width / 10,
-                    paddingRight: screen_width / 10, // if this is changed to SCREEN_WIDTH / 21 everything works
-                    fontSize: screen_width / 10,
-                    fontFamily: "SignikaNegative-Bold",
-                  }}
-                >
-                  Confirm Order
-                </Text>
-              </TouchableOpacity>
-            </View>
+              />
+              <Marker
+                coordinate={{
+                  latitude: this.state.fromLoc[0].latitude,
+                  longitude: this.state.fromLoc[0].longitude,
+                }}
+              ></Marker>
+            </MapView>
           </View>
-        </SafeAreaView>
-        <View style={{ alignItems: "center" }}>
-          <MapView
-            region={this.state.region[0]}
-            style={{ width: 300, height: 250, bottom: 530 }}
-          >
-            <Marker
-              coordinate={{
-                latitude: this.state.toLoc[0].latitude,
-                longitude: this.state.toLoc[0].longitude,
+          <View style={{ width: 200 }}>
+            <Text
+              style={{
+                color: "#000000",
+                left: 35,
+                bottom: 455,
+                fontSize: 20,
               }}
+            >
+              Address
+            </Text>
+            <TextInput
+              style={{
+                backgroundColor: "#C4C4C4",
+                left: 35,
+                width: 305,
+                bottom: 450,
+                height: 35,
+              }}
+              onChangeText={(text) => this.setState({ geoInput: text })}
+              value={this.state.geoInput}
             />
-            <Marker
-              coordinate={{
-                latitude: this.state.fromLoc[0].latitude,
-                longitude: this.state.fromLoc[0].longitude,
+            <Text
+              style={{
+                color: "#000000",
+                left: 35,
+                bottom: 445,
+                fontSize: 20,
               }}
-            ></Marker>
-          </MapView>
-        </View>
-        <View style={{ width: 200 }}>
-          <Text
-            style={{
-              color: "#000000",
-              left: 35,
-              bottom: 455,
-              fontSize: 20,
-            }}
-          >
-            Address
-          </Text>
-          <TextInput
-            style={{
-              backgroundColor: "#C4C4C4",
-              left: 35,
-              width: 305,
-              bottom: 450,
-              height: 35,
-            }}
-            onChangeText={(text) => this.setState({ geoInput: text })}
-            value={this.state.geoInput}
-          />
-          <Text
-            style={{
-              color: "#000000",
-              left: 35,
-              bottom: 445,
-              fontSize: 20,
-            }}
-          >
-            Phone Number
-          </Text>
-          <TextInput
-            style={{
-              backgroundColor: "#C4C4C4",
-              left: 35,
-              width: 305,
-              bottom: 440,
-              height: 35,
-            }}
-            keyboardType="numeric"
-            maxLength={10}
-          />
+            >
+              Phone Number
+            </Text>
+            <TextInput
+              style={{
+                backgroundColor: "#C4C4C4",
+                left: 35,
+                width: 305,
+                bottom: 440,
+                height: 35,
+              }}
+              keyboardType="numeric"
+              maxLength={10}
+            />
+          </View>
         </View>
       </View>
     );
@@ -280,18 +245,50 @@ const screen_width = Dimensions.get("window").width;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingHorizontal: 15,
+    paddingVertical: 20,
   },
-  btn1: {
-    alignItems: "center",
-    marginTop: hp("62%"),
+  goBack: {
+    right: 50,
+    marginLeft: "5%",
+    bottom: 10,
+    height: 20,
+    width: 20,
   },
-  insidebtn: {
-    height: hp("7.5%"),
-    width: wp("95%"),
-    backgroundColor: COLORS.primary,
-    alignItems: "center",
-    justifyContent: "center",
+  header: {
+    //flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    color: COLORS.secondary,
+    marginTop: 30,
+  },
+  titleText: {
+    fontSize: 30,
+    fontFamily: "SignikaNegative-Bold",
+    color: COLORS.primary,
+    bottom: 12,
+    marginLeft: "10%",
+    right: 65,
+  },
+  input: {
+    bottom: 50,
+    right: 12,
+  },
+  order: {
+    marginTop: "180%",
+    width: 330,
+    height: 60,
     borderRadius: 20,
+    backgroundColor: COLORS.primary,
+    left: 10,
+  },
+  orderText: {
+    textAlign: "center",
+    marginVertical: "4%",
+    fontFamily: "SignikaNegative-Bold",
+    fontSize: 30,
+    width: 330,
+    height: 60,
   },
 });
 

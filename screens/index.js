@@ -43,7 +43,6 @@ import MendozaCanned from "./MendozaCanned";
 import MendozaFlour from "./MendozaFlour";
 import MendozaSalsa from "./MendozaSalsa";
 import MendozaMole from "./MendozaMole";
-import MendozaSauces from "./MendozaSauces";
 import MendozaBeans from "./MendozaBeans";
 import MendozaPasta from "./MendozaPasta";
 import MendozaRice from "./MendozaRice";
@@ -95,7 +94,6 @@ export {
   MendozaFlour,
   MendozaSalsa,
   MendozaMole,
-  MendozaSauces,
   MendozaBeans,
   MendozaPasta,
   MendozaRice,

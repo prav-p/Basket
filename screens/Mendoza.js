@@ -135,7 +135,7 @@ const CATEGORIES = [
   },
 
   {
-    title: "Salsas & Sauces",
+    title: "Salsas & Mole",
     data: [
       {
         type: "Salsas",
@@ -144,11 +144,6 @@ const CATEGORIES = [
       {
         type: "Mole",
         photo: "https://s.yimg.com/aah/mex-grocer/mole-sauce-14.gif",
-      },
-      {
-        type: "Sauces",
-        photo:
-          "https://s.yimg.com/aah/mex-grocer/enchilada-sauce-cooking-sauces-11.gif",
       },
     ],
   },
@@ -215,12 +210,8 @@ const ListItem = ({ item }) => {
         navigation.navigate("MendozaFlour");
         //navigate
         break;
-      case "Sauces":
-        navigation.navigate("MendozaSauces");
-        //navigate
-        break;
       case "Salsas":
-        navigation.navigate("MendozaSalsas");
+        navigation.navigate("MendozaSalsa");
         //navigate
         break;
       case "Mole":

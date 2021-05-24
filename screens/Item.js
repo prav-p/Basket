@@ -45,138 +45,175 @@ class Item extends React.Component {
   getTotalPrice = () => {
     var totalPrice = +this.getSubTotalPrice() + +this.getSalesTax();
     return totalPrice;
-  }
+  };
 
   render() {
-    return (
-      <View style={styles.renderView}>
-        <View style={styles.header}>
-          {/*Return Button */}
-          <View style={styles.goBack}>
-            <TouchableHighlight
-              activeOpacity={0.6}
-              underlayColor="#white"
-              onPress={() => this.props.navigation.navigate("Home")}
-            >
-              <IconButton icon={icons.goBack} />
-            </TouchableHighlight>
-          </View>
-          {/*Title Button */}
-          <View>
-            <Text style={styles.titleText}>Checkout</Text>
-          </View>
-        </View>
-        <FlatList
-          style={{
-            flex: 1,
-          }}
-          data={this.state.data}
-          renderItem={({ item }) => (
-            <View style={styles.FlatListView}>
-              <View style={styles.itemDescrp}>
-                <Image
-                  Image
-                  source={{ uri: item.picture }}
-                  style={{ width: 60, height: 60 }}
-                />
-                <Text style={styles.itemName}>{`${item.name}\t`}</Text>
-                <Text style={styles.itemQty}>{`${item.qty}\t`}</Text>
-                <Text style={styles.itemPrice}>${`${item.price}`}</Text>
-              </View>
+    if (this.getTotalPrice() == 0) {
+      return (
+        <View style={styles.renderView}>
+          <View style={styles.header}>
+            {/*Return Button */}
+            <View style={styles.goBack}>
+              <TouchableHighlight
+                activeOpacity={0.6}
+                underlayColor="#white"
+                onPress={() => this.props.navigation.navigate("Home")}
+              >
+                <IconButton icon={icons.goBack} />
+              </TouchableHighlight>
             </View>
-          )}
-          keyExtractor={(item) => item.name}
-        />
-        <View style={styles.renderSeaparatorView}></View>
-        <View style={styles.subTotal}>
-          <Text
-            style={{
-              fontWeight: "bold",
-              fontFamily: "SignikaNegative-SemiBold",
-              fontSize: 18,
-              top: "10%",
-            }}
-          >
-            Subtotal
-          </Text>
-          <Text
-            style={{
-              fontWeight: "bold",
-              fontFamily: "SignikaNegative-SemiBold",
-              fontSize: 18,
-              marginLeft: "85%",
-            }}
-          >
-            ${this.getSubTotalPrice()}
-          </Text>
-          <Text
-            style={{
-              fontWeight: "bold",
-              fontFamily: "SignikaNegative-SemiBold",
-              fontSize: 18,
-              top: "10%",
-            }}
-          >
-            Delivery
-          </Text>
-          <Text
-            style={{
-              fontWeight: "bold",
-              fontFamily: "SignikaNegative-SemiBold",
-              fontSize: 18,
-              top: "10%",
-            }}
-          >
-            Est. Sales Tax
-          </Text>
-          <Text
-            style={{
-              fontWeight: "bold",
-              fontFamily: "SignikaNegative-Bold",
-              fontSize: 18,
-              marginLeft: "85%",
-            }}
-          >
-            ${this.getSalesTax()}
-          </Text>
-          <Text
-            style={{
-              fontWeight: "bold",
-              fontFamily: "SignikaNegative-Bold",
-              fontSize: 18,
-              top: "10%",
-            }}
-          >
-            Total
-          </Text>
-          <Text
-            style={{
-              fontWeight: "bold",
-              fontFamily: "SignikaNegative-Bold",
-              fontSize: 18,
-              right: 10,
-              textAlign: 'right'
-            }}
-          >
-            ${this.getTotalPrice()}
-          </Text>
+            {/*Title Button */}
+            <View>
+              <Text style={styles.titleText}>Checkout</Text>
+            </View>
+          </View>
+          <View style={{ marginVertical: "75%" }}>
+            <Image
+              source={require("../assets/icons/BasketGreen.png")}
+              style={{ width: 60, height: 60, alignSelf: "center" }}
+            />
+            <Text style={styles.emptyCheckoutText}> Your basket is empty</Text>
+          </View>
+          <View style={styles.eCheckoutbt}>
+            <TouchableOpacity>
+              <Text style={styles.CheckoutText}>Continue</Text>
+            </TouchableOpacity>
+          </View>
         </View>
-        <View style={styles.Checkout}>
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("Checkout")}
-          >
-            <Text style={styles.CheckoutText}>Continue</Text>
-          </TouchableOpacity>
+      );
+    } else {
+      return (
+        <View style={styles.renderView}>
+          <View style={styles.header}>
+            {/*Return Button */}
+            <View style={styles.goBack}>
+              <TouchableHighlight
+                activeOpacity={0.6}
+                underlayColor="#white"
+                onPress={() => this.props.navigation.navigate("Home")}
+              >
+                <IconButton icon={icons.goBack} />
+              </TouchableHighlight>
+            </View>
+            {/*Title Button */}
+            <View>
+              <Text style={styles.titleText}>Checkout</Text>
+            </View>
+          </View>
+          <FlatList
+            style={{
+              flex: 1,
+            }}
+            data={this.state.data}
+            renderItem={({ item }) => (
+              <View style={styles.FlatListView}>
+                <View style={styles.itemDescrp}>
+                  <Image
+                    Image
+                    source={{ uri: item.picture }}
+                    style={{ width: 60, height: 60 }}
+                  />
+                  <Text style={styles.itemName}>{`${item.name}\t`}</Text>
+                  <Text style={styles.itemQty}>{`${item.qty}\t`}</Text>
+                  <Text style={styles.itemPrice}>${`${item.price}`}</Text>
+                </View>
+              </View>
+            )}
+            keyExtractor={(item) => item.name}
+          />
+          <View style={styles.renderSeaparatorView}></View>
+          <View style={styles.subTotal}>
+            <Text
+              style={{
+                fontWeight: "bold",
+                fontFamily: "SignikaNegative-SemiBold",
+                fontSize: 18,
+                top: "10%",
+              }}
+            >
+              Subtotal
+            </Text>
+            <Text
+              style={{
+                fontWeight: "bold",
+                fontFamily: "SignikaNegative-SemiBold",
+                fontSize: 18,
+                marginLeft: "85%",
+                right: 4,
+              }}
+            >
+              ${this.getSubTotalPrice()}
+            </Text>
+            <Text
+              style={{
+                fontWeight: "bold",
+                fontFamily: "SignikaNegative-SemiBold",
+                fontSize: 18,
+                top: "10%",
+              }}
+            >
+              Delivery
+            </Text>
+            <Text
+              style={{
+                fontWeight: "bold",
+                fontFamily: "SignikaNegative-SemiBold",
+                fontSize: 18,
+                top: "10%",
+              }}
+            >
+              Est. Sales Tax
+            </Text>
+            <Text
+              style={{
+                fontWeight: "bold",
+                fontFamily: "SignikaNegative-SemiBold",
+                fontSize: 18,
+                marginLeft: "85%",
+                right: 4,
+              }}
+            >
+              ${this.getSalesTax()}
+            </Text>
+            <Text
+              style={{
+                fontWeight: "bold",
+                fontFamily: "SignikaNegative-Bold",
+                fontSize: 18,
+                top: "10%",
+              }}
+            >
+              Total
+            </Text>
+            <Text
+              style={{
+                fontWeight: "bold",
+                fontFamily: "SignikaNegative-Bold",
+                fontSize: 18,
+                right: 20,
+                textAlign: "right",
+              }}
+            >
+              ${this.getTotalPrice()}
+            </Text>
+          </View>
+          <View style={styles.Checkout}>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate("Checkout")}
+            >
+              <Text style={styles.CheckoutText}>Continue</Text>
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
-    );
+      );
+    }
   }
 }
 
 const styles = StyleSheet.create({
   renderView: {
     flex: 1,
-    paddingHorizontal: 20,
+    paddingHorizontal: 15,
     paddingVertical: 20,
   },
   header: {
@@ -220,23 +257,42 @@ const styles = StyleSheet.create({
     fontSize: 16,
     width: 140,
     marginHorizontal: "2%",
+    top: 10,
   },
   itemQty: {
     fontFamily: "SignikaNegative-Regular",
     fontSize: 20,
     width: 20,
     marginLeft: "5%",
+    top: 12,
+    left: 5,
   },
   itemPrice: {
     fontFamily: "SignikaNegative-Regular",
-    fontSize: 20,
+    fontSize: 18,
     width: 50,
     marginLeft: "6%",
+    left: 25,
+    top: 12,
   },
   subTotal: {
     width: 350,
     height: 200,
   },
+  emptyCheckout: {},
+  emptyCheckoutText: {
+    textAlign: "center",
+    fontSize: 20,
+    fontFamily: "SignikaNegative-Bold",
+  },
+  eCheckoutbt: {
+    marginVertical: "15%",
+    width: 330,
+    height: 60,
+    borderRadius: 20,
+    backgroundColor: COLORS.darkGray,
+  },
+
   Checkout: {
     marginVertical: "5%",
     width: 330,
@@ -255,7 +311,7 @@ const styles = StyleSheet.create({
   },
   renderSeaparatorView: {
     height: 1,
-    width: "100%",
+    width: 350,
     backgroundColor: COLORS.primary,
   },
 });

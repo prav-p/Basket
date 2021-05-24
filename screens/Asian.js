@@ -110,7 +110,7 @@ const CATEGORIES = [
       {
         type: "Seafood",
         photo:
-          "https://chinafoodingredients.files.wordpress.com/2019/04/yingjinqian.jpeg",
+          "https://cdn01.sayweee.net/2021-04/Y1L-aB1JRl6HGisOZP8jwQ-square-320.jpg",
       },
       {
         type: "Beef",

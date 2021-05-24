@@ -7,9 +7,7 @@ import {
   Text,
   StyleSheet,
   TouchableOpacity,
-  Image,
   Keyboard,
-  FlatList,
   TextInput,
   KeyboardAvoidingView,
   TouchableWithoutFeedback,
@@ -22,7 +20,6 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
-import { add } from "react-native-reanimated";
 
 const db = SQLite.openDatabase("BasketDB");
 
@@ -39,13 +36,25 @@ const createAccount = () => {
 
   let [flatListItems, setFlatListItems] = React.useState([]);
 
-  function hasLowerCase(str) {
-    return (/[a-z]/.test(str));
-  }
-
   let create_account = () => {
-    if (!email.includes("@") && email.substring(email.length - 3, email.length - 4)) {
+    const access = false;
+    console.log(email.substring(email.length - 4));
+
+    if (name === undefined || name === "") {
       Alert.alert(
+        "Error!",
+        "Please enter your name",
+        [
+          {
+            text: "Ok",
+          },
+        ],
+        { cancelable: false }
+      );
+    } else if (email === undefined || email === "" ||
+      !email.includes("@") || 
+      email.substring(email.length - 4) !== ".com") {
+        Alert.alert(
         "Error!",
         "Invalid email",
         [
@@ -55,47 +64,125 @@ const createAccount = () => {
         ],
         { cancelable: false }
       );
-    } else if (password.length !== 8) {
-
-    }
-
-    db.transaction((tx) => {
-      tx.executeSql(
-        "create table if not exists DataTable (id integer primary key not null, name text, email text, password text, " +
-          "rePassword text, address text, zipcode int, city text, contactNo text);",
-        []
+    } else if (password === undefined || password === "") {
+      Alert.alert(
+        "Error!",
+        "Please enter password",
+        [
+          {
+            text: "Ok",
+          },
+        ],
+        { cancelable: false }
       );
-
-      tx.executeSql(
-        "insert into DataTable (name, email, password, rePassword, address, zipcode, city, contactNo) values " +
-          "(?, ?, ?, ?, ?, ?, ?, ?)",
-        [name, email, password, rePassword, address, zipcode, city, contactNo],
-        (tx, results) => {
-          console.log("Results", results.rowsAffected);
-          if (results.rowsAffected > 0) {
-            Alert.alert(
-              "Success",
-              "You are Registered Successfully",
-              [
-                {
-                  text: "Continue",
-                  onPress: () => navigation.navigate("Home"),
-                },
-              ],
-              { cancelable: false }
-            );
-          } else alert("Registration Failed");
-        }
+    } else if (password.length < 8) {
+      Alert.alert(
+        "Error!",
+        "Password must be at least 8 characters",
+        [
+          {
+            text: "Ok",
+          },
+        ],
+        { cancelable: false }
       );
-
-      tx.executeSql("SELECT * FROM DataTable", [], (tx, results) => {
-        var temp = [];
-        for (let i = 0; i < results.rows.length; ++i)
-          temp.push(results.rows.item(i));
-        setFlatListItems(temp);
-        console.log(temp);
+    } else if (rePassword === undefined || rePassword === "" || 
+              rePassword !== password) {
+                Alert.alert(
+                  "Error!",
+                  "Password does not match",
+                  [
+                    {
+                      text: "Ok",
+                    },
+                  ],
+                  { cancelable: false }
+                );     
+    } else if (address === undefined || address === "") {
+      Alert.alert(
+        "Error!",
+        "Invalid address",
+        [
+          {
+            text: "Ok",
+          },
+        ],
+        { cancelable: false }
+      );
+    } else if (zipcode === undefined || zipcode === "" || 
+    zipcode.length < 5 || isNaN(zipcode)) {
+      Alert.alert(
+        "Error!",
+        "Invalid zipcode",
+        [
+          {
+            text: "Ok",
+          },
+        ],
+        { cancelable: false }
+      );
+    } else if (city === undefined || city === "") {
+      Alert.alert(
+        "Error!",
+        "Invalid city",
+        [
+          {
+            text: "Ok",
+          },
+        ],
+        { cancelable: false }
+      );
+    } else if (contactNo === undefined || contactNo === "" ||
+    isNaN(contactNo)) {
+      Alert.alert(
+        "Error!",
+        "Invalid contact number",
+        [
+          {
+            text: "Ok",
+          },
+        ],
+        { cancelable: false }
+      );
+    }else {
+      db.transaction((tx) => {
+        tx.executeSql(
+          "create table if not exists DataTable (id integer primary key not null, name text, email text, password text, " +
+            "rePassword text, address text, zipcode int, city text, contactNo text);",
+          []
+        );
+  
+        tx.executeSql(
+          "insert into DataTable (name, email, password, rePassword, address, zipcode, city, contactNo) values " +
+            "(?, ?, ?, ?, ?, ?, ?, ?)",
+          [name, email, password, rePassword, address, zipcode, city, contactNo],
+          (tx, results) => {
+            console.log("Results", results.rowsAffected);
+            if (results.rowsAffected > 0) {
+              Alert.alert(
+                "Success",
+                "You are Registered Successfully",
+                [
+                  {
+                    text: "Continue",
+                    onPress: () => navigation.navigate("Home"),
+                  },
+                ],
+                { cancelable: false }
+              );
+            } else alert("Registration Failed");
+          }
+        );
+  
+        tx.executeSql("SELECT * FROM DataTable", [], (tx, results) => {
+          var temp = [];
+          for (let i = 0; i < results.rows.length; ++i)
+            temp.push(results.rows.item(i));
+          setFlatListItems(temp);
+          console.log(temp);
+        });
       });
-    });
+    }
   };
 
   function renderSignUpHeader() {
@@ -126,6 +213,7 @@ const createAccount = () => {
           />
           <Text style={styles.inqLabel}>Password</Text>
           <TextInput
+            secureTextEntry={true}
             style={styles.inqInput}
             selectionColor={COLORS.primary}
             onChangeText={onChangePassword}
@@ -133,6 +221,7 @@ const createAccount = () => {
           />
           <Text style={styles.inqLabel}>Re-enter Password</Text>
           <TextInput
+            secureTextEntry={true}
             style={styles.inqInput}
             selectionColor={COLORS.primary}
             onChangeText={onChangeRePassword}

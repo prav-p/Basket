@@ -51,12 +51,10 @@ const createAccount = () => {
         ],
         { cancelable: false }
       );
-    } else if (email === undefined || email === "" ||
-      !email.includes("@") || 
-      email.substring(email.length - 4) !== ".com") {
+    } else if (email === undefined || email === "") {
         Alert.alert(
         "Error!",
-        "Invalid email",
+        "Please enter your email",
         [
           {
             text: "Ok",
@@ -64,6 +62,18 @@ const createAccount = () => {
         ],
         { cancelable: false }
       );
+    } else if (!email.includes("@") || 
+      email.substring(email.length - 4) !== ".com") {
+        Alert.alert(
+          "Error!",
+          "Invalid email",
+          [
+            {
+              text: "Ok",
+            },
+          ],
+          { cancelable: false }
+        );
     } else if (password === undefined || password === "") {
       Alert.alert(
         "Error!",

@@ -138,7 +138,7 @@ class Checkout extends React.Component {
     }
   };
 
-render() {
+  render() {
   return (
     // <View style={styles.container}>
       <KeyboardAvoidingView
@@ -280,6 +280,7 @@ render() {
       </KeyboardAvoidingView>
     // </View>
   )
+  }
 }
 
 const screen_width = Dimensions.get("window").width;
@@ -294,7 +295,8 @@ const styles = StyleSheet.create({
   btn1: {
     alignItems: "center",
     // top: 50
-
+  },
+  
   goBack: {
     right: 50,
     marginLeft: "5%",

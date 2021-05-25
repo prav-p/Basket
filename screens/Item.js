@@ -61,7 +61,26 @@ class Item extends React.Component {
           fullData: Data,
         });
       }
-    } 
+    } else {
+      console.log("e");
+
+      const orderArrayM = await AsyncStorage.getItem("@order_MKey");
+      const parseOrderArrayM = JSON.parse(orderArrayM);
+    
+      if (parseOrderArrayM === null) {
+        this.setState({
+          data: [],
+          fullData: Data,
+        });
+      } else {
+        const filterArrayM = parseOrderArrayM.filter((item) => item.qty !== 0);
+  
+        this.setState({
+          data: filterArrayM,
+          fullData: Data,
+        });
+      }
+    }
   };
 
   navigateBack = async() => {
@@ -81,9 +100,14 @@ class Item extends React.Component {
     }
   }
 
+  getItemPrice = (item) => {
+    let itemPrice = 0;
+    itemPrice += item.qty * item.price;
+    return itemPrice.toFixed(2);
+  }
+
   getSubTotalPrice = () => {
     let subTotal = this.state.data.reduce((a, b) => a + (b.total || 0), 0);
-
     return subTotal.toFixed(2);
   };
 
@@ -94,7 +118,7 @@ class Item extends React.Component {
 
   getTotalPrice = () => {
     var totalPrice = +this.getSubTotalPrice() + +this.getSalesTax();
-    return totalPrice;
+    return totalPrice.toFixed(2);
   };
 
   render() {
@@ -203,6 +227,17 @@ class Item extends React.Component {
               }}
             >
               Delivery
+            </Text>
+            <Text 
+              style={{
+                fontWeight: "bold",
+                fontFamily: "SignikaNegative-SemiBold",
+                fontSize: 18,
+                marginLeft: "85%",
+                right: 4,
+              }}
+            >
+              $1.99
             </Text>
             <Text
               style={{

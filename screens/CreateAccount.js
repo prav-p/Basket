@@ -37,9 +37,6 @@ const createAccount = () => {
   let [flatListItems, setFlatListItems] = React.useState([]);
 
   let create_account = () => {
-    const access = false;
-    console.log(email.substring(email.length - 4));
-
     if (name === undefined || name === "") {
       Alert.alert(
         "Error!",

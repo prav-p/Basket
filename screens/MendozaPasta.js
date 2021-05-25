@@ -28,7 +28,7 @@ class MendozaPasta extends React.Component {
   }
 
   makeRemoteRequest = async () => {
-    const orderArray = await AsyncStorage.getItem("@order_MKey");
+    const orderArray = await AsyncStorage.getItem("@order_Key");
 
     this.setState({
       data: Data[11].brand,
@@ -123,9 +123,9 @@ class MendozaPasta extends React.Component {
       console.log(orderList);
     }
 
-    await AsyncStorage.setItem("@order_MKey", JSON.stringify(orderList));
+    await AsyncStorage.setItem("@order_Key", JSON.stringify(orderList));
 
-    const orderArray = await AsyncStorage.getItem("@order_MKey");
+    const orderArray = await AsyncStorage.getItem("@order_Key");
 
     console.log(JSON.parse(orderArray));
   };

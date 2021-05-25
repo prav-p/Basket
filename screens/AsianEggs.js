@@ -322,7 +322,7 @@ const styles = StyleSheet.create({
   qty: {
     fontFamily: "SignikaNegative-SemiBold",
     fontSize: 16,
-    color: COLORS.lightGray,
+    color: COLORS.darkGray,
   },
   name: {
     fontFamily: "SignikaNegative-Regular",

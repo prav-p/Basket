@@ -77,7 +77,7 @@ class Home extends React.Component {
               autoCorrect={false}
               onChangeText={this.handleSearch}
               status="info"
-              placeholder="Type to search here"
+              placeholder="Search stores here.."
               style={style.searchBar}
               textStyle={{ color: COLORS.darkGray }}
               clearButtonMode="always"
@@ -178,7 +178,7 @@ const style = StyleSheet.create({
 
   searchBar: {
     borderColor: "#333",
-    backgroundColor: "#fff",
+    backgroundColor: "#ebebeb",
     fontFamily: "SignikaNegative-SemiBold",
     fontStyle: "italic",
     fontSize: 18,
@@ -198,6 +198,7 @@ const style = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 20,
     paddingVertical: 10,
+    backgroundColor: COLORS.secondary,
   },
 
   flatListView: {

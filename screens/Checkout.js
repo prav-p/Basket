@@ -220,7 +220,7 @@ class Checkout extends React.Component {
               <TextInput
                 selectionColor={COLORS.primary}
                 style={{
-                  backgroundColor: "#C4C4C4",
+                  backgroundColor: "#ebebeb",
                   left: 20,
                   width: 330,
                   height: 35,
@@ -242,7 +242,7 @@ class Checkout extends React.Component {
               <TextInput
                 selectionColor={COLORS.primary}
                 style={{
-                  backgroundColor: "#C4C4C4",
+                  backgroundColor: "#ebebeb",
                   left: 20,
                   width: 330,
                   height: 35,
@@ -263,7 +263,9 @@ class Checkout extends React.Component {
               </Text>
             </View>
             <View style={styles.route}>
-              <TouchableOpacity onPress={() => this.userInputLocation(this.state.geoInput)}>
+              <TouchableOpacity
+                onPress={() => this.userInputLocation(this.state.geoInput)}
+              >
                 <Text Text style={styles.routeText}>
                   View
                 </Text>

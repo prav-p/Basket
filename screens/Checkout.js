@@ -203,7 +203,7 @@ class Checkout extends React.Component {
                     fontFamily: "SignikaNegative-SemiBold",
                   }}
                 >
-                  Please enter your address and phone number below
+                  Please enter delivery details below
                 </Text>
               </View>
               <Text
@@ -248,6 +248,26 @@ class Checkout extends React.Component {
                   height: 35,
                 }}
               />
+            </View>
+            <View style={{ left: 8, marginTop: 10 }}>
+              <Text
+                style={{
+                  color: "#000000",
+                  fontSize: 16,
+                  width: 220,
+                  fontFamily: "SignikaNegative-SemiBold",
+                }}
+              >
+                {" "}
+                View Delivery Route
+              </Text>
+            </View>
+            <View style={styles.route}>
+              <TouchableOpacity>
+                <Text Text style={styles.routeText}>
+                  View
+                </Text>
+              </TouchableOpacity>
             </View>
 
             <View style={styles.order}>
@@ -302,8 +322,25 @@ const styles = StyleSheet.create({
     bottom: 50,
     right: 20,
   },
+  route: {
+    marginTop: "4%",
+    width: 80,
+    height: 30,
+    borderRadius: 10,
+    // top: 30
+    backgroundColor: COLORS.primary,
+    left: 8,
+  },
+  routeText: {
+    textAlign: "center",
+    marginVertical: "5%",
+    fontFamily: "SignikaNegative-SemiBold",
+    fontSize: 20,
+    width: 80,
+    height: 30,
+  },
   order: {
-    marginTop: "40%",
+    marginTop: "20%",
     width: 330,
     height: 60,
     borderRadius: 20,

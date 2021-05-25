@@ -8,6 +8,7 @@ export const lunch_meat = require("../assets/images/lunch_meat.jpg");
 export const organic_produce = require("../assets/images/organic_produce.jpg");
 export const pork_belly = require("../assets/images/pork-belly.jpg");
 export const vegetables = require("../assets/images/vegetables.jpg");
+export const confirmation = require("../assets/images/confirmation.jpg");
 export default {
   landing,
   beef,
@@ -19,4 +20,5 @@ export default {
   organic_produce,
   pork_belly,
   vegetables,
+  confirmation,
 };

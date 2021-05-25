@@ -290,7 +290,7 @@ const styles = StyleSheet.create({
     width: 330,
     height: 60,
     borderRadius: 20,
-    backgroundColor: COLORS.darkGray,
+    backgroundColor: COLORS.lightGray,
   },
 
   Checkout: {

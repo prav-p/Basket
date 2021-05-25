@@ -1,5 +1,5 @@
 import React from "react";
-import { COLORS, FONTS, icons } from "../constants";
+import { COLORS, FONTS, icons, images } from "../constants";
 import { IconButton } from "../components";
 import {
   SafeAreaView,
@@ -22,7 +22,7 @@ class ThankYou extends React.Component {
       <View style={styles.renderView}>
         <View style={styles.header}>
           {/*Return Button */}
-          <View style={styles.goBack}>
+          {/* <View style={styles.goBack}>
             <TouchableHighlight
               activeOpacity={0.6}
               underlayColor="#white"
@@ -30,7 +30,7 @@ class ThankYou extends React.Component {
             >
               <IconButton icon={icons.goBack} />
             </TouchableHighlight>
-          </View>
+          </View> */}
           {/*Title Button */}
           <View>
             <Text style={styles.titleText}>Checkout</Text>
@@ -38,10 +38,10 @@ class ThankYou extends React.Component {
         </View>
         <View style={{ marginVertical: "75%" }}>
           <Image
-            source={require("../assets/icons/BasketGreen.png")}
-            style={{ width: 60, height: 60, alignSelf: "center" }}
+            source={require("../assets/images/confirmation.jpg")}
+            style={{ width: 100, height: 100, alignSelf: "center" }}
           />
-          <Text style={styles.emptyCheckoutText}> You are all set!</Text>
+          <Text style={styles.emptyCheckoutText}> Your order is placed!</Text>
         </View>
         <View style={styles.eCheckoutbt}>
           <TouchableOpacity
@@ -80,20 +80,19 @@ const styles = StyleSheet.create({
     fontFamily: "SignikaNegative-Bold",
     color: COLORS.primary,
     bottom: 12,
-    marginLeft: "10%",
-    right: 65,
+    marginLeft: "20%",
   },
   emptyCheckoutText: {
     textAlign: "center",
-    fontSize: 20,
+    fontSize: 25,
     fontFamily: "SignikaNegative-Bold",
   },
   eCheckoutbt: {
-    marginVertical: "15%",
+    marginVertical: "1%",
     width: 330,
     height: 60,
     borderRadius: 20,
-    backgroundColor: COLORS.darkGray,
+    backgroundColor: COLORS.primary,
     left: 8,
   },
   CheckoutText: {

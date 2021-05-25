@@ -21,11 +21,12 @@ import {
   TextInput,
   TouchableOpacity,
   TouchableWithoutFeedback,
+  TouchableHighlight,
 } from "react-native-gesture-handler";
 import MapView, { Marker } from "react-native-maps";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import UniversalGeocoder from "universal-geocoder";
-
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
 class Checkout extends React.Component {
   state = {
     geoInput: "",
@@ -152,55 +153,25 @@ class Checkout extends React.Component {
       >
         <ScrollView>
           <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-            <SafeAreaView
-              style={{
-                height: 150,
-                alignItems: "center",
-              }}
-            >
-              <View
-                style={{
-                  flexDirection: "row",
-                  paddingHorizontal: 20,
-                  alignItems: "center",
-                  height: 25,
-                  wdith: 25,
-                }}
-              >
-                {/* Return Button */}
-
-                <TouchableOpacity
-                  onPress={() => this.props.navigation.navigate("Item")}
-                  style={{
-                    top: 25,
-                  }}
-                >
-                  <IconButton icon={icons.goBack} />
-                </TouchableOpacity>
-
-                {/* Title */}
-                <View
-                  style={{
-                    flex: 1,
-                    alignItems: "center",
-                    height: 100,
-                  }}
-                >
-                  <Text
-                    style={{
-                      color: COLORS.primary,
-                      ...FONTS.h1,
-                      fontSize: 37,
-                      top: 60,
-                    }}
+            {/* Return Button */}
+            <View style={styles.container}>
+              <View style={styles.header}>
+                <View style={styles.goBack}>
+                  <TouchableHighlight
+                    activeOpacity={0.6}
+                    underlayColor="#white"
+                    onPress={() => this.props.navigation.navigate("Item")}
                   >
-                    Delivery Address
-                  </Text>
+                    <IconButton icon={icons.goBack} />
+                  </TouchableHighlight>
                 </View>
-                {/* Empty View */}
-                <View style={{ width: 25 }}></View>
+                {/* Title */}
+                <View>
+                  <Text style={styles.titleText}>Delivery</Text>
+                </View>
               </View>
-            </SafeAreaView>
+            </View>
+
             <View style={{ alignItems: "center" }}>
               <MapView
                 region={this.state.region[0]}
@@ -220,22 +191,38 @@ class Checkout extends React.Component {
                 ></Marker>
               </MapView>
             </View>
-            <View style={{ width: 200 }}>
+            <View style={{ width: 220, bottom: 5, right: 10 }}>
+              <View style={{ marginBottom: "15%" }}>
+                <Text
+                  style={{
+                    color: "#000000",
+                    left: 20,
+                    fontSize: 16,
+                    bottom: 20,
+                    width: 220,
+                    fontFamily: "SignikaNegative-SemiBold",
+                  }}
+                >
+                  Please enter your address and phone number below
+                </Text>
+              </View>
               <Text
                 style={{
                   color: "#000000",
-                  left: 35,
+                  left: 20,
                   fontSize: 20,
                   bottom: 20,
+                  fontFamily: "SignikaNegative-SemiBold",
                 }}
               >
                 Address
               </Text>
               <TextInput
+                selectionColor={COLORS.primary}
                 style={{
                   backgroundColor: "#C4C4C4",
-                  left: 35,
-                  width: 305,
+                  left: 20,
+                  width: 330,
                   height: 35,
                   bottom: 20,
                 }}
@@ -245,43 +232,36 @@ class Checkout extends React.Component {
               <Text
                 style={{
                   color: "#000000",
-                  left: 35,
+                  left: 20,
                   fontSize: 20,
+                  fontFamily: "SignikaNegative-SemiBold",
                 }}
               >
                 Phone Number
               </Text>
               <TextInput
+                selectionColor={COLORS.primary}
                 style={{
                   backgroundColor: "#C4C4C4",
-                  left: 35,
-                  width: 305,
+                  left: 20,
+                  width: 330,
                   height: 35,
                 }}
               />
             </View>
-            <SafeAreaView>
-              <View style={styles.btn1}>
-                <View style={styles.insidebtn}>
-                  <TouchableOpacity
-                    onPress={() => {
-                      this.userInputLocation(this.state.geoInput);
-                    }}
-                  >
-                    <Text
-                      style={{
-                        paddingLeft: screen_width / 10,
-                        paddingRight: screen_width / 10, // if this is changed to SCREEN_WIDTH / 21 everything works
-                        fontSize: screen_width / 10,
-                        fontFamily: "SignikaNegative-Bold",
-                      }}
-                    >
-                      Confirm Order
-                    </Text>
-                  </TouchableOpacity>
-                </View>
-              </View>
-            </SafeAreaView>
+
+            <View style={styles.order}>
+              <TouchableOpacity
+                onPress={() => {
+                  this.userInputLocation(this.state.geoInput);
+                  this.props.navigation.navigate("ThankYou");
+                }}
+              >
+                <Text Text style={styles.orderText}>
+                  Confirm Order
+                </Text>
+              </TouchableOpacity>
+            </View>
           </TouchableWithoutFeedback>
         </ScrollView>
       </KeyboardAvoidingView>
@@ -297,47 +277,39 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 15,
     paddingVertical: 20,
+    backgroundColor: COLORS.secondary,
   },
-
-  btn1: {
-    alignItems: "center",
-    // top: 50
-  },
-
   goBack: {
-    right: 50,
-    marginLeft: "5%",
-    bottom: 10,
     height: 20,
     width: 20,
+    right: 35,
   },
   header: {
-    //flex: 1,
+    flex: 1,
     flexDirection: "row",
     justifyContent: "space-around",
     color: COLORS.secondary,
-    marginTop: 30,
+    marginBottom: "20%",
   },
   titleText: {
     fontSize: 30,
     fontFamily: "SignikaNegative-Bold",
     color: COLORS.primary,
-    bottom: 12,
-    marginLeft: "10%",
-    right: 65,
+    bottom: 5,
+    marginRight: "25%",
   },
   input: {
     bottom: 50,
-    right: 12,
+    right: 20,
   },
   order: {
-    marginTop: "180%",
+    marginTop: "40%",
     width: 330,
     height: 60,
     borderRadius: 20,
     // top: 30
     backgroundColor: COLORS.primary,
-    left: 10,
+    left: 8,
   },
 
   orderText: {

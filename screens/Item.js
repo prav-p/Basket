@@ -215,6 +215,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 15,
     paddingVertical: 20,
+    backgroundColor: COLORS.secondary,
   },
   header: {
     //flex: 1,

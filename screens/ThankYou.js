@@ -41,11 +41,13 @@ class ThankYou extends React.Component {
             source={require("../assets/icons/BasketGreen.png")}
             style={{ width: 60, height: 60, alignSelf: "center" }}
           />
-          <Text style={styles.emptyCheckoutText}> Your basket is empty</Text>
+          <Text style={styles.emptyCheckoutText}> You are all set!</Text>
         </View>
         <View style={styles.eCheckoutbt}>
-          <TouchableOpacity>
-            <Text style={styles.CheckoutText}>Continue</Text>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate("Home")}
+          >
+            <Text style={styles.CheckoutText}>Return to Home</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -53,10 +55,11 @@ class ThankYou extends React.Component {
   }
 }
 const styles = StyleSheet.create({
-  container: {
+  renderView: {
     flex: 1,
     paddingHorizontal: 15,
     paddingVertical: 20,
+    backgroundColor: COLORS.secondary,
   },
   goBack: {
     right: 50,
@@ -79,6 +82,27 @@ const styles = StyleSheet.create({
     bottom: 12,
     marginLeft: "10%",
     right: 65,
+  },
+  emptyCheckoutText: {
+    textAlign: "center",
+    fontSize: 20,
+    fontFamily: "SignikaNegative-Bold",
+  },
+  eCheckoutbt: {
+    marginVertical: "15%",
+    width: 330,
+    height: 60,
+    borderRadius: 20,
+    backgroundColor: COLORS.darkGray,
+    left: 8,
+  },
+  CheckoutText: {
+    textAlign: "center",
+    marginVertical: "4%",
+    fontFamily: "SignikaNegative-Bold",
+    fontSize: 30,
+    width: 330,
+    height: 60,
   },
 });
 export default ThankYou;

@@ -263,7 +263,7 @@ class Checkout extends React.Component {
               </Text>
             </View>
             <View style={styles.route}>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => this.userInputLocation(this.state.geoInput)}>
                 <Text Text style={styles.routeText}>
                   View
                 </Text>
@@ -273,7 +273,6 @@ class Checkout extends React.Component {
             <View style={styles.order}>
               <TouchableOpacity
                 onPress={() => {
-                  this.userInputLocation(this.state.geoInput);
                   this.props.navigation.navigate("ThankYou");
                 }}
               >

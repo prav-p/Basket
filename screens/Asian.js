@@ -152,7 +152,7 @@ const ListItem = ({ item }) => {
     console.log(type);
     switch (type) {
       case "Milk":
-        AsyncStorage.removeItem("@order_Key");
+        // AsyncStorage.removeItem("@order_Key");
         navigation.navigate("AsianMilk");
 
         break;

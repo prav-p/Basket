@@ -20,15 +20,66 @@ class Item extends React.Component {
   }
 
   makeRemoteRequest = async () => {
-    const orderArray = await AsyncStorage.getItem("@order_Key");
-    const parseOrderArray = JSON.parse(orderArray);
-    const filterArray = parseOrderArray.filter((item) => item.qty !== 0);
+    const storeArray = await AsyncStorage.getItem("@store_Key");
+    const parseStoreArray = JSON.parse(storeArray);
 
-    this.setState({
-      data: filterArray,
-      fullData: Data,
-    });
+    if (parseStoreArray[0].storeName === "Asian Family Market Seattle") {
+      console.log("a");
+
+      const orderArray = await AsyncStorage.getItem("@order_Key");
+      const parseOrderArray = JSON.parse(orderArray);
+  
+      if (parseOrderArray === null) {
+        this.setState({
+          data: [],
+          fullData: Data,
+        });
+      } else {
+        const filterArray = parseOrderArray.filter((item) => item.qty !== 0);
+  
+        this.setState({
+          data: filterArray,
+          fullData: Data,
+        });
+      }
+    } else if (parseStoreArray[0].storeName === "European Foods") {
+      console.log("e");
+
+      const orderArrayE = await AsyncStorage.getItem("@order_EKey");
+      const parseOrderArrayE = JSON.parse(orderArrayE);
+    
+      if (parseOrderArrayE === null) {
+        this.setState({
+          data: [],
+          fullData: Data,
+        });
+      } else {
+        const filterArrayE = parseOrderArrayE.filter((item) => item.qty !== 0);
+  
+        this.setState({
+          data: filterArrayE,
+          fullData: Data,
+        });
+      }
+    } 
   };
+
+  navigateBack = async() => {
+    const storeArray = await AsyncStorage.getItem("@store_Key");
+    const parseStoreArray = JSON.parse(storeArray);
+
+    switch (parseStoreArray[0].storeName) {
+      case "Asian Family Market Seattle":
+        this.props.navigation.navigate("Asian");
+        break;
+      case "Mendoza's Mexican Mercado":
+        this.props.navigation.navigate("Mendoza");
+        break;
+      case "European Foods":
+        this.props.navigation.navigate("European");
+        break;
+    }
+  }
 
   getSubTotalPrice = () => {
     let subTotal = this.state.data.reduce((a, b) => a + (b.total || 0), 0);
@@ -38,7 +89,6 @@ class Item extends React.Component {
 
   getSalesTax = () => {
     let salesTax = this.getSubTotalPrice() * (10.1 / 100);
-    console.log(salesTax);
     return salesTax.toFixed(2);
   };
 
@@ -57,7 +107,7 @@ class Item extends React.Component {
               <TouchableHighlight
                 activeOpacity={0.6}
                 underlayColor="#white"
-                onPress={() => this.props.navigation.navigate("Home")}
+                onPress={() => this.navigateBack()}
               >
                 <IconButton icon={icons.goBack} />
               </TouchableHighlight>
@@ -90,7 +140,7 @@ class Item extends React.Component {
               <TouchableHighlight
                 activeOpacity={0.6}
                 underlayColor="#white"
-                onPress={() => this.props.navigation.navigate("Home")}
+                onPress={() => this.navigateBack()}
               >
                 <IconButton icon={icons.goBack} />
               </TouchableHighlight>

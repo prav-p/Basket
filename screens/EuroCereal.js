@@ -28,7 +28,7 @@ class EuroCereal extends React.Component {
   }
 
   makeRemoteRequest = async () => {
-    const orderArray = await AsyncStorage.getItem("@order_Key");
+    const orderArray = await AsyncStorage.getItem("@order_EKey");
 
     this.setState({
       data: Data[6].brand,
@@ -123,9 +123,9 @@ class EuroCereal extends React.Component {
       console.log(orderList);
     }
 
-    await AsyncStorage.setItem("@order_Key", JSON.stringify(orderList));
+    await AsyncStorage.setItem("@order_EKey", JSON.stringify(orderList));
 
-    const orderArray = await AsyncStorage.getItem("@order_Key");
+    const orderArray = await AsyncStorage.getItem("@order_EKey");
 
     console.log(JSON.parse(orderArray));
   };

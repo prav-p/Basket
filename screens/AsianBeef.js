@@ -370,7 +370,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     marginTop: 5,
     marginLeft: 100,
-    alignContent: "space-between",
     width: 100,
   },
 });

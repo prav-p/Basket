@@ -56,7 +56,6 @@ class ThankYou extends React.Component {
 }
 const styles = StyleSheet.create({
   renderView: {
-    flex: 1,
     paddingHorizontal: 15,
     paddingVertical: 20,
     backgroundColor: COLORS.secondary,

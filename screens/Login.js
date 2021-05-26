@@ -102,9 +102,11 @@ const Login = () => {
         // } else {
         //   navigation.navigate("Home");
         // }
-        navigation.navigate("Home");
+        // navigation.navigate("Home");
       });
     });
+
+    navigation.navigate("Home");
   }
 
   function renderLoginButton() {

@@ -185,7 +185,6 @@ const createAccount = () => {
             contactNo,
           ],
           (tx, results) => {
-            console.log("Results", results.rowsAffected);
             if (results.rowsAffected > 0) {
               Alert.alert(
                 "Success",
@@ -201,14 +200,6 @@ const createAccount = () => {
             } else alert("Registration Failed");
           }
         );
-
-        tx.executeSql("SELECT * FROM DataTable", [], (tx, results) => {
-          var temp = [];
-          for (let i = 0; i < results.rows.length; ++i)
-            temp.push(results.rows.item(i));
-          setFlatListItems(temp);
-          console.log(temp);
-        });
       });
     }
   };

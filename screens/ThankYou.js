@@ -36,7 +36,7 @@ class ThankYou extends React.Component {
             <Text style={styles.titleText}>Checkout</Text>
           </View>
         </View>
-        <View style={{ marginVertical: "70%" }}>
+        <View style={{ bottom: 100 }}>
           <Image
             source={require("../assets/images/confirmation.jpg")}
             style={{ width: 100, height: 100, alignSelf: "center" }}

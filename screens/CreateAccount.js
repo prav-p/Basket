@@ -39,8 +39,8 @@ const createAccount = () => {
   let create_account = () => {
     if (name === undefined || name === "") {
       Alert.alert(
-        "Error!",
-        "Please enter your name",
+        "Invalid entry",
+        "Your name is required",
         [
           {
             text: "Ok",
@@ -50,8 +50,8 @@ const createAccount = () => {
       );
     } else if (email === undefined || email === "") {
       Alert.alert(
-        "Error!",
-        "Please enter your email",
+        "Invalid email",
+        "Please enter a valid email address",
         [
           {
             text: "Ok",
@@ -64,8 +64,8 @@ const createAccount = () => {
       email.substring(email.length - 4) !== ".com"
     ) {
       Alert.alert(
-        "Error!",
         "Invalid email",
+        "Please enter a valid email address",
         [
           {
             text: "Ok",
@@ -86,7 +86,7 @@ const createAccount = () => {
       );
     } else if (password.length < 8) {
       Alert.alert(
-        "Error!",
+        "Invalid password format",
         "Password must be at least 8 characters",
         [
           {
@@ -112,8 +112,8 @@ const createAccount = () => {
       );
     } else if (address === undefined || address === "") {
       Alert.alert(
-        "Error!",
         "Invalid address",
+        "Please enter a valid address",
         [
           {
             text: "Ok",
@@ -128,8 +128,8 @@ const createAccount = () => {
       isNaN(zipcode)
     ) {
       Alert.alert(
-        "Error!",
         "Invalid zipcode",
+        "Please enter a valid zipcode",
         [
           {
             text: "Ok",
@@ -139,8 +139,8 @@ const createAccount = () => {
       );
     } else if (city === undefined || city === "") {
       Alert.alert(
-        "Error!",
         "Invalid city",
+        "Please enter a valid city",
         [
           {
             text: "Ok",
@@ -154,8 +154,8 @@ const createAccount = () => {
       isNaN(contactNo)
     ) {
       Alert.alert(
-        "Error!",
         "Invalid contact number",
+        "Please enter a valid contact number",
         [
           {
             text: "Ok",

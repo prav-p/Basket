@@ -161,7 +161,7 @@ class Checkout extends React.Component {
     }
 
     this.props.navigation.navigate("ThankYou");
-  }
+  };
 
   render() {
     return (
@@ -234,7 +234,7 @@ class Checkout extends React.Component {
                   fontFamily: "SignikaNegative-SemiBold",
                 }}
               >
-                Address
+                Delivery Address
               </Text>
               <TextInput
                 selectionColor={COLORS.primary}

@@ -36,7 +36,7 @@ class ThankYou extends React.Component {
             <Text style={styles.titleText}>Checkout</Text>
           </View>
         </View>
-        <View style={{ marginVertical: "75%" }}>
+        <View style={{ marginVertical: "50%" }}>
           <Image
             source={require("../assets/images/confirmation.jpg")}
             style={{ width: 100, height: 100, alignSelf: "center" }}
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     fontFamily: "SignikaNegative-Bold",
   },
   eCheckoutbt: {
-    marginVertical: "1%",
+    marginVertical: "50%",
     width: 330,
     height: 60,
     borderRadius: 20,

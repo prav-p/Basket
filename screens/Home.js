@@ -45,11 +45,9 @@ class Home extends React.Component {
   handleSearch = (text) => {
     const formattedQuery = text.toUpperCase();
     const data = filter(this.state.fullData, (store) => {
-      console.log(this.contains(store, formattedQuery));
       return this.contains(store, formattedQuery);
     });
     this.setState({ data, query: text });
-    console.log(data);
   };
 
   renderHeader = () => {
@@ -97,9 +95,6 @@ class Home extends React.Component {
     const res = this.state.data.filter((obj) => {
       return obj.storeName === storeName;
     });
-
-    console.log(`${res.storeName}`);
-
     await AsyncStorage.setItem("@store_Key", JSON.stringify(res));
 
     switch (storeName) {

@@ -24,8 +24,6 @@ class Item extends React.Component {
     const parseStoreArray = JSON.parse(storeArray);
 
     if (parseStoreArray[0].storeName === "Asian Family Market Seattle") {
-      console.log("a");
-
       const orderArray = await AsyncStorage.getItem("@order_Key");
       const parseOrderArray = JSON.parse(orderArray);
   
@@ -43,8 +41,6 @@ class Item extends React.Component {
         });
       }
     } else if (parseStoreArray[0].storeName === "European Foods") {
-      console.log("e");
-
       const orderArrayE = await AsyncStorage.getItem("@order_EKey");
       const parseOrderArrayE = JSON.parse(orderArrayE);
     
@@ -62,8 +58,6 @@ class Item extends React.Component {
         });
       }
     } else {
-      console.log("e");
-
       const orderArrayM = await AsyncStorage.getItem("@order_MKey");
       const parseOrderArrayM = JSON.parse(orderArrayM);
     

@@ -144,6 +144,25 @@ class Checkout extends React.Component {
     }
   };
 
+  confirmOrder = async () => {
+    const storeArray = await AsyncStorage.getItem("@store_Key");
+    const parseStoreArray = JSON.parse(storeArray);
+
+    switch (parseStoreArray[0].storeName) {
+      case "Asian Family Market Seattle":
+        await AsyncStorage.removeItem("@order_Key");
+        break;
+      case "Mendoza's Mexican Mercado":
+        await AsyncStorage.removeItem("@order_MKey");
+        break;
+      case "European Foods":
+        await AsyncStorage.removeItem("@order_EKey");
+        break;
+    }
+
+    this.props.navigation.navigate("ThankYou");
+  }
+
   render() {
     return (
       // <View style={styles.container}>
@@ -273,7 +292,7 @@ class Checkout extends React.Component {
             <View style={styles.order}>
               <TouchableOpacity
                 onPress={() => {
-                  this.props.navigation.navigate("ThankYou");
+                  this.confirmOrder();
                 }}
               >
                 <Text Text style={styles.orderText}>

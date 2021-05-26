@@ -23,21 +23,19 @@ class ThankYou extends React.Component {
         <View style={styles.header}>
           {/*Title Button */}
           <View>
-            <Text style={styles.titleText}>Checkout</Text>
+            <Text style={styles.titleText}>Order Confirmed</Text>
           </View>
         </View>
         <View style={{ height: 300, marginVertical: "45%" }}>
-          <Image
-            source={require("../assets/images/confirmation.jpg")}
-            style={{ width: 100, height: 100, alignSelf: "center" }}
-          />
           <Text style={styles.emptyCheckoutText}> Your order is placed!</Text>
-        </View>
-        <View style={styles.eCheckoutbt}>
           <TouchableOpacity
             onPress={() => this.props.navigation.navigate("Home")}
           >
-            <Text style={styles.CheckoutText}>Return to Home</Text>
+            <Image
+              source={require("../assets/images/confirmation.jpg")}
+              style={{ width: 100, height: 100, alignSelf: "center" }}
+            />
+            <Text style={styles.returnText}>Return to stores nearby</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -49,6 +47,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 15,
     paddingVertical: 20,
+
     backgroundColor: COLORS.secondary,
   },
   header: {
@@ -63,11 +62,18 @@ const styles = StyleSheet.create({
     fontFamily: "SignikaNegative-Bold",
     color: COLORS.primary,
     bottom: 12,
-    marginLeft: "20%",
+    marginLeft: "5%",
   },
   emptyCheckoutText: {
     textAlign: "center",
     fontSize: 25,
+    marginBottom: "15%",
+    fontFamily: "SignikaNegative-Bold",
+  },
+  returnText: {
+    textAlign: "center",
+    fontSize: 18,
+    marginVertical: "1%",
     fontFamily: "SignikaNegative-Bold",
   },
   eCheckoutbt: {
@@ -80,7 +86,7 @@ const styles = StyleSheet.create({
   },
   CheckoutText: {
     textAlign: "center",
-    marginVertical: "4%",
+    marginVertical: "10%",
     fontFamily: "SignikaNegative-Bold",
     fontSize: 30,
     width: 330,

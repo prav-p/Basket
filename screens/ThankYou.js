@@ -36,19 +36,20 @@ class ThankYou extends React.Component {
             <Text style={styles.titleText}>Checkout</Text>
           </View>
         </View>
-        <View style={{ marginVertical: "50%" }}>
+        <View style={{ marginVertical: "70%" }}>
           <Image
             source={require("../assets/images/confirmation.jpg")}
             style={{ width: 100, height: 100, alignSelf: "center" }}
           />
           <Text style={styles.emptyCheckoutText}> Your order is placed!</Text>
-        </View>
-        <View style={styles.eCheckoutbt}>
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("Home")}
-          >
-            <Text style={styles.CheckoutText}>Return to Home</Text>
-          </TouchableOpacity>
+
+          <View style={styles.eCheckoutbt}>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate("Home")}
+            >
+              <Text style={styles.CheckoutText}>Return to Home</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     );
@@ -87,7 +88,7 @@ const styles = StyleSheet.create({
     fontFamily: "SignikaNegative-Bold",
   },
   eCheckoutbt: {
-    marginVertical: "50%",
+    marginVertical: "70%",
     width: 330,
     height: 60,
     borderRadius: 20,

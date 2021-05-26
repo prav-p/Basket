@@ -21,35 +21,24 @@ class ThankYou extends React.Component {
     return (
       <View style={styles.renderView}>
         <View style={styles.header}>
-          {/*Return Button */}
-          {/* <View style={styles.goBack}>
-            <TouchableHighlight
-              activeOpacity={0.6}
-              underlayColor="#white"
-              onPress={() => this.props.navigation.navigate("Home")}
-            >
-              <IconButton icon={icons.goBack} />
-            </TouchableHighlight>
-          </View> */}
           {/*Title Button */}
           <View>
             <Text style={styles.titleText}>Checkout</Text>
           </View>
         </View>
-        <View>
+        <View style={{ marginVertical: "75%" }}>
           <Image
             source={require("../assets/images/confirmation.jpg")}
-            style={{ width: 100, height: 100, marginLeft: 120, marginTop: 250 }}
+            style={{ width: 60, height: 60, alignSelf: "center" }}
           />
           <Text style={styles.emptyCheckoutText}> Your order is placed!</Text>
-
-          <View style={styles.eCheckoutbt}>
-            <TouchableOpacity
-              onPress={() => this.props.navigation.navigate("Home")}
-            >
-              <Text style={styles.CheckoutText}>Return to Home</Text>
-            </TouchableOpacity>
-          </View>
+        </View>
+        <View style={styles.eCheckoutbt}>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate("Home")}
+          >
+            <Text style={styles.CheckoutText}>Return to Home</Text>
+          </TouchableOpacity>
         </View>
       </View>
     );
@@ -57,16 +46,10 @@ class ThankYou extends React.Component {
 }
 const styles = StyleSheet.create({
   renderView: {
+    flex: 1,
     paddingHorizontal: 15,
     paddingVertical: 20,
     backgroundColor: COLORS.secondary,
-  },
-  goBack: {
-    right: 50,
-    marginLeft: "5%",
-    bottom: 10,
-    height: 20,
-    width: 20,
   },
   header: {
     //flex: 1,
@@ -88,7 +71,7 @@ const styles = StyleSheet.create({
     fontFamily: "SignikaNegative-Bold",
   },
   eCheckoutbt: {
-    marginVertical: "70%",
+    marginVertical: "5%",
     width: 330,
     height: 60,
     borderRadius: 20,

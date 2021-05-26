@@ -26,7 +26,7 @@ class Item extends React.Component {
     if (parseStoreArray[0].storeName === "Asian Family Market Seattle") {
       const orderArray = await AsyncStorage.getItem("@order_Key");
       const parseOrderArray = JSON.parse(orderArray);
-  
+
       if (parseOrderArray === null) {
         this.setState({
           data: [],
@@ -34,7 +34,7 @@ class Item extends React.Component {
         });
       } else {
         const filterArray = parseOrderArray.filter((item) => item.qty !== 0);
-  
+
         this.setState({
           data: filterArray,
           fullData: Data,
@@ -43,7 +43,7 @@ class Item extends React.Component {
     } else if (parseStoreArray[0].storeName === "European Foods") {
       const orderArrayE = await AsyncStorage.getItem("@order_EKey");
       const parseOrderArrayE = JSON.parse(orderArrayE);
-    
+
       if (parseOrderArrayE === null) {
         this.setState({
           data: [],
@@ -51,7 +51,7 @@ class Item extends React.Component {
         });
       } else {
         const filterArrayE = parseOrderArrayE.filter((item) => item.qty !== 0);
-  
+
         this.setState({
           data: filterArrayE,
           fullData: Data,
@@ -60,7 +60,7 @@ class Item extends React.Component {
     } else {
       const orderArrayM = await AsyncStorage.getItem("@order_MKey");
       const parseOrderArrayM = JSON.parse(orderArrayM);
-    
+
       if (parseOrderArrayM === null) {
         this.setState({
           data: [],
@@ -68,7 +68,7 @@ class Item extends React.Component {
         });
       } else {
         const filterArrayM = parseOrderArrayM.filter((item) => item.qty !== 0);
-  
+
         this.setState({
           data: filterArrayM,
           fullData: Data,
@@ -77,7 +77,7 @@ class Item extends React.Component {
     }
   };
 
-  navigateBack = async() => {
+  navigateBack = async () => {
     const storeArray = await AsyncStorage.getItem("@store_Key");
     const parseStoreArray = JSON.parse(storeArray);
 
@@ -92,13 +92,13 @@ class Item extends React.Component {
         this.props.navigation.navigate("European");
         break;
     }
-  }
+  };
 
   getItemPrice = (item) => {
     let itemPrice = 0;
     itemPrice += item.qty * item.price;
     return itemPrice.toFixed(2);
-  }
+  };
 
   getSubTotalPrice = () => {
     let subTotal = this.state.data.reduce((a, b) => a + (b.total || 0), 0);
@@ -222,7 +222,7 @@ class Item extends React.Component {
             >
               Delivery
             </Text>
-            <Text 
+            <Text
               style={{
                 fontWeight: "bold",
                 fontFamily: "SignikaNegative-SemiBold",
@@ -365,11 +365,12 @@ const styles = StyleSheet.create({
     fontFamily: "SignikaNegative-Bold",
   },
   eCheckoutbt: {
-    marginVertical: "15%",
+    marginVertical: "5%",
     width: 330,
     height: 60,
     borderRadius: 20,
     backgroundColor: COLORS.lightGray,
+    left: 10,
   },
 
   Checkout: {

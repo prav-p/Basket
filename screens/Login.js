@@ -77,7 +77,6 @@ const Login = () => {
       tx.executeSql("SELECT * FROM DataTable", [], (tx, results) => {
         // for (let i = 0; i < results.rows.length; ++i)
         //   temp.push(results.rows.item(i));
-        // console.log(temp);
 
         // for (var i = 0; i < temp.length; ++i) {
         //   if (temp[i].email === email && temp[i].password === password) {

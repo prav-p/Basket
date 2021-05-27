@@ -41,7 +41,6 @@ class MendozaSalsa extends React.Component {
         orderItems: JSON.parse(orderArray),
       });
     }
-    console.log(this.state.orderItems);
   };
 
   contains = ({ name }, query) => {
@@ -54,11 +53,9 @@ class MendozaSalsa extends React.Component {
   handleSearch = (text) => {
     const formattedQuery = text.toUpperCase();
     const data = filter(this.state.fullData, (item) => {
-      console.log(this.contains(item, formattedQuery));
       return this.contains(item, formattedQuery);
     });
     this.setState({ data, query: text });
-    console.log(this.state.fullData[0].brand);
   };
 
   renderHeader = () => (
@@ -83,7 +80,6 @@ class MendozaSalsa extends React.Component {
   editOrder = async (action, name, price, picture) => {
     let orderList = this.state.orderItems.slice();
     let item = orderList.filter((a) => a.name == name);
-    console.log(picture);
 
     if (action == "+") {
       if (item.length > 0) {
@@ -106,7 +102,6 @@ class MendozaSalsa extends React.Component {
         orderItems: orderList,
       });
 
-      console.log(orderList);
     } else {
       if (item.length > 0) {
         if (item[0]?.qty > 0) {
@@ -120,14 +115,12 @@ class MendozaSalsa extends React.Component {
         orderItems: orderList,
       });
 
-      console.log(orderList);
     }
 
     await AsyncStorage.setItem("@order_MKey", JSON.stringify(orderList));
 
     const orderArray = await AsyncStorage.getItem("@order_MKey");
 
-    console.log(JSON.parse(orderArray));
   };
 
   getOrderQty = (name) => {

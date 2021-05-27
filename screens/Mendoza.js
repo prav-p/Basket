@@ -176,7 +176,6 @@ const CATEGORIES = [
 const ListItem = ({ item }) => {
   const navigation = useNavigation();
   function onclick_item(type) {
-    console.log(type);
     switch (type) {
       case "Milk":
         navigation.navigate("MendozaMilk");

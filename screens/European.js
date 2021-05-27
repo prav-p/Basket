@@ -184,7 +184,6 @@ const CATEGORIES = [
 const ListItem = ({ item }) => {
   const navigation = useNavigation();
   function onclick_item(type) {
-    console.log(type);
     switch (type) {
       case "Butter":
         navigation.navigate("EuroButter");
@@ -251,7 +250,6 @@ const ListItem = ({ item }) => {
     }
   }
 
-  // console.log(item.type)
   return (
     <View style={styles.item}>
       <TouchableOpacity onPress={() => onclick_item(item.type)}>

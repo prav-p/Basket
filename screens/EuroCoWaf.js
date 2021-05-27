@@ -101,8 +101,6 @@ class EuroCoWaf extends React.Component {
       this.setState({
         orderItems: orderList,
       });
-
-      console.log(orderList);
     } else {
       if (item.length > 0) {
         if (item[0]?.qty > 0) {

@@ -192,7 +192,7 @@ const createAccount = () => {
                 [
                   {
                     text: "Continue",
-                    onPress: () => navigation.navigate("Home"),
+                    onPress: () => navigation.navigate("Login"),
                   },
                 ],
                 { cancelable: false }

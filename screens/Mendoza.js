@@ -238,7 +238,6 @@ const ListItem = ({ item }) => {
     }
   }
 
-  // console.log(item.type)
   return (
     <View style={styles.item}>
       <TouchableOpacity onPress={() => onclick_item(item.type)}>

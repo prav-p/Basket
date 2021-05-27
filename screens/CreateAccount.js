@@ -341,6 +341,7 @@ const styles = StyleSheet.create({
     fontSize: RFValue(25, 896),
     // right: 50,
     // bottom: 50,
+    color: COLORS.black,
     top: 20,
   },
 
@@ -370,6 +371,7 @@ const styles = StyleSheet.create({
     // right: 50,
     // bottom: 50,
     //top: 20,
+    color: COLORS.black,
   },
 
   zipcodeInput: {
@@ -393,6 +395,7 @@ const styles = StyleSheet.create({
     //left: 150,
     // right: 50,
     //bottom: 75,
+    color: COLORS.black,
   },
 
   cityInput: {
@@ -414,6 +417,7 @@ const styles = StyleSheet.create({
     fontSize: RFValue(25, 896),
     // right: 50,
     marginTop: 1,
+    color: COLORS.black,
   },
 
   contactNoInput: {
@@ -431,10 +435,8 @@ const styles = StyleSheet.create({
     width: 330,
     height: 60,
     borderRadius: 20,
-    borderWidth: 3,
-    borderColor: COLORS.primary,
     marginLeft: "30%",
-    backgroundColor: COLORS.secondary,
+    backgroundColor: COLORS.lightOrange,
   },
   createText: {
     textAlign: "center",
@@ -443,7 +445,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     width: 330,
     height: 60,
-    color: COLORS.primary,
+    color: COLORS.black,
   },
 });
 export default createAccount;

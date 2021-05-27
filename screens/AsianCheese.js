@@ -328,11 +328,13 @@ const styles = StyleSheet.create({
     fontFamily: "SignikaNegative-Regular",
     fontSize: 14,
     width: 100,
+    color: COLORS.black,
   },
 
   price: {
     fontFamily: "SignikaNegative-SemiBold",
     fontSize: 14,
+    color: COLORS.black,
   },
   flatListText: {
     color: "#000",

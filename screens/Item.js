@@ -197,6 +197,7 @@ class Item extends React.Component {
                 fontFamily: "SignikaNegative-SemiBold",
                 fontSize: 18,
                 top: "10%",
+                color: COLORS.black,
               }}
             >
               Subtotal
@@ -208,6 +209,7 @@ class Item extends React.Component {
                 fontSize: 18,
                 marginLeft: "85%",
                 right: 4,
+                color: COLORS.black,
               }}
             >
               ${this.getSubTotalPrice()}
@@ -218,6 +220,7 @@ class Item extends React.Component {
                 fontFamily: "SignikaNegative-SemiBold",
                 fontSize: 18,
                 top: "10%",
+                color: COLORS.black,
               }}
             >
               Delivery
@@ -229,6 +232,7 @@ class Item extends React.Component {
                 fontSize: 18,
                 marginLeft: "85%",
                 right: 4,
+                color: COLORS.black,
               }}
             >
               $1.99
@@ -239,6 +243,7 @@ class Item extends React.Component {
                 fontFamily: "SignikaNegative-SemiBold",
                 fontSize: 18,
                 top: "10%",
+                color: COLORS.black,
               }}
             >
               Est. Sales Tax
@@ -250,6 +255,7 @@ class Item extends React.Component {
                 fontSize: 18,
                 marginLeft: "85%",
                 right: 4,
+                color: COLORS.black,
               }}
             >
               ${this.getSalesTax()}
@@ -260,6 +266,7 @@ class Item extends React.Component {
                 fontFamily: "SignikaNegative-Bold",
                 fontSize: 18,
                 top: "10%",
+                color: COLORS.black,
               }}
             >
               Total
@@ -269,8 +276,9 @@ class Item extends React.Component {
                 fontWeight: "bold",
                 fontFamily: "SignikaNegative-Bold",
                 fontSize: 18,
-                right: 20,
+                right: 15,
                 textAlign: "right",
+                color: COLORS.black,
               }}
             >
               ${this.getTotalPrice()}
@@ -331,6 +339,7 @@ const styles = StyleSheet.create({
   },
   itemDescrp: {
     flexDirection: "row",
+    color: COLORS.black,
   },
   itemName: {
     fontFamily: "SignikaNegative-Regular",
@@ -338,6 +347,7 @@ const styles = StyleSheet.create({
     width: 140,
     marginHorizontal: "2%",
     top: 10,
+    color: COLORS.black,
   },
   itemQty: {
     fontFamily: "SignikaNegative-Regular",
@@ -346,6 +356,7 @@ const styles = StyleSheet.create({
     marginLeft: "5%",
     top: 12,
     left: 5,
+    color: COLORS.black,
   },
   itemPrice: {
     fontFamily: "SignikaNegative-Regular",
@@ -354,6 +365,7 @@ const styles = StyleSheet.create({
     marginLeft: "6%",
     left: 25,
     top: 12,
+    color: COLORS.black,
   },
   subTotal: {
     width: 350,
@@ -363,6 +375,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 20,
     fontFamily: "SignikaNegative-Bold",
+    color: COLORS.black,
   },
   eCheckoutbt: {
     marginVertical: "5%",

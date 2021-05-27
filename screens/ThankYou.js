@@ -69,12 +69,14 @@ const styles = StyleSheet.create({
     fontSize: 25,
     marginBottom: "15%",
     fontFamily: "SignikaNegative-Bold",
+    color: COLORS.black,
   },
   returnText: {
     textAlign: "center",
     fontSize: 18,
     marginVertical: "1%",
     fontFamily: "SignikaNegative-Bold",
+    color: COLORS.black,
   },
   eCheckoutbt: {
     marginVertical: "5%",
@@ -91,6 +93,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     width: 330,
     height: 60,
+    color: COLORS.black,
   },
 });
 export default ThankYou;

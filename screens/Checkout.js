@@ -237,7 +237,6 @@ class Checkout extends React.Component {
                 Delivery Address
               </Text>
               <TextInput
-                selectionColor={COLORS.primary}
                 style={{
                   backgroundColor: "#ebebeb",
                   left: 20,
@@ -250,7 +249,7 @@ class Checkout extends React.Component {
               />
               <Text
                 style={{
-                  color: "#000000",
+                  color: COLORS.black,
                   left: 20,
                   fontSize: 20,
                   fontFamily: "SignikaNegative-SemiBold",
@@ -259,7 +258,6 @@ class Checkout extends React.Component {
                 Phone Number
               </Text>
               <TextInput
-                selectionColor={COLORS.primary}
                 style={{
                   backgroundColor: "#ebebeb",
                   left: 20,
@@ -271,7 +269,7 @@ class Checkout extends React.Component {
             <View style={{ left: 8, marginTop: 10 }}>
               <Text
                 style={{
-                  color: "#000000",
+                  color: COLORS.black,
                   fontSize: 16,
                   width: 220,
                   fontFamily: "SignikaNegative-SemiBold",

@@ -206,7 +206,7 @@ const style = StyleSheet.create({
 
   flatListText: {
     left: 20,
-    color: "#000",
+    color: COLORS.black,
     fontFamily: "SignikaNegative-SemiBold",
     fontSize: 18,
     flexShrink: 1,

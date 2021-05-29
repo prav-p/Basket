@@ -61,6 +61,15 @@ const App = () => {
     "SignikaNegative-Bold": require("./assets/fonts/SignikaNegative-Bold.ttf"),
     "SignikaNegative-SemiBold": require("./assets/fonts/SignikaNegative-SemiBold.ttf"),
     "SignikaNegative-Regular": require("./assets/fonts/SignikaNegative-Regular.ttf"),
+    "Montserrat-Black": require("./assets/fonts/Montserrat-Black.ttf"),
+    "Montserrat-BlackItalic": require("./assets/fonts/Montserrat-BlackItalic.ttf"),
+    "Montserrat-Bold": require("./assets/fonts/Montserrat-Bold.ttf"),
+    "Montserrat-BoldItalic": require("./assets/fonts/Montserrat-BoldItalic.ttf"),
+    "Montserrat-Medium": require("./assets/fonts/Montserrat-Medium.ttf"),
+    "Montserrat-MediumItalic": require("./assets/fonts/Montserrat-MediumItalic.ttf"),
+    "Montserrat-Regular": require("./assets/fonts/Montserrat-Regular.ttf"),
+    "Montserrat-SemiBold": require("./assets/fonts/Montserrat-SemiBold.ttf"),
+    "Montserrat-SemiBoldItalic": require("./assets/fonts/Montserrat-SemiBoldItalic.ttf"),
   });
 
   if (!loaded) {

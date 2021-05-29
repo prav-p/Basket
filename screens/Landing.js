@@ -54,7 +54,7 @@ const Landing = () => {
                   fontSize: screen_width / 10,
                 }}
               >
-                Create An Account
+                Sign Up
               </Text>
             </Text>
           </TouchableOpacity>
@@ -75,7 +75,7 @@ const style = StyleSheet.create({
   },
   insidebtn: {
     height: hp("7.5%"),
-    width: wp("95%"),
+    width: wp("80%"),
     //textAlign: "center",
     backgroundColor: COLORS.primary,
     alignItems: "center",
@@ -83,13 +83,13 @@ const style = StyleSheet.create({
     borderRadius: 20,
   },
   text: {
-    fontFamily: "SignikaNegative-Bold",
-    left: 0,
+    fontFamily: "Montserrat-Bold",
     textAlign: "center",
     fontSize: RFValue(20, 896),
     color: COLORS.white,
-    paddingLeft: 140,
-    paddingRight: 140,
+    height: hp("7.5%"),
+    width: wp("80%"),
+    marginTop: "5%",
   },
   btn2: {
     alignItems: "center",
@@ -97,8 +97,7 @@ const style = StyleSheet.create({
   },
   insidebtn2: {
     height: hp("7.5%"),
-    width: wp("95%"),
-    textAlign: "center",
+    width: wp("80%"),
     backgroundColor: COLORS.white,
     alignItems: "center",
     justifyContent: "center",
@@ -107,12 +106,15 @@ const style = StyleSheet.create({
     borderColor: COLORS.primary,
   },
   text2: {
-    fontFamily: "SignikaNegative-Bold",
+    fontFamily: "Montserrat-Bold",
     textAlign: "center",
     fontSize: RFValue(20, 896),
     color: COLORS.primary,
-    paddingLeft: 30,
-    paddingRight: 30,
+    // paddingLeft: 30,
+    // paddingRight: 30,
+    height: hp("7.5%"),
+    width: wp("80%"),
+    marginTop: "5%",
   },
   title: {
     position: "absolute",

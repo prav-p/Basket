@@ -289,7 +289,7 @@ const createAccount = () => {
     return (
       <View style={styles.CreateAccount}>
         <TouchableOpacity onPress={() => create_account()}>
-          <Text style={styles.createText}>Create</Text>
+          <Text style={styles.createText}>Create Account</Text>
         </TouchableOpacity>
       </View>
     );
@@ -332,7 +332,7 @@ const styles = StyleSheet.create({
     top: 20,
     fontFamily: "SignikaNegative-Bold",
     textAlign: "center",
-    fontSize: RFValue(80, 896),
+    fontSize: RFValue(60, 896),
     color: COLORS.primary,
   },
 
@@ -356,7 +356,7 @@ const styles = StyleSheet.create({
     fontSize: RFValue(30, 896),
     backgroundColor: "#EBEBEB",
     // borderRadius: 10,
-    fontFamily: "SignikaNegative-Regular",
+    fontFamily: "Montserrat-Regular",
   },
   zipCity: {
     alignItems: "flex-start",
@@ -386,7 +386,7 @@ const styles = StyleSheet.create({
     fontSize: RFValue(30, 896),
     backgroundColor: "#EBEBEB",
     // borderRadius: 10,
-    fontFamily: "SignikaNegative-Regular",
+    fontFamily: "Montserrat-Regular",
   },
 
   cityLabel: {
@@ -409,7 +409,7 @@ const styles = StyleSheet.create({
     fontSize: RFValue(30, 896),
     backgroundColor: "#EBEBEB",
     // borderRadius: 10,
-    fontFamily: "SignikaNegative-Regular",
+    fontFamily: "Montserrat-Regular",
   },
 
   contactNoLabel: {
@@ -428,23 +428,23 @@ const styles = StyleSheet.create({
     fontSize: RFValue(30, 896),
     backgroundColor: "#EBEBEB",
     // borderRadius: 10,
-    fontFamily: "SignikaNegative-Regular",
+    fontFamily: "Montserrat-Regular",
   },
   CreateAccount: {
     marginVertical: "5%",
-    width: 330,
-    height: 60,
+    width: 250,
+    height: 50,
     borderRadius: 20,
-    marginLeft: "30%",
+    marginLeft: "40%",
     backgroundColor: COLORS.lightOrange,
   },
   createText: {
     textAlign: "center",
     marginVertical: "4%",
-    fontFamily: "SignikaNegative-Bold",
-    fontSize: 30,
-    width: 330,
-    height: 60,
+    fontFamily: "Montserrat-Bold",
+    fontSize: 24,
+    width: 250,
+    height: 50,
     color: COLORS.black,
   },
 });

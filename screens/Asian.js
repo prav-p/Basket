@@ -42,7 +42,7 @@ class Asian extends React.Component {
             >
               <Image
                 source={require("../assets/icons/BasketGreen.png")}
-                style={{ width: 40, height: 40 }}
+                style={{ width: 35, height: 35 }}
               />
             </TouchableOpacity>
           </View>

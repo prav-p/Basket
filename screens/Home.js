@@ -63,7 +63,7 @@ class Home extends React.Component {
               <TouchableOpacity onPress={() => navigation.navigate("Item")}>
                 <Image
                   source={require("../assets/icons/BasketGreen.png")}
-                  style={{ width: 40, height: 40 }}
+                  style={{ width: 35, height: 35 }}
                 />
               </TouchableOpacity>
             </View>
@@ -132,6 +132,7 @@ class Home extends React.Component {
                     borderRadius: 30,
                   }}
                 />
+                <Text></Text>
                 <Text adjustsFontSizeToFit style={style.flatListText}>
                   {`${item.storeName}\n${item.storeLocation}`}
                 </Text>
@@ -207,7 +208,7 @@ const style = StyleSheet.create({
   flatListText: {
     left: 20,
     color: COLORS.black,
-    fontFamily: "SignikaNegative-SemiBold",
+    fontFamily: "Montserrat-Medium",
     fontSize: 18,
     flexShrink: 1,
   },

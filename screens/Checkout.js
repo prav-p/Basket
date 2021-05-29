@@ -13,10 +13,6 @@ import {
   KeyboardAvoidingView,
 } from "react-native";
 import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from "react-native-responsive-screen";
-import {
   ScrollView,
   TextInput,
   TouchableOpacity,
@@ -26,7 +22,7 @@ import {
 import MapView, { Marker } from "react-native-maps";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import UniversalGeocoder from "universal-geocoder";
-import { NavigationContainer, useNavigation } from "@react-navigation/native";
+
 class Checkout extends React.Component {
   state = {
     geoInput: "",

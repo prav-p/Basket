@@ -310,19 +310,19 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   qty: {
-    fontFamily: "SignikaNegative-SemiBold",
+    fontFamily: "Montserrat-Medium",
     fontSize: 16,
     color: COLORS.darkGray,
   },
   name: {
-    fontFamily: "SignikaNegative-Regular",
-    fontSize: 14,
+    fontFamily: "Montserrat-SemiBold",
+    fontSize: 12,
     width: 100,
     color: COLORS.black,
   },
 
   price: {
-    fontFamily: "SignikaNegative-SemiBold",
+    fontFamily: "Montserrat-Bold",
     fontSize: 14,
     color: COLORS.black,
   },
@@ -330,7 +330,7 @@ const styles = StyleSheet.create({
     color: "#000",
     width: 90,
     height: 140,
-    fontFamily: "SignikaNegative-SemiBold",
+    fontFamily: "Montserrat-SemiBold",
     fontSize: 16,
   },
   header: {

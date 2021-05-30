@@ -132,10 +132,14 @@ class Home extends React.Component {
                     borderRadius: 30,
                   }}
                 />
-                <Text></Text>
+
                 <Text adjustsFontSizeToFit style={style.flatListText}>
-                  {`${item.storeName}\n${item.storeLocation}`}
+                  {`${item.storeName}`}
                 </Text>
+                <Text
+                  adjustsFontSizeToFit
+                  style={style.storeLocationText}
+                >{`${item.storeLocation}`}</Text>
               </View>
             </TouchableOpacity>
           )}
@@ -164,14 +168,6 @@ const style = StyleSheet.create({
     marginTop: "15%",
   },
 
-  headerView: {
-    //backgroundColor: "#fff",
-    //padding: 2,
-    //borderRadius: 15,
-    //marginTop: "10%",
-    //marginBottom: "5%",
-  },
-
   searchBar: {
     borderColor: "#333",
     backgroundColor: "#ebebeb",
@@ -187,7 +183,6 @@ const style = StyleSheet.create({
     height: 2,
     width: "100%",
     backgroundColor: COLORS.primary,
-    //marginLeft: "5%",
   },
 
   renderView: {
@@ -208,9 +203,22 @@ const style = StyleSheet.create({
   flatListText: {
     left: 20,
     color: COLORS.black,
+    fontFamily: "Montserrat-Bold",
+    fontSize: 15,
+    flexDirection: "row",
+    width: 180,
+    height: 20,
+    bottom: 20,
+  },
+  storeLocationText: {
+    top: 10,
+    right: 160,
+    color: COLORS.black,
     fontFamily: "Montserrat-Medium",
-    fontSize: 18,
-    flexShrink: 1,
+    fontSize: 14,
+    flexDirection: "row",
+    width: 120,
+    height: 50,
   },
   checkout: {
     left: 35,

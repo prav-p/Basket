@@ -206,7 +206,7 @@ const createAccount = () => {
 
   function renderSignUpHeader() {
     return (
-      <View>
+      <View style={{ height: 100 }}>
         <Text style={styles.signUpText}>SIGN UP</Text>
       </View>
     );
@@ -314,9 +314,11 @@ const createAccount = () => {
 const styles = StyleSheet.create({
   form: {
     flex: 4,
-    marginVertical: "10%",
-    marginLeft: "30%",
+    // marginVertical: "10%",
+    // marginLeft: "30%",
+    left: 25,
     width: 450,
+    alignItems: 'center'
   },
 
   container: {
@@ -375,11 +377,11 @@ const styles = StyleSheet.create({
   },
 
   zipcodeInput: {
-    //top: 20,
+    top: 15,
     width: wp("30%"),
     height: hp("5%"),
     marginVertical: 20,
-    right: 55,
+    right: 70,
     // top: 115,
     // bottom: 50,
     //marginBottom: 20,
@@ -399,10 +401,11 @@ const styles = StyleSheet.create({
   },
 
   cityInput: {
-    width: wp("46%"),
+    top: 15,
+    width: wp("42%"),
     height: hp("5%"),
     marginVertical: 20,
-    right: 30,
+    right: 40,
     // top: 115,
     //bottom: 73,
     //left: 150,
@@ -435,8 +438,9 @@ const styles = StyleSheet.create({
     width: 250,
     height: 50,
     borderRadius: 20,
-    marginLeft: "40%",
+    marginLeft: "25%",
     backgroundColor: COLORS.lightOrange,
+    alignItems: 'center'
   },
   createText: {
     textAlign: "center",

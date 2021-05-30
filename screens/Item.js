@@ -208,7 +208,9 @@ class Item extends React.Component {
                 fontFamily: "SignikaNegative-SemiBold",
                 fontSize: 18,
                 marginLeft: "85%",
-                right: 4,
+                width: 100,
+                right: 40,
+                textAlign: 'right',
                 color: COLORS.black,
               }}
             >
@@ -231,7 +233,9 @@ class Item extends React.Component {
                 fontFamily: "SignikaNegative-SemiBold",
                 fontSize: 18,
                 marginLeft: "85%",
-                right: 4,
+                width: 100,
+                right: 40,
+                textAlign: 'right',
                 color: COLORS.black,
               }}
             >
@@ -254,7 +258,9 @@ class Item extends React.Component {
                 fontFamily: "SignikaNegative-SemiBold",
                 fontSize: 18,
                 marginLeft: "85%",
-                right: 4,
+                width: 100,
+                right: 40,
+                textAlign: 'right',
                 color: COLORS.black,
               }}
             >
@@ -274,10 +280,12 @@ class Item extends React.Component {
             <Text
               style={{
                 fontWeight: "bold",
-                fontFamily: "SignikaNegative-Bold",
+                fontFamily: "SignikaNegative-SemiBold",
                 fontSize: 18,
-                right: 15,
-                textAlign: "right",
+                marginLeft: "85%",
+                width: 100,
+                right: 40,
+                textAlign: 'right',
                 color: COLORS.black,
               }}
             >
@@ -352,7 +360,7 @@ const styles = StyleSheet.create({
   itemQty: {
     fontFamily: "SignikaNegative-Regular",
     fontSize: 20,
-    width: 20,
+    width: 30,
     marginLeft: "5%",
     top: 12,
     left: 5,
@@ -361,7 +369,7 @@ const styles = StyleSheet.create({
   itemPrice: {
     fontFamily: "SignikaNegative-Regular",
     fontSize: 18,
-    width: 50,
+    width: 75,
     marginLeft: "6%",
     left: 25,
     top: 12,

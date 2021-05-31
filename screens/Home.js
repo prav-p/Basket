@@ -132,10 +132,9 @@ class Home extends React.Component {
                     borderRadius: 30,
                   }}
                 />
-
-                <Text adjustsFontSizeToFit style={style.flatListText}>
-                  {`${item.storeName}`}
-                </Text>
+                  <Text adjustsFontSizeToFit style={style.flatListText}>
+                    {`${item.storeName}`}
+                  </Text>
                 <Text
                   adjustsFontSizeToFit
                   style={style.storeLocationText}
@@ -197,7 +196,7 @@ const style = StyleSheet.create({
     flexDirection: "row",
     padding: 16,
     alignItems: "center",
-    width: 300,
+    width: 50,
   },
 
   flatListText: {
@@ -207,17 +206,16 @@ const style = StyleSheet.create({
     fontSize: 15,
     flexDirection: "row",
     width: 180,
-    height: 20,
     bottom: 20,
   },
   storeLocationText: {
-    top: 10,
+    top: 20,
     right: 160,
     color: COLORS.black,
     fontFamily: "Montserrat-Medium",
     fontSize: 14,
     flexDirection: "row",
-    width: 120,
+    width: 150,
     height: 50,
   },
   checkout: {

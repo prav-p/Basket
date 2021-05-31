@@ -53,7 +53,7 @@ const Login = () => {
         <Text style={styles.email}>Email</Text>
         <TextInput
           style={styles.emailInput}
-          selectionColor={COLORS.secondary}
+          selectionColor={COLORS.black}
           onChangeText={onChangeEmail}
           value={email}
         />
@@ -61,7 +61,7 @@ const Login = () => {
         <TextInput
           secureTextEntry={true}
           style={styles.passwordInput}
-          selectionColor={COLORS.secondary}
+          selectionColor={COLORS.black}
           onChangeText={onChangePassword}
           value={password}
         />

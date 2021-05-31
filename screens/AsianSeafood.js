@@ -312,7 +312,7 @@ const styles = StyleSheet.create({
   },
   qty: {
     fontFamily: "Montserrat-Medium",
-    fontSize: 16,
+    fontSize: 12,
     color: COLORS.darkGray,
   },
   name: {

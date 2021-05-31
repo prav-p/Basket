@@ -219,7 +219,7 @@ class AsianMilk extends React.Component {
                     style={{
                       color: COLORS.black,
                       fontWeight: "bold",
-                      fontSize: 20,
+                      fontSize: 15,
                       left: 8,
                     }}
                   >
@@ -310,7 +310,7 @@ const styles = StyleSheet.create({
   },
   qty: {
     fontFamily: "Montserrat-Medium",
-    fontSize: 16,
+    fontSize: 12,
     color: COLORS.darkGray,
   },
   name: {

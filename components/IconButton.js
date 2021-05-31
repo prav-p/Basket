@@ -17,8 +17,8 @@ const IconButton = ({ containerStyle, iconStyle, icon, onPress }) => {
         source={icon}
         resizeMode="contain"
         style={{
-          width: 15,
-          height: 15,
+          width: 16,
+          height: 16,
           tintColor: COLORS.primary,
           ...iconStyle,
         }}

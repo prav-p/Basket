@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from "react-native-gesture-handler";
 import Data from "../assets/store_items.json";
-
+import TouchableScale from "react-native-touchable-scale";
 class Item extends React.Component {
   state = {
     data: [],
@@ -143,9 +143,9 @@ class Item extends React.Component {
             <Text style={styles.emptyCheckoutText}> Your basket is empty</Text>
           </View>
           <View style={styles.eCheckoutbt}>
-            <TouchableOpacity>
+            <TouchableScale activeScale={0.5}>
               <Text style={styles.CheckoutText}>Continue</Text>
-            </TouchableOpacity>
+            </TouchableScale>
           </View>
         </View>
       );
@@ -194,8 +194,8 @@ class Item extends React.Component {
             <Text
               style={{
                 fontWeight: "bold",
-                fontFamily: "SignikaNegative-SemiBold",
-                fontSize: 18,
+                fontFamily: "Montserrat-SemiBold",
+                fontSize: 16,
                 top: "10%",
                 color: COLORS.black,
               }}
@@ -205,12 +205,12 @@ class Item extends React.Component {
             <Text
               style={{
                 fontWeight: "bold",
-                fontFamily: "SignikaNegative-SemiBold",
-                fontSize: 18,
+                fontFamily: "Montserrat-SemiBold",
+                fontSize: 16,
                 marginLeft: "85%",
                 width: 100,
                 right: 40,
-                textAlign: 'right',
+                textAlign: "right",
                 color: COLORS.black,
               }}
             >
@@ -219,8 +219,8 @@ class Item extends React.Component {
             <Text
               style={{
                 fontWeight: "bold",
-                fontFamily: "SignikaNegative-SemiBold",
-                fontSize: 18,
+                fontFamily: "Montserrat-SemiBold",
+                fontSize: 16,
                 top: "10%",
                 color: COLORS.black,
               }}
@@ -230,12 +230,12 @@ class Item extends React.Component {
             <Text
               style={{
                 fontWeight: "bold",
-                fontFamily: "SignikaNegative-SemiBold",
-                fontSize: 18,
+                fontFamily: "Montserrat-SemiBold",
+                fontSize: 16,
                 marginLeft: "85%",
                 width: 100,
                 right: 40,
-                textAlign: 'right',
+                textAlign: "right",
                 color: COLORS.black,
               }}
             >
@@ -244,8 +244,8 @@ class Item extends React.Component {
             <Text
               style={{
                 fontWeight: "bold",
-                fontFamily: "SignikaNegative-SemiBold",
-                fontSize: 18,
+                fontFamily: "Montserrat-SemiBold",
+                fontSize: 16,
                 top: "10%",
                 color: COLORS.black,
               }}
@@ -255,12 +255,12 @@ class Item extends React.Component {
             <Text
               style={{
                 fontWeight: "bold",
-                fontFamily: "SignikaNegative-SemiBold",
-                fontSize: 18,
+                fontFamily: "Montserrat-SemiBold",
+                fontSize: 16,
                 marginLeft: "85%",
                 width: 100,
                 right: 40,
-                textAlign: 'right',
+                textAlign: "right",
                 color: COLORS.black,
               }}
             >
@@ -269,9 +269,9 @@ class Item extends React.Component {
             <Text
               style={{
                 fontWeight: "bold",
-                fontFamily: "SignikaNegative-Bold",
+                fontFamily: "Montserrat-Bold",
                 fontSize: 18,
-                top: "10%",
+                top: "20%",
                 color: COLORS.black,
               }}
             >
@@ -280,12 +280,13 @@ class Item extends React.Component {
             <Text
               style={{
                 fontWeight: "bold",
-                fontFamily: "SignikaNegative-SemiBold",
+                fontFamily: "Montserrat-Bold",
                 fontSize: 18,
                 marginLeft: "85%",
+                top: "10%",
                 width: 100,
                 right: 40,
-                textAlign: 'right',
+                textAlign: "right",
                 color: COLORS.black,
               }}
             >
@@ -350,15 +351,15 @@ const styles = StyleSheet.create({
     color: COLORS.black,
   },
   itemName: {
-    fontFamily: "SignikaNegative-Regular",
-    fontSize: 16,
+    fontFamily: "Montserrat-Medium",
+    fontSize: 12,
     width: 140,
     marginHorizontal: "2%",
     top: 10,
     color: COLORS.black,
   },
   itemQty: {
-    fontFamily: "SignikaNegative-Regular",
+    fontFamily: "Montserrat-Medium",
     fontSize: 20,
     width: 30,
     marginLeft: "5%",
@@ -367,47 +368,47 @@ const styles = StyleSheet.create({
     color: COLORS.black,
   },
   itemPrice: {
-    fontFamily: "SignikaNegative-Regular",
+    fontFamily: "Montserrat-SemiBold",
     fontSize: 18,
     width: 75,
     marginLeft: "6%",
-    left: 25,
+    left: 15,
     top: 12,
     color: COLORS.black,
   },
   subTotal: {
-    width: 350,
+    width: 330,
     height: 200,
   },
   emptyCheckoutText: {
     textAlign: "center",
     fontSize: 20,
-    fontFamily: "SignikaNegative-Bold",
+    fontFamily: "Montserrat-Bold",
     color: COLORS.black,
   },
   eCheckoutbt: {
     marginVertical: "5%",
-    width: 330,
+    width: 200,
     height: 60,
     borderRadius: 20,
     backgroundColor: COLORS.lightGray,
-    left: 10,
+    left: 75,
   },
 
   Checkout: {
     marginVertical: "5%",
-    width: 330,
+    width: 200,
     height: 60,
     borderRadius: 20,
-    left: 10,
-    backgroundColor: COLORS.primary,
+    marginLeft: 75,
+    backgroundColor: COLORS.lightOrange,
   },
   CheckoutText: {
     textAlign: "center",
-    marginVertical: "4%",
-    fontFamily: "SignikaNegative-Bold",
+    marginVertical: "6%",
+    fontFamily: "Montserrat-Bold",
     fontSize: 30,
-    width: 330,
+    width: 200,
     height: 60,
   },
   renderSeaparatorView: {

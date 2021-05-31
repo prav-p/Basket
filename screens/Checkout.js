@@ -218,8 +218,8 @@ class Checkout extends React.Component {
                     left: 20,
                     fontSize: 16,
                     bottom: 20,
-                    width: 220,
-                    fontFamily: "SignikaNegative-SemiBold",
+                    width: 250,
+                    fontFamily: "Montserrat-SemiBold",
                   }}
                 >
                   Please enter delivery details below
@@ -231,7 +231,7 @@ class Checkout extends React.Component {
                   left: 20,
                   fontSize: 20,
                   bottom: 20,
-                  fontFamily: "SignikaNegative-SemiBold",
+                  fontFamily: "Montserrat-SemiBold",
                 }}
               >
                 Delivery Address
@@ -252,7 +252,7 @@ class Checkout extends React.Component {
                   color: COLORS.black,
                   left: 20,
                   fontSize: 20,
-                  fontFamily: "SignikaNegative-SemiBold",
+                  fontFamily: "Montserrat-SemiBold",
                 }}
               >
                 Phone Number
@@ -272,7 +272,7 @@ class Checkout extends React.Component {
                   color: COLORS.black,
                   fontSize: 16,
                   width: 220,
-                  fontFamily: "SignikaNegative-SemiBold",
+                  fontFamily: "Montserrat-SemiBold",
                 }}
               >
                 {" "}
@@ -352,27 +352,27 @@ const styles = StyleSheet.create({
   routeText: {
     textAlign: "center",
     marginVertical: "5%",
-    fontFamily: "SignikaNegative-SemiBold",
+    fontFamily: "Montserrat-SemiBold",
     fontSize: 20,
     width: 80,
     height: 30,
   },
   order: {
     marginTop: "20%",
-    width: 330,
+    width: 200,
     height: 60,
     borderRadius: 20,
     // top: 30
-    backgroundColor: COLORS.primary,
-    left: 8,
+    backgroundColor: COLORS.lightOrange,
+    left: 75,
   },
 
   orderText: {
     textAlign: "center",
-    marginVertical: "4%",
-    fontFamily: "SignikaNegative-Bold",
-    fontSize: 30,
-    width: 330,
+    marginVertical: "8%",
+    fontFamily: "Montserrat-Bold",
+    fontSize: 24,
+    width: 200,
     height: 60,
   },
 });

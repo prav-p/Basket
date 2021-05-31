@@ -68,14 +68,14 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 25,
     marginBottom: "15%",
-    fontFamily: "SignikaNegative-Bold",
+    fontFamily: "Montserrat-Bold",
     color: COLORS.black,
   },
   returnText: {
     textAlign: "center",
     fontSize: 18,
     marginVertical: "1%",
-    fontFamily: "SignikaNegative-Bold",
+    fontFamily: "Montserrat-Bold",
     color: COLORS.black,
   },
   eCheckoutbt: {

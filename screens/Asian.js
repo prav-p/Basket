@@ -42,7 +42,7 @@ class Asian extends React.Component {
             >
               <Image
                 source={require("../assets/icons/BasketGreen.png")}
-                style={{ width: 40, height: 40 }}
+                style={{ width: 35, height: 35 }}
               />
             </TouchableOpacity>
           </View>
@@ -238,12 +238,12 @@ const styles = StyleSheet.create({
   },
 
   sectionHeader: {
-    fontWeight: "800",
-    fontSize: 18,
+    fontWeight: "400",
+    fontSize: 16,
     color: "black",
     marginTop: 20,
     marginBottom: 5,
-    fontFamily: "SignikaNegative-Bold",
+    fontFamily: "Montserrat-Bold",
   },
   flatlist: {
     alignContent: "center",

@@ -63,7 +63,7 @@ class Home extends React.Component {
               <TouchableOpacity onPress={() => navigation.navigate("Item")}>
                 <Image
                   source={require("../assets/icons/BasketGreen.png")}
-                  style={{ width: 40, height: 40 }}
+                  style={{ width: 35, height: 35 }}
                 />
               </TouchableOpacity>
             </View>
@@ -132,9 +132,13 @@ class Home extends React.Component {
                     borderRadius: 30,
                   }}
                 />
-                <Text adjustsFontSizeToFit style={style.flatListText}>
-                  {`${item.storeName}\n${item.storeLocation}`}
-                </Text>
+                  <Text adjustsFontSizeToFit style={style.flatListText}>
+                    {`${item.storeName}`}
+                  </Text>
+                <Text
+                  adjustsFontSizeToFit
+                  style={style.storeLocationText}
+                >{`${item.storeLocation}`}</Text>
               </View>
             </TouchableOpacity>
           )}
@@ -163,14 +167,6 @@ const style = StyleSheet.create({
     marginTop: "15%",
   },
 
-  headerView: {
-    //backgroundColor: "#fff",
-    //padding: 2,
-    //borderRadius: 15,
-    //marginTop: "10%",
-    //marginBottom: "5%",
-  },
-
   searchBar: {
     borderColor: "#333",
     backgroundColor: "#ebebeb",
@@ -186,7 +182,6 @@ const style = StyleSheet.create({
     height: 2,
     width: "100%",
     backgroundColor: COLORS.primary,
-    //marginLeft: "5%",
   },
 
   renderView: {
@@ -201,15 +196,27 @@ const style = StyleSheet.create({
     flexDirection: "row",
     padding: 16,
     alignItems: "center",
-    width: 300,
+    width: 50,
   },
 
   flatListText: {
     left: 20,
     color: COLORS.black,
-    fontFamily: "SignikaNegative-SemiBold",
-    fontSize: 18,
-    flexShrink: 1,
+    fontFamily: "Montserrat-Bold",
+    fontSize: 15,
+    flexDirection: "row",
+    width: 180,
+    bottom: 20,
+  },
+  storeLocationText: {
+    top: 20,
+    right: 160,
+    color: COLORS.black,
+    fontFamily: "Montserrat-Medium",
+    fontSize: 14,
+    flexDirection: "row",
+    width: 150,
+    height: 50,
   },
   checkout: {
     left: 35,

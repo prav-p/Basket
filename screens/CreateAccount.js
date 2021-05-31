@@ -206,7 +206,7 @@ const createAccount = () => {
 
   function renderSignUpHeader() {
     return (
-      <View>
+      <View style={{ height: 100 }}>
         <Text style={styles.signUpText}>SIGN UP</Text>
       </View>
     );
@@ -289,7 +289,7 @@ const createAccount = () => {
     return (
       <View style={styles.CreateAccount}>
         <TouchableOpacity onPress={() => create_account()}>
-          <Text style={styles.createText}>Create</Text>
+          <Text style={styles.createText}>Create Account</Text>
         </TouchableOpacity>
       </View>
     );
@@ -314,9 +314,11 @@ const createAccount = () => {
 const styles = StyleSheet.create({
   form: {
     flex: 4,
-    marginVertical: "10%",
-    marginLeft: "30%",
+    // marginVertical: "10%",
+    // marginLeft: "30%",
+    left: 25,
     width: 450,
+    alignItems: 'center'
   },
 
   container: {
@@ -332,7 +334,7 @@ const styles = StyleSheet.create({
     top: 20,
     fontFamily: "SignikaNegative-Bold",
     textAlign: "center",
-    fontSize: RFValue(80, 896),
+    fontSize: RFValue(60, 896),
     color: COLORS.primary,
   },
 
@@ -356,7 +358,7 @@ const styles = StyleSheet.create({
     fontSize: RFValue(30, 896),
     backgroundColor: "#EBEBEB",
     // borderRadius: 10,
-    fontFamily: "SignikaNegative-Regular",
+    fontFamily: "Montserrat-Regular",
   },
   zipCity: {
     alignItems: "flex-start",
@@ -375,18 +377,18 @@ const styles = StyleSheet.create({
   },
 
   zipcodeInput: {
-    //top: 20,
+    top: 15,
     width: wp("30%"),
     height: hp("5%"),
     marginVertical: 20,
-    right: 55,
+    right: 70,
     // top: 115,
     // bottom: 50,
     //marginBottom: 20,
     fontSize: RFValue(30, 896),
     backgroundColor: "#EBEBEB",
     // borderRadius: 10,
-    fontFamily: "SignikaNegative-Regular",
+    fontFamily: "Montserrat-Regular",
   },
 
   cityLabel: {
@@ -399,17 +401,18 @@ const styles = StyleSheet.create({
   },
 
   cityInput: {
-    width: wp("46%"),
+    top: 15,
+    width: wp("42%"),
     height: hp("5%"),
     marginVertical: 20,
-    right: 30,
+    right: 40,
     // top: 115,
     //bottom: 73,
     //left: 150,
     fontSize: RFValue(30, 896),
     backgroundColor: "#EBEBEB",
     // borderRadius: 10,
-    fontFamily: "SignikaNegative-Regular",
+    fontFamily: "Montserrat-Regular",
   },
 
   contactNoLabel: {
@@ -428,23 +431,24 @@ const styles = StyleSheet.create({
     fontSize: RFValue(30, 896),
     backgroundColor: "#EBEBEB",
     // borderRadius: 10,
-    fontFamily: "SignikaNegative-Regular",
+    fontFamily: "Montserrat-Regular",
   },
   CreateAccount: {
     marginVertical: "5%",
-    width: 330,
-    height: 60,
+    width: 250,
+    height: 50,
     borderRadius: 20,
-    marginLeft: "30%",
+    marginLeft: "25%",
     backgroundColor: COLORS.lightOrange,
+    alignItems: 'center'
   },
   createText: {
     textAlign: "center",
     marginVertical: "4%",
-    fontFamily: "SignikaNegative-Bold",
-    fontSize: 30,
-    width: 330,
-    height: 60,
+    fontFamily: "Montserrat-Bold",
+    fontSize: 24,
+    width: 250,
+    height: 50,
     color: COLORS.black,
   },
 });

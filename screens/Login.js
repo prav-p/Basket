@@ -53,7 +53,7 @@ const Login = () => {
         <Text style={styles.email}>Email</Text>
         <TextInput
           style={styles.emailInput}
-          selectionColor={COLORS.secondary}
+          selectionColor={COLORS.black}
           onChangeText={onChangeEmail}
           value={email}
         />
@@ -61,7 +61,7 @@ const Login = () => {
         <TextInput
           secureTextEntry={true}
           style={styles.passwordInput}
-          selectionColor={COLORS.secondary}
+          selectionColor={COLORS.black}
           onChangeText={onChangePassword}
           value={password}
         />
@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
     fontFamily: "SignikaNegative-Bold",
     textAlign: "center",
 
-    fontSize: RFValue(80, 896),
+    fontSize: RFValue(60, 896),
 
     color: COLORS.primary,
   },
@@ -164,15 +164,6 @@ const styles = StyleSheet.create({
 
     fontSize: RFValue(25, 896),
     left: 20,
-    top: 105,
-  },
-
-  emailInput: {
-    width: wp("85%"),
-    height: hp("5%"),
-    left: 20,
-    top: 105,
-    left: 10,
     top: 115,
   },
 
@@ -184,7 +175,7 @@ const styles = StyleSheet.create({
     fontSize: RFValue(30, 896),
     backgroundColor: "#FF9E45",
     borderRadius: 10,
-    fontFamily: "SignikaNegative-Regular",
+    fontFamily: "Montserrat-Regular",
   },
 
   passwordLabel: {
@@ -192,7 +183,7 @@ const styles = StyleSheet.create({
 
     fontSize: RFValue(26, 896),
     left: 20,
-    top: 150,
+    top: 160,
   },
 
   passwordInput: {
@@ -212,18 +203,18 @@ const styles = StyleSheet.create({
     fontSize: RFValue(30, 896),
     backgroundColor: "#FF9E45",
     borderRadius: 10,
-    fontFamily: "SignikaNegative-Regular",
+    fontFamily: "Montserrat-Regular",
   },
 
   btn1: {
     flex: 1,
     alignItems: "center",
     marginTop: "60%",
+    height: hp("7.5%"),
+    width: wp("95%"),
   },
 
   insidebtn: {
-    height: hp("7.5%"),
-    width: wp("95%"),
     textAlign: "center",
     backgroundColor: COLORS.primary,
     alignItems: "center",
@@ -232,15 +223,13 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    fontFamily: "SignikaNegative-Bold",
+    fontFamily: "Montserrat-Bold",
     textAlign: "center",
+    height: hp("7.5%"),
+    width: wp("80%"),
     fontSize: RFValue(40, 896),
-    fontSize: RFValue(30, 896),
+    paddingTop: 10,
     color: COLORS.white,
-    paddingLeft: 150,
-    paddingRight: 150,
-    paddingTop: 7,
-    paddingBottom: 7,
   },
 });
 

@@ -65,7 +65,7 @@ class MendozaTT extends React.Component {
         autoCorrect={false}
         onChangeText={this.handleSearch}
         status="info"
-        placeholder="Search"
+        placeholder="Search Tortilla and Tamale products..."
         style={styles.searchBar}
         textStyle={{ color: "#000" }}
         clearButtonMode="always"
@@ -101,7 +101,6 @@ class MendozaTT extends React.Component {
       this.setState({
         orderItems: orderList,
       });
-
     } else {
       if (item.length > 0) {
         if (item[0]?.qty > 0) {
@@ -114,13 +113,11 @@ class MendozaTT extends React.Component {
       this.setState({
         orderItems: orderList,
       });
-
     }
 
     await AsyncStorage.setItem("@order_MKey", JSON.stringify(orderList));
 
     const orderArray = await AsyncStorage.getItem("@order_MKey");
-
   };
 
   getOrderQty = (name) => {
@@ -158,7 +155,7 @@ class MendozaTT extends React.Component {
             >
               <Image
                 source={require("../assets/icons/BasketGreen.png")}
-                style={{ width: 40, height: 40 }}
+                style={{ width: 35, height: 35 }}
               />
             </TouchableOpacity>
           </View>
@@ -225,6 +222,7 @@ class MendozaTT extends React.Component {
                       color: COLORS.black,
                       fontWeight: "bold",
                       fontSize: 15,
+                      left: 8,
                     }}
                   >
                     {this.getOrderQty(item.name)}
@@ -242,7 +240,7 @@ class MendozaTT extends React.Component {
                     borderRadius: 25,
                     borderWidth: 2,
                     borderColor: COLORS.primary,
-                    right: 110,
+                    right: 95,
                   }}
                 >
                   <Text
@@ -313,19 +311,19 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   qty: {
-    fontFamily: "SignikaNegative-SemiBold",
-    fontSize: 16,
+    fontFamily: "Montserrat-Medium",
+    fontSize: 12,
     color: COLORS.darkGray,
   },
   name: {
-    fontFamily: "SignikaNegative-Regular",
-    fontSize: 14,
+    fontFamily: "Montserrat-SemiBold",
+    fontSize: 12,
     width: 100,
     color: COLORS.black,
   },
 
   price: {
-    fontFamily: "SignikaNegative-SemiBold",
+    fontFamily: "Montserrat-Bold",
     fontSize: 14,
     color: COLORS.black,
   },

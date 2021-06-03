@@ -151,7 +151,8 @@ const createAccount = () => {
     } else if (
       contactNo === undefined ||
       contactNo === "" ||
-      isNaN(contactNo)
+      isNaN(contactNo) || 
+      contactNo.length < 10
     ) {
       Alert.alert(
         "Invalid contact number",

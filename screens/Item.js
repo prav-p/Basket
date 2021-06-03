@@ -362,10 +362,9 @@ const styles = StyleSheet.create({
     fontFamily: "Montserrat-Medium",
     fontSize: 20,
     width: 30,
-    marginLeft: "5%",
     top: 12,
-    left: 5,
     color: COLORS.black,
+    textAlign: "right"
   },
   itemPrice: {
     fontFamily: "Montserrat-SemiBold",
